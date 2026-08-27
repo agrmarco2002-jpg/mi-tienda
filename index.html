@@ -6,7 +6,8 @@
 
 <title>4:20 — La hora adecuada</title>
 
-<meta name="description" content="4:20 — La hora adecuada. Streetwear, piezas urbanas y línea 4:20 Work / Agriculture.">
+<meta name="description"
+content="4:20 — La hora adecuada. Streetwear, piezas urbanas y prendas personalizadas.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,13 +15,18 @@
 
 <style>
 
+/* =========================================================
+   4:20 — LA HORA ADECUADA
+   ========================================================= */
+
 :root{
 --black:#080808;
---black2:#0e0e0e;
+--black2:#0d0d0d;
 --black3:#151515;
---white:#f5f5f2;
---gray:#8b8b8b;
+--white:#f4f4ef;
+--gray:#888;
 --line:#252525;
+--shirt:#101010;
 }
 
 *{
@@ -50,14 +56,15 @@ text-decoration:none;
 }
 
 button,
-input{
+input,
+select{
 font-family:inherit;
 }
 
 
-/* =========================
-LOADER
-========================= */
+/* =========================================================
+   LOADER
+   ========================================================= */
 
 .loader{
 position:fixed;
@@ -100,9 +107,9 @@ transform:scaleX(1);
 }
 
 
-/* =========================
-HEADER
-========================= */
+/* =========================================================
+   HEADER
+   ========================================================= */
 
 header{
 position:fixed;
@@ -165,11 +172,6 @@ font-weight:800;
 letter-spacing:2px;
 }
 
-
-/* =========================
-MOBILE MENU
-========================= */
-
 .mobile-menu{
 position:fixed;
 inset:0;
@@ -197,9 +199,9 @@ letter-spacing:-2px;
 }
 
 
-/* =========================
-HERO
-========================= */
+/* =========================================================
+   HERO
+   ========================================================= */
 
 .hero{
 min-height:100vh;
@@ -209,12 +211,7 @@ align-items:center;
 justify-content:center;
 overflow:hidden;
 background:
-radial-gradient(
-circle at center,
-#242424 0%,
-#101010 30%,
-#080808 70%
-);
+radial-gradient(circle at center,#242424 0%,#101010 30%,#080808 70%);
 }
 
 .hero-grid{
@@ -312,9 +309,9 @@ box-shadow:0 20px 50px rgba(255,255,255,.08);
 }
 
 
-/* =========================
-MARQUEE
-========================= */
+/* =========================================================
+   MARQUEE
+   ========================================================= */
 
 .marquee{
 overflow:hidden;
@@ -340,9 +337,9 @@ transform:translateX(-50%);
 }
 
 
-/* =========================
-GENERAL SECTIONS
-========================= */
+/* =========================================================
+   SHOP
+   ========================================================= */
 
 .section{
 padding:140px 6%;
@@ -375,11 +372,6 @@ color:#555;
 font-size:8px;
 letter-spacing:2px;
 }
-
-
-/* =========================
-PRODUCTS
-========================= */
 
 .products{
 display:grid;
@@ -486,9 +478,9 @@ letter-spacing:1px;
 }
 
 
-/* =========================
-ABOUT
-========================= */
+/* =========================================================
+   BRAND
+   ========================================================= */
 
 .brand-section{
 margin:30px 6%;
@@ -507,9 +499,9 @@ line-height:2;
 }
 
 
-/* =========================
-DROP
-========================= */
+/* =========================================================
+   DROP
+   ========================================================= */
 
 .drop{
 padding:150px 6%;
@@ -524,11 +516,7 @@ padding:9%;
 overflow:hidden;
 border-radius:110px 0 110px 0;
 background:
-radial-gradient(
-circle at 70% 50%,
-#282828,
-#090909 55%
-);
+radial-gradient(circle at 70% 50%,#282828,#090909 55%);
 border:1px solid #252525;
 }
 
@@ -572,9 +560,9 @@ line-height:1.9;
 }
 
 
-/* =====================================================
-CREA TU PIEZA
-===================================================== */
+/* =========================================================
+   CUSTOM
+   ========================================================= */
 
 .custom{
 padding:150px 6%;
@@ -584,189 +572,462 @@ border-radius:100px 100px 0 0;
 
 .custom-grid{
 display:grid;
-grid-template-columns:1.1fr .9fr;
+grid-template-columns:1.15fr .85fr;
 gap:70px;
 align-items:start;
 }
 
 
-/* =========================
-PREVIEW
-========================= */
+/* =========================================================
+   PREVIEW
+   ========================================================= */
 
 .preview{
 position:sticky;
 top:100px;
 }
 
+.preview-header{
+display:flex;
+align-items:center;
+justify-content:space-between;
+margin-bottom:20px;
+}
+
+.preview-status{
+color:#666;
+font-size:8px;
+font-weight:800;
+letter-spacing:2px;
+}
+
+
+/* CONTENEDOR */
+
+.man-head{
+position:absolute;
+top:38px;
+left:50%;
+transform:translateX(-50%);
+width:82px;
+height:100px;
+background:
+radial-gradient(circle at 35% 30%,#aaa,#696969 65%,#444);
+border-radius:48% 48% 45% 45%;
+z-index:1;
+box-shadow:
+inset -12px -10px 20px rgba(0,0,0,.35),
+inset 8px 5px 15px rgba(255,255,255,.1);
+}
+
+.man-neck{
+position:absolute;
+top:118px;
+left:50%;
+transform:translateX(-50%);
+width:48px;
+height:45px;
+background:linear-gradient(90deg,#555,#999,#555);
+z-index:0;
+}
+
+.man-body{
+position:absolute;
+top:140px;
+left:50%;
+transform:translateX(-50%);
+width:245px;
+height:390px;
+background:
+linear-gradient(90deg,#555 0%,#8b8b8b 22%,#a6a6a6 48%,#777 78%,#4d4d4d 100%);
+border-radius:90px 90px 35px 35px;
+z-index:0;
+}
+
+.man-arm{
+position:absolute;
+top:155px;
+width:70px;
+height:330px;
+background:
+linear-gradient(90deg,#4d4d4d,#929292,#555);
+border-radius:45px;
+z-index:0;
+}
+
+.man-arm.left{
+left:calc(50% - 150px);
+transform:rotate(7deg);
+}
+
+.man-arm.right{
+right:calc(50% - 150px);
+transform:rotate(-7deg);
+}
+
+.man-waist{
+position:absolute;
+top:500px;
+left:50%;
+transform:translateX(-50%);
+width:180px;
+height:100px;
+background:linear-gradient(90deg,#555,#888,#555);
+border-radius:20px;
+z-index:0;
+}
+
+
+/* STAGE */
+
 .shirt-stage{
-min-height:680px;
+height:650px;
 position:relative;
 display:flex;
 align-items:center;
 justify-content:center;
 overflow:hidden;
 background:
-radial-gradient(
-circle,
-#292929 0%,
-#151515 42%,
-#090909 75%
-);
-border-radius:50%;
-border:1px solid #222;
+radial-gradient(circle at 50% 45%,#303030,#111 55%,#090909);
+border:1px solid #252525;
+border-radius:50px;
+perspective:1200px;
+box-shadow:
+inset 0 0 100px rgba(255,255,255,.025);
 }
 
 
-/* Luz */
+/* MANIQUÍ COMPLETO */
 
-.stage-light{
+.mannequin{
 position:absolute;
-width:65%;
-height:65%;
-border-radius:50%;
-background:rgba(255,255,255,.035);
-filter:blur(30px);
+width:420px;
+height:600px;
+left:50%;
+top:25px;
+transform:translateX(-50%);
 }
 
 
-/* =========================
-PRENDA SVG
-========================= */
+/* PRENDA */
 
 .garment{
-position:relative;
-z-index:2;
-width:430px;
-max-width:70%;
+position:absolute;
+z-index:3;
+top:140px;
+left:50%;
+transform:translateX(-50%);
+width:285px;
+height:390px;
+background:
+linear-gradient(
+90deg,
+rgba(0,0,0,.35),
+rgba(255,255,255,.08) 18%,
+rgba(255,255,255,.03) 48%,
+rgba(0,0,0,.28)
+),
+var(--shirt-color,#111);
+clip-path:polygon(
+22% 0,
+38% 5%,
+50% 10%,
+62% 5%,
+78% 0,
+100% 16%,
+84% 33%,
+76% 27%,
+76% 100%,
+24% 100%,
+24% 27%,
+16% 33%,
+0 16%
+);
 filter:
-drop-shadow(0 25px 25px rgba(0,0,0,.45));
-transition:.45s ease;
-}
-
-.garment svg{
-width:100%;
-height:auto;
-display:block;
-overflow:visible;
-}
-
-.garment-body{
-fill:#080808;
-transition:.4s;
-}
-
-.garment.white .garment-body{
-fill:#eeeae1;
-}
-
-.garment.gray .garment-body{
-fill:#777;
-}
-
-.garment.beige .garment-body{
-fill:#b8ae9c;
-}
-
-.garment.green .garment-body{
-fill:#27352b;
-}
-
-.garment.brown .garment-body{
-fill:#493c31;
+drop-shadow(0 25px 25px rgba(0,0,0,.55));
+transition:
+background .35s,
+width .35s,
+height .35s,
+clip-path .35s,
+transform .5s;
 }
 
 
-/* =========================
-DISEÑO SOBRE PRENDA
-========================= */
+/* COSTURAS */
+
+.garment:before{
+content:"";
+position:absolute;
+inset:0;
+background:
+linear-gradient(90deg,
+transparent 0%,
+rgba(255,255,255,.05) 45%,
+transparent 50%,
+rgba(0,0,0,.08) 70%,
+transparent 100%);
+mix-blend-mode:overlay;
+pointer-events:none;
+}
+
+
+/* CURVAS DE TELA */
+
+.garment:after{
+content:"";
+position:absolute;
+left:15%;
+right:15%;
+top:12%;
+bottom:5%;
+border-radius:50%;
+box-shadow:
+inset 12px 0 20px rgba(0,0,0,.14),
+inset -12px 0 20px rgba(255,255,255,.04);
+pointer-events:none;
+}
+
+
+/* OVERSIZE */
+
+.garment.oversize{
+width:330px;
+height:405px;
+clip-path:polygon(
+18% 0,
+38% 5%,
+50% 10%,
+62% 5%,
+82% 0,
+100% 14%,
+88% 38%,
+78% 32%,
+78% 100%,
+22% 100%,
+22% 32%,
+12% 38%,
+0 14%
+);
+}
+
+
+/* POLO */
+
+.garment.polo{
+width:285px;
+height:390px;
+clip-path:polygon(
+22% 0,
+38% 6%,
+46% 12%,
+50% 17%,
+54% 12%,
+62% 6%,
+78% 0,
+100% 16%,
+84% 33%,
+76% 27%,
+76% 100%,
+24% 100%,
+24% 27%,
+16% 33%,
+0 16%
+);
+}
+
+
+/* CUELLO POLO */
+
+.polo-collar{
+position:absolute;
+z-index:6;
+top:151px;
+left:50%;
+transform:translateX(-50%);
+width:92px;
+height:55px;
+border-left:7px solid rgba(255,255,255,.2);
+border-right:7px solid rgba(0,0,0,.35);
+border-bottom:10px solid rgba(0,0,0,.28);
+clip-path:polygon(0 0,45% 25%,50% 100%,55% 25%,100% 0,75% 60%,50% 85%,25% 60%);
+opacity:0;
+transition:.3s;
+z-index:8;
+}
+
+.polo-collar.show{
+opacity:1;
+}
+
+
+/* CUELLO REDONDO */
+
+.round-neck{
+position:absolute;
+z-index:7;
+top:151px;
+left:50%;
+transform:translateX(-50%);
+width:75px;
+height:30px;
+border:7px solid rgba(0,0,0,.28);
+border-radius:50%;
+opacity:0;
+transition:.3s;
+}
+
+.round-neck.show{
+opacity:1;
+}
+
+
+/* DISEÑO SOBRE PRENDA */
 
 .design-layer{
 position:absolute;
-z-index:5;
+z-index:10;
+top:260px;
 left:50%;
-top:45%;
-transform:
-translate(-50%,-50%)
-translate(var(--design-x),var(--design-y))
-scale(var(--design-scale));
-width:150px;
-max-width:30%;
+transform:translateX(-50%);
+width:145px;
+min-height:65px;
 display:flex;
 align-items:center;
 justify-content:center;
-pointer-events:none;
-transition:.2s ease;
-}
-
-.design-layer img{
-width:100%;
-max-height:140px;
-object-fit:contain;
-display:block;
-filter:drop-shadow(0 4px 5px rgba(0,0,0,.18));
-}
-
-.design-text{
-font-size:22px;
-font-weight:900;
 text-align:center;
-line-height:1.05;
-letter-spacing:-1px;
-white-space:normal;
-word-break:break-word;
-max-width:180px;
 color:white;
-text-shadow:0 2px 3px rgba(0,0,0,.3);
+font-size:17px;
+font-weight:900;
+line-height:1.1;
+letter-spacing:1px;
+word-break:break-word;
+pointer-events:none;
+transition:.35s;
+text-shadow:
+0 2px 2px rgba(0,0,0,.25);
 }
 
-.garment.white ~ .design-layer .design-text,
-.garment.beige ~ .design-layer .design-text{
+.garment.white-shirt ~ .design-layer{
 color:#080808;
 text-shadow:none;
 }
 
-
-/* =========================
-PREVIEW INFO
-========================= */
-
-.preview-info{
-position:absolute;
-left:25px;
-bottom:25px;
-z-index:10;
+.design-layer img{
+max-width:125px;
+max-height:90px;
+object-fit:contain;
+display:block;
+filter:drop-shadow(0 3px 4px rgba(0,0,0,.2));
 }
 
-.preview-badge{
-display:inline-block;
-padding:9px 12px;
+
+/* ETIQUETA */
+
+.garment-tag{
+position:absolute;
+z-index:11;
+top:225px;
+left:50%;
+transform:translateX(-50%);
+width:30px;
+height:15px;
+background:rgba(255,255,255,.85);
+color:#111;
+font-size:5px;
+font-weight:900;
+display:flex;
+align-items:center;
+justify-content:center;
+letter-spacing:1px;
+opacity:.8;
+}
+
+
+/* ESPALDA */
+
+.back-label{
+display:none;
+position:absolute;
+z-index:10;
+top:275px;
+left:50%;
+transform:translateX(-50%);
+font-size:9px;
+font-weight:900;
+letter-spacing:3px;
+color:rgba(255,255,255,.7);
+}
+
+.back-view .back-label{
+display:block;
+}
+
+.back-view .design-layer{
+opacity:.95;
+}
+
+
+/* LUZ DE MANIQUÍ */
+
+.stage-light{
+position:absolute;
+width:430px;
+height:430px;
+left:50%;
+top:90px;
+transform:translateX(-50%);
+border-radius:50%;
+background:radial-gradient(
+circle,
+rgba(255,255,255,.08),
+transparent 65%
+);
+pointer-events:none;
+}
+
+
+/* BOTONES DEL VISOR */
+
+.preview-controls{
+display:flex;
+gap:8px;
+margin-top:15px;
+}
+
+.preview-btn{
+flex:1;
+height:45px;
+background:#111;
+border:1px solid #292929;
+color:#777;
+font-size:8px;
+font-weight:800;
+letter-spacing:2px;
+cursor:pointer;
+transition:.25s;
+}
+
+.preview-btn:hover,
+.preview-btn.active{
 background:#eee;
 color:#080808;
-font-size:7px;
-font-weight:900;
-letter-spacing:2px;
+border-color:#eee;
 }
 
 
-/* =========================
-CUSTOM FORM
-========================= */
+/* =========================================================
+   FORMULARIO
+   ========================================================= */
 
 .custom-form{
 display:flex;
 flex-direction:column;
-gap:30px;
-}
-
-.form-block{
-display:flex;
-flex-direction:column;
-gap:10px;
+gap:28px;
 }
 
 .form-label{
-margin-bottom:2px;
+margin-bottom:10px;
 color:#777;
 font-size:8px;
 font-weight:800;
@@ -780,7 +1041,7 @@ gap:7px;
 }
 
 .option{
-padding:13px 16px;
+padding:13px 18px;
 background:#111;
 color:#777;
 border:1px solid #292929;
@@ -801,11 +1062,6 @@ color:#080808;
 border-color:#eee;
 }
 
-
-/* =========================
-INPUT
-========================= */
-
 .custom-input{
 width:100%;
 height:55px;
@@ -820,11 +1076,6 @@ outline:none;
 border-color:#aaa;
 }
 
-
-/* =========================
-UPLOAD
-========================= */
-
 .upload{
 display:block;
 padding:25px;
@@ -835,7 +1086,7 @@ font-size:8px;
 font-weight:800;
 letter-spacing:2px;
 cursor:pointer;
-transition:.3s;
+transition:.25s;
 }
 
 .upload:hover{
@@ -847,62 +1098,48 @@ border-color:#aaa;
 display:none;
 }
 
-
-/* =========================
-CONTROL SLIDERS
-========================= */
-
-.slider-row{
-display:grid;
-grid-template-columns:1fr 60px;
-gap:15px;
-align-items:center;
-}
-
-.slider{
+.remove-logo{
+display:none;
 width:100%;
-accent-color:white;
-cursor:pointer;
-}
-
-.slider-value{
-height:35px;
-display:flex;
-align-items:center;
-justify-content:center;
+height:40px;
 background:#111;
 border:1px solid #292929;
-color:#aaa;
-font-size:9px;
-}
-
-
-/* =========================
-RESET
-========================= */
-
-.reset-button{
-width:100%;
-height:45px;
-background:transparent;
-color:#666;
-border:1px solid #292929;
+color:#777;
 font-size:8px;
 font-weight:800;
 letter-spacing:2px;
 cursor:pointer;
-transition:.3s;
 }
 
-.reset-button:hover{
-color:white;
-border-color:#777;
+.remove-logo.show{
+display:block;
 }
 
+.size-controls{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+}
 
-/* =========================
-PRICE
-========================= */
+.range-box{
+padding:15px;
+background:#111;
+border:1px solid #292929;
+}
+
+.range-box label{
+display:block;
+margin-bottom:10px;
+color:#666;
+font-size:7px;
+font-weight:800;
+letter-spacing:2px;
+}
+
+.range-box input{
+width:100%;
+accent-color:#eee;
+}
 
 .custom-price{
 display:flex;
@@ -922,10 +1159,29 @@ letter-spacing:3px;
 font-size:25px;
 }
 
+.custom-summary{
+padding:20px;
+background:#111;
+border:1px solid #292929;
+}
 
-/* =========================
-VALUES
-========================= */
+.custom-summary div{
+display:flex;
+justify-content:space-between;
+padding:7px 0;
+color:#777;
+font-size:8px;
+letter-spacing:1px;
+}
+
+.custom-summary strong{
+color:#eee;
+}
+
+
+/* =========================================================
+   VALUES
+   ========================================================= */
 
 .values{
 display:grid;
@@ -967,9 +1223,9 @@ line-height:1.9;
 }
 
 
-/* =========================
-SOCIAL
-========================= */
+/* =========================================================
+   SOCIAL
+   ========================================================= */
 
 .social-section{
 padding:150px 6%;
@@ -1064,9 +1320,9 @@ letter-spacing:2px;
 }
 
 
-/* =========================
-FOOTER
-========================= */
+/* =========================================================
+   FOOTER
+   ========================================================= */
 
 footer{
 padding:130px 6% 30px;
@@ -1122,9 +1378,9 @@ letter-spacing:2px;
 }
 
 
-/* =========================
-MODAL
-========================= */
+/* =========================================================
+   MODAL PRODUCTOS
+   ========================================================= */
 
 .modal{
 position:fixed;
@@ -1169,7 +1425,6 @@ overflow:hidden;
 width:100%;
 height:100%;
 object-fit:contain;
-object-position:center;
 background:#eeece5;
 }
 
@@ -1208,9 +1463,9 @@ cursor:pointer;
 }
 
 
-/* =========================
-REVEAL
-========================= */
+/* =========================================================
+   REVEAL
+   ========================================================= */
 
 .reveal{
 opacity:0;
@@ -1224,11 +1479,11 @@ transform:translateY(0);
 }
 
 
-/* =====================================================
-RESPONSIVE
-===================================================== */
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
-@media(max-width:800px){
+@media(max-width:900px){
 
 header{
 height:65px;
@@ -1315,9 +1570,6 @@ border-radius:55px 0 55px 0;
 letter-spacing:-7px;
 }
 
-
-/* CUSTOM MOBILE */
-
 .custom{
 padding:100px 5%;
 border-radius:60px 60px 0 0;
@@ -1334,25 +1586,13 @@ top:0;
 }
 
 .shirt-stage{
-min-height:510px;
-border-radius:40px;
+height:570px;
+border-radius:35px;
 }
 
-.garment{
-width:390px;
-max-width:78%;
-}
-
-.design-layer{
-max-width:30%;
-}
-
-.design-text{
-font-size:17px;
-}
-
-.custom-form{
-gap:25px;
+.mannequin{
+transform:translateX(-50%) scale(.86);
+transform-origin:top center;
 }
 
 .values{
@@ -1406,27 +1646,65 @@ font-size:30px;
 }
 
 
-/* SMALL PHONES */
+/* CELULAR PEQUEÑO */
 
-@media(max-width:420px){
+@media(max-width:480px){
 
 .hero h1{
-font-size:88px;
+font-size:86px;
+}
+
+.hero-description{
+padding:0 20px;
 }
 
 .shirt-stage{
-min-height:440px;
+height:520px;
+}
+
+.mannequin{
+transform:translateX(-50%) scale(.72);
+}
+
+.size-controls{
+grid-template-columns:1fr;
+}
+
+.custom-form{
+gap:22px;
+}
+
+}
+
+
+/* =========================================================
+   ANIMACIÓN SUAVE DE TELA
+   ========================================================= */
+
+@keyframes fabricMove{
+
+0%,100%{
+transform:translateX(-50%) scaleX(1) skewX(0deg);
+}
+
+50%{
+transform:translateX(-50%) scaleX(.992) skewX(.35deg);
+}
+
 }
 
 .garment{
-max-width:82%;
+animation:fabricMove 5s ease-in-out infinite;
 }
 
-.option{
-padding:11px 13px;
-font-size:7px;
-}
 
+/* AL GIRAR */
+
+.back-view .garment{
+animation:none;
+transform:
+translateX(-50%)
+rotateY(180deg);
 }
 
 </style>
@@ -1436,47 +1714,42 @@ font-size:7px;
 <body>
 
 
-<!-- =====================================================
-LOADER
-===================================================== -->
+<!-- =======================================================
+     LOADER
+======================================================= -->
 
 <div class="loader" id="loader">
-
-<div class="loader-logo">
-4:20
-</div>
-
+<div class="loader-logo">4:20</div>
 <div class="loader-line"></div>
-
 </div>
 
 
-<!-- =====================================================
-HEADER
-===================================================== -->
+<!-- =======================================================
+     HEADER
+======================================================= -->
 
 <header>
 
-<a href="#" class="logo">
-4:<span>20</span>
-</a>
+<a href="#" class="logo">4:<span>20</span></a>
 
 <nav>
-
 <a href="#shop">SHOP</a>
 <a href="#drops">DROPS</a>
 <a href="#custom">CUSTOM</a>
 <a href="#about">ABOUT</a>
-
 </nav>
 
 <div class="header-social">
 
-<a href="https://www.instagram.com/4_20.street/" target="_blank" rel="noopener noreferrer">
+<a href="https://www.instagram.com/4_20.street/"
+target="_blank"
+rel="noopener noreferrer">
 IG ↗
 </a>
 
-<a href="https://www.tiktok.com/@horaadecuada420" target="_blank" rel="noopener noreferrer">
+<a href="https://www.tiktok.com/@horaadecuada420"
+target="_blank"
+rel="noopener noreferrer">
 TK ↗
 </a>
 
@@ -1489,51 +1762,42 @@ MENU
 </header>
 
 
-<!-- =====================================================
-MOBILE MENU
-===================================================== -->
+<!-- =======================================================
+     MOBILE MENU
+======================================================= -->
 
 <div class="mobile-menu" id="mobileMenu">
 
-<a href="#shop" onclick="toggleMenu()">
-SHOP
-</a>
+<a href="#shop" onclick="toggleMenu()">SHOP</a>
+<a href="#drops" onclick="toggleMenu()">DROPS</a>
+<a href="#custom" onclick="toggleMenu()">CUSTOM</a>
+<a href="#about" onclick="toggleMenu()">ABOUT</a>
 
-<a href="#drops" onclick="toggleMenu()">
-DROPS
-</a>
-
-<a href="#custom" onclick="toggleMenu()">
-CUSTOM
-</a>
-
-<a href="#about" onclick="toggleMenu()">
-ABOUT
-</a>
-
-<a href="https://www.instagram.com/4_20.street/" target="_blank">
+<a href="https://www.instagram.com/4_20.street/"
+target="_blank">
 INSTAGRAM ↗
 </a>
 
-<a href="https://www.tiktok.com/@horaadecuada420" target="_blank">
+<a href="https://www.tiktok.com/@horaadecuada420"
+target="_blank">
 TIKTOK ↗
 </a>
 
-<a href="https://www.facebook.com/share/1Ephp8bfdR/" target="_blank">
+<a href="https://www.facebook.com/share/1Ephp8bfdR/"
+target="_blank">
 FACEBOOK ↗
 </a>
 
 </div>
 
 
-<!-- =====================================================
-HERO
-===================================================== -->
+<!-- =======================================================
+     HERO
+======================================================= -->
 
 <section class="hero">
 
 <div class="hero-grid"></div>
-
 <div class="hero-ring"></div>
 
 <div class="hero-content">
@@ -1551,7 +1815,8 @@ LA HORA ADECUADA
 </div>
 
 <p class="hero-description">
-Diseño contemporáneo, piezas urbanas y colecciones creadas para vestir todos los días.
+Diseño contemporáneo, piezas urbanas y colecciones creadas
+para vestir todos los días.
 </p>
 
 <a href="#shop" class="button">
@@ -1563,9 +1828,9 @@ VER COLECCIÓN →
 </section>
 
 
-<!-- =====================================================
-MARQUEE
-===================================================== -->
+<!-- =======================================================
+     MARQUEE
+======================================================= -->
 
 <div class="marquee">
 
@@ -1580,9 +1845,9 @@ MARQUEE
 </div>
 
 
-<!-- =====================================================
-SHOP
-===================================================== -->
+<!-- =======================================================
+     SHOP
+======================================================= -->
 
 <section class="section" id="shop">
 
@@ -1612,15 +1877,13 @@ DROP 01
 
 <!-- PRODUCTO 1 -->
 
-<article
-class="product reveal"
+<article class="product reveal"
 onclick="openProduct(
 'TEE 4:20 / DESIGN 01',
 'PIEZA 01 · COLECCIÓN 001',
 'POR DEFINIR',
 'IMG-20260827-WA1289.jpg'
-)"
->
+)">
 
 <div class="product-image">
 
@@ -1628,8 +1891,7 @@ onclick="openProduct(
 TEE 001
 </div>
 
-<button
-class="favorite"
+<button class="favorite"
 onclick="event.stopPropagation();toggleFavorite(this)">
 ♡
 </button>
@@ -1649,15 +1911,8 @@ TEE 4:20 / DESIGN 01
 </div>
 
 <div class="product-meta">
-
-<span>
-DROP 001
-</span>
-
-<span>
-001
-</span>
-
+<span>DROP 001</span>
+<span>001</span>
 </div>
 
 </div>
@@ -1667,15 +1922,13 @@ DROP 001
 
 <!-- PRODUCTO 2 -->
 
-<article
-class="product reveal"
+<article class="product reveal"
 onclick="openProduct(
 'TEE 4:20 / DESIGN 02',
 'PIEZA 02 · COLECCIÓN 001',
 'POR DEFINIR',
 'IMG-20260827-WA2971.jpg'
-)"
->
+)">
 
 <div class="product-image">
 
@@ -1683,8 +1936,7 @@ onclick="openProduct(
 TEE 002
 </div>
 
-<button
-class="favorite"
+<button class="favorite"
 onclick="event.stopPropagation();toggleFavorite(this)">
 ♡
 </button>
@@ -1704,15 +1956,8 @@ TEE 4:20 / DESIGN 02
 </div>
 
 <div class="product-meta">
-
-<span>
-DROP 001
-</span>
-
-<span>
-002
-</span>
-
+<span>DROP 001</span>
+<span>002</span>
 </div>
 
 </div>
@@ -1722,15 +1967,13 @@ DROP 001
 
 <!-- PRODUCTO 3 -->
 
-<article
-class="product reveal"
+<article class="product reveal"
 onclick="openProduct(
 'TEE 4:20 / DESIGN 03',
 'PIEZA 03 · COLECCIÓN 001',
 'POR DEFINIR',
 'IMG-20260827-WA3824.jpg'
-)"
->
+)">
 
 <div class="product-image">
 
@@ -1738,8 +1981,7 @@ onclick="openProduct(
 TEE 003
 </div>
 
-<button
-class="favorite"
+<button class="favorite"
 onclick="event.stopPropagation();toggleFavorite(this)">
 ♡
 </button>
@@ -1759,15 +2001,8 @@ TEE 4:20 / DESIGN 03
 </div>
 
 <div class="product-meta">
-
-<span>
-DROP 001
-</span>
-
-<span>
-003
-</span>
-
+<span>DROP 001</span>
+<span>003</span>
 </div>
 
 </div>
@@ -1777,15 +2012,13 @@ DROP 001
 
 <!-- PRODUCTO 4 -->
 
-<article
-class="product reveal"
+<article class="product reveal"
 onclick="openProduct(
 'TEE 4:20 / DESIGN 04',
 'PIEZA 04 · COLECCIÓN 001',
 'POR DEFINIR',
 'IMG-20260827-WA6261.jpg'
-)"
->
+)">
 
 <div class="product-image">
 
@@ -1793,8 +2026,7 @@ onclick="openProduct(
 TEE 004
 </div>
 
-<button
-class="favorite"
+<button class="favorite"
 onclick="event.stopPropagation();toggleFavorite(this)">
 ♡
 </button>
@@ -1814,15 +2046,8 @@ TEE 4:20 / DESIGN 04
 </div>
 
 <div class="product-meta">
-
-<span>
-DROP 001
-</span>
-
-<span>
-004
-</span>
-
+<span>DROP 001</span>
+<span>004</span>
 </div>
 
 </div>
@@ -1832,15 +2057,13 @@ DROP 001
 
 <!-- PRODUCTO 5 -->
 
-<article
-class="product reveal"
+<article class="product reveal"
 onclick="openProduct(
 'TEE 4:20 / DESIGN 05',
 'PIEZA 05 · COLECCIÓN 001',
 'POR DEFINIR',
 'IMG-20260827-WA8548.jpg'
-)"
->
+)">
 
 <div class="product-image">
 
@@ -1848,8 +2071,7 @@ onclick="openProduct(
 TEE 005
 </div>
 
-<button
-class="favorite"
+<button class="favorite"
 onclick="event.stopPropagation();toggleFavorite(this)">
 ♡
 </button>
@@ -1869,15 +2091,8 @@ TEE 4:20 / DESIGN 05
 </div>
 
 <div class="product-meta">
-
-<span>
-DROP 001
-</span>
-
-<span>
-005
-</span>
-
+<span>DROP 001</span>
+<span>005</span>
 </div>
 
 </div>
@@ -1887,15 +2102,13 @@ DROP 001
 
 <!-- PRODUCTO 6 -->
 
-<article
-class="product reveal"
+<article class="product reveal"
 onclick="openProduct(
 'POLO 4:20 / FIELD',
-'NEGRO + VERDE OSCURO · POLO WORK PREMIUM · COLECCIÓN 001',
+'NEGRO + VERDE OSCURO · POLO WORK PREMIUM',
 'POR DEFINIR',
 'IMG-20260827-WA8893.jpg'
-)"
->
+)">
 
 <div class="product-image">
 
@@ -1903,8 +2116,7 @@ onclick="openProduct(
 POLO 001
 </div>
 
-<button
-class="favorite"
+<button class="favorite"
 onclick="event.stopPropagation();toggleFavorite(this)">
 ♡
 </button>
@@ -1924,34 +2136,25 @@ POLO 4:20 / FIELD
 </div>
 
 <div class="product-meta">
-
-<span>
-WORK · AGRICULTURE
-</span>
-
-<span>
-006
-</span>
-
+<span>WORK · AGRICULTURE</span>
+<span>006</span>
 </div>
 
 </div>
 
 </article>
 
+
 </div>
 
 </section>
 
 
-<!-- =====================================================
-ABOUT
-===================================================== -->
+<!-- =======================================================
+     ABOUT
+======================================================= -->
 
-<section
-class="brand-section reveal"
-id="about"
->
+<section class="brand-section reveal" id="about">
 
 <div class="label">
 4:20 / BRAND
@@ -1962,7 +2165,6 @@ LA HORA<br>ADECUADA.
 </h2>
 
 <p>
-
 4:20 nace como una marca de ropa enfocada en diseño,
 identidad, comodidad y piezas fáciles de llevar.
 La estética es limpia, reconocible y contemporánea.
@@ -1977,9 +2179,9 @@ VESTIR BIEN · COMODIDAD · CONFIANZA · GUSTO.
 </section>
 
 
-<!-- =====================================================
-DROP
-===================================================== -->
+<!-- =======================================================
+     DROP
+======================================================= -->
 
 <section class="drop" id="drops">
 
@@ -2004,8 +2206,7 @@ Los próximos lanzamientos estarán disponibles en nuestras redes.
 href="https://www.instagram.com/4_20.street/"
 target="_blank"
 rel="noopener noreferrer"
-class="button"
->
+class="button">
 VER INSTAGRAM →
 </a>
 
@@ -2016,14 +2217,12 @@ VER INSTAGRAM →
 </section>
 
 
-<!-- =====================================================
-CREA TU PIEZA
-===================================================== -->
+<!-- =======================================================
+     CREA TU PIEZA
+======================================================= -->
 
-<section
-class="custom"
-id="custom"
->
+<section class="custom" id="custom">
+
 
 <div class="section-head reveal">
 
@@ -2039,25 +2238,56 @@ CREA<br>TU PIEZA.
 
 </div>
 
-<div class="section-note">
-DISEÑA · PERSONALIZA · COTIZA
-</div>
-
 </div>
 
 
 <div class="custom-grid">
 
 
-<!-- =================================================
-VISTA PREVIA
-================================================= -->
+<!-- =====================================================
+     PREVIEW MANIQUÍ
+===================================================== -->
 
 <div class="preview reveal">
 
-<div class="shirt-stage">
+
+<div class="preview-header">
+
+<div class="label">
+VISTA PREVIA
+</div>
+
+<div class="preview-status" id="viewStatus">
+FRENTE
+</div>
+
+</div>
+
+
+<div class="shirt-stage" id="shirtStage">
 
 <div class="stage-light"></div>
+
+
+<div class="mannequin">
+
+
+<!-- CABEZA -->
+
+<div class="man-head"></div>
+
+<div class="man-neck"></div>
+
+
+<!-- CUERPO -->
+
+<div class="man-body"></div>
+
+<div class="man-arm left"></div>
+
+<div class="man-arm right"></div>
+
+<div class="man-waist"></div>
 
 
 <!-- PRENDA -->
@@ -2065,193 +2295,32 @@ VISTA PREVIA
 <div
 class="garment"
 id="garment"
->
-
-<svg
-id="garmentSVG"
-viewBox="0 0 500 600"
-xmlns="http://www.w3.org/2000/svg"
->
-
-<!-- PLAYERA -->
-
-<g id="teeShape">
-
-<path
-class="garment-body"
-d="
-M145 70
-L205 35
-L250 65
-L295 35
-L355 70
-L455 145
-L405 225
-L350 190
-L350 555
-L150 555
-L150 190
-L95 225
-L45 145
-Z
-"
-/>
-
-<path
-d="
-M205 35
-Q250 90 295 35
-"
-fill="none"
-stroke="rgba(255,255,255,.18)"
-stroke-width="5"
-/>
-
-</g>
+style="--shirt-color:#111">
+</div>
 
 
-<!-- POLO -->
+<!-- CUELLO REDONDO -->
 
-<g
-id="poloShape"
-style="display:none"
->
-
-<path
-class="garment-body"
-d="
-M145 70
-L205 35
-L250 75
-L295 35
-L355 70
-L445 145
-L400 220
-L350 190
-L350 555
-L150 555
-L150 190
-L100 220
-L55 145
-Z
-"
-/>
-
-<path
-d="
-M205 35
-L250 75
-L295 35
-L270 125
-L230 125
-Z
-"
-fill="rgba(0,0,0,.18)"
-/>
-
-<line
-x1="250"
-y1="75"
-x2="250"
-y2="125"
-stroke="rgba(255,255,255,.2)"
-stroke-width="3"
-/>
-
-</g>
+<div
+class="round-neck show"
+id="roundNeck">
+</div>
 
 
-<!-- OVERSIZE -->
+<!-- CUELLO POLO -->
 
-<g
-id="oversizeShape"
-style="display:none"
->
-
-<path
-class="garment-body"
-d="
-M125 65
-L200 30
-L250 65
-L300 30
-L375 65
-L470 145
-L410 235
-L350 195
-L370 565
-L130 565
-L150 195
-L90 235
-L30 145
-Z
-"
-/>
-
-<path
-d="
-M200 30
-Q250 95 300 30
-"
-fill="none"
-stroke="rgba(255,255,255,.18)"
-stroke-width="5"
-/>
-
-</g>
+<div
+class="polo-collar"
+id="poloCollar">
+</div>
 
 
-<!-- SUDADERA -->
+<!-- ETIQUETA -->
 
-<g
-id="hoodieShape"
-style="display:none"
->
-
-<path
-class="garment-body"
-d="
-M150 85
-L205 45
-Q250 95 295 45
-L350 85
-L435 155
-L395 230
-L350 205
-L365 555
-L135 555
-L150 205
-L105 230
-L65 155
-Z
-"
-/>
-
-<path
-d="
-M205 45
-Q250 120 295 45
-Q285 125 250 150
-Q215 125 205 45
-"
-fill="rgba(0,0,0,.2)"
-/>
-
-<path
-d="
-M195 370
-L305 370
-L320 455
-L180 455
-Z
-"
-fill="rgba(0,0,0,.13)"
-/>
-
-</g>
-
-</svg>
-
+<div
+class="garment-tag"
+id="garmentTag">
+4:20
 </div>
 
 
@@ -2259,83 +2328,79 @@ fill="rgba(0,0,0,.13)"
 
 <div
 class="design-layer"
-id="designLayer"
-style="
---design-x:0px;
---design-y:0px;
---design-scale:1;
-"
->
-
-<div
-class="design-text"
-id="designText"
->
+id="designLayer">
 4/20
 </div>
 
+
+<div
+class="back-label"
+id="backLabel">
+4:20
 </div>
 
-
-<div class="preview-info">
-
-<span
-class="preview-badge"
-id="previewBadge"
->
-PLAYERA · NEGRO
-</span>
-
-</div>
 
 </div>
 
 </div>
 
 
-<!-- =================================================
-CONTROLES
-================================================= -->
+<!-- CONTROLES -->
+
+<div class="preview-controls">
+
+<button
+class="preview-btn active"
+id="frontBtn"
+onclick="setView('front')">
+FRENTE
+</button>
+
+<button
+class="preview-btn"
+id="backBtn"
+onclick="setView('back')">
+ESPALDA ↻
+</button>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     FORMULARIO
+===================================================== -->
 
 <div class="custom-form reveal">
 
 
 <!-- PRENDA -->
 
-<div class="form-block">
+<div>
 
 <div class="form-label">
-1 · PRENDA
+PRENDA
 </div>
 
 <div class="options">
 
 <button
 class="option active"
-onclick="setGarment('tee',this)"
->
-PLAYERA
-</button>
-
-<button
-class="option"
-onclick="setGarment('oversize',this)"
->
+onclick="setGarment('oversize',this)">
 OVERSIZE
 </button>
 
 <button
 class="option"
-onclick="setGarment('polo',this)"
->
-POLO
+onclick="setGarment('round',this)">
+CUELLO REDONDO
 </button>
 
 <button
 class="option"
-onclick="setGarment('hoodie',this)"
->
-SUDADERA
+onclick="setGarment('polo',this)">
+POLO
 </button>
 
 </div>
@@ -2345,54 +2410,36 @@ SUDADERA
 
 <!-- COLOR -->
 
-<div class="form-block">
+<div>
 
 <div class="form-label">
-2 · COLOR
+COLOR
 </div>
 
 <div class="options">
 
 <button
 class="option active"
-onclick="setGarmentColor('black',this)"
->
+onclick="setShirtColor('black',this)">
 NEGRO
 </button>
 
 <button
 class="option"
-onclick="setGarmentColor('white',this)"
->
+onclick="setShirtColor('white',this)">
 BLANCO
 </button>
 
 <button
 class="option"
-onclick="setGarmentColor('gray',this)"
->
-GRIS
-</button>
-
-<button
-class="option"
-onclick="setGarmentColor('beige',this)"
->
+onclick="setShirtColor('beige',this)">
 BEIGE
 </button>
 
 <button
 class="option"
-onclick="setGarmentColor('green',this)"
->
-VERDE
-</button>
-
-<button
-class="option"
-onclick="setGarmentColor('brown',this)"
->
-CAFÉ
+onclick="setShirtColor('gray',this)">
+GRIS
 </button>
 
 </div>
@@ -2402,97 +2449,36 @@ CAFÉ
 
 <!-- DISEÑO -->
 
-<div class="form-block">
+<div>
 
 <div class="form-label">
-3 · DISEÑO
+DISEÑO
 </div>
 
 <div class="options">
 
 <button
 class="option active"
-onclick="setDesignText('4/20',this)"
->
+onclick="setDesign('4/20',this)">
 4/20
 </button>
 
 <button
 class="option"
-onclick="setDesignText('LA HORA ADECUADA',this)"
->
+onclick="setDesign('LA HORA ADECUADA',this)">
 LA HORA ADECUADA
 </button>
 
 <button
 class="option"
-onclick="setDesignText('FRACCIÓN',this)"
->
-FRACCIÓN
+onclick="setDesign('ORIGEN',this)">
+ORIGEN
 </button>
 
 <button
 class="option"
-onclick="setDesignText('4:20',this)"
->
-4:20
-</button>
-
-</div>
-
-</div>
-
-
-<!-- USAR PIEZAS EXISTENTES -->
-
-<div class="form-block">
-
-<div class="form-label">
-4 · TUS DISEÑOS
-</div>
-
-<div class="options">
-
-<button
-class="option"
-onclick="useExistingImage('IMG-20260827-WA1289.jpg',this)"
->
-DISEÑO 01
-</button>
-
-<button
-class="option"
-onclick="useExistingImage('IMG-20260827-WA2971.jpg',this)"
->
-DISEÑO 02
-</button>
-
-<button
-class="option"
-onclick="useExistingImage('IMG-20260827-WA3824.jpg',this)"
->
-DISEÑO 03
-</button>
-
-<button
-class="option"
-onclick="useExistingImage('IMG-20260827-WA6261.jpg',this)"
->
-DISEÑO 04
-</button>
-
-<button
-class="option"
-onclick="useExistingImage('IMG-20260827-WA8548.jpg',this)"
->
-DISEÑO 05
-</button>
-
-<button
-class="option"
-onclick="useExistingImage('IMG-20260827-WA8893.jpg',this)"
->
-POLO FIELD
+onclick="setDesign('SIN DISEÑO',this)">
+SIN DISEÑO
 </button>
 
 </div>
@@ -2502,142 +2488,169 @@ POLO FIELD
 
 <!-- TEXTO -->
 
-<div class="form-block">
+<div>
 
 <div class="form-label">
-5 · TU TEXTO
+TU TEXTO
 </div>
 
 <input
 class="custom-input"
 id="customText"
 placeholder="Escribe tu texto"
-maxlength="30"
+maxlength="24"
 oninput="updateCustomText(this.value)"
 >
 
 </div>
 
 
-<!-- SUBIR -->
+<!-- LOGO -->
 
 <label class="upload">
 
 <input
 type="file"
-accept="image/*"
+id="logoInput"
+accept="image/png,image/jpeg,image/webp"
 onchange="handleUpload(this)"
 >
 
-📤 SUBIR LOGO / IMAGEN
+SUBIR LOGO / IMAGEN
 
 </label>
 
 
-<!-- TAMAÑO -->
-
-<div class="form-block">
-
-<div class="form-label">
-6 · TAMAÑO DEL DISEÑO
-</div>
-
-<div class="slider-row">
-
-<input
-class="slider"
-type="range"
-min="50"
-max="180"
-value="100"
-id="sizeSlider"
-oninput="changeDesignSize(this.value)"
->
-
-<div
-class="slider-value"
-id="sizeValue"
->
-100%
-</div>
-
-</div>
-
-</div>
+<button
+class="remove-logo"
+id="removeLogo"
+onclick="removeLogo()">
+QUITAR LOGO
+</button>
 
 
-<!-- ARRIBA ABAJO -->
+<!-- TAMAÑO Y POSICIÓN -->
 
-<div class="form-block">
+<div>
 
 <div class="form-label">
-7 · POSICIÓN VERTICAL
+AJUSTAR DISEÑO
 </div>
 
-<div class="slider-row">
+<div class="size-controls">
+
+<div class="range-box">
+
+<label>
+TAMAÑO
+</label>
 
 <input
-class="slider"
 type="range"
-min="-80"
-max="80"
-value="0"
-id="verticalSlider"
-oninput="changeDesignY(this.value)"
+id="designSize"
+min="60"
+max="190"
+value="145"
+oninput="updateDesignSize(this.value)"
 >
 
-<div
-class="slider-value"
-id="verticalValue"
+</div>
+
+
+<div class="range-box">
+
+<label>
+ALTURA
+</label>
+
+<input
+type="range"
+id="designPosition"
+min="225"
+max="325"
+value="260"
+oninput="updateDesignPosition(this.value)"
 >
-0
-</div>
 
 </div>
 
 </div>
 
+</div>
 
-<!-- IZQUIERDA DERECHA -->
 
-<div class="form-block">
+<!-- TALLA -->
+
+<div>
 
 <div class="form-label">
-8 · POSICIÓN HORIZONTAL
+TALLA
 </div>
 
-<div class="slider-row">
-
-<input
-class="slider"
-type="range"
-min="-70"
-max="70"
-value="0"
-id="horizontalSlider"
-oninput="changeDesignX(this.value)"
->
-
-<div
-class="slider-value"
-id="horizontalValue"
->
-0
-</div>
-
-</div>
-
-</div>
-
-
-<!-- RESET -->
+<div class="options">
 
 <button
-class="reset-button"
-onclick="resetCustomizer()"
->
-↻ RESTABLECER DISEÑO
+class="option active"
+onclick="setSize('S',this)">
+S
 </button>
+
+<button
+class="option"
+onclick="setSize('M',this)">
+M
+</button>
+
+<button
+class="option"
+onclick="setSize('L',this)">
+L
+</button>
+
+<button
+class="option"
+onclick="setSize('XL',this)">
+XL
+</button>
+
+</div>
+
+</div>
+
+
+<!-- RESUMEN -->
+
+<div class="custom-summary">
+
+<div>
+<span>PRENDA</span>
+<strong id="summaryGarment">
+OVERSIZE
+</strong>
+</div>
+
+<div>
+<span>COLOR</span>
+<strong id="summaryColor">
+NEGRO
+</strong>
+</div>
+
+<div>
+<span>DISEÑO</span>
+<strong id="summaryDesign">
+4/20
+</strong>
+</div>
+
+<div>
+<span>TALLA</span>
+<strong id="summarySize">
+S
+</strong>
+</div>
+
+</div>
 
 
 <!-- PRECIO -->
@@ -2659,10 +2672,10 @@ POR DEFINIR
 href="https://www.instagram.com/4_20.street/"
 target="_blank"
 rel="noopener noreferrer"
-class="button"
->
+class="button">
 COTIZAR EN IG →
 </a>
+
 
 </div>
 
@@ -2671,9 +2684,9 @@ COTIZAR EN IG →
 </section>
 
 
-<!-- =====================================================
-VALUES
-===================================================== -->
+<!-- =======================================================
+     VALUES
+======================================================= -->
 
 <section class="values reveal">
 
@@ -2706,8 +2719,8 @@ COMODIDAD
 </h3>
 
 <p>
-Algodón pesado, oversized y regular.
-Prendas para uso diario real.
+Oversize, regular y polo.
+Prendas pensadas para uso diario real.
 </p>
 
 </div>
@@ -2733,9 +2746,9 @@ Reconocible sin gritar.
 </section>
 
 
-<!-- =====================================================
-SOCIAL
-===================================================== -->
+<!-- =======================================================
+     SOCIAL
+======================================================= -->
 
 <section class="social-section reveal">
 
@@ -2751,15 +2764,14 @@ SÍGUENOS.
 DROP 001 · LA HORA ADECUADA · DISPONIBLE
 </div>
 
+
 <div class="social-grid">
 
 
 <a
 href="https://www.instagram.com/4_20.street/"
 target="_blank"
-rel="noopener noreferrer"
-class="social-card"
->
+class="social-card">
 
 <div class="social-top">
 
@@ -2795,9 +2807,7 @@ ENTRAR →
 <a
 href="https://www.tiktok.com/@horaadecuada420"
 target="_blank"
-rel="noopener noreferrer"
-class="social-card"
->
+class="social-card">
 
 <div class="social-top">
 
@@ -2833,9 +2843,7 @@ ENTRAR →
 <a
 href="https://www.facebook.com/share/1Ephp8bfdR/"
 target="_blank"
-rel="noopener noreferrer"
-class="social-card"
->
+class="social-card">
 
 <div class="social-top">
 
@@ -2867,14 +2875,15 @@ ENTRAR →
 
 </a>
 
+
 </div>
 
 </section>
 
 
-<!-- =====================================================
-FOOTER
-===================================================== -->
+<!-- =======================================================
+     FOOTER
+======================================================= -->
 
 <footer>
 
@@ -2895,33 +2904,18 @@ LA HORA ADECUADA · EST. MMXX · MEXICO
 
 <div class="footer-links">
 
-<a href="#shop">
-SHOP
-</a>
+<a href="#shop">SHOP</a>
+<a href="#drops">DROPS</a>
+<a href="#custom">CUSTOM</a>
+<a href="#about">ABOUT</a>
 
-<a href="#drops">
-DROPS
-</a>
-
-<a href="#custom">
-CUSTOM
-</a>
-
-<a href="#about">
-ABOUT
-</a>
-
-<a
-href="https://www.instagram.com/4_20.street/"
-target="_blank"
->
+<a href="https://www.instagram.com/4_20.street/"
+target="_blank">
 INSTAGRAM
 </a>
 
-<a
-href="https://www.tiktok.com/@horaadecuada420"
-target="_blank"
->
+<a href="https://www.tiktok.com/@horaadecuada420"
+target="_blank">
 TIKTOK
 </a>
 
@@ -2946,19 +2940,13 @@ HECHO EN MEXICO · DISEÑO LOCAL
 </footer>
 
 
-<!-- =====================================================
-MODAL PRODUCTO
-===================================================== -->
+<!-- =======================================================
+     MODAL
+======================================================= -->
 
-<div
-class="modal"
-id="productModal"
->
+<div class="modal" id="productModal">
 
-<button
-class="close"
-onclick="closeProduct()"
->
+<button class="close" onclick="closeProduct()">
 ×
 </button>
 
@@ -2966,20 +2954,13 @@ onclick="closeProduct()"
 
 <div class="modal-image">
 
-<img
-id="modalImg"
-src=""
-alt=""
->
+<img id="modalImg" src="" alt="">
 
 </div>
 
 <div class="modal-info">
 
-<div
-class="label"
-id="modalLabel"
->
+<div class="label">
 4:20 / DROP 001
 </div>
 
@@ -2994,16 +2975,14 @@ color:#aaa;
 font-size:12px;
 font-weight:800;
 letter-spacing:2px;
-margin-bottom:30px;
-"
-></p>
+margin-bottom:30px">
+</p>
 
 <a
 href="https://www.instagram.com/4_20.street/"
 target="_blank"
 rel="noopener noreferrer"
-class="button"
->
+class="button">
 PEDIR POR IG →
 </a>
 
@@ -3014,16 +2993,16 @@ PEDIR POR IG →
 </div>
 
 
-<!-- =====================================================
-JAVASCRIPT
-===================================================== -->
+<!-- =======================================================
+     JAVASCRIPT
+======================================================= -->
 
 <script>
 
 
-/* =========================
-LOADER
-========================= */
+/* =========================================================
+   LOADER
+========================================================= */
 
 const loader=document.getElementById('loader');
 
@@ -3038,9 +3017,9 @@ loader.classList.add('hide');
 });
 
 
-/* =========================
-MENU
-========================= */
+/* =========================================================
+   MENU
+========================================================= */
 
 function toggleMenu(){
 
@@ -3053,9 +3032,9 @@ document.body.classList.toggle('lock');
 }
 
 
-/* =========================
-FAVORITOS
-========================= */
+/* =========================================================
+   FAVORITOS
+========================================================= */
 
 function toggleFavorite(btn){
 
@@ -3069,9 +3048,9 @@ btn.classList.contains('active')
 }
 
 
-/* =========================
-PRODUCT MODAL
-========================= */
+/* =========================================================
+   PRODUCT MODAL
+========================================================= */
 
 function openProduct(title,desc,price,img){
 
@@ -3114,9 +3093,9 @@ closeProduct();
 });
 
 
-/* =========================
-REVEALS
-========================= */
+/* =========================================================
+   REVEAL
+========================================================= */
 
 const reveals=document.querySelectorAll('.reveal');
 
@@ -3136,396 +3115,489 @@ io.unobserve(entry.target);
 
 },{threshold:.15});
 
-reveals.forEach(r=>io.observe(r));
+reveals.forEach(el=>io.observe(el));
 
 
-/* =====================================================
-CUSTOMIZER
-===================================================== */
+/* =========================================================
+   ELEMENTOS DEL CONFIGURADOR
+========================================================= */
 
 const garment=document.getElementById('garment');
 
+const roundNeck=document.getElementById('roundNeck');
+
+const poloCollar=document.getElementById('poloCollar');
+
 const designLayer=document.getElementById('designLayer');
 
-const designText=document.getElementById('designText');
+const garmentTag=document.getElementById('garmentTag');
 
-const previewBadge=document.getElementById('previewBadge');
+const shirtStage=document.getElementById('shirtStage');
 
-const garmentSVG=document.getElementById('garmentSVG');
+const viewStatus=document.getElementById('viewStatus');
 
-const teeShape=document.getElementById('teeShape');
+const summaryGarment=document.getElementById('summaryGarment');
 
-const poloShape=document.getElementById('poloShape');
+const summaryColor=document.getElementById('summaryColor');
 
-const oversizeShape=document.getElementById('oversizeShape');
+const summaryDesign=document.getElementById('summaryDesign');
 
-const hoodieShape=document.getElementById('hoodieShape');
+const summarySize=document.getElementById('summarySize');
+
+let currentColor='black';
+
+let currentGarment='oversize';
+
+let currentDesign='4/20';
+
+let currentSize='S';
+
+let currentView='front';
 
 
-/* =========================
-PRENDA
-========================= */
-
-let currentGarment='PLAYERA';
+/* =========================================================
+   CAMBIAR PRENDA
+========================================================= */
 
 function setGarment(type,btn){
 
 document
-.querySelectorAll('.custom-form .form-block:nth-child(1) .option')
+.querySelectorAll(
+'.custom-form > div:nth-child(1) .option'
+)
 .forEach(o=>o.classList.remove('active'));
 
 btn.classList.add('active');
 
+currentGarment=type;
 
-teeShape.style.display='none';
+garment.classList.remove(
+'oversize',
+'polo'
+);
 
-poloShape.style.display='none';
+roundNeck.classList.remove('show');
 
-oversizeShape.style.display='none';
+poloCollar.classList.remove('show');
 
-hoodieShape.style.display='none';
-
-
-if(type==='tee'){
-
-teeShape.style.display='block';
-
-currentGarment='PLAYERA';
-
-}
 
 if(type==='oversize'){
 
-oversizeShape.style.display='block';
+garment.classList.add('oversize');
 
-currentGarment='OVERSIZE';
+summaryGarment.textContent='OVERSIZE';
+
+roundNeck.classList.add('show');
 
 }
+
+
+if(type==='round'){
+
+summaryGarment.textContent='CUELLO REDONDO';
+
+roundNeck.classList.add('show');
+
+}
+
 
 if(type==='polo'){
 
-poloShape.style.display='block';
+garment.classList.add('polo');
 
-currentGarment='POLO';
+summaryGarment.textContent='POLO';
+
+poloCollar.classList.add('show');
 
 }
-
-if(type==='hoodie'){
-
-hoodieShape.style.display='block';
-
-currentGarment='SUDADERA';
 
 }
 
 
-updateBadge();
+/* =========================================================
+   CAMBIAR COLOR
+========================================================= */
 
-}
+function setShirtColor(color,btn){
 
+const container=btn.closest('.options');
 
-/* =========================
-COLOR
-========================= */
-
-let currentColor='NEGRO';
-
-function setGarmentColor(color,btn){
-
-document
-.querySelectorAll('.custom-form .form-block:nth-child(2) .option')
+container
+.querySelectorAll('.option')
 .forEach(o=>o.classList.remove('active'));
 
 btn.classList.add('active');
 
-
-garment.className='garment '+color;
-
-currentColor=
-color==='black'?'NEGRO':
-color==='white'?'BLANCO':
-color==='gray'?'GRIS':
-color==='beige'?'BEIGE':
-color==='green'?'VERDE':
-'CAFÉ';
+currentColor=color;
 
 
-updateBadge();
+const colors={
+
+black:'#111111',
+
+white:'#eeeeea',
+
+beige:'#d8d0bd',
+
+gray:'#777777'
+
+};
+
+
+garment.style.setProperty(
+'--shirt-color',
+colors[color]
+);
+
+
+if(color==='white'){
+
+garment.classList.add('white-shirt');
+
+designLayer.style.color='#080808';
+
+summaryColor.textContent='BLANCO';
+
+}
+
+else if(color==='beige'){
+
+garment.classList.add('white-shirt');
+
+designLayer.style.color='#080808';
+
+summaryColor.textContent='BEIGE';
+
+}
+
+else if(color==='gray'){
+
+garment.classList.remove('white-shirt');
+
+designLayer.style.color='white';
+
+summaryColor.textContent='GRIS';
+
+}
+
+else{
+
+garment.classList.remove('white-shirt');
+
+designLayer.style.color='white';
+
+summaryColor.textContent='NEGRO';
+
+}
 
 }
 
 
-/* =========================
-BADGE
-========================= */
+/* =========================================================
+   DISEÑOS
+========================================================= */
 
-function updateBadge(){
+function setDesign(text,btn){
 
-previewBadge.textContent=
-currentGarment+
-' · '+
-currentColor;
-
-}
-
-
-/* =========================
-TEXTO
-========================= */
-
-function setDesignText(text,btn){
-
-document
-.querySelectorAll('.custom-form .form-block:nth-child(3) .option')
+btn
+.closest('.options')
+.querySelectorAll('.option')
 .forEach(o=>o.classList.remove('active'));
 
 btn.classList.add('active');
 
+currentDesign=text;
 
-designLayer.innerHTML=
-'<div class="design-text" id="designText">'+
-text+
-'</div>';
+designLayer.innerHTML='';
 
-designLayer
-.querySelector('.design-text')
-.style.color=
-(currentColor==='BLANCO'||currentColor==='BEIGE')
-?'#080808'
-:'white';
+designLayer.textContent=text;
 
+summaryDesign.textContent=text;
 
 }
 
 
-/* =========================
-TEXTO PERSONALIZADO
-========================= */
+/* =========================================================
+   TEXTO PERSONALIZADO
+========================================================= */
 
 function updateCustomText(value){
 
 if(value.trim()===''){
 
-designLayer.innerHTML=
-'<div class="design-text" id="designText">4/20</div>';
+designLayer.textContent=currentDesign;
+
+summaryDesign.textContent=currentDesign;
 
 return;
 
 }
 
+designLayer.textContent=value.toUpperCase();
 
-designLayer.innerHTML=
-'<div class="design-text" id="designText">'+
-value.toUpperCase()+
-'</div>';
-
-const txt=designLayer.querySelector('.design-text');
-
-txt.style.color=
-(currentColor==='BLANCO'||currentColor==='BEIGE')
-?'#080808'
-:'white';
+summaryDesign.textContent='PERSONALIZADO';
 
 }
 
 
-/* =========================
-IMÁGENES EXISTENTES
-========================= */
-
-function useExistingImage(file,btn){
-
-document
-.querySelectorAll('.custom-form .form-block:nth-child(4) .option')
-.forEach(o=>o.classList.remove('active'));
-
-btn.classList.add('active');
-
-
-designLayer.innerHTML=
-'<img src="'+file+'" alt="Diseño seleccionado">';
-
-}
-
-
-/* =========================
-SUBIR IMAGEN
-========================= */
+/* =========================================================
+   SUBIR LOGO
+========================================================= */
 
 function handleUpload(input){
 
-if(!input.files || !input.files[0]){
-
+if(
+!input.files ||
+!input.files[0]
+){
 return;
-
 }
+
+const file=input.files[0];
 
 const reader=new FileReader();
 
 reader.onload=function(e){
 
-designLayer.innerHTML=
-'<img src="'+e.target.result+'" alt="Diseño personalizado">';
+designLayer.innerHTML='';
+
+const img=document.createElement('img');
+
+img.src=e.target.result;
+
+designLayer.appendChild(img);
+
+summaryDesign.textContent='LOGO';
+
+document
+.getElementById('removeLogo')
+.classList.add('show');
 
 };
 
-reader.readAsDataURL(input.files[0]);
+reader.readAsDataURL(file);
 
 }
 
 
-/* =========================
-TAMAÑO
-========================= */
+/* =========================================================
+   QUITAR LOGO
+========================================================= */
 
-function changeDesignSize(value){
+function removeLogo(){
 
-designLayer.style.setProperty(
-'--design-scale',
-value/100
-);
+const input=document.getElementById('logoInput');
 
-document.getElementById('sizeValue').textContent=
-value+'%';
+input.value='';
 
-}
+designLayer.innerHTML='';
 
+designLayer.textContent=currentDesign;
 
-/* =========================
-POSICIÓN VERTICAL
-========================= */
-
-function changeDesignY(value){
-
-designLayer.style.setProperty(
-'--design-y',
-value+'px'
-);
-
-document.getElementById('verticalValue').textContent=
-value;
-
-}
-
-
-/* =========================
-POSICIÓN HORIZONTAL
-========================= */
-
-function changeDesignX(value){
-
-designLayer.style.setProperty(
-'--design-x',
-value+'px'
-);
-
-document.getElementById('horizontalValue').textContent=
-value;
-
-}
-
-
-/* =========================
-RESET
-========================= */
-
-function resetCustomizer(){
-
-/* Prenda */
-
-garment.className='garment';
-
-
-teeShape.style.display='block';
-
-poloShape.style.display='none';
-
-oversizeShape.style.display='none';
-
-hoodieShape.style.display='none';
-
-
-/* Color */
-
-currentGarment='PLAYERA';
-
-currentColor='NEGRO';
-
-updateBadge();
-
-
-/* Diseño */
-
-designLayer.innerHTML=
-'<div class="design-text" id="designText">4/20</div>';
-
-
-/* Sliders */
-
-document.getElementById('sizeSlider').value=100;
-
-document.getElementById('verticalSlider').value=0;
-
-document.getElementById('horizontalSlider').value=0;
-
-
-designLayer.style.setProperty(
-'--design-scale',
-1
-);
-
-designLayer.style.setProperty(
-'--design-y',
-'0px'
-);
-
-designLayer.style.setProperty(
-'--design-x',
-'0px'
-);
-
-
-document.getElementById('sizeValue').textContent='100%';
-
-document.getElementById('verticalValue').textContent='0';
-
-document.getElementById('horizontalValue').textContent='0';
-
-
-/* Texto */
-
-document.getElementById('customText').value='';
-
-
-/* Botones */
+summaryDesign.textContent=currentDesign;
 
 document
-.querySelectorAll('.custom-form .option')
+.getElementById('removeLogo')
+.classList.remove('show');
+
+}
+
+
+/* =========================================================
+   TAMAÑO DEL DISEÑO
+========================================================= */
+
+function updateDesignSize(value){
+
+designLayer.style.width=value+'px';
+
+}
+
+
+/* =========================================================
+   ALTURA DEL DISEÑO
+========================================================= */
+
+function updateDesignPosition(value){
+
+designLayer.style.top=value+'px';
+
+}
+
+
+/* =========================================================
+   TALLA
+========================================================= */
+
+function setSize(size,btn){
+
+btn
+.closest('.options')
+.querySelectorAll('.option')
 .forEach(o=>o.classList.remove('active'));
 
+btn.classList.add('active');
 
-/* Primer botón de cada grupo */
+currentSize=size;
 
-document
-.querySelector('.custom-form .form-block:nth-child(1) .option')
-.classList.add('active');
-
-document
-.querySelector('.custom-form .form-block:nth-child(2) .option')
-.classList.add('active');
-
-document
-.querySelector('.custom-form .form-block:nth-child(3) .option')
-.classList.add('active');
+summarySize.textContent=size;
 
 }
 
 
-/* =========================
-TECLADO ESC PARA MODAL
-========================= */
+/* =========================================================
+   FRENTE / ESPALDA
+========================================================= */
 
-document.addEventListener('keydown',function(e){
+function setView(view){
+
+currentView=view;
+
+const frontBtn=document.getElementById('frontBtn');
+
+const backBtn=document.getElementById('backBtn');
+
+
+if(view==='front'){
+
+shirtStage.classList.remove('back-view');
+
+frontBtn.classList.add('active');
+
+backBtn.classList.remove('active');
+
+viewStatus.textContent='FRENTE';
+
+garmentTag.style.display='block';
+
+designLayer.style.display='flex';
+
+}
+
+else{
+
+shirtStage.classList.add('back-view');
+
+backBtn.classList.add('active');
+
+frontBtn.classList.remove('active');
+
+viewStatus.textContent='ESPALDA';
+
+garmentTag.style.display='none';
+
+designLayer.style.display='none';
+
+}
+
+}
+
+
+/* =========================================================
+   ARRASTRAR PARA GIRAR
+========================================================= */
+
+let startX=0;
+
+let dragging=false;
+
+shirtStage.addEventListener(
+'touchstart',
+function(e){
+
+startX=e.touches[0].clientX;
+
+dragging=true;
+
+},
+{passive:true}
+);
+
+
+shirtStage.addEventListener(
+'touchend',
+function(e){
+
+if(!dragging)return;
+
+const endX=e.changedTouches[0].clientX;
+
+const difference=endX-startX;
+
+if(Math.abs(difference)>60){
+
+if(difference<0){
+
+setView('back');
+
+}
+else{
+
+setView('front');
+
+}
+
+}
+
+dragging=false;
+
+},
+{passive:true}
+);
+
+
+/* =========================================================
+   MOUSE DRAG
+========================================================= */
+
+shirtStage.addEventListener(
+'mousedown',
+function(e){
+
+startX=e.clientX;
+
+dragging=true;
+
+}
+);
+
+
+window.addEventListener(
+'mouseup',
+function(e){
+
+if(!dragging)return;
+
+const difference=e.clientX-startX;
+
+if(Math.abs(difference)>70){
+
+if(difference<0){
+
+setView('back');
+
+}
+else{
+
+setView('front');
+
+}
+
+}
+
+dragging=false;
+
+}
+);
+
+
+/* =========================================================
+   TECLADO
+========================================================= */
+
+document.addEventListener(
+'keydown',
+function(e){
 
 if(e.key==='Escape'){
 
@@ -3533,8 +3605,32 @@ closeProduct();
 
 }
 
-});
+if(e.key==='ArrowLeft'){
 
+setView('front');
+
+}
+
+if(e.key==='ArrowRight'){
+
+setView('back');
+
+}
+
+}
+);
+
+
+/* =========================================================
+   INICIALIZAR
+========================================================= */
+
+setGarment(
+'oversize',
+document.querySelector(
+'.custom-form > div:nth-child(1) .option'
+)
+);
 
 </script>
 
