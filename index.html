@@ -7,25 +7,24 @@
 <title>4:20® — La hora adecuada</title>
 
 <meta name="description"
-content="4:20® — Streetwear. La hora adecuada. Drops y piezas personalizadas.">
+content="4:20® — La hora adecuada. Streetwear, drops y piezas personalizadas.">
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 :root{
     --bg:#070707;
-    --surface:#101010;
-    --surface2:#151515;
-    --white:#f5f5f0;
-    --muted:#858585;
-    --line:#252525;
-    --danger:#ff5c5c;
+    --card:#111;
+    --card2:#161616;
+    --white:#f5f5f2;
+    --gray:#888;
+    --line:#272727;
 }
 
 *{
-    box-sizing:border-box;
     margin:0;
     padding:0;
+    box-sizing:border-box;
 }
 
 html{
@@ -36,12 +35,10 @@ body{
     background:var(--bg);
     color:var(--white);
     font-family:Inter,Arial,sans-serif;
-    overflow-x:hidden;
 }
 
 button,
-input,
-select{
+input{
     font-family:inherit;
 }
 
@@ -50,41 +47,12 @@ button{
 }
 
 a{
-    text-decoration:none;
     color:inherit;
+    text-decoration:none;
 }
 
 /* =========================
-   LOADER
-========================= */
-
-.loader{
-    position:fixed;
-    inset:0;
-    background:#070707;
-    z-index:9999;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    animation:loaderOut 1s 1.2s forwards;
-    pointer-events:none;
-}
-
-.loader span{
-    font-size:48px;
-    font-weight:900;
-    letter-spacing:-5px;
-}
-
-@keyframes loaderOut{
-    to{
-        opacity:0;
-        visibility:hidden;
-    }
-}
-
-/* =========================
-   HEADER
+HEADER
 ========================= */
 
 header{
@@ -92,8 +60,9 @@ header{
     top:0;
     left:0;
     right:0;
-    height:72px;
     z-index:1000;
+
+    height:70px;
 
     display:flex;
     align-items:center;
@@ -101,181 +70,177 @@ header{
 
     padding:0 5%;
 
-    background:rgba(7,7,7,.76);
-    backdrop-filter:blur(20px);
+    background:rgba(7,7,7,.82);
+    backdrop-filter:blur(18px);
 
     border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 .logo{
-    font-size:21px;
+    font-size:22px;
     font-weight:900;
     letter-spacing:-2px;
 }
 
 .nav{
     display:flex;
-    gap:32px;
+    gap:35px;
 }
 
 .nav a{
-    color:#999;
+    color:#888;
     font-size:9px;
-    font-weight:700;
+    font-weight:800;
     letter-spacing:2px;
     transition:.3s;
 }
 
 .nav a:hover{
-    color:#fff;
+    color:white;
 }
 
-.bag{
+.cart-btn{
     border:0;
     background:none;
     color:white;
+
     font-size:9px;
     font-weight:800;
     letter-spacing:2px;
 }
 
-.menu{
-    display:none;
-    font-size:20px;
-}
-
 /* =========================
-   HERO
+HERO
 ========================= */
 
 .hero{
-    height:100vh;
-    min-height:650px;
+    min-height:100vh;
 
     display:flex;
     align-items:center;
     justify-content:center;
 
+    text-align:center;
+
     position:relative;
     overflow:hidden;
-
-    text-align:center;
 }
 
-.hero-bg{
+.hero:before{
+    content:"";
+
     position:absolute;
-    inset:-20%;
+    width:800px;
+    height:800px;
 
-    background:
-        radial-gradient(
-            circle at center,
-            #292929 0%,
-            #151515 18%,
-            #070707 60%
-        );
+    border-radius:50%;
 
-    animation:heroMove 20s ease-in-out infinite alternate;
+    background:radial-gradient(
+        circle,
+        #303030 0%,
+        #151515 35%,
+        transparent 70%
+    );
+
+    opacity:.7;
+
+    animation:pulse 8s ease-in-out infinite alternate;
 }
 
-@keyframes heroMove{
+@keyframes pulse{
     from{
-        transform:scale(1);
+        transform:scale(.9);
     }
     to{
-        transform:scale(1.08);
+        transform:scale(1.15);
     }
-}
-
-.hero-bg:after{
-    content:"";
-    position:absolute;
-    inset:0;
-
-    background:
-        repeating-radial-gradient(
-            circle at center,
-            transparent 0,
-            transparent 100px,
-            rgba(255,255,255,.018) 101px,
-            transparent 103px
-        );
 }
 
 .hero-content{
     position:relative;
     z-index:2;
+
     padding:30px;
 }
 
 .eyebrow{
     color:#777;
+
     font-size:9px;
+    font-weight:700;
     letter-spacing:5px;
-    margin-bottom:30px;
+
+    margin-bottom:35px;
 }
 
 .hero h1{
-    font-size:clamp(105px,20vw,260px);
-    font-weight:900;
-    letter-spacing:-15px;
+    font-size:clamp(100px,20vw,260px);
+
     line-height:.7;
+
+    font-weight:900;
+
+    letter-spacing:-15px;
 }
 
 .tagline{
-    margin-top:48px;
+    margin-top:55px;
 
     font-size:10px;
-    font-weight:500;
+    font-weight:700;
+
     letter-spacing:7px;
 }
 
-.hero-text{
-    max-width:400px;
-    margin:22px auto 35px;
+.hero p{
+    max-width:430px;
+
+    margin:25px auto 35px;
 
     color:#777;
+
     font-size:13px;
     line-height:1.8;
 }
 
 /* =========================
-   BUTTON
+BUTTON
 ========================= */
 
 .btn{
-    border:0;
-
     min-height:52px;
-    padding:0 28px;
+
+    padding:0 30px;
 
     display:inline-flex;
     align-items:center;
     justify-content:center;
 
-    background:var(--white);
+    border:0;
+
+    background:white;
     color:#050505;
 
     font-size:9px;
     font-weight:900;
     letter-spacing:2px;
 
-    transition:.35s;
+    transition:.3s;
 }
 
 .btn:hover{
     transform:translateY(-4px);
-    background:#fff;
 }
 
 /* =========================
-   MARQUEE
+MARQUEE
 ========================= */
 
 .marquee{
     overflow:hidden;
     white-space:nowrap;
 
-    padding:18px 0;
+    padding:17px 0;
 
     border-top:1px solid var(--line);
     border-bottom:1px solid var(--line);
@@ -299,57 +264,63 @@ header{
 }
 
 /* =========================
-   SECTIONS
+GENERAL SECTION
 ========================= */
 
 .section{
     padding:130px 6%;
 }
 
-.section-head{
+.section-header{
     display:flex;
     justify-content:space-between;
     align-items:end;
 
-    margin-bottom:55px;
+    margin-bottom:60px;
 }
 
 .section-title{
-    font-size:clamp(50px,7vw,90px);
-    letter-spacing:-6px;
-    line-height:.85;
+    font-size:clamp(55px,8vw,100px);
+
+    letter-spacing:-7px;
+    line-height:.8;
 }
 
-.section-note{
+.section-description{
     color:#666;
+
     font-size:9px;
     letter-spacing:2px;
 }
 
 /* =========================
-   PRODUCTS
+PRODUCTS
 ========================= */
 
 .products{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:50px 22px;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:45px 25px;
 }
 
 .product{
     cursor:pointer;
 }
 
-.product-img{
+.product-image{
     position:relative;
-    overflow:hidden;
 
     aspect-ratio:4/5;
 
-    background:#111;
+    overflow:hidden;
+
+    background:#151515;
 }
 
-.product-img img{
+.product-image img{
     width:100%;
     height:100%;
 
@@ -358,19 +329,22 @@ header{
     filter:grayscale(100%);
 
     transition:
-        transform .8s cubic-bezier(.2,.7,.2,1),
+        transform .7s,
         filter .5s;
 }
 
 .product:hover img{
     transform:scale(1.05);
+
     filter:grayscale(0);
 }
 
 .product-number{
     position:absolute;
+
     top:15px;
     left:15px;
+
     z-index:2;
 
     padding:8px 10px;
@@ -398,33 +372,36 @@ header{
 }
 
 .product-meta{
-    margin-top:6px;
+    margin-top:7px;
 
     color:#666;
 
-    font-size:9px;
+    font-size:8px;
     letter-spacing:1px;
 }
 
-.product-price{
+.price{
     font-size:12px;
     font-weight:800;
 }
 
 /* =========================
-   MANIFESTO
+MANIFESTO
 ========================= */
 
 .manifesto{
-    padding:160px 7%;
+    padding:150px 7%;
 
-    background:var(--white);
+    background:#f4f4ef;
+
     color:#080808;
 }
 
 .manifesto h2{
     font-size:clamp(55px,9vw,125px);
+
     line-height:.82;
+
     letter-spacing:-8px;
 }
 
@@ -440,43 +417,51 @@ header{
 }
 
 /* =========================
-   CUSTOM
+CUSTOM
 ========================= */
 
 .custom{
     padding:140px 6%;
-    background:#0b0b0b;
+
+    background:#0c0c0c;
 }
 
-.custom-header{
-    max-width:800px;
-    margin-bottom:70px;
+.custom-heading{
+    margin-bottom:75px;
 }
 
-.custom-header h2{
-    font-size:clamp(50px,8vw,105px);
-    letter-spacing:-7px;
-    line-height:.85;
+.custom-heading h2{
+    font-size:clamp(55px,9vw,120px);
+
+    letter-spacing:-8px;
+
+    line-height:.8;
 }
 
-.custom-header p{
+.custom-heading p{
     max-width:500px;
 
-    margin-top:25px;
+    margin-top:30px;
 
     color:#777;
 
     font-size:13px;
+
     line-height:1.8;
 }
 
 .custom-grid{
     display:grid;
-    grid-template-columns:1fr 1fr;
+
+    grid-template-columns:
+        1fr 1fr;
+
     gap:70px;
 }
 
-/* PREVIEW */
+/* =========================
+SHIRT PREVIEW
+========================= */
 
 .preview{
     position:sticky;
@@ -485,25 +470,21 @@ header{
     height:max-content;
 }
 
-.shirt{
-    position:relative;
-
+.shirt-area{
     aspect-ratio:4/5;
-
-    overflow:hidden;
 
     display:flex;
     align-items:center;
     justify-content:center;
 
-    background:#181818;
+    background:#171717;
 }
 
-.shirt-base{
-    width:65%;
-    height:78%;
-
+.shirt{
     position:relative;
+
+    width:65%;
+    height:75%;
 
     background:#050505;
 
@@ -526,69 +507,71 @@ header{
     transition:.3s;
 }
 
-.shirt-base.white{
-    background:#f1f1ed;
+.shirt.white{
+    background:#f0f0ec;
 }
 
-.shirt-design{
+.design-text{
     position:absolute;
 
-    left:50%;
     top:43%;
+    left:50%;
 
     transform:translate(-50%,-50%);
 
-    width:55%;
+    width:70%;
 
     text-align:center;
 
     color:white;
 
+    font-size:25px;
     font-weight:900;
-    font-size:23px;
-    letter-spacing:-1px;
 
-    pointer-events:none;
+    word-break:break-word;
 }
 
-.shirt-base.white .shirt-design{
+.shirt.white .design-text{
     color:#080808;
 }
 
-.custom-image{
+.uploaded-design{
     position:absolute;
 
-    max-width:35%;
-    max-height:30%;
-
-    left:50%;
     top:45%;
+    left:50%;
 
     transform:translate(-50%,-50%);
+
+    max-width:45%;
+    max-height:35%;
 
     object-fit:contain;
 
     display:none;
 }
 
-.preview-label{
-    margin-top:15px;
+.preview-caption{
+    margin-top:12px;
 
-    color:#666;
+    color:#555;
 
-    font-size:9px;
+    font-size:8px;
     letter-spacing:2px;
 }
 
-/* FORM */
+/* =========================
+FORM
+========================= */
 
 .custom-form{
     display:flex;
     flex-direction:column;
+
     gap:28px;
 }
 
-.form-group label{
+.form-group label.title{
     display:block;
 
     margin-bottom:10px;
@@ -596,26 +579,28 @@ header{
     color:#777;
 
     font-size:9px;
-    font-weight:700;
+    font-weight:800;
+
     letter-spacing:2px;
 }
 
 .options{
     display:flex;
     flex-wrap:wrap;
+
     gap:8px;
 }
 
 .option{
+    padding:13px 17px;
+
     border:1px solid #303030;
 
     background:#111;
-    color:#aaa;
+    color:#999;
 
-    padding:13px 16px;
-
-    font-size:10px;
-    font-weight:700;
+    font-size:9px;
+    font-weight:800;
 
     transition:.25s;
 }
@@ -625,21 +610,22 @@ header{
 }
 
 .option.active{
-    border-color:white;
     background:white;
     color:black;
+
+    border-color:white;
 }
 
-input[type="text"]{
+.text-input{
     width:100%;
 
     height:52px;
 
-    border:1px solid #303030;
+    padding:0 15px;
 
     outline:none;
 
-    padding:0 15px;
+    border:1px solid #303030;
 
     background:#111;
     color:white;
@@ -647,27 +633,28 @@ input[type="text"]{
     font-size:12px;
 }
 
-input[type="text"]:focus{
+.text-input:focus{
     border-color:#aaa;
 }
 
-.file{
-    width:100%;
-
-    border:1px dashed #333;
+.upload{
+    display:block;
 
     padding:22px;
 
+    border:1px dashed #333;
+
     color:#777;
 
-    font-size:10px;
-
     text-align:center;
+
+    font-size:9px;
+    letter-spacing:2px;
 
     cursor:pointer;
 }
 
-.file input{
+.upload input{
     display:none;
 }
 
@@ -677,23 +664,25 @@ input[type="text"]:focus{
     border-top:1px solid var(--line);
 
     display:flex;
+
     justify-content:space-between;
     align-items:center;
 }
 
-.total span:first-child{
+.total-label{
     color:#777;
+
     font-size:9px;
     letter-spacing:2px;
 }
 
 .total-price{
     font-size:25px;
-    font-weight:800;
+    font-weight:900;
 }
 
 /* =========================
-   DROP
+DROP
 ========================= */
 
 .drop{
@@ -706,11 +695,11 @@ input[type="text"]:focus{
     text-align:center;
 
     background:
-        linear-gradient(
-            rgba(0,0,0,.65),
-            rgba(0,0,0,.8)
-        ),
-        url("https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=2000&q=90");
+    linear-gradient(
+        rgba(0,0,0,.65),
+        rgba(0,0,0,.85)
+    ),
+    url("https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=2000&q=90");
 
     background-size:cover;
     background-position:center;
@@ -718,7 +707,9 @@ input[type="text"]:focus{
 
 .drop h2{
     font-size:clamp(65px,11vw,150px);
+
     letter-spacing:-9px;
+
     line-height:.8;
 }
 
@@ -727,20 +718,22 @@ input[type="text"]:focus{
 
     color:#aaa;
 
-    font-size:10px;
+    font-size:9px;
+
     letter-spacing:4px;
 }
 
 /* =========================
-   VALUES
+VALUES
 ========================= */
 
 .values{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+
+    grid-template-columns:
+        repeat(3,1fr);
 
     border-top:1px solid var(--line);
-    border-bottom:1px solid var(--line);
 }
 
 .value{
@@ -753,30 +746,32 @@ input[type="text"]:focus{
     border-right:0;
 }
 
-.value-num{
+.value-number{
     margin-bottom:35px;
 
     color:#555;
 
     font-size:9px;
+
     letter-spacing:2px;
 }
 
 .value h3{
     margin-bottom:15px;
 
-    font-size:18px;
+    font-size:17px;
 }
 
 .value p{
     color:#666;
 
     font-size:11px;
+
     line-height:1.8;
 }
 
 /* =========================
-   FOOTER
+FOOTER
 ========================= */
 
 footer{
@@ -787,14 +782,17 @@ footer{
 
 .footer-top{
     display:flex;
+
     justify-content:space-between;
 
     margin-bottom:90px;
 }
 
 .footer-logo{
-    font-size:42px;
+    font-size:45px;
+
     font-weight:900;
+
     letter-spacing:-5px;
 }
 
@@ -803,65 +801,64 @@ footer{
 
     color:#666;
 
-    font-size:9px;
+    font-size:8px;
+
     letter-spacing:3px;
 }
 
 .footer-links{
     display:flex;
+
     gap:30px;
 }
 
 .footer-links a{
     color:#777;
 
-    font-size:9px;
+    font-size:8px;
+
     letter-spacing:2px;
 }
 
 .footer-bottom{
-    display:flex;
-    justify-content:space-between;
-
     padding-top:25px;
 
     border-top:1px solid var(--line);
 
+    display:flex;
+
+    justify-content:space-between;
+
     color:#555;
 
     font-size:8px;
+
     letter-spacing:1px;
 }
 
 /* =========================
-   MOBILE
+MOBILE
 ========================= */
 
 @media(max-width:750px){
 
     header{
-        height:65px;
+        height:64px;
     }
 
     .nav{
         display:none;
     }
 
-    .menu{
-        display:block;
-    }
-
-    .hero{
-        min-height:680px;
-    }
-
     .hero h1{
         font-size:105px;
+
         letter-spacing:-9px;
     }
 
     .tagline{
-        font-size:9px;
+        font-size:8px;
+
         letter-spacing:4px;
     }
 
@@ -869,17 +866,16 @@ footer{
         padding:100px 5%;
     }
 
-    .section-head{
+    .section-header{
         display:block;
     }
 
-    .section-note{
+    .section-description{
         margin-top:20px;
     }
 
     .products{
         grid-template-columns:1fr;
-        gap:45px;
     }
 
     .manifesto{
@@ -887,7 +883,7 @@ footer{
     }
 
     .manifesto h2{
-        letter-spacing:-4px;
+        letter-spacing:-5px;
     }
 
     .custom{
@@ -896,12 +892,14 @@ footer{
 
     .custom-grid{
         grid-template-columns:1fr;
+
         gap:60px;
     }
 
     .preview{
         position:relative;
         top:0;
+
         order:-1;
     }
 
@@ -911,11 +909,8 @@ footer{
 
     .value{
         border-right:0;
-        border-bottom:1px solid var(--line);
-    }
 
-    .value:last-child{
-        border-bottom:0;
+        border-bottom:1px solid var(--line);
     }
 
     .drop{
@@ -932,6 +927,7 @@ footer{
 
     .footer-links{
         margin-top:35px;
+
         flex-wrap:wrap;
     }
 
@@ -949,37 +945,53 @@ footer{
 
 <body>
 
-<!-- LOADER -->
-<div class="loader">
-    <span>4:20</span>
-</div>
 
+<!-- =========================
+HEADER
+========================= -->
 
-<!-- HEADER -->
 <header>
 
-    <a href="#" class="logo">4:20®</a>
+    <a href="#" class="logo">
+        4:20®
+    </a>
 
     <nav class="nav">
-        <a href="#shop">SHOP</a>
-        <a href="#custom">CUSTOM</a>
-        <a href="#manifesto">IDENTIDAD</a>
-        <a href="#drop">DROPS</a>
+
+        <a href="#shop">
+            SHOP
+        </a>
+
+        <a href="#custom">
+            CUSTOM
+        </a>
+
+        <a href="#identity">
+            IDENTIDAD
+        </a>
+
+        <a href="#drops">
+            DROPS
+        </a>
+
     </nav>
 
-    <button class="bag" onclick="scrollToShop()">
-        BAG (<span id="bagCount">0</span>)
-    </button>
+    <button
+    class="cart-btn"
+    onclick="goShop()">
 
-    <div class="menu">☰</div>
+        BAG (<span id="cartCount">0</span>)
+
+    </button>
 
 </header>
 
 
-<!-- HERO -->
-<section class="hero">
+<!-- =========================
+HERO
+========================= -->
 
-    <div class="hero-bg"></div>
+<section class="hero">
 
     <div class="hero-content">
 
@@ -987,19 +999,25 @@ footer{
             EST. 2026 · MEXICO
         </div>
 
-        <h1>4:20</h1>
+        <h1>
+            4:20
+        </h1>
 
         <div class="tagline">
             LA HORA ADECUADA
         </div>
 
-        <p class="hero-text">
-            Una identidad. Una hora.
-            Una forma diferente de vestir.
+        <p>
+            Streetwear creado alrededor de una hora,
+            una identidad y una forma de vestir.
         </p>
 
-        <a href="#shop" class="btn">
-            EXPLORAR DROP 01
+        <a
+        href="#shop"
+        class="btn">
+
+            VER DROP 01 →
+
         </a>
 
     </div>
@@ -1007,578 +1025,630 @@ footer{
 </section>
 
 
-<!-- MARQUEE -->
+<!-- =========================
+MARQUEE
+========================= -->
+
 <div class="marquee">
-    <span>
-        4:20® — LA HORA ADECUADA — DROP 01 —
-        4:20® — LA HORA ADECUADA — DROP 01 —
-        4:20® — LA HORA ADECUADA — DROP 01 —
-        4:20® — LA HORA ADECUADA — DROP 01 —
-    </span>
+
+<span>
+4:20® — LA HORA ADECUADA —
+DROP 01 — MADE TO ORDER —
+4:20® — LA HORA ADECUADA —
+DROP 01 — MADE TO ORDER —
+4:20® — LA HORA ADECUADA —
+DROP 01 — MADE TO ORDER —
+</span>
+
 </div>
 
 
-<!-- SHOP -->
-<section class="section" id="shop">
+<!-- =========================
+SHOP
+========================= -->
 
-    <div class="section-head">
+<section
+class="section"
+id="shop">
 
-        <div>
-            <div class="eyebrow">
-                COLLECTION 001
-            </div>
+<div class="section-header">
 
-            <h2 class="section-title">
-                DROP 01
-            </h2>
-        </div>
+<div>
 
-        <div class="section-note">
-            MADE TO ORDER
-        </div>
+<div class="eyebrow">
+COLLECTION 001
+</div>
 
-    </div>
+<h2 class="section-title">
+DROP 01
+</h2>
 
+</div>
 
-    <div class="products">
+<div class="section-description">
+03 PIEZAS · MADE TO ORDER
+</div>
 
-
-        <!-- PRODUCTO 1 -->
-
-        <article class="product"
-        onclick="addProduct('4:20 TEE 001',200)">
-
-            <div class="product-img">
-
-                <div class="product-number">
-                    001
-                </div>
-
-                <img
-                src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=90"
-                alt="4:20 Tee 001">
-
-            </div>
-
-            <div class="product-info">
-
-                <div>
-
-                    <div class="product-name">
-                        4:20 TEE 001
-                    </div>
-
-                    <div class="product-meta">
-                        BLACK · OVERSIZED · CH / M / G / XL
-                    </div>
-
-                </div>
-
-                <div class="product-price">
-                    $200
-                </div>
-
-            </div>
-
-        </article>
+</div>
 
 
-        <!-- PRODUCTO 2 -->
-
-        <article class="product"
-        onclick="addProduct('4:20 TEE 002',200)">
-
-            <div class="product-img">
-
-                <div class="product-number">
-                    002
-                </div>
-
-                <img
-                src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=1200&q=90"
-                alt="4:20 Tee 002">
-
-            </div>
-
-            <div class="product-info">
-
-                <div>
-
-                    <div class="product-name">
-                        4:20 TEE 002
-                    </div>
-
-                    <div class="product-meta">
-                        WHITE · REGULAR · CH / M / G / XL
-                    </div>
-
-                </div>
-
-                <div class="product-price">
-                    $200
-                </div>
-
-            </div>
-
-        </article>
+<div class="products">
 
 
-        <!-- PRODUCTO 3 -->
+<!-- PRODUCTO 001 -->
 
-        <article class="product"
-        onclick="addProduct('4:20 TEE 003',250)">
+<article
+class="product"
+onclick="addProduct('4:20 TEE 001',200)">
 
-            <div class="product-img">
+<div class="product-image">
 
-                <div class="product-number">
-                    003
-                </div>
+<div class="product-number">
+001
+</div>
 
-                <img
-                src="https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=1200&q=90"
-                alt="4:20 Tee 003">
+<!-- CAMBIA ESTA IMAGEN POR TU DISEÑO -->
 
-            </div>
+<img
+src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=90"
+alt="4:20 Tee 001">
 
-            <div class="product-info">
+</div>
 
-                <div>
+<div class="product-info">
 
-                    <div class="product-name">
-                        4:20 TEE 003
-                    </div>
+<div>
 
-                    <div class="product-meta">
-                        BLACK · LIMITED · CH / M / G / XL
-                    </div>
+<div class="product-name">
+4:20 TEE 001
+</div>
 
-                </div>
+<div class="product-meta">
+NEGRO · OVERSIZED · CH / M / G / XL
+</div>
 
-                <div class="product-price">
-                    $250
-                </div>
+</div>
 
-            </div>
+<div class="price">
+$200
+</div>
 
-        </article>
+</div>
 
-    </div>
-
-</section>
+</article>
 
 
-<!-- MANIFESTO -->
-<section class="manifesto" id="manifesto">
+<!-- PRODUCTO 002 -->
 
-    <div>
+<article
+class="product"
+onclick="addProduct('4:20 TEE 002',200)">
 
-        <div class="eyebrow">
-            4:20 / IDENTITY
-        </div>
+<div class="product-image">
 
-        <h2>
-            LA HORA<br>
-            ADECUADA.
-        </h2>
+<div class="product-number">
+002
+</div>
 
-        <p>
-            No necesitamos símbolos para explicar quiénes somos.
-            El número es suficiente.
-            4:20 es nuestra identidad.
-            Lo demás lo lleva quien viste la marca.
-        </p>
+<!-- CAMBIA ESTA IMAGEN POR TU DISEÑO -->
 
-    </div>
+<img
+src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=1200&q=90"
+alt="4:20 Tee 002">
+
+</div>
+
+<div class="product-info">
+
+<div>
+
+<div class="product-name">
+4:20 TEE 002
+</div>
+
+<div class="product-meta">
+BLANCO · REGULAR · CH / M / G / XL
+</div>
+
+</div>
+
+<div class="price">
+$200
+</div>
+
+</div>
+
+</article>
+
+
+<!-- PRODUCTO 003 -->
+
+<article
+class="product"
+onclick="addProduct('4:20 TEE 003',250)">
+
+<div class="product-image">
+
+<div class="product-number">
+003
+</div>
+
+<!-- CAMBIA ESTA IMAGEN POR TU DISEÑO -->
+
+<img
+src="https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=1200&q=90"
+alt="4:20 Tee 003">
+
+</div>
+
+<div class="product-info">
+
+<div>
+
+<div class="product-name">
+4:20 TEE 003
+</div>
+
+<div class="product-meta">
+NEGRO · LIMITED · CH / M / G / XL
+</div>
+
+</div>
+
+<div class="price">
+$250
+</div>
+
+</div>
+
+</article>
+
+
+</div>
 
 </section>
 
 
-<!-- CUSTOM -->
-<section class="custom" id="custom">
+<!-- =========================
+IDENTITY
+========================= -->
 
-    <div class="custom-header">
+<section
+class="manifesto"
+id="identity">
 
-        <div class="eyebrow">
-            4:20 / CUSTOM
-        </div>
+<div class="eyebrow">
+4:20 / IDENTITY
+</div>
 
-        <h2>
-            HAZLA<br>
-            TUYA.
-        </h2>
+<h2>
+LA HORA<br>
+ADECUADA.
+</h2>
 
-        <p>
-            Personaliza tu pieza. Elige el color,
-            talla, ubicación y agrega tu propio diseño.
-            Fabricamos bajo pedido.
-        </p>
+<p>
 
-    </div>
+No necesitamos explicar demasiado.
 
+4:20 es el número.
+La identidad está en quien lo lleva.
 
-    <div class="custom-grid">
+Diseños urbanos, drops pequeños
+y piezas hechas bajo pedido.
 
-
-        <!-- PREVIEW -->
-
-        <div class="preview">
-
-            <div class="shirt">
-
-                <div
-                class="shirt-base"
-                id="shirtBase">
-
-                    <div
-                    class="shirt-design"
-                    id="shirtText">
-                        4:20
-                    </div>
-
-                    <img
-                    class="custom-image"
-                    id="customImage">
-
-                </div>
-
-            </div>
-
-            <div class="preview-label">
-                VISTA PREVIA · REFERENCIA VISUAL
-            </div>
-
-        </div>
-
-
-        <!-- FORMULARIO -->
-
-        <div class="custom-form">
-
-
-            <!-- COLOR -->
-
-            <div class="form-group">
-
-                <label>
-                    COLOR
-                </label>
-
-                <div class="options">
-
-                    <button
-                    class="option active"
-                    onclick="selectColor('black',this)">
-                        NEGRO
-                    </button>
-
-                    <button
-                    class="option"
-                    onclick="selectColor('white',this)">
-                        BLANCO
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <!-- CORTE -->
-
-            <div class="form-group">
-
-                <label>
-                    CORTE
-                </label>
-
-                <div class="options">
-
-                    <button class="option active">
-                        OVERSIZED
-                    </button>
-
-                    <button class="option">
-                        REGULAR
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <!-- TALLA -->
-
-            <div class="form-group">
-
-                <label>
-                    TALLA
-                </label>
-
-                <div class="options">
-
-                    <button class="option">
-                        CH
-                    </button>
-
-                    <button class="option active">
-                        M
-                    </button>
-
-                    <button class="option">
-                        G
-                    </button>
-
-                    <button class="option">
-                        XL
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <!-- TEXTO -->
-
-            <div class="form-group">
-
-                <label>
-                    TEXTO PERSONALIZADO
-                </label>
-
-                <input
-                type="text"
-                id="customText"
-                maxlength="25"
-                placeholder="Escribe tu texto..."
-                oninput="updateText()">
-
-            </div>
-
-
-            <!-- UBICACIÓN -->
-
-            <div class="form-group">
-
-                <label>
-                    UBICACIÓN DEL DISEÑO
-                </label>
-
-                <div class="options">
-
-                    <button
-                    class="option active"
-                    onclick="selectPosition('front',this)">
-                        PECHO
-                    </button>
-
-                    <button
-                    class="option"
-                    onclick="selectPosition('back',this)">
-                        ESPALDA
-                    </button>
-
-                    <button
-                    class="option"
-                    onclick="selectPosition('sleeve',this)">
-                        MANGA
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <!-- ARCHIVO -->
-
-            <div class="form-group">
-
-                <label>
-                    TU DISEÑO
-                </label>
-
-                <label class="file">
-
-                    SUBIR IMAGEN
-
-                    <input
-                    type="file"
-                    accept="image/*"
-                    onchange="uploadDesign(event)">
-
-                </label>
-
-            </div>
-
-
-            <!-- TOTAL -->
-
-            <div class="total">
-
-                <span>
-                    DESDE
-                </span>
-
-                <div class="total-price">
-                    $250 MXN
-                </div>
-
-            </div>
-
-
-            <button
-            class="btn"
-            onclick="customOrder()">
-
-                PEDIR PERSONALIZADA →
-
-            </button>
-
-        </div>
-
-    </div>
+</p>
 
 </section>
 
 
-<!-- NEXT DROP -->
+<!-- =========================
+CUSTOM
+========================= -->
 
-<section class="drop" id="drop">
+<section
+class="custom"
+id="custom">
 
-    <div>
+<div class="custom-heading">
 
-        <div class="eyebrow">
-            NEXT RELEASE
-        </div>
+<div class="eyebrow">
+4:20 / CUSTOM
+</div>
 
-        <h2>
-            DROP 02
-        </h2>
+<h2>
+HAZLA<br>
+TUYA.
+</h2>
 
-        <p>
-            PRÓXIMAMENTE · 4:20®
-        </p>
+<p>
+Crea una pieza personalizada.
+Elige color, corte, talla, ubicación
+y agrega tu propio diseño.
+</p>
 
-        <a href="#shop" class="btn">
-            VER DROP 01
-        </a>
+</div>
 
-    </div>
+
+<div class="custom-grid">
+
+
+<!-- PREVIEW -->
+
+<div class="preview">
+
+<div class="shirt-area">
+
+<div
+class="shirt"
+id="shirt">
+
+<div
+class="design-text"
+id="designText">
+
+4:20
+
+</div>
+
+<img
+class="uploaded-design"
+id="uploadedDesign">
+
+</div>
+
+</div>
+
+<div class="preview-caption">
+VISTA PREVIA · REFERENCIA
+</div>
+
+</div>
+
+
+<!-- FORM -->
+
+<div class="custom-form">
+
+
+<!-- COLOR -->
+
+<div class="form-group">
+
+<label class="title">
+COLOR
+</label>
+
+<div class="options">
+
+<button
+class="option active"
+onclick="chooseColor('black',this)">
+NEGRO
+</button>
+
+<button
+class="option"
+onclick="chooseColor('white',this)">
+BLANCO
+</button>
+
+</div>
+
+</div>
+
+
+<!-- CORTE -->
+
+<div class="form-group">
+
+<label class="title">
+CORTE
+</label>
+
+<div class="options">
+
+<button class="option active">
+OVERSIZED
+</button>
+
+<button class="option">
+REGULAR
+</button>
+
+</div>
+
+</div>
+
+
+<!-- TALLA -->
+
+<div class="form-group">
+
+<label class="title">
+TALLA
+</label>
+
+<div class="options">
+
+<button class="option">
+CH
+</button>
+
+<button class="option active">
+M
+</button>
+
+<button class="option">
+G
+</button>
+
+<button class="option">
+XL
+</button>
+
+</div>
+
+</div>
+
+
+<!-- TEXTO -->
+
+<div class="form-group">
+
+<label class="title">
+TEXTO PERSONALIZADO
+</label>
+
+<input
+class="text-input"
+id="customText"
+maxlength="25"
+placeholder="Escribe algo..."
+oninput="updateText()">
+
+</div>
+
+
+<!-- UBICACION -->
+
+<div class="form-group">
+
+<label class="title">
+UBICACIÓN
+</label>
+
+<div class="options">
+
+<button
+class="option active"
+onclick="choosePosition('front',this)">
+PECHO
+</button>
+
+<button
+class="option"
+onclick="choosePosition('back',this)">
+ESPALDA
+</button>
+
+<button
+class="option"
+onclick="choosePosition('sleeve',this)">
+MANGA
+</button>
+
+</div>
+
+</div>
+
+
+<!-- IMAGEN -->
+
+<div class="form-group">
+
+<label class="title">
+TU DISEÑO
+</label>
+
+<label class="upload">
+
+SUBIR IMAGEN
+
+<input
+type="file"
+accept="image/*"
+onchange="uploadImage(event)">
+
+</label>
+
+</div>
+
+
+<!-- TOTAL -->
+
+<div class="total">
+
+<div class="total-label">
+DESDE
+</div>
+
+<div class="total-price">
+$250 MXN
+</div>
+
+</div>
+
+
+<button
+class="btn"
+onclick="orderCustom()">
+
+PEDIR POR WHATSAPP →
+
+</button>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- VALUES -->
+<!-- =========================
+NEXT DROP
+========================= -->
+
+<section
+class="drop"
+id="drops">
+
+<div>
+
+<div class="eyebrow">
+NEXT RELEASE
+</div>
+
+<h2>
+DROP 02
+</h2>
+
+<p>
+COMING SOON · 4:20®
+</p>
+
+<a
+href="#shop"
+class="btn">
+
+VER DROP 01
+
+</a>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+VALUES
+========================= -->
 
 <section class="values">
 
-    <div class="value">
 
-        <div class="value-num">
-            01 / DESIGN
-        </div>
+<div class="value">
 
-        <h3>
-            MENOS, PERO MEJOR.
-        </h3>
+<div class="value-number">
+01 / DESIGN
+</div>
 
-        <p>
-            Diseños limpios, identidad fuerte
-            y detalles que hablan por sí solos.
-        </p>
+<h3>
+MENOS. MEJOR.
+</h3>
 
-    </div>
+<p>
+Diseños limpios,
+identidad fuerte
+y detalles intencionales.
+</p>
 
-
-    <div class="value">
-
-        <div class="value-num">
-            02 / DROPS
-        </div>
-
-        <h3>
-            PIEZAS LIMITADAS.
-        </h3>
-
-        <p>
-            Cada colección tiene su momento.
-            Cuando se acaba, se acaba.
-        </p>
-
-    </div>
+</div>
 
 
-    <div class="value">
+<div class="value">
 
-        <div class="value-num">
-            03 / CUSTOM
-        </div>
+<div class="value-number">
+02 / DROPS
+</div>
 
-        <h3>
-            HECHO PARA TI.
-        </h3>
+<h3>
+NO PARA SIEMPRE.
+</h3>
 
-        <p>
-            Personaliza tu pieza y nosotros
-            la producimos bajo pedido.
-        </p>
+<p>
+Cada drop tiene su momento.
+Después pasa al archivo.
+</p>
 
-    </div>
+</div>
+
+
+<div class="value">
+
+<div class="value-number">
+03 / CUSTOM
+</div>
+
+<h3>
+HECHA PARA TI.
+</h3>
+
+<p>
+Personaliza tu pieza.
+Nosotros la producimos bajo pedido.
+</p>
+
+</div>
+
 
 </section>
 
 
-<!-- FOOTER -->
+<!-- =========================
+FOOTER
+========================= -->
 
 <footer>
 
-    <div class="footer-top">
+<div class="footer-top">
 
-        <div>
+<div>
 
-            <div class="footer-logo">
-                4:20®
-            </div>
+<div class="footer-logo">
+4:20®
+</div>
 
-            <div class="footer-slogan">
-                LA HORA ADECUADA.
-            </div>
+<div class="footer-slogan">
+LA HORA ADECUADA.
+</div>
 
-        </div>
-
-
-        <div class="footer-links">
-
-            <a href="#">
-                INSTAGRAM
-            </a>
-
-            <a href="#">
-                TIKTOK
-            </a>
-
-            <a href="#">
-                WHATSAPP
-            </a>
-
-        </div>
-
-    </div>
+</div>
 
 
-    <div class="footer-bottom">
+<div class="footer-links">
 
-        <div>
-            © 2026 4:20®
-        </div>
+<a href="#">
+INSTAGRAM
+</a>
 
-        <div>
-            MEXICO
-        </div>
+<a href="#">
+TIKTOK
+</a>
 
-        <div>
-            LA HORA ADECUADA.
-        </div>
+<a href="#">
+WHATSAPP
+</a>
 
-    </div>
+</div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+<div>
+© 2026 4:20®
+</div>
+
+<div>
+MEXICO
+</div>
+
+<div>
+LA HORA ADECUADA.
+</div>
+
+</div>
 
 </footer>
 
@@ -1586,40 +1656,72 @@ footer{
 <script>
 
 /* =========================
-   VARIABLES
+CONFIGURACIÓN
 ========================= */
 
-let bag = 0;
+const WHATSAPP =
+"TU_NUMERO_WHATSAPP";
 
-let customColor = "black";
 
-let customPosition = "front";
+let cartCount = 0;
 
-const basePrice = 250;
+let color = "Negro";
+
+let position = "Pecho";
 
 
 /* =========================
-   BAG
+CARRITO
 ========================= */
 
 function addProduct(name,price){
 
-    bag++;
+    cartCount++;
 
-    document.getElementById("bagCount").textContent = bag;
+    document.getElementById(
+        "cartCount"
+    ).textContent = cartCount;
 
-    alert(
-        name +
-        " agregado a tu bolsa."
-    );
+    const message =
+`Hola 4:20® 👋
+
+Quiero pedir:
+
+${name}
+
+Precio: $${price} MXN
+
+Quiero confirmar disponibilidad y talla.`;
+
+    if(
+        WHATSAPP !==
+        "TU_NUMERO_WHATSAPP"
+    ){
+
+        window.open(
+            "https://wa.me/" +
+            WHATSAPP +
+            "?text=" +
+            encodeURIComponent(message),
+            "_blank"
+        );
+
+    }else{
+
+        alert(
+            "Primero configura tu número de WhatsApp en el código."
+        );
+
+    }
+
 }
 
 
 /* =========================
-   SHOP
+IR A SHOP
 ========================= */
 
-function scrollToShop(){
+function goShop(){
 
     document
     .getElementById("shop")
@@ -1631,16 +1733,22 @@ function scrollToShop(){
 
 
 /* =========================
-   COLOR
+COLOR
 ========================= */
 
-function selectColor(color,button){
+function chooseColor(
+    selected,
+    button
+){
 
-    customColor = color;
+    color =
+    selected === "black"
+    ? "Negro"
+    : "Blanco";
 
     document
     .querySelectorAll(
-        ".form-group:nth-child(1) .option"
+        ".custom-form .form-group:first-child .option"
     )
     .forEach(
         b => b.classList.remove("active")
@@ -1649,9 +1757,9 @@ function selectColor(color,button){
     button.classList.add("active");
 
     const shirt =
-    document.getElementById("shirtBase");
+    document.getElementById("shirt");
 
-    if(color === "white"){
+    if(selected === "white"){
 
         shirt.classList.add("white");
 
@@ -1665,34 +1773,43 @@ function selectColor(color,button){
 
 
 /* =========================
-   TEXT
+TEXTO
 ========================= */
 
 function updateText(){
 
-    const input =
-    document.getElementById("customText");
+    const value =
+    document.getElementById(
+        "customText"
+    ).value;
 
-    const text =
-    document.getElementById("shirtText");
-
-    text.textContent =
-    input.value || "4:20";
+    document.getElementById(
+        "designText"
+    ).textContent =
+    value || "4:20";
 
 }
 
 
 /* =========================
-   POSITION
+POSICIÓN
 ========================= */
 
-function selectPosition(position,button){
+function choosePosition(
+    selected,
+    button
+){
 
-    customPosition = position;
+    position =
+    selected === "front"
+    ? "Pecho"
+    : selected === "back"
+    ? "Espalda"
+    : "Manga";
 
     document
     .querySelectorAll(
-        ".form-group:nth-child(5) .option"
+        ".custom-form .form-group:nth-child(5) .option"
     )
     .forEach(
         b => b.classList.remove("active")
@@ -1700,31 +1817,22 @@ function selectPosition(position,button){
 
     button.classList.add("active");
 
-    const text =
-    document.getElementById("shirtText");
+    const design =
+    document.getElementById(
+        "designText"
+    );
 
-    if(position === "front"){
+    if(selected === "sleeve"){
 
-        text.style.top = "43%";
-
-    }
-
-    if(position === "back"){
-
-        text.style.top = "43%";
-
-    }
-
-    if(position === "sleeve"){
-
-        text.style.top = "30%";
-        text.style.left = "25%";
-        text.style.fontSize = "12px";
+        design.style.left = "25%";
+        design.style.top = "30%";
+        design.style.fontSize = "12px";
 
     }else{
 
-        text.style.left = "50%";
-        text.style.fontSize = "23px";
+        design.style.left = "50%";
+        design.style.top = "43%";
+        design.style.fontSize = "25px";
 
     }
 
@@ -1732,10 +1840,10 @@ function selectPosition(position,button){
 
 
 /* =========================
-   UPLOAD IMAGE
+SUBIR IMAGEN
 ========================= */
 
-function uploadDesign(event){
+function uploadImage(event){
 
     const file =
     event.target.files[0];
@@ -1745,16 +1853,19 @@ function uploadDesign(event){
     const reader =
     new FileReader();
 
-    reader.onload = function(e){
+    reader.onload =
+    function(e){
 
         const image =
         document.getElementById(
-            "customImage"
+            "uploadedDesign"
         );
 
-        image.src = e.target.result;
+        image.src =
+        e.target.result;
 
-        image.style.display = "block";
+        image.style.display =
+        "block";
 
     };
 
@@ -1764,41 +1875,52 @@ function uploadDesign(event){
 
 
 /* =========================
-   WHATSAPP CUSTOM
+CUSTOM WHATSAPP
 ========================= */
 
-function customOrder(){
+function orderCustom(){
 
-    const text =
+    const customText =
     document.getElementById(
         "customText"
-    ).value || "Sin texto";
+    ).value ||
+    "Sin texto";
 
     const message =
 `Hola 4:20® 👋
 
-Quiero pedir una playera CUSTOM.
+Quiero una CUSTOM.
 
-Color: ${customColor === "black" ? "Negro" : "Blanco"}
+Color: ${color}
 Corte: Oversized
 Talla: M
-Ubicación: ${customPosition}
-Texto: ${text}
+Ubicación: ${position}
+Texto: ${customText}
 
-Precio base: $250 MXN
+Precio desde: $250 MXN
 
 La hora adecuada.`;
 
-    const phone =
-    "5210000000000";
+    if(
+        WHATSAPP ===
+        "TU_NUMERO_WHATSAPP"
+    ){
 
-    const url =
-    "https://wa.me/" +
-    phone +
-    "?text=" +
-    encodeURIComponent(message);
+        alert(
+            "Primero configura tu número de WhatsApp en el código."
+        );
 
-    window.open(url,"_blank");
+        return;
+
+    }
+
+    window.open(
+        "https://wa.me/" +
+        WHATSAPP +
+        "?text=" +
+        encodeURIComponent(message),
+        "_blank"
+    );
 
 }
 
