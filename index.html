@@ -4,23 +4,31 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>4:20® — LA HORA ADECUADA</title>
+<title>4:20 — La hora adecuada</title>
 
 <meta name="description"
-content="4:20® — La hora adecuada. Streetwear mexicano.">
+content="4:20 — Marca de ropa urbana. Diseños, drops y piezas personalizadas.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+/* =========================================================
+   4:20 — PREMIUM STREETWEAR
+   ========================================================= */
 
 :root{
-  --black:#050505;
-  --dark:#0b0b0b;
-  --card:#101010;
-  --white:#f2f2ed;
-  --gray:#777;
+  --black:#080808;
+  --black2:#0e0e0e;
+  --black3:#151515;
+  --white:#f5f5f2;
+  --gray:#8b8b8b;
+  --gray2:#555;
   --line:#252525;
-  --acid:#c8ff35;
+  --accent:#d8d8d2;
 }
 
 *{
@@ -40,7 +48,7 @@ body{
   overflow-x:hidden;
 }
 
-body.no-scroll{
+body.lock{
   overflow:hidden;
 }
 
@@ -49,22 +57,28 @@ a{
   text-decoration:none;
 }
 
-button,input{
+button,
+input{
   font-family:inherit;
 }
 
 
-/* LOADER */
+/* =========================================================
+   LOADER
+   ========================================================= */
 
 .loader{
   position:fixed;
   inset:0;
   z-index:9999;
+
   display:flex;
   align-items:center;
   justify-content:center;
-  background:#050505;
-  transition:.7s;
+
+  background:#080808;
+
+  transition:.7s ease;
 }
 
 .loader.hide{
@@ -73,41 +87,46 @@ button,input{
 }
 
 .loader-logo{
-  font-size:60px;
+  font-size:58px;
   font-weight:900;
   letter-spacing:-6px;
-}
-
-.loader-logo span{
-  color:var(--acid);
 }
 
 .loader-line{
   position:absolute;
   bottom:0;
   left:0;
+
   width:100%;
-  height:3px;
-  background:var(--acid);
+  height:2px;
+
+  background:#eee;
+
   transform:scaleX(0);
   transform-origin:left;
-  animation:load 1.5s ease forwards;
+
+  animation:loading 1.5s ease forwards;
 }
 
-@keyframes load{
-  to{transform:scaleX(1);}
+@keyframes loading{
+  to{
+    transform:scaleX(1);
+  }
 }
 
 
-/* HEADER */
+/* =========================================================
+   HEADER
+   ========================================================= */
 
 header{
   position:fixed;
   top:0;
   left:0;
-  width:100%;
-  height:76px;
   z-index:1000;
+
+  width:100%;
+  height:74px;
 
   display:flex;
   align-items:center;
@@ -115,68 +134,81 @@ header{
 
   padding:0 5%;
 
-  background:rgba(5,5,5,.72);
+  background:rgba(8,8,8,.78);
   backdrop-filter:blur(20px);
 
   border-bottom:1px solid rgba(255,255,255,.07);
 }
 
 .logo{
-  font-size:25px;
+  font-size:24px;
   font-weight:900;
   letter-spacing:-2px;
 }
 
 .logo span{
-  color:var(--acid);
+  color:#aaa;
 }
 
 nav{
   display:flex;
-  gap:35px;
+  gap:36px;
 }
 
 nav a{
   color:#888;
+
   font-size:9px;
   font-weight:800;
+
   letter-spacing:2px;
+
   transition:.3s;
 }
 
 nav a:hover{
-  color:var(--acid);
+  color:white;
 }
 
-.header-right{
+.header-social{
   display:flex;
   align-items:center;
-  gap:22px;
+  gap:20px;
 }
 
-.header-link{
-  color:white;
-  font-size:9px;
+.header-social a{
+  color:#777;
+
+  font-size:8px;
   font-weight:800;
+
   letter-spacing:2px;
+
+  transition:.3s;
 }
 
-.header-link:hover{
-  color:var(--acid);
+.header-social a:hover{
+  color:white;
 }
 
 .menu{
   display:none;
-  background:none;
+
   border:0;
+  background:none;
+
   color:white;
+
   font-size:9px;
   font-weight:800;
+
   letter-spacing:2px;
 }
 
 
-/* MOBILE MENU */
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
 
 .mobile-menu{
   position:fixed;
@@ -188,9 +220,9 @@ nav a:hover{
   align-items:center;
   justify-content:center;
 
-  gap:25px;
+  gap:26px;
 
-  background:#050505;
+  background:#080808;
 
   opacity:0;
   visibility:hidden;
@@ -204,16 +236,20 @@ nav a:hover{
 }
 
 .mobile-menu a{
-  font-size:38px;
+  font-size:34px;
   font-weight:900;
+
   letter-spacing:-3px;
 }
 
 
-/* HERO */
+/* =========================================================
+   HERO
+   ========================================================= */
 
 .hero{
   min-height:100vh;
+
   position:relative;
 
   display:flex;
@@ -225,13 +261,13 @@ nav a:hover{
   background:
     radial-gradient(
       circle at center,
-      #273417 0%,
-      #10140d 22%,
-      #050505 60%
+      #242424 0%,
+      #101010 30%,
+      #080808 70%
     );
 }
 
-.grid{
+.hero-grid{
   position:absolute;
   inset:0;
 
@@ -246,7 +282,7 @@ nav a:hover{
       transparent 1px
     );
 
-  background-size:65px 65px;
+  background-size:70px 70px;
 
   mask-image:linear-gradient(
     to bottom,
@@ -255,41 +291,44 @@ nav a:hover{
   );
 }
 
-.circle{
+.hero-ring{
   position:absolute;
 
-  width:650px;
-  height:650px;
+  width:680px;
+  height:680px;
 
-  border:1px solid rgba(200,255,53,.12);
+  border:1px solid rgba(255,255,255,.08);
 
   border-radius:50%;
 
-  animation:rotate 40s linear infinite;
+  animation:spin 45s linear infinite;
 }
 
-.circle:before{
+.hero-ring:after{
   content:"";
 
   position:absolute;
-  inset:70px;
+  inset:80px;
 
-  border:1px dashed rgba(200,255,53,.08);
+  border:1px solid rgba(255,255,255,.05);
 
   border-radius:50%;
 }
 
-@keyframes rotate{
-  to{transform:rotate(360deg);}
+@keyframes spin{
+  to{
+    transform:rotate(360deg);
+  }
 }
 
 .hero-content{
   position:relative;
   z-index:2;
+
   text-align:center;
 }
 
-.small{
+.eyebrow{
   color:#777;
 
   font-size:8px;
@@ -299,9 +338,9 @@ nav a:hover{
 }
 
 .hero h1{
-  margin:50px 0 35px;
+  margin:48px 0 30px;
 
-  font-size:clamp(110px,23vw,300px);
+  font-size:clamp(115px,23vw,310px);
 
   line-height:.68;
 
@@ -311,29 +350,27 @@ nav a:hover{
 }
 
 .hero h1 span{
-  color:var(--acid);
+  color:#aaa;
 }
 
 .slogan{
   font-size:10px;
-  font-weight:900;
-  letter-spacing:7px;
+  font-weight:800;
+
+  letter-spacing:6px;
 }
 
 .hero-description{
   max-width:430px;
 
-  margin:25px auto 35px;
+  margin:28px auto 35px;
 
-  color:#777;
+  color:#666;
 
   font-size:11px;
 
   line-height:1.9;
 }
-
-
-/* BUTTON */
 
 .button{
   display:inline-flex;
@@ -345,10 +382,10 @@ nav a:hover{
 
   padding:0 28px;
 
-  border:0;
+  background:#f0f0eb;
+  color:#080808;
 
-  background:var(--acid);
-  color:#050505;
+  border:0;
 
   font-size:9px;
   font-weight:900;
@@ -361,63 +398,18 @@ nav a:hover{
 }
 
 .button:hover{
-  transform:translateY(-5px);
+  transform:translateY(-4px);
+
+  background:white;
 
   box-shadow:
-    0 20px 50px rgba(200,255,53,.16);
+    0 20px 50px rgba(255,255,255,.08);
 }
 
 
-/* CLOCK */
-
-.clock-section{
-  padding:130px 6%;
-  text-align:center;
-}
-
-.label{
-  color:#666;
-
-  font-size:8px;
-  font-weight:800;
-
-  letter-spacing:4px;
-}
-
-.clock{
-  margin-top:35px;
-
-  font-size:clamp(80px,16vw,190px);
-
-  font-weight:900;
-
-  line-height:.8;
-
-  letter-spacing:-12px;
-}
-
-.clock span{
-  color:var(--acid);
-}
-
-.clock-message{
-  margin-top:30px;
-
-  color:#555;
-
-  font-size:9px;
-
-  letter-spacing:3px;
-
-  transition:.3s;
-}
-
-.clock-message.active{
-  color:var(--acid);
-}
-
-
-/* MARQUEE */
+/* =========================================================
+   MARQUEE
+   ========================================================= */
 
 .marquee{
   overflow:hidden;
@@ -435,20 +427,24 @@ nav a:hover{
 
   color:#555;
 
-  font-size:9px;
+  font-size:8px;
   font-weight:800;
 
   letter-spacing:4px;
 
-  animation:marquee 25s linear infinite;
+  animation:marquee 28s linear infinite;
 }
 
 @keyframes marquee{
-  to{transform:translateX(-50%);}
+  to{
+    transform:translateX(-50%);
+  }
 }
 
 
-/* SECTIONS */
+/* =========================================================
+   GENERAL
+   ========================================================= */
 
 .section{
   padding:140px 6%;
@@ -456,22 +452,21 @@ nav a:hover{
 
 .section-head{
   display:flex;
-
   align-items:end;
   justify-content:space-between;
 
-  margin-bottom:75px;
+  margin-bottom:70px;
 }
 
-.green-label{
-  color:var(--acid);
+.label{
+  margin-bottom:20px;
+
+  color:#777;
 
   font-size:8px;
   font-weight:800;
 
   letter-spacing:4px;
-
-  margin-bottom:20px;
 }
 
 .big-title{
@@ -484,16 +479,18 @@ nav a:hover{
   letter-spacing:-10px;
 }
 
-.gray{
+.section-note{
   color:#555;
 
-  font-size:9px;
+  font-size:8px;
 
   letter-spacing:2px;
 }
 
 
-/* PRODUCTS */
+/* =========================================================
+   SHOP
+   ========================================================= */
 
 .products{
   display:grid;
@@ -507,6 +504,7 @@ nav a:hover{
 
 .product{
   cursor:pointer;
+
   transition:.5s;
 }
 
@@ -519,20 +517,22 @@ nav a:hover{
 }
 
 .product:hover{
-  transform:translateY(-12px);
+  transform:translateY(-10px);
 }
 
 .product-image{
   position:relative;
+
   overflow:hidden;
+
   background:#111;
 }
 
 .product-image img{
-  display:block;
-
   width:100%;
   aspect-ratio:4/5;
+
+  display:block;
 
   object-fit:cover;
 
@@ -543,21 +543,19 @@ nav a:hover{
 
 .product:hover img{
   filter:grayscale(0);
-  transform:scale(1.08);
+  transform:scale(1.06);
 }
 
-.number{
+.product-number{
   position:absolute;
-
   top:15px;
   left:15px;
-
   z-index:2;
 
   padding:8px 10px;
 
-  background:var(--acid);
-  color:#050505;
+  background:#eee;
+  color:#080808;
 
   font-size:7px;
   font-weight:900;
@@ -567,10 +565,8 @@ nav a:hover{
 
 .favorite{
   position:absolute;
-
   top:15px;
   right:15px;
-
   z-index:3;
 
   width:38px;
@@ -580,7 +576,7 @@ nav a:hover{
 
   border-radius:50%;
 
-  background:rgba(0,0,0,.5);
+  background:rgba(0,0,0,.55);
 
   color:white;
 
@@ -588,8 +584,8 @@ nav a:hover{
 }
 
 .favorite.active{
-  background:var(--acid);
-  color:#050505;
+  background:white;
+  color:#080808;
 }
 
 .product-info{
@@ -603,7 +599,6 @@ nav a:hover{
 
 .product-meta{
   display:flex;
-
   justify-content:space-between;
 
   margin-top:8px;
@@ -616,21 +611,27 @@ nav a:hover{
 }
 
 
-/* MANIFESTO */
+/* =========================================================
+   BRAND
+   ========================================================= */
 
-.manifesto{
+.brand-section{
   margin:30px 6%;
 
   padding:140px 7%;
 
-  background:var(--white);
-  color:#050505;
+  background:#eeeeea;
+  color:#080808;
 
   border-radius:90px 0 90px 0;
 }
 
-.manifesto p{
-  max-width:600px;
+.brand-section .label{
+  color:#777;
+}
+
+.brand-section p{
+  max-width:650px;
 
   margin-top:55px;
 
@@ -642,7 +643,9 @@ nav a:hover{
 }
 
 
-/* DROP */
+/* =========================================================
+   DROP
+   ========================================================= */
 
 .drop{
   padding:150px 6%;
@@ -665,11 +668,11 @@ nav a:hover{
   background:
     radial-gradient(
       circle at 70% 50%,
-      #283716,
-      #090909 50%
+      #282828,
+      #090909 55%
     );
 
-  border:1px solid #242424;
+  border:1px solid #252525;
 }
 
 .drop-box:after{
@@ -677,12 +680,13 @@ nav a:hover{
 
   position:absolute;
 
-  right:-30px;
+  right:-35px;
   bottom:-100px;
 
-  color:rgba(200,255,53,.035);
+  color:rgba(255,255,255,.025);
 
-  font-size:310px;
+  font-size:300px;
+
   font-weight:900;
 
   letter-spacing:-25px;
@@ -694,7 +698,7 @@ nav a:hover{
 }
 
 .drop-number{
-  color:var(--acid);
+  color:#777;
 
   font-size:8px;
   font-weight:800;
@@ -709,9 +713,9 @@ nav a:hover{
 
   line-height:.7;
 
-  letter-spacing:-11px;
-
   font-weight:900;
+
+  letter-spacing:-11px;
 }
 
 .drop p{
@@ -719,7 +723,7 @@ nav a:hover{
 
   margin-bottom:30px;
 
-  color:#777;
+  color:#666;
 
   font-size:11px;
 
@@ -727,12 +731,14 @@ nav a:hover{
 }
 
 
-/* CUSTOMIZER */
+/* =========================================================
+   CUSTOMIZER
+   ========================================================= */
 
 .custom{
   padding:150px 6%;
 
-  background:#080808;
+  background:#0b0b0b;
 
   border-radius:100px 100px 0 0;
 }
@@ -753,17 +759,21 @@ nav a:hover{
 .shirt-stage{
   min-height:650px;
 
-  position:relative;
-
   display:flex;
 
   align-items:center;
   justify-content:center;
 
+  position:relative;
+
   overflow:hidden;
 
   background:
-    radial-gradient(circle,#272727,#0a0a0a);
+    radial-gradient(
+      circle,
+      #252525,
+      #0a0a0a
+    );
 
   border-radius:50%;
 }
@@ -812,34 +822,36 @@ nav a:hover{
 
   white-space:nowrap;
 
-  font-size:24px;
+  font-size:25px;
   font-weight:900;
 }
 
 .shirt.white .shirt-text{
-  color:#050505;
+  color:#080808;
 }
 
 .custom-form{
   display:flex;
   flex-direction:column;
+
   gap:30px;
 }
 
 .form-label{
+  margin-bottom:10px;
+
   color:#777;
 
   font-size:8px;
   font-weight:800;
 
   letter-spacing:3px;
-
-  margin-bottom:10px;
 }
 
 .options{
   display:flex;
   flex-wrap:wrap;
+
   gap:7px;
 }
 
@@ -861,15 +873,15 @@ nav a:hover{
 }
 
 .option:hover{
-  border-color:var(--acid);
+  border-color:#aaa;
+  color:white;
 }
 
 .option.active{
-  background:var(--acid);
+  background:#eee;
+  color:#080808;
 
-  color:#050505;
-
-  border-color:var(--acid);
+  border-color:#eee;
 }
 
 .custom-input{
@@ -888,7 +900,7 @@ nav a:hover{
 }
 
 .custom-input:focus{
-  border-color:var(--acid);
+  border-color:#aaa;
 }
 
 .upload{
@@ -913,8 +925,8 @@ nav a:hover{
 }
 
 .upload:hover{
-  border-color:var(--acid);
-  color:var(--acid);
+  color:white;
+  border-color:#aaa;
 }
 
 .upload input{
@@ -945,10 +957,13 @@ nav a:hover{
 }
 
 
-/* VALUES */
+/* =========================================================
+   VALUES
+   ========================================================= */
 
 .values{
   display:grid;
+
   grid-template-columns:repeat(3,1fr);
 }
 
@@ -970,18 +985,19 @@ nav a:hover{
 }
 
 .value-number{
-  color:var(--acid);
+  margin-bottom:30px;
+
+  color:#777;
 
   font-size:8px;
   font-weight:800;
 
   letter-spacing:3px;
-
-  margin-bottom:30px;
 }
 
 .value h3{
   margin-bottom:15px;
+
   font-size:18px;
 }
 
@@ -994,15 +1010,18 @@ nav a:hover{
 }
 
 
-/* SOCIAL */
+/* =========================================================
+   SOCIAL
+   ========================================================= */
 
-.instagram{
+.social-section{
   padding:150px 6%;
+
   text-align:center;
 }
 
-.instagram-title{
-  font-size:clamp(65px,11vw,150px);
+.social-title{
+  font-size:clamp(70px,11vw,150px);
 
   line-height:.75;
 
@@ -1011,93 +1030,73 @@ nav a:hover{
   letter-spacing:-10px;
 }
 
-.instagram-title span{
-  color:var(--acid);
-}
-
-.instagram-handle{
-  margin:30px 0;
+.social-subtitle{
+  margin:30px 0 70px;
 
   color:#666;
 
-  font-size:10px;
+  font-size:9px;
 
   letter-spacing:4px;
 }
 
-.social-big{
-  max-width:1100px;
+.social-grid{
+  max-width:1150px;
 
-  margin:70px auto 0;
+  margin:auto;
 
   display:grid;
 
   grid-template-columns:repeat(3,1fr);
 
-  gap:15px;
+  gap:18px;
 }
 
 .social-card{
-  min-height:150px;
+  min-height:210px;
 
   position:relative;
 
   display:flex;
 
-  align-items:center;
+  flex-direction:column;
 
-  gap:20px;
+  justify-content:space-between;
 
-  padding:28px;
+  padding:30px;
+
+  text-align:left;
 
   overflow:hidden;
 
-  background:#0d0d0d;
+  background:#101010;
 
   border:1px solid #242424;
 
-  border-radius:28px;
-
-  text-align:left;
+  border-radius:32px;
 
   transition:.4s;
 }
 
-.social-card:before{
-  content:"";
-
-  position:absolute;
-
-  width:150px;
-  height:150px;
-
-  right:-60px;
-  top:-60px;
-
-  border-radius:50%;
-
-  background:rgba(200,255,53,.05);
-
-  transition:.5s;
-}
-
 .social-card:hover{
-  transform:translateY(-8px);
+  transform:translateY(-10px);
 
-  border-color:var(--acid);
+  border-color:#888;
 
-  background:#111;
+  background:#151515;
 }
 
-.social-card:hover:before{
-  transform:scale(2);
+.social-top{
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
 }
 
 .social-icon{
-  width:55px;
-  height:55px;
-
-  flex-shrink:0;
+  width:52px;
+  height:52px;
 
   display:flex;
 
@@ -1108,44 +1107,53 @@ nav a:hover{
 
   border-radius:50%;
 
-  color:var(--acid);
+  color:#ddd;
 
-  font-size:11px;
-
+  font-size:10px;
   font-weight:900;
 }
 
-.social-card strong{
-  display:block;
+.social-arrow{
+  color:#777;
 
-  font-size:11px;
+  font-size:20px;
+}
+
+.social-card h3{
+  margin-top:30px;
+
+  font-size:14px;
 
   letter-spacing:2px;
 }
 
-.social-card span{
-  display:block;
-
-  margin-top:7px;
+.social-card p{
+  margin-top:8px;
 
   color:#666;
 
   font-size:9px;
 }
 
-.arrow{
-  margin-left:auto;
+.social-enter{
+  margin-top:25px;
 
-  position:relative;
-  z-index:2;
+  color:#aaa;
 
-  color:var(--acid);
+  font-size:8px;
+  font-weight:800;
 
-  font-size:20px;
+  letter-spacing:2px;
+}
+
+.social-card:hover .social-enter{
+  color:white;
 }
 
 
-/* FOOTER */
+/* =========================================================
+   FOOTER
+   ========================================================= */
 
 footer{
   padding:130px 6% 30px;
@@ -1157,7 +1165,6 @@ footer{
   display:flex;
 
   align-items:flex-start;
-
   justify-content:space-between;
 
   margin-bottom:100px;
@@ -1171,10 +1178,6 @@ footer{
   letter-spacing:-8px;
 }
 
-.footer-logo span{
-  color:var(--acid);
-}
-
 .footer-slogan{
   margin-top:12px;
 
@@ -1185,17 +1188,18 @@ footer{
   letter-spacing:4px;
 }
 
-.social{
+.footer-links{
   display:flex;
-  gap:25px;
+
   flex-wrap:wrap;
+
+  gap:25px;
 }
 
-.social a{
+.footer-links a{
   color:#666;
 
   font-size:8px;
-
   font-weight:800;
 
   letter-spacing:2px;
@@ -1203,8 +1207,8 @@ footer{
   transition:.3s;
 }
 
-.social a:hover{
-  color:var(--acid);
+.footer-links a:hover{
+  color:white;
 }
 
 .footer-bottom{
@@ -1224,7 +1228,9 @@ footer{
 }
 
 
-/* MODAL */
+/* =========================================================
+   MODAL
+   ========================================================= */
 
 .modal{
   position:fixed;
@@ -1240,7 +1246,7 @@ footer{
 
   padding:20px;
 
-  background:rgba(0,0,0,.85);
+  background:rgba(0,0,0,.88);
 
   backdrop-filter:blur(18px);
 
@@ -1269,14 +1275,6 @@ footer{
   border:1px solid #292929;
 
   border-radius:40px;
-
-  transform:translateY(30px);
-
-  transition:.4s;
-}
-
-.modal.open .modal-box{
-  transform:translateY(0);
 }
 
 .modal-image{
@@ -1286,6 +1284,7 @@ footer{
 .modal-image img{
   width:100%;
   height:100%;
+
   object-fit:cover;
 }
 
@@ -1340,11 +1339,14 @@ footer{
 }
 
 
-/* REVEAL */
+/* =========================================================
+   ANIMATION
+   ========================================================= */
 
 .reveal{
   opacity:0;
-  transform:translateY(40px);
+
+  transform:translateY(35px);
 
   transition:
     opacity .8s ease,
@@ -1353,11 +1355,14 @@ footer{
 
 .reveal.visible{
   opacity:1;
+
   transform:translateY(0);
 }
 
 
-/* MOBILE */
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
 @media(max-width:800px){
 
@@ -1366,6 +1371,10 @@ footer{
   }
 
   nav{
+    display:none;
+  }
+
+  .header-social a{
     display:none;
   }
 
@@ -1378,13 +1387,9 @@ footer{
     letter-spacing:-10px;
   }
 
-  .circle{
+  .hero-ring{
     width:360px;
     height:360px;
-  }
-
-  .clock{
-    letter-spacing:-7px;
   }
 
   .section{
@@ -1395,13 +1400,15 @@ footer{
     display:block;
   }
 
-  .section-head .gray{
+  .section-note{
     display:block;
+
     margin-top:25px;
   }
 
   .products{
     grid-template-columns:1fr;
+
     gap:55px;
   }
 
@@ -1419,10 +1426,12 @@ footer{
     width:90%;
   }
 
-  .manifesto{
+  .brand-section{
     margin:20px 5%;
+
     padding:100px 7%;
-    border-radius:50px 0 50px 0;
+
+    border-radius:55px 0 55px 0;
   }
 
   .big-title{
@@ -1435,7 +1444,9 @@ footer{
 
   .drop-box{
     min-height:500px;
+
     padding:10%;
+
     border-radius:55px 0 55px 0;
   }
 
@@ -1445,6 +1456,7 @@ footer{
 
   .custom{
     padding:100px 5%;
+
     border-radius:60px 60px 0 0;
   }
 
@@ -1475,11 +1487,11 @@ footer{
     border-bottom:1px solid var(--line);
   }
 
-  .social-big{
+  .social-grid{
     grid-template-columns:1fr;
   }
 
-  .instagram-title{
+  .social-title{
     letter-spacing:-6px;
   }
 
@@ -1487,18 +1499,21 @@ footer{
     display:block;
   }
 
-  .social{
+  .footer-links{
     margin-top:35px;
   }
 
   .footer-bottom{
     display:block;
+
     line-height:3;
   }
 
   .modal-box{
     grid-template-columns:1fr;
+
     max-height:90vh;
+
     overflow:auto;
   }
 
@@ -1523,12 +1538,14 @@ footer{
 <body>
 
 
-<!-- LOADER -->
+<!-- =======================================================
+     LOADER
+======================================================= -->
 
 <div class="loader" id="loader">
 
   <div class="loader-logo">
-    4:<span>20</span>®
+    4:20
   </div>
 
   <div class="loader-line"></div>
@@ -1536,12 +1553,14 @@ footer{
 </div>
 
 
-<!-- HEADER -->
+<!-- =======================================================
+     HEADER
+======================================================= -->
 
 <header>
 
   <a href="#" class="logo">
-    4:<span>20</span>®
+    4:<span>20</span>
   </a>
 
   <nav>
@@ -1553,34 +1572,26 @@ footer{
 
   </nav>
 
-  <div class="header-right">
+  <div class="header-social">
 
     <a
-      class="header-link"
       href="https://www.instagram.com/4_20.street/"
       target="_blank"
       rel="noopener noreferrer">
-
       IG ↗
-
     </a>
 
     <a
-      class="header-link"
       href="https://www.tiktok.com/@marcoantoniogarci3206"
       target="_blank"
       rel="noopener noreferrer">
-
       TK ↗
-
     </a>
 
     <button
       class="menu"
       onclick="toggleMenu()">
-
       MENU
-
     </button>
 
   </div>
@@ -1588,69 +1599,57 @@ footer{
 </header>
 
 
-<!-- MOBILE MENU -->
+<!-- =======================================================
+     MOBILE MENU
+======================================================= -->
 
-<div
-  class="mobile-menu"
-  id="mobileMenu">
+<div class="mobile-menu" id="mobileMenu">
 
-  <a href="#shop" onclick="toggleMenu()">
-    SHOP
-  </a>
+  <a href="#shop" onclick="toggleMenu()">SHOP</a>
 
-  <a href="#drops" onclick="toggleMenu()">
-    DROPS
-  </a>
+  <a href="#drops" onclick="toggleMenu()">DROPS</a>
 
-  <a href="#custom" onclick="toggleMenu()">
-    CUSTOM
-  </a>
+  <a href="#custom" onclick="toggleMenu()">CUSTOM</a>
 
-  <a href="#about" onclick="toggleMenu()">
-    ABOUT
-  </a>
+  <a href="#about" onclick="toggleMenu()">ABOUT</a>
 
   <a
     href="https://www.instagram.com/4_20.street/"
     target="_blank"
     rel="noopener noreferrer">
-
     INSTAGRAM ↗
-
   </a>
 
   <a
     href="https://www.tiktok.com/@marcoantoniogarci3206"
     target="_blank"
     rel="noopener noreferrer">
-
     TIKTOK ↗
-
   </a>
 
   <a
     href="https://www.facebook.com/share/1Ephp8bfdR/"
     target="_blank"
     rel="noopener noreferrer">
-
     FACEBOOK ↗
-
   </a>
 
 </div>
 
 
-<!-- HERO -->
+<!-- =======================================================
+     HERO
+======================================================= -->
 
 <section class="hero">
 
-  <div class="grid"></div>
+  <div class="hero-grid"></div>
 
-  <div class="circle"></div>
+  <div class="hero-ring"></div>
 
   <div class="hero-content">
 
-    <div class="small">
+    <div class="eyebrow">
       MEXICO · EST. 2026
     </div>
 
@@ -1659,16 +1658,16 @@ footer{
     </h1>
 
     <div class="slogan">
-      LA HORA ADECUADA.
+      LA HORA ADECUADA
     </div>
 
     <p class="hero-description">
-      Una hora. Una identidad.
-      Una forma diferente de vestirla.
+      Diseño contemporáneo, piezas urbanas
+      y colecciones creadas para vestir todos los días.
     </p>
 
     <a href="#shop" class="button">
-      VER COLLECTION →
+      VER COLECCIÓN →
     </a>
 
   </div>
@@ -1676,44 +1675,27 @@ footer{
 </section>
 
 
-<!-- CLOCK -->
-
-<section class="clock-section reveal">
-
-  <div class="label">
-    LIVE TIME / 4:20 SYSTEM
-  </div>
-
-  <div class="clock" id="clock">
-    00:<span>00</span>
-  </div>
-
-  <div class="clock-message" id="clockMessage">
-    ESPERANDO LA HORA ADECUADA.
-  </div>
-
-</section>
-
-
-<!-- MARQUEE -->
+<!-- =======================================================
+     MARQUEE
+======================================================= -->
 
 <div class="marquee">
 
   <div class="marquee-track">
 
-    4:20® · LA HORA ADECUADA ·
-    STREETWEAR · MEXICO ·
-    MADE TO ORDER ·
-    4:20® · LA HORA ADECUADA ·
-    STREETWEAR · MEXICO ·
-    MADE TO ORDER ·
+    4:20 · LA HORA ADECUADA · STREETWEAR ·
+    DROP 01 · COLLECTION · 4:20 ·
+    LA HORA ADECUADA · STREETWEAR ·
+    DROP 01 · COLLECTION ·
 
   </div>
 
 </div>
 
 
-<!-- SHOP -->
+<!-- =======================================================
+     SHOP
+======================================================= -->
 
 <section class="section" id="shop">
 
@@ -1721,7 +1703,7 @@ footer{
 
     <div>
 
-      <div class="green-label">
+      <div class="label">
         COLLECTION / 001
       </div>
 
@@ -1731,8 +1713,8 @@ footer{
 
     </div>
 
-    <div class="gray">
-      03 PIEZAS · LIMITED
+    <div class="section-note">
+      03 PIEZAS · DISPONIBLES BAJO PEDIDO
     </div>
 
   </div>
@@ -1741,30 +1723,32 @@ footer{
   <div class="products">
 
 
+    <!-- PRODUCTO 01 -->
+
     <article
       class="product reveal"
       onclick="openProduct(
         '4:20 TEE 001',
-        'BLACK · OVERSIZED',
+        'NEGRO · CORTE OVERSIZED',
         '$200 MXN',
         'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=90'
       )">
 
       <div class="product-image">
 
-        <div class="number">001</div>
+        <div class="product-number">
+          001
+        </div>
 
         <button
           class="favorite"
-          onclick="event.stopPropagation();favorite(this)">
-
+          onclick="event.stopPropagation();toggleFavorite(this)">
           ♡
-
         </button>
 
         <img
           src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=90"
-          alt="4:20 Tee 001">
+          alt="Playera 4:20 negra">
 
       </div>
 
@@ -1777,6 +1761,7 @@ footer{
         <div class="product-meta">
 
           <span>BLACK · OVERSIZED</span>
+
           <span>$200</span>
 
         </div>
@@ -1786,30 +1771,32 @@ footer{
     </article>
 
 
+    <!-- PRODUCTO 02 -->
+
     <article
       class="product reveal"
       onclick="openProduct(
         '4:20 TEE 002',
-        'WHITE · REGULAR',
+        'BLANCO · CORTE REGULAR',
         '$200 MXN',
         'https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=1200&q=90'
       )">
 
       <div class="product-image">
 
-        <div class="number">002</div>
+        <div class="product-number">
+          002
+        </div>
 
         <button
           class="favorite"
-          onclick="event.stopPropagation();favorite(this)">
-
+          onclick="event.stopPropagation();toggleFavorite(this)">
           ♡
-
         </button>
 
         <img
           src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=1200&q=90"
-          alt="4:20 Tee 002">
+          alt="Playera 4:20 blanca">
 
       </div>
 
@@ -1822,6 +1809,7 @@ footer{
         <div class="product-meta">
 
           <span>WHITE · REGULAR</span>
+
           <span>$200</span>
 
         </div>
@@ -1831,30 +1819,32 @@ footer{
     </article>
 
 
+    <!-- PRODUCTO 03 -->
+
     <article
       class="product reveal"
       onclick="openProduct(
         '4:20 TEE 003',
-        'BLACK · LIMITED',
+        'NEGRO · EDICIÓN LIMITADA',
         '$250 MXN',
         'https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=1200&q=90'
       )">
 
       <div class="product-image">
 
-        <div class="number">003</div>
+        <div class="product-number">
+          003
+        </div>
 
         <button
           class="favorite"
-          onclick="event.stopPropagation();favorite(this)">
-
+          onclick="event.stopPropagation();toggleFavorite(this)">
           ♡
-
         </button>
 
         <img
           src="https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=1200&q=90"
-          alt="4:20 Tee 003">
+          alt="Playera 4:20 edición limitada">
 
       </div>
 
@@ -1867,6 +1857,7 @@ footer{
         <div class="product-meta">
 
           <span>BLACK · LIMITED</span>
+
           <span>$250</span>
 
         </div>
@@ -1875,17 +1866,20 @@ footer{
 
     </article>
 
+
   </div>
 
 </section>
 
 
-<!-- ABOUT -->
+<!-- =======================================================
+     ABOUT
+======================================================= -->
 
-<section class="manifesto reveal" id="about">
+<section class="brand-section reveal" id="about">
 
-  <div class="green-label">
-    THE IDEA
+  <div class="label">
+    4:20 / BRAND
   </div>
 
   <h2 class="big-title">
@@ -1894,18 +1888,22 @@ footer{
   </h2>
 
   <p>
-    4:20 es el identificador.
-    Una marca de streetwear que no necesita
-    gritar para ser reconocida.
+    4:20 nace como una marca de ropa enfocada
+    en diseño, identidad y piezas fáciles de llevar.
 
-    Diseños limpios, drops y piezas que
-    hablan por sí mismas.
+    La idea es mantener una estética limpia,
+    reconocible y contemporánea.
+
+    Cada colección puede cambiar.
+    El identificador permanece.
   </p>
 
 </section>
 
 
-<!-- DROP -->
+<!-- =======================================================
+     DROP
+======================================================= -->
 
 <section class="drop" id="drops">
 
@@ -1923,11 +1921,11 @@ footer{
       </h2>
 
       <p>
-        Los siguientes diseños llegan cuando
-        sea la hora.
+        Nuevas piezas, nuevos diseños y
+        nuevas colecciones.
 
-        Síguenos en nuestras redes para enterarte
-        primero del próximo drop.
+        Los próximos lanzamientos estarán
+        disponibles en nuestras redes.
       </p>
 
       <a
@@ -1936,7 +1934,7 @@ footer{
         rel="noopener noreferrer"
         class="button">
 
-        SEGUIR @4_20.STREET →
+        VER INSTAGRAM →
 
       </a>
 
@@ -1947,7 +1945,9 @@ footer{
 </section>
 
 
-<!-- CUSTOM -->
+<!-- =======================================================
+     CUSTOMIZER
+======================================================= -->
 
 <section class="custom" id="custom">
 
@@ -1955,13 +1955,13 @@ footer{
 
     <div>
 
-      <div class="green-label">
+      <div class="label">
         4:20 / CUSTOM
       </div>
 
       <h2 class="big-title">
-        HAZLA<br>
-        TUYA.
+        CREA<br>
+        TU PIEZA.
       </h2>
 
     </div>
@@ -1971,13 +1971,18 @@ footer{
 
   <div class="custom-grid">
 
+
+    <!-- PREVIEW -->
+
     <div class="preview reveal">
 
       <div class="shirt-stage">
 
         <div class="shirt" id="shirt">
 
-          <div class="shirt-text" id="shirtText">
+          <div
+            class="shirt-text"
+            id="shirtText">
             4:20
           </div>
 
@@ -1987,6 +1992,8 @@ footer{
 
     </div>
 
+
+    <!-- FORM -->
 
     <div class="custom-form reveal">
 
@@ -2001,18 +2008,14 @@ footer{
 
           <button
             class="option active"
-            onclick="shirtColor('black',this)">
-
+            onclick="changeColor('black',this)">
             NEGRO
-
           </button>
 
           <button
             class="option"
-            onclick="shirtColor('white',this)">
-
+            onclick="changeColor('white',this)">
             BLANCO
-
           </button>
 
         </div>
@@ -2030,25 +2033,25 @@ footer{
 
           <button
             class="option"
-            onclick="selectSize(this)">
+            onclick="changeSize(this)">
             CH
           </button>
 
           <button
             class="option active"
-            onclick="selectSize(this)">
+            onclick="changeSize(this)">
             M
           </button>
 
           <button
             class="option"
-            onclick="selectSize(this)">
+            onclick="changeSize(this)">
             G
           </button>
 
           <button
             class="option"
-            onclick="selectSize(this)">
+            onclick="changeSize(this)">
             XL
           </button>
 
@@ -2060,15 +2063,15 @@ footer{
       <div>
 
         <div class="form-label">
-          TEXTO
+          TEXTO DEL DISEÑO
         </div>
 
         <input
-          class="custom-input"
           id="customText"
+          class="custom-input"
           maxlength="20"
           placeholder="ESCRIBE TU TEXTO"
-          oninput="updateText">
+          oninput="updateText(this.value)">
 
       </div>
 
@@ -2095,7 +2098,9 @@ footer{
 
       <div class="custom-price">
 
-        <span>DESDE</span>
+        <span>
+          DESDE
+        </span>
 
         <strong>
           $250 MXN
@@ -2108,9 +2113,10 @@ footer{
         class="button"
         onclick="sendCustom()">
 
-        PEDIR POR WHATSAPP →
+        COTIZAR POR WHATSAPP →
 
       </button>
+
 
     </div>
 
@@ -2119,23 +2125,25 @@ footer{
 </section>
 
 
-<!-- VALUES -->
+<!-- =======================================================
+     VALUES
+======================================================= -->
 
 <section class="values">
 
   <div class="value reveal">
 
     <div class="value-number">
-      01 / DROPS
+      01 / DESIGN
     </div>
 
     <h3>
-      PEQUEÑAS COLECCIONES.
+      DISEÑO LIMPIO.
     </h3>
 
     <p>
-      Diseños lanzados por temporadas
-      y producidos bajo pedido.
+      Piezas pensadas para combinar
+      con diferentes estilos.
     </p>
 
   </div>
@@ -2144,16 +2152,16 @@ footer{
   <div class="value reveal">
 
     <div class="value-number">
-      02 / IDENTITY
+      02 / DROPS
     </div>
 
     <h3>
-      UN NÚMERO.
+      NUEVAS COLECCIONES.
     </h3>
 
     <p>
-      4:20 es todo lo que necesitas
-      para reconocer la marca.
+      Diseños que aparecen por temporadas
+      y cambian constantemente.
     </p>
 
   </div>
@@ -2170,8 +2178,8 @@ footer{
     </h3>
 
     <p>
-      Personaliza una playera y convierte
-      una idea en una pieza única.
+      Personaliza una playera con tu idea,
+      texto o diseño.
     </p>
 
   </div>
@@ -2179,52 +2187,62 @@ footer{
 </section>
 
 
-<!-- SOCIAL -->
+<!-- =======================================================
+     SOCIAL — MUY VISIBLE
+======================================================= -->
 
-<section class="instagram">
+<section class="social-section">
 
-  <div class="green-label">
-    FOLLOW THE HOUR
+  <div class="label">
+    FOLLOW 4:20
   </div>
 
-  <h2 class="instagram-title">
-    4:20<span>®</span>
+  <h2 class="social-title">
+    SOCIAL.
   </h2>
 
-  <div class="instagram-handle">
-    @4_20.STREET · SOCIAL
+  <div class="social-subtitle">
+    ENCUENTRA LA MARCA EN TODAS NUESTRAS REDES
   </div>
 
 
-  <div class="social-big">
+  <div class="social-grid">
 
 
     <!-- INSTAGRAM -->
 
     <a
+      class="social-card reveal"
       href="https://www.instagram.com/4_20.street/"
       target="_blank"
-      rel="noopener noreferrer"
-      class="social-card">
-
-      <div class="social-icon">
-        IG
-      </div>
+      rel="noopener noreferrer">
 
       <div>
 
-        <strong>
-          INSTAGRAM
-        </strong>
+        <div class="social-top">
 
-        <span>
+          <div class="social-icon">
+            IG
+          </div>
+
+          <div class="social-arrow">
+            ↗
+          </div>
+
+        </div>
+
+        <h3>
+          INSTAGRAM
+        </h3>
+
+        <p>
           @4_20.street
-        </span>
+        </p>
 
       </div>
 
-      <div class="arrow">
-        ↗
+      <div class="social-enter">
+        ENTRAR A INSTAGRAM →
       </div>
 
     </a>
@@ -2233,29 +2251,37 @@ footer{
     <!-- TIKTOK -->
 
     <a
+      class="social-card reveal"
       href="https://www.tiktok.com/@marcoantoniogarci3206"
       target="_blank"
-      rel="noopener noreferrer"
-      class="social-card">
-
-      <div class="social-icon">
-        TK
-      </div>
+      rel="noopener noreferrer">
 
       <div>
 
-        <strong>
-          TIKTOK
-        </strong>
+        <div class="social-top">
 
-        <span>
+          <div class="social-icon">
+            TK
+          </div>
+
+          <div class="social-arrow">
+            ↗
+          </div>
+
+        </div>
+
+        <h3>
+          TIKTOK
+        </h3>
+
+        <p>
           @marcoantoniogarci3206
-        </span>
+        </p>
 
       </div>
 
-      <div class="arrow">
-        ↗
+      <div class="social-enter">
+        ENTRAR A TIKTOK →
       </div>
 
     </a>
@@ -2264,39 +2290,50 @@ footer{
     <!-- FACEBOOK -->
 
     <a
+      class="social-card reveal"
       href="https://www.facebook.com/share/1Ephp8bfdR/"
       target="_blank"
-      rel="noopener noreferrer"
-      class="social-card">
-
-      <div class="social-icon">
-        FB
-      </div>
+      rel="noopener noreferrer">
 
       <div>
 
-        <strong>
-          FACEBOOK
-        </strong>
+        <div class="social-top">
 
-        <span>
+          <div class="social-icon">
+            FB
+          </div>
+
+          <div class="social-arrow">
+            ↗
+          </div>
+
+        </div>
+
+        <h3>
+          FACEBOOK
+        </h3>
+
+        <p>
           4:20 STREET
-        </span>
+        </p>
 
       </div>
 
-      <div class="arrow">
-        ↗
+      <div class="social-enter">
+        ENTRAR A FACEBOOK →
       </div>
 
     </a>
+
 
   </div>
 
 </section>
 
 
-<!-- FOOTER -->
+<!-- =======================================================
+     FOOTER
+======================================================= -->
 
 <footer>
 
@@ -2305,17 +2342,29 @@ footer{
     <div>
 
       <div class="footer-logo">
-        4:<span>20</span>®
+        4:20
       </div>
 
       <div class="footer-slogan">
-        LA HORA ADECUADA.
+        LA HORA ADECUADA
       </div>
 
     </div>
 
 
-    <div class="social">
+    <div class="footer-links">
+
+      <a href="#shop">
+        SHOP
+      </a>
+
+      <a href="#drops">
+        DROPS
+      </a>
+
+      <a href="#custom">
+        CUSTOM
+      </a>
 
       <a
         href="https://www.instagram.com/4_20.street/"
@@ -2338,10 +2387,6 @@ footer{
         FACEBOOK ↗
       </a>
 
-      <a href="#custom">
-        CUSTOM ↗
-      </a>
-
     </div>
 
   </div>
@@ -2349,16 +2394,26 @@ footer{
 
   <div class="footer-bottom">
 
-    <span>© 2026 4:20®</span>
-    <span>MEXICO</span>
-    <span>MADE TO ORDER</span>
+    <span>
+      © 2026 4:20
+    </span>
+
+    <span>
+      MEXICO
+    </span>
+
+    <span>
+      LA HORA ADECUADA
+    </span>
 
   </div>
 
 </footer>
 
 
-<!-- MODAL -->
+<!-- =======================================================
+     PRODUCT MODAL
+======================================================= -->
 
 <div
   class="modal"
@@ -2371,6 +2426,7 @@ footer{
     ×
   </button>
 
+
   <div class="modal-box">
 
     <div class="modal-image">
@@ -2382,23 +2438,27 @@ footer{
 
     </div>
 
+
     <div class="modal-info">
 
-      <div class="green-label">
-        4:20® / DROP
+      <div class="label">
+        4:20 / COLLECTION
       </div>
 
       <h2 id="modalName">
-        PRODUCT
+        PRODUCTO
       </h2>
 
       <p id="modalDescription">
-        DESCRIPTION
+        DESCRIPCIÓN
       </p>
+
 
       <div class="custom-price">
 
-        <span>PRICE</span>
+        <span>
+          PRECIO
+        </span>
 
         <strong id="modalPrice">
           $200
@@ -2425,26 +2485,27 @@ footer{
 
 <script>
 
-
-/* =========================
+/* =========================================================
    WHATSAPP
-========================= */
+   =========================================================
 
-/*
-  CAMBIA ESTO:
+   CAMBIA:
 
-  TU_NUMERO_WHATSAPP
+   TU_NUMERO
 
-  POR TU NÚMERO.
+   POR TU NÚMERO CON LADA.
 
-  Ejemplo:
-  5212221234567
+   EJEMPLO:
+   5212221234567
+
 */
 
-const WHATSAPP = "TU_NUMERO_WHATSAPP";
+const WHATSAPP = "TU_NUMERO";
 
 
-/* LOADER */
+/* =========================================================
+   LOADER
+========================================================= */
 
 window.addEventListener("load",()=>{
 
@@ -2460,7 +2521,9 @@ window.addEventListener("load",()=>{
 });
 
 
-/* MOBILE MENU */
+/* =========================================================
+   MOBILE MENU
+========================================================= */
 
 function toggleMenu(){
 
@@ -2472,16 +2535,20 @@ function toggleMenu(){
   document
     .body
     .classList
-    .toggle("no-scroll");
+    .toggle("lock");
 
 }
 
 
-/* FAVORITES */
+/* =========================================================
+   FAVORITES
+========================================================= */
 
-function favorite(button){
+function toggleFavorite(button){
 
-  button.classList.toggle("active");
+  button
+    .classList
+    .toggle("active");
 
   button.textContent =
     button.classList.contains("active")
@@ -2491,7 +2558,9 @@ function favorite(button){
 }
 
 
-/* MODAL */
+/* =========================================================
+   PRODUCT MODAL
+========================================================= */
 
 let selectedProduct="";
 let selectedPrice="";
@@ -2530,9 +2599,10 @@ function openProduct(
   document
     .body
     .classList
-    .add("no-scroll");
+    .add("lock");
 
 }
+
 
 function closeProduct(){
 
@@ -2544,48 +2614,55 @@ function closeProduct(){
   document
     .body
     .classList
-    .remove("no-scroll");
+    .remove("lock");
 
 }
+
 
 function closeOutside(event){
 
   if(event.target.id==="modal"){
+
     closeProduct();
+
   }
 
 }
 
 
-/* PRODUCT WHATSAPP */
+/* =========================================================
+   PRODUCT WHATSAPP
+========================================================= */
 
 function buyProduct(){
 
-  if(WHATSAPP==="TU_NUMERO_WHATSAPP"){
+  if(WHATSAPP==="TU_NUMERO"){
 
     alert(
-      "Primero coloca tu número de WhatsApp en el código."
+      "Agrega primero tu número de WhatsApp en el código."
     );
 
     return;
 
   }
 
-  const message =
-`Hola 4:20® 👋
+  const message=
+`Hola 4:20.
 
-Quiero pedir:
+Quiero la siguiente playera:
 
 ${selectedProduct}
 
-Precio: ${selectedPrice}
+Precio:
+${selectedPrice}
 
 Quiero confirmar talla y disponibilidad.`;
 
   window.open(
-    "https://wa.me/"+WHATSAPP+
-    "?text="+
-    encodeURIComponent(message),
+    "https://wa.me/"
+    +WHATSAPP
+    +"?text="
+    +encodeURIComponent(message),
 
     "_blank"
   );
@@ -2593,13 +2670,17 @@ Quiero confirmar talla y disponibilidad.`;
 }
 
 
-/* SHIRT COLOR */
+/* =========================================================
+   CUSTOMIZER
+========================================================= */
 
-let shirtColorName="NEGRO";
+let selectedColor="NEGRO";
+let selectedSize="M";
 
-function shirtColor(color,button){
 
-  const shirt =
+function changeColor(color,button){
+
+  const shirt=
     document.getElementById("shirt");
 
   button
@@ -2614,23 +2695,21 @@ function shirtColor(color,button){
   if(color==="white"){
 
     shirt.classList.add("white");
-    shirtColorName="BLANCO";
+
+    selectedColor="BLANCO";
 
   }else{
 
     shirt.classList.remove("white");
-    shirtColorName="NEGRO";
+
+    selectedColor="NEGRO";
 
   }
 
 }
 
 
-/* SIZE */
-
-let selectedSize="M";
-
-function selectSize(button){
+function changeSize(button){
 
   button
     .parentElement
@@ -2647,93 +2726,102 @@ function selectSize(button){
 }
 
 
-/* CUSTOM TEXT */
+/* =========================================================
+   CUSTOM TEXT
+========================================================= */
 
-function updateText(){
-
-  const value=
-    document
-      .getElementById("customText")
-      .value;
+function updateText(value){
 
   document
     .getElementById("shirtText")
     .textContent=
-      value||"4:20";
+      value || "4:20";
 
 }
 
 
-/* CUSTOM IMAGE */
+/* =========================================================
+   UPLOAD DESIGN
+========================================================= */
 
 function uploadDesign(event){
 
   const file=
     event.target.files[0];
 
-  if(!file)return;
+  if(!file){
+    return;
+  }
 
   const reader=
     new FileReader();
 
-  reader.onload=
-    function(e){
+  reader.onload=function(e){
 
-      const shirt=
-        document.getElementById("shirt");
+    const shirt=
+      document.getElementById("shirt");
 
-      shirt.style.backgroundImage=
-        `url(${e.target.result})`;
+    shirt.style.backgroundImage=
+      `url(${e.target.result})`;
 
-      shirt.style.backgroundSize="contain";
-      shirt.style.backgroundPosition="center";
-      shirt.style.backgroundRepeat="no-repeat";
+    shirt.style.backgroundSize="contain";
 
-      document
-        .getElementById("shirtText")
-        .style.display="none";
+    shirt.style.backgroundPosition="center";
 
-    };
+    shirt.style.backgroundRepeat="no-repeat";
+
+    document
+      .getElementById("shirtText")
+      .style.display="none";
+
+  };
 
   reader.readAsDataURL(file);
 
 }
 
 
-/* CUSTOM WHATSAPP */
+/* =========================================================
+   CUSTOM WHATSAPP
+========================================================= */
 
 function sendCustom(){
 
-  if(WHATSAPP==="TU_NUMERO_WHATSAPP"){
+  if(WHATSAPP==="TU_NUMERO"){
 
     alert(
-      "Primero coloca tu número de WhatsApp en el código."
+      "Agrega primero tu número de WhatsApp en el código."
     );
 
     return;
 
   }
 
-  const text=
+  const customText=
     document
       .getElementById("customText")
-      .value||"4:20";
+      .value || "4:20";
 
   const message=
-`Hola 4:20® 👋
+`Hola 4:20.
 
-Quiero cotizar una playera CUSTOM.
+Quiero cotizar una playera personalizada.
 
-Color: ${shirtColorName}
+Color: ${selectedColor}
+
 Talla: ${selectedSize}
-Texto: ${text}
 
-Precio desde: $250 MXN`;
+Texto:
+${customText}
+
+Precio desde:
+$250 MXN`;
 
   window.open(
-    "https://wa.me/"+WHATSAPP+
-    "?text="+
-    encodeURIComponent(message),
+    "https://wa.me/"
+    +WHATSAPP
+    +"?text="
+    +encodeURIComponent(message),
 
     "_blank"
   );
@@ -2741,52 +2829,9 @@ Precio desde: $250 MXN`;
 }
 
 
-/* CLOCK */
-
-function updateClock(){
-
-  const now=new Date();
-
-  const h=
-    String(now.getHours())
-    .padStart(2,"0");
-
-  const m=
-    String(now.getMinutes())
-    .padStart(2,"0");
-
-  document
-    .getElementById("clock")
-    .innerHTML=
-      `${h}:<span>${m}</span>`;
-
-  const message=
-    document.getElementById("clockMessage");
-
-  if(h==="04"&&m==="20"){
-
-    message.textContent=
-      "THE HOUR IS NOW.";
-
-    message.classList.add("active");
-
-  }else{
-
-    message.textContent=
-      "ESPERANDO LA HORA ADECUADA.";
-
-    message.classList.remove("active");
-
-  }
-
-}
-
-updateClock();
-
-setInterval(updateClock,1000);
-
-
-/* REVEAL */
+/* =========================================================
+   SCROLL ANIMATIONS
+========================================================= */
 
 const observer=
   new IntersectionObserver(
@@ -2807,25 +2852,34 @@ const observer=
 
     },
 
-    {threshold:.12}
+    {
+      threshold:.12
+    }
 
   );
+
 
 document
   .querySelectorAll(".reveal")
   .forEach(element=>{
+
     observer.observe(element);
+
   });
 
 
-/* ESC */
+/* =========================================================
+   ESC CLOSE
+========================================================= */
 
 document.addEventListener(
   "keydown",
   (event)=>{
 
     if(event.key==="Escape"){
+
       closeProduct();
+
     }
 
   }
