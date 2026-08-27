@@ -11,10 +11,6 @@ content="4:20® — La hora adecuada. Streetwear mexicano.">
 
 <style>
 
-/* =========================
-   BASE
-========================= */
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 :root{
@@ -53,27 +49,21 @@ a{
   text-decoration:none;
 }
 
-button,
-input{
+button,input{
   font-family:inherit;
 }
 
 
-/* =========================
-   LOADER
-========================= */
+/* LOADER */
 
 .loader{
   position:fixed;
   inset:0;
   z-index:9999;
-
   display:flex;
   align-items:center;
   justify-content:center;
-
   background:#050505;
-
   transition:.7s;
 }
 
@@ -96,37 +86,27 @@ input{
   position:absolute;
   bottom:0;
   left:0;
-
   width:100%;
   height:3px;
-
   background:var(--acid);
-
   transform:scaleX(0);
   transform-origin:left;
-
   animation:load 1.5s ease forwards;
 }
 
 @keyframes load{
-  to{
-    transform:scaleX(1);
-  }
+  to{transform:scaleX(1);}
 }
 
 
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 
 header{
   position:fixed;
   top:0;
   left:0;
-
   width:100%;
   height:76px;
-
   z-index:1000;
 
   display:flex;
@@ -158,11 +138,9 @@ nav{
 
 nav a{
   color:#888;
-
   font-size:9px;
   font-weight:800;
   letter-spacing:2px;
-
   transition:.3s;
 }
 
@@ -178,7 +156,6 @@ nav a:hover{
 
 .header-link{
   color:white;
-
   font-size:9px;
   font-weight:800;
   letter-spacing:2px;
@@ -190,26 +167,20 @@ nav a:hover{
 
 .menu{
   display:none;
-
   background:none;
   border:0;
-
   color:white;
-
   font-size:9px;
   font-weight:800;
   letter-spacing:2px;
 }
 
 
-/* =========================
-   MOBILE MENU
-========================= */
+/* MOBILE MENU */
 
 .mobile-menu{
   position:fixed;
   inset:0;
-
   z-index:900;
 
   display:flex;
@@ -233,19 +204,16 @@ nav a:hover{
 }
 
 .mobile-menu a{
-  font-size:45px;
+  font-size:38px;
   font-weight:900;
-  letter-spacing:-4px;
+  letter-spacing:-3px;
 }
 
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero{
   min-height:100vh;
-
   position:relative;
 
   display:flex;
@@ -280,12 +248,11 @@ nav a:hover{
 
   background-size:65px 65px;
 
-  mask-image:
-    linear-gradient(
-      to bottom,
-      black,
-      transparent
-    );
+  mask-image:linear-gradient(
+    to bottom,
+    black,
+    transparent
+  );
 }
 
 .circle{
@@ -313,15 +280,12 @@ nav a:hover{
 }
 
 @keyframes rotate{
-  to{
-    transform:rotate(360deg);
-  }
+  to{transform:rotate(360deg);}
 }
 
 .hero-content{
   position:relative;
   z-index:2;
-
   text-align:center;
 }
 
@@ -353,7 +317,6 @@ nav a:hover{
 .slogan{
   font-size:10px;
   font-weight:900;
-
   letter-spacing:7px;
 }
 
@@ -370,9 +333,7 @@ nav a:hover{
 }
 
 
-/* =========================
-   BUTTON
-========================= */
+/* BUTTON */
 
 .button{
   display:inline-flex;
@@ -407,13 +368,10 @@ nav a:hover{
 }
 
 
-/* =========================
-   CLOCK
-========================= */
+/* CLOCK */
 
 .clock-section{
   padding:130px 6%;
-
   text-align:center;
 }
 
@@ -459,9 +417,7 @@ nav a:hover{
 }
 
 
-/* =========================
-   MARQUEE
-========================= */
+/* MARQUEE */
 
 .marquee{
   overflow:hidden;
@@ -488,15 +444,11 @@ nav a:hover{
 }
 
 @keyframes marquee{
-  to{
-    transform:translateX(-50%);
-  }
+  to{transform:translateX(-50%);}
 }
 
 
-/* =========================
-   SECTIONS
-========================= */
+/* SECTIONS */
 
 .section{
   padding:140px 6%;
@@ -541,9 +493,7 @@ nav a:hover{
 }
 
 
-/* =========================
-   PRODUCTS
-========================= */
+/* PRODUCTS */
 
 .products{
   display:grid;
@@ -557,7 +507,6 @@ nav a:hover{
 
 .product{
   cursor:pointer;
-
   transition:.5s;
 }
 
@@ -575,25 +524,8 @@ nav a:hover{
 
 .product-image{
   position:relative;
-
   overflow:hidden;
-
   background:#111;
-}
-
-.product:nth-child(1)
-.product-image{
-  border-radius:45px 3px 45px 3px;
-}
-
-.product:nth-child(2)
-.product-image{
-  border-radius:3px 45px 3px 45px;
-}
-
-.product:nth-child(3)
-.product-image{
-  border-radius:50% 3px 50% 3px;
 }
 
 .product-image img{
@@ -611,7 +543,6 @@ nav a:hover{
 
 .product:hover img{
   filter:grayscale(0);
-
   transform:scale(1.08);
 }
 
@@ -658,7 +589,6 @@ nav a:hover{
 
 .favorite.active{
   background:var(--acid);
-
   color:#050505;
 }
 
@@ -686,9 +616,7 @@ nav a:hover{
 }
 
 
-/* =========================
-   MANIFESTO
-========================= */
+/* MANIFESTO */
 
 .manifesto{
   margin:30px 6%;
@@ -714,9 +642,7 @@ nav a:hover{
 }
 
 
-/* =========================
-   DROP
-========================= */
+/* DROP */
 
 .drop{
   padding:150px 6%;
@@ -801,9 +727,7 @@ nav a:hover{
 }
 
 
-/* =========================
-   CUSTOMIZER
-========================= */
+/* CUSTOMIZER */
 
 .custom{
   padding:150px 6%;
@@ -823,7 +747,6 @@ nav a:hover{
 
 .preview{
   position:sticky;
-
   top:110px;
 }
 
@@ -899,9 +822,7 @@ nav a:hover{
 
 .custom-form{
   display:flex;
-
   flex-direction:column;
-
   gap:30px;
 }
 
@@ -918,9 +839,7 @@ nav a:hover{
 
 .options{
   display:flex;
-
   flex-wrap:wrap;
-
   gap:7px;
 }
 
@@ -995,7 +914,6 @@ nav a:hover{
 
 .upload:hover{
   border-color:var(--acid);
-
   color:var(--acid);
 }
 
@@ -1027,13 +945,10 @@ nav a:hover{
 }
 
 
-/* =========================
-   VALUES
-========================= */
+/* VALUES */
 
 .values{
   display:grid;
-
   grid-template-columns:repeat(3,1fr);
 }
 
@@ -1067,7 +982,6 @@ nav a:hover{
 
 .value h3{
   margin-bottom:15px;
-
   font-size:18px;
 }
 
@@ -1080,13 +994,10 @@ nav a:hover{
 }
 
 
-/* =========================
-   SOCIAL
-========================= */
+/* SOCIAL */
 
 .instagram{
   padding:150px 6%;
-
   text-align:center;
 }
 
@@ -1115,13 +1026,13 @@ nav a:hover{
 }
 
 .social-big{
-  max-width:900px;
+  max-width:1100px;
 
   margin:70px auto 0;
 
   display:grid;
 
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:repeat(3,1fr);
 
   gap:15px;
 }
@@ -1135,9 +1046,9 @@ nav a:hover{
 
   align-items:center;
 
-  gap:22px;
+  gap:20px;
 
-  padding:30px;
+  padding:28px;
 
   overflow:hidden;
 
@@ -1234,9 +1145,7 @@ nav a:hover{
 }
 
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer{
   padding:130px 6% 30px;
@@ -1278,8 +1187,8 @@ footer{
 
 .social{
   display:flex;
-
   gap:25px;
+  flex-wrap:wrap;
 }
 
 .social a{
@@ -1315,9 +1224,7 @@ footer{
 }
 
 
-/* =========================
-   MODAL
-========================= */
+/* MODAL */
 
 .modal{
   position:fixed;
@@ -1379,7 +1286,6 @@ footer{
 .modal-image img{
   width:100%;
   height:100%;
-
   object-fit:cover;
 }
 
@@ -1434,13 +1340,10 @@ footer{
 }
 
 
-/* =========================
-   REVEAL
-========================= */
+/* REVEAL */
 
 .reveal{
   opacity:0;
-
   transform:translateY(40px);
 
   transition:
@@ -1450,14 +1353,11 @@ footer{
 
 .reveal.visible{
   opacity:1;
-
   transform:translateY(0);
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media(max-width:800px){
 
@@ -1475,7 +1375,6 @@ footer{
 
   .hero h1{
     font-size:105px;
-
     letter-spacing:-10px;
   }
 
@@ -1498,13 +1397,11 @@ footer{
 
   .section-head .gray{
     display:block;
-
     margin-top:25px;
   }
 
   .products{
     grid-template-columns:1fr;
-
     gap:55px;
   }
 
@@ -1515,7 +1412,6 @@ footer{
 
   .product:nth-child(2){
     width:85%;
-
     margin-left:auto;
   }
 
@@ -1525,9 +1421,7 @@ footer{
 
   .manifesto{
     margin:20px 5%;
-
     padding:100px 7%;
-
     border-radius:50px 0 50px 0;
   }
 
@@ -1541,9 +1435,7 @@ footer{
 
   .drop-box{
     min-height:500px;
-
     padding:10%;
-
     border-radius:55px 0 55px 0;
   }
 
@@ -1553,7 +1445,6 @@ footer{
 
   .custom{
     padding:100px 5%;
-
     border-radius:60px 60px 0 0;
   }
 
@@ -1563,7 +1454,6 @@ footer{
 
   .preview{
     position:relative;
-
     top:0;
   }
 
@@ -1582,7 +1472,6 @@ footer{
 
   .value{
     border-right:0;
-
     border-bottom:1px solid var(--line);
   }
 
@@ -1600,21 +1489,16 @@ footer{
 
   .social{
     margin-top:35px;
-
-    flex-wrap:wrap;
   }
 
   .footer-bottom{
     display:block;
-
     line-height:3;
   }
 
   .modal-box{
     grid-template-columns:1fr;
-
     max-height:90vh;
-
     overflow:auto;
   }
 
@@ -1639,9 +1523,7 @@ footer{
 <body>
 
 
-<!-- =========================
-     LOADER
-========================= -->
+<!-- LOADER -->
 
 <div class="loader" id="loader">
 
@@ -1654,9 +1536,7 @@ footer{
 </div>
 
 
-<!-- =========================
-     HEADER
-========================= -->
+<!-- HEADER -->
 
 <header>
 
@@ -1667,11 +1547,8 @@ footer{
   <nav>
 
     <a href="#shop">SHOP</a>
-
     <a href="#drops">DROPS</a>
-
     <a href="#custom">CUSTOM</a>
-
     <a href="#about">ABOUT</a>
 
   </nav>
@@ -1688,6 +1565,16 @@ footer{
 
     </a>
 
+    <a
+      class="header-link"
+      href="https://www.tiktok.com/@marcoantoniogarci3206"
+      target="_blank"
+      rel="noopener noreferrer">
+
+      TK ↗
+
+    </a>
+
     <button
       class="menu"
       onclick="toggleMenu()">
@@ -1701,9 +1588,7 @@ footer{
 </header>
 
 
-<!-- =========================
-     MOBILE MENU
-========================= -->
+<!-- MOBILE MENU -->
 
 <div
   class="mobile-menu"
@@ -1735,6 +1620,15 @@ footer{
   </a>
 
   <a
+    href="https://www.tiktok.com/@marcoantoniogarci3206"
+    target="_blank"
+    rel="noopener noreferrer">
+
+    TIKTOK ↗
+
+  </a>
+
+  <a
     href="https://www.facebook.com/share/1Ephp8bfdR/"
     target="_blank"
     rel="noopener noreferrer">
@@ -1746,9 +1640,7 @@ footer{
 </div>
 
 
-<!-- =========================
-     HERO
-========================= -->
+<!-- HERO -->
 
 <section class="hero">
 
@@ -1775,12 +1667,8 @@ footer{
       Una forma diferente de vestirla.
     </p>
 
-    <a
-      href="#shop"
-      class="button">
-
+    <a href="#shop" class="button">
       VER COLLECTION →
-
     </a>
 
   </div>
@@ -1788,9 +1676,7 @@ footer{
 </section>
 
 
-<!-- =========================
-     CLOCK
-========================= -->
+<!-- CLOCK -->
 
 <section class="clock-section reveal">
 
@@ -1798,28 +1684,18 @@ footer{
     LIVE TIME / 4:20 SYSTEM
   </div>
 
-  <div
-    class="clock"
-    id="clock">
-
+  <div class="clock" id="clock">
     00:<span>00</span>
-
   </div>
 
-  <div
-    class="clock-message"
-    id="clockMessage">
-
+  <div class="clock-message" id="clockMessage">
     ESPERANDO LA HORA ADECUADA.
-
   </div>
 
 </section>
 
 
-<!-- =========================
-     MARQUEE
-========================= -->
+<!-- MARQUEE -->
 
 <div class="marquee">
 
@@ -1837,13 +1713,9 @@ footer{
 </div>
 
 
-<!-- =========================
-     SHOP
-========================= -->
+<!-- SHOP -->
 
-<section
-  class="section"
-  id="shop">
+<section class="section" id="shop">
 
   <div class="section-head reveal">
 
@@ -1869,8 +1741,6 @@ footer{
   <div class="products">
 
 
-    <!-- PRODUCTO 001 -->
-
     <article
       class="product reveal"
       onclick="openProduct(
@@ -1882,9 +1752,7 @@ footer{
 
       <div class="product-image">
 
-        <div class="number">
-          001
-        </div>
+        <div class="number">001</div>
 
         <button
           class="favorite"
@@ -1908,13 +1776,8 @@ footer{
 
         <div class="product-meta">
 
-          <span>
-            BLACK · OVERSIZED
-          </span>
-
-          <span>
-            $200
-          </span>
+          <span>BLACK · OVERSIZED</span>
+          <span>$200</span>
 
         </div>
 
@@ -1922,8 +1785,6 @@ footer{
 
     </article>
 
-
-    <!-- PRODUCTO 002 -->
 
     <article
       class="product reveal"
@@ -1936,9 +1797,7 @@ footer{
 
       <div class="product-image">
 
-        <div class="number">
-          002
-        </div>
+        <div class="number">002</div>
 
         <button
           class="favorite"
@@ -1962,13 +1821,8 @@ footer{
 
         <div class="product-meta">
 
-          <span>
-            WHITE · REGULAR
-          </span>
-
-          <span>
-            $200
-          </span>
+          <span>WHITE · REGULAR</span>
+          <span>$200</span>
 
         </div>
 
@@ -1976,8 +1830,6 @@ footer{
 
     </article>
 
-
-    <!-- PRODUCTO 003 -->
 
     <article
       class="product reveal"
@@ -1990,9 +1842,7 @@ footer{
 
       <div class="product-image">
 
-        <div class="number">
-          003
-        </div>
+        <div class="number">003</div>
 
         <button
           class="favorite"
@@ -2016,13 +1866,8 @@ footer{
 
         <div class="product-meta">
 
-          <span>
-            BLACK · LIMITED
-          </span>
-
-          <span>
-            $250
-          </span>
+          <span>BLACK · LIMITED</span>
+          <span>$250</span>
 
         </div>
 
@@ -2035,50 +1880,34 @@ footer{
 </section>
 
 
-<!-- =========================
-     ABOUT
-========================= -->
+<!-- ABOUT -->
 
-<section
-  class="manifesto reveal"
-  id="about">
+<section class="manifesto reveal" id="about">
 
-  <div>
-
-    <div class="green-label">
-      THE IDEA
-    </div>
-
-    <h2 class="big-title">
-
-      LA HORA<br>
-      ADECUADA.
-
-    </h2>
-
-    <p>
-
-      4:20 es el identificador.
-      Una marca de streetwear que no necesita
-      gritar para ser reconocida.
-
-      Diseños limpios, drops y piezas que
-      hablan por sí mismas.
-
-    </p>
-
+  <div class="green-label">
+    THE IDEA
   </div>
+
+  <h2 class="big-title">
+    LA HORA<br>
+    ADECUADA.
+  </h2>
+
+  <p>
+    4:20 es el identificador.
+    Una marca de streetwear que no necesita
+    gritar para ser reconocida.
+
+    Diseños limpios, drops y piezas que
+    hablan por sí mismas.
+  </p>
 
 </section>
 
 
-<!-- =========================
-     DROP
-========================= -->
+<!-- DROP -->
 
-<section
-  class="drop"
-  id="drops">
+<section class="drop" id="drops">
 
   <div class="drop-box reveal">
 
@@ -2089,20 +1918,16 @@ footer{
       </div>
 
       <h2>
-
         COMING<br>
         SOON.
-
       </h2>
 
       <p>
-
         Los siguientes diseños llegan cuando
         sea la hora.
 
-        Síguenos en Instagram o Facebook
-        para enterarte primero del próximo drop.
-
+        Síguenos en nuestras redes para enterarte
+        primero del próximo drop.
       </p>
 
       <a
@@ -2122,13 +1947,9 @@ footer{
 </section>
 
 
-<!-- =========================
-     CUSTOMIZER
-========================= -->
+<!-- CUSTOM -->
 
-<section
-  class="custom"
-  id="custom">
+<section class="custom" id="custom">
 
   <div class="section-head reveal">
 
@@ -2139,10 +1960,8 @@ footer{
       </div>
 
       <h2 class="big-title">
-
         HAZLA<br>
         TUYA.
-
       </h2>
 
     </div>
@@ -2152,21 +1971,14 @@ footer{
 
   <div class="custom-grid">
 
-
     <div class="preview reveal">
 
       <div class="shirt-stage">
 
-        <div
-          class="shirt"
-          id="shirt">
+        <div class="shirt" id="shirt">
 
-          <div
-            class="shirt-text"
-            id="shirtText">
-
+          <div class="shirt-text" id="shirtText">
             4:20
-
           </div>
 
         </div>
@@ -2178,8 +1990,6 @@ footer{
 
     <div class="custom-form reveal">
 
-
-      <!-- COLOR -->
 
       <div>
 
@@ -2210,8 +2020,6 @@ footer{
       </div>
 
 
-      <!-- TALLA -->
-
       <div>
 
         <div class="form-label">
@@ -2223,41 +2031,31 @@ footer{
           <button
             class="option"
             onclick="selectSize(this)">
-
             CH
-
           </button>
 
           <button
             class="option active"
             onclick="selectSize(this)">
-
             M
-
           </button>
 
           <button
             class="option"
             onclick="selectSize(this)">
-
             G
-
           </button>
 
           <button
             class="option"
             onclick="selectSize(this)">
-
             XL
-
           </button>
 
         </div>
 
       </div>
 
-
-      <!-- TEXTO -->
 
       <div>
 
@@ -2270,12 +2068,10 @@ footer{
           id="customText"
           maxlength="20"
           placeholder="ESCRIBE TU TEXTO"
-          oninput="updateText()">
+          oninput="updateText">
 
       </div>
 
-
-      <!-- IMAGEN -->
 
       <div>
 
@@ -2299,9 +2095,7 @@ footer{
 
       <div class="custom-price">
 
-        <span>
-          DESDE
-        </span>
+        <span>DESDE</span>
 
         <strong>
           $250 MXN
@@ -2325,9 +2119,7 @@ footer{
 </section>
 
 
-<!-- =========================
-     VALUES
-========================= -->
+<!-- VALUES -->
 
 <section class="values">
 
@@ -2387,9 +2179,7 @@ footer{
 </section>
 
 
-<!-- =========================
-     SOCIAL
-========================= -->
+<!-- SOCIAL -->
 
 <section class="instagram">
 
@@ -2398,15 +2188,11 @@ footer{
   </div>
 
   <h2 class="instagram-title">
-
     4:20<span>®</span>
-
   </h2>
 
   <div class="instagram-handle">
-
-    @4_20.STREET · INSTAGRAM · FACEBOOK
-
+    @4_20.STREET · SOCIAL
   </div>
 
 
@@ -2433,6 +2219,37 @@ footer{
 
         <span>
           @4_20.street
+        </span>
+
+      </div>
+
+      <div class="arrow">
+        ↗
+      </div>
+
+    </a>
+
+
+    <!-- TIKTOK -->
+
+    <a
+      href="https://www.tiktok.com/@marcoantoniogarci3206"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="social-card">
+
+      <div class="social-icon">
+        TK
+      </div>
+
+      <div>
+
+        <strong>
+          TIKTOK
+        </strong>
+
+        <span>
+          @marcoantoniogarci3206
         </span>
 
       </div>
@@ -2479,9 +2296,7 @@ footer{
 </section>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- FOOTER -->
 
 <footer>
 
@@ -2490,15 +2305,11 @@ footer{
     <div>
 
       <div class="footer-logo">
-
         4:<span>20</span>®
-
       </div>
 
       <div class="footer-slogan">
-
         LA HORA ADECUADA.
-
       </div>
 
     </div>
@@ -2510,24 +2321,25 @@ footer{
         href="https://www.instagram.com/4_20.street/"
         target="_blank"
         rel="noopener noreferrer">
-
         INSTAGRAM ↗
+      </a>
 
+      <a
+        href="https://www.tiktok.com/@marcoantoniogarci3206"
+        target="_blank"
+        rel="noopener noreferrer">
+        TIKTOK ↗
       </a>
 
       <a
         href="https://www.facebook.com/share/1Ephp8bfdR/"
         target="_blank"
         rel="noopener noreferrer">
-
         FACEBOOK ↗
-
       </a>
 
       <a href="#custom">
-
         CUSTOM ↗
-
       </a>
 
     </div>
@@ -2537,26 +2349,16 @@ footer{
 
   <div class="footer-bottom">
 
-    <span>
-      © 2026 4:20®
-    </span>
-
-    <span>
-      MEXICO
-    </span>
-
-    <span>
-      MADE TO ORDER
-    </span>
+    <span>© 2026 4:20®</span>
+    <span>MEXICO</span>
+    <span>MADE TO ORDER</span>
 
   </div>
 
 </footer>
 
 
-<!-- =========================
-     PRODUCT MODAL
-========================= -->
+<!-- MODAL -->
 
 <div
   class="modal"
@@ -2566,14 +2368,10 @@ footer{
   <button
     class="close"
     onclick="closeProduct()">
-
     ×
-
   </button>
 
-
   <div class="modal-box">
-
 
     <div class="modal-image">
 
@@ -2583,7 +2381,6 @@ footer{
         alt="Producto 4:20">
 
     </div>
-
 
     <div class="modal-info">
 
@@ -2599,12 +2396,9 @@ footer{
         DESCRIPTION
       </p>
 
-
       <div class="custom-price">
 
-        <span>
-          PRICE
-        </span>
+        <span>PRICE</span>
 
         <strong id="modalPrice">
           $200
@@ -2633,24 +2427,24 @@ footer{
 
 
 /* =========================
-   CONFIGURACIÓN
+   WHATSAPP
 ========================= */
 
 /*
-   IMPORTANTE:
+  CAMBIA ESTO:
 
-   Cambia solamente esto por tu número.
+  TU_NUMERO_WHATSAPP
 
-   Ejemplo:
-   const WHATSAPP = "5212221234567";
+  POR TU NÚMERO.
+
+  Ejemplo:
+  5212221234567
 */
 
 const WHATSAPP = "TU_NUMERO_WHATSAPP";
 
 
-/* =========================
-   LOADER
-========================= */
+/* LOADER */
 
 window.addEventListener("load",()=>{
 
@@ -2666,9 +2460,7 @@ window.addEventListener("load",()=>{
 });
 
 
-/* =========================
-   MOBILE MENU
-========================= */
+/* MOBILE MENU */
 
 function toggleMenu(){
 
@@ -2685,9 +2477,7 @@ function toggleMenu(){
 }
 
 
-/* =========================
-   FAVORITES
-========================= */
+/* FAVORITES */
 
 function favorite(button){
 
@@ -2701,12 +2491,10 @@ function favorite(button){
 }
 
 
-/* =========================
-   PRODUCT MODAL
-========================= */
+/* MODAL */
 
-let selectedProduct = "";
-let selectedPrice = "";
+let selectedProduct="";
+let selectedPrice="";
 
 function openProduct(
   name,
@@ -2715,36 +2503,29 @@ function openProduct(
   image
 ){
 
-  selectedProduct = name;
-
-  selectedPrice = price;
-
+  selectedProduct=name;
+  selectedPrice=price;
 
   document
     .getElementById("modalName")
-    .textContent = name;
-
+    .textContent=name;
 
   document
     .getElementById("modalDescription")
-    .textContent = description;
-
+    .textContent=description;
 
   document
     .getElementById("modalPrice")
-    .textContent = price;
-
+    .textContent=price;
 
   document
     .getElementById("modalImage")
-    .src = image;
-
+    .src=image;
 
   document
     .getElementById("modal")
     .classList
     .add("open");
-
 
   document
     .body
@@ -2752,7 +2533,6 @@ function openProduct(
     .add("no-scroll");
 
 }
-
 
 function closeProduct(){
 
@@ -2768,25 +2548,20 @@ function closeProduct(){
 
 }
 
-
 function closeOutside(event){
 
-  if(event.target.id === "modal"){
-
+  if(event.target.id==="modal"){
     closeProduct();
-
   }
 
 }
 
 
-/* =========================
-   PRODUCT → WHATSAPP
-========================= */
+/* PRODUCT WHATSAPP */
 
 function buyProduct(){
 
-  if(WHATSAPP === "TU_NUMERO_WHATSAPP"){
+  if(WHATSAPP==="TU_NUMERO_WHATSAPP"){
 
     alert(
       "Primero coloca tu número de WhatsApp en el código."
@@ -2795,7 +2570,6 @@ function buyProduct(){
     return;
 
   }
-
 
   const message =
 `Hola 4:20® 👋
@@ -2808,11 +2582,9 @@ Precio: ${selectedPrice}
 
 Quiero confirmar talla y disponibilidad.`;
 
-
   window.open(
-    "https://wa.me/" +
-    WHATSAPP +
-    "?text=" +
+    "https://wa.me/"+WHATSAPP+
+    "?text="+
     encodeURIComponent(message),
 
     "_blank"
@@ -2821,21 +2593,17 @@ Quiero confirmar talla y disponibilidad.`;
 }
 
 
-/* =========================
-   CUSTOM COLOR
-========================= */
+/* SHIRT COLOR */
 
-let shirtColorName = "NEGRO";
+let shirtColorName="NEGRO";
 
-function shirtColor(
-  color,
+function shirtColor(color,button){
+
+  const shirt =
+    document.getElementById("shirt");
+
   button
-){
-
-  const customSection =
-    document.querySelector(".custom");
-
-  customSection
+    .parentElement
     .querySelectorAll(".option")
     .forEach(item=>{
       item.classList.remove("active");
@@ -2843,127 +2611,100 @@ function shirtColor(
 
   button.classList.add("active");
 
-
-  const shirt =
-    document.getElementById("shirt");
-
-
-  if(color === "white"){
+  if(color==="white"){
 
     shirt.classList.add("white");
-
-    shirtColorName = "BLANCO";
+    shirtColorName="BLANCO";
 
   }else{
 
     shirt.classList.remove("white");
-
-    shirtColorName = "NEGRO";
+    shirtColorName="NEGRO";
 
   }
 
 }
 
 
-/* =========================
-   TALLA
-========================= */
+/* SIZE */
 
-let selectedSize = "M";
+let selectedSize="M";
 
 function selectSize(button){
 
-  const buttons =
-    button.parentElement
-      .querySelectorAll(".option");
-
-  buttons.forEach(item=>{
-    item.classList.remove("active");
-  });
+  button
+    .parentElement
+    .querySelectorAll(".option")
+    .forEach(item=>{
+      item.classList.remove("active");
+    });
 
   button.classList.add("active");
 
-  selectedSize =
+  selectedSize=
     button.textContent.trim();
 
 }
 
 
-/* =========================
-   CUSTOM TEXT
-========================= */
+/* CUSTOM TEXT */
 
 function updateText(){
 
-  const value =
+  const value=
     document
       .getElementById("customText")
       .value;
 
   document
     .getElementById("shirtText")
-    .textContent =
-      value || "4:20";
+    .textContent=
+      value||"4:20";
 
 }
 
 
-/* =========================
-   CUSTOM IMAGE
-========================= */
+/* CUSTOM IMAGE */
 
 function uploadDesign(event){
 
-  const file =
+  const file=
     event.target.files[0];
 
   if(!file)return;
 
-
-  const reader =
+  const reader=
     new FileReader();
 
-
-  reader.onload =
+  reader.onload=
     function(e){
 
-      const shirt =
+      const shirt=
         document.getElementById("shirt");
 
-
-      shirt.style.backgroundImage =
+      shirt.style.backgroundImage=
         `url(${e.target.result})`;
 
-      shirt.style.backgroundSize =
-        "contain";
-
-      shirt.style.backgroundPosition =
-        "center";
-
-      shirt.style.backgroundRepeat =
-        "no-repeat";
-
+      shirt.style.backgroundSize="contain";
+      shirt.style.backgroundPosition="center";
+      shirt.style.backgroundRepeat="no-repeat";
 
       document
         .getElementById("shirtText")
-        .style.display =
-        "none";
+        .style.display="none";
 
     };
-
 
   reader.readAsDataURL(file);
 
 }
 
 
-/* =========================
-   CUSTOM → WHATSAPP
-========================= */
+/* CUSTOM WHATSAPP */
 
 function sendCustom(){
 
-  if(WHATSAPP === "TU_NUMERO_WHATSAPP"){
+  if(WHATSAPP==="TU_NUMERO_WHATSAPP"){
 
     alert(
       "Primero coloca tu número de WhatsApp en el código."
@@ -2973,14 +2714,12 @@ function sendCustom(){
 
   }
 
-
-  const text =
+  const text=
     document
       .getElementById("customText")
-      .value || "4:20";
+      .value||"4:20";
 
-
-  const message =
+  const message=
 `Hola 4:20® 👋
 
 Quiero cotizar una playera CUSTOM.
@@ -2991,11 +2730,9 @@ Texto: ${text}
 
 Precio desde: $250 MXN`;
 
-
   window.open(
-    "https://wa.me/" +
-    WHATSAPP +
-    "?text=" +
+    "https://wa.me/"+WHATSAPP+
+    "?text="+
     encodeURIComponent(message),
 
     "_blank"
@@ -3004,71 +2741,54 @@ Precio desde: $250 MXN`;
 }
 
 
-/* =========================
-   LIVE CLOCK
-========================= */
+/* CLOCK */
 
 function updateClock(){
 
-  const now =
-    new Date();
+  const now=new Date();
 
-
-  const h =
+  const h=
     String(now.getHours())
-      .padStart(2,"0");
+    .padStart(2,"0");
 
-
-  const m =
+  const m=
     String(now.getMinutes())
-      .padStart(2,"0");
-
+    .padStart(2,"0");
 
   document
     .getElementById("clock")
-    .innerHTML =
+    .innerHTML=
       `${h}:<span>${m}</span>`;
 
+  const message=
+    document.getElementById("clockMessage");
 
-  const message =
-    document
-      .getElementById("clockMessage");
+  if(h==="04"&&m==="20"){
 
-
-  if(h === "04" && m === "20"){
-
-    message.textContent =
+    message.textContent=
       "THE HOUR IS NOW.";
 
-    message.classList
-      .add("active");
+    message.classList.add("active");
 
   }else{
 
-    message.textContent =
+    message.textContent=
       "ESPERANDO LA HORA ADECUADA.";
 
-    message.classList
-      .remove("active");
+    message.classList.remove("active");
 
   }
 
 }
 
-
 updateClock();
 
-setInterval(
-  updateClock,
-  1000
-);
+setInterval(updateClock,1000);
 
 
-/* =========================
-   SCROLL REVEAL
-========================= */
+/* REVEAL */
 
-const observer =
+const observer=
   new IntersectionObserver(
 
     (entries)=>{
@@ -3087,34 +2807,25 @@ const observer =
 
     },
 
-    {
-      threshold:.12
-    }
+    {threshold:.12}
 
   );
-
 
 document
   .querySelectorAll(".reveal")
   .forEach(element=>{
-
     observer.observe(element);
-
   });
 
 
-/* =========================
-   ESC CLOSE
-========================= */
+/* ESC */
 
 document.addEventListener(
   "keydown",
   (event)=>{
 
-    if(event.key === "Escape"){
-
+    if(event.key==="Escape"){
       closeProduct();
-
     }
 
   }
