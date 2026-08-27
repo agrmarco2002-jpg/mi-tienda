@@ -2,1071 +2,1030 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
 <title>4:20® — La hora adecuada</title>
-
-<meta name="description"
-content="4:20® — La hora adecuada. Streetwear, drops y piezas personalizadas.">
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 :root{
-    --bg:#070707;
-    --card:#111;
-    --card2:#161616;
-    --white:#f5f5f2;
-    --gray:#888;
-    --line:#272727;
+--black:#050505;
+--dark:#0b0b0b;
+--panel:#111;
+--panel2:#171717;
+--white:#f4f4f0;
+--muted:#777;
+--line:#242424;
+--lime:#b7ff2a;
 }
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+box-sizing:border-box;
+margin:0;
+padding:0;
 }
 
 html{
-    scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
 
 body{
-    background:var(--bg);
-    color:var(--white);
-    font-family:Inter,Arial,sans-serif;
-}
-
-button,
-input{
-    font-family:inherit;
-}
-
-button{
-    cursor:pointer;
+background:var(--black);
+color:var(--white);
+font-family:Inter,Arial,sans-serif;
+overflow-x:hidden;
 }
 
 a{
-    color:inherit;
-    text-decoration:none;
+color:inherit;
+text-decoration:none;
 }
 
-/* =========================
-HEADER
-========================= */
+button{
+font-family:inherit;
+cursor:pointer;
+}
+
+/* ================= HEADER ================= */
 
 header{
-    position:fixed;
-    top:0;
-    left:0;
-    right:0;
-    z-index:1000;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:76px;
 
-    height:70px;
+display:flex;
+align-items:center;
+justify-content:space-between;
 
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+padding:0 5%;
 
-    padding:0 5%;
+z-index:100;
 
-    background:rgba(7,7,7,.82);
-    backdrop-filter:blur(18px);
+background:rgba(5,5,5,.72);
+backdrop-filter:blur(20px);
 
-    border-bottom:1px solid rgba(255,255,255,.08);
+border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 .logo{
-    font-size:22px;
-    font-weight:900;
-    letter-spacing:-2px;
+font-size:24px;
+font-weight:900;
+letter-spacing:-2px;
 }
 
-.nav{
-    display:flex;
-    gap:35px;
+.logo span{
+color:var(--lime);
 }
 
-.nav a{
-    color:#888;
-    font-size:9px;
-    font-weight:800;
-    letter-spacing:2px;
-    transition:.3s;
+nav{
+display:flex;
+gap:35px;
 }
 
-.nav a:hover{
-    color:white;
+nav a{
+font-size:9px;
+font-weight:700;
+letter-spacing:2px;
+color:#888;
+transition:.3s;
 }
 
-.cart-btn{
-    border:0;
-    background:none;
-    color:white;
-
-    font-size:9px;
-    font-weight:800;
-    letter-spacing:2px;
+nav a:hover{
+color:var(--lime);
 }
 
-/* =========================
-HERO
-========================= */
+.bag{
+border:0;
+background:none;
+color:white;
+
+font-size:9px;
+font-weight:800;
+letter-spacing:2px;
+}
+
+/* ================= HERO ================= */
 
 .hero{
-    min-height:100vh;
+min-height:100vh;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+display:flex;
+align-items:center;
+justify-content:center;
 
-    text-align:center;
+position:relative;
+overflow:hidden;
 
-    position:relative;
-    overflow:hidden;
+background:
+radial-gradient(
+circle at 50% 45%,
+#202a13 0%,
+#0b0b0b 25%,
+#050505 60%
+);
 }
 
-.hero:before{
-    content:"";
+.hero-grid{
+position:absolute;
+inset:0;
 
-    position:absolute;
-    width:800px;
-    height:800px;
+background-image:
+linear-gradient(
+rgba(255,255,255,.035) 1px,
+transparent 1px
+),
+linear-gradient(
+90deg,
+rgba(255,255,255,.035) 1px,
+transparent 1px
+);
 
-    border-radius:50%;
+background-size:80px 80px;
 
-    background:radial-gradient(
-        circle,
-        #303030 0%,
-        #151515 35%,
-        transparent 70%
-    );
-
-    opacity:.7;
-
-    animation:pulse 8s ease-in-out infinite alternate;
-}
-
-@keyframes pulse{
-    from{
-        transform:scale(.9);
-    }
-    to{
-        transform:scale(1.15);
-    }
+mask-image:linear-gradient(
+to bottom,
+black,
+transparent
+);
 }
 
 .hero-content{
-    position:relative;
-    z-index:2;
+position:relative;
+z-index:2;
 
-    padding:30px;
+text-align:center;
+padding:30px;
 }
 
-.eyebrow{
-    color:#777;
-
-    font-size:9px;
-    font-weight:700;
-    letter-spacing:5px;
-
-    margin-bottom:35px;
+.small{
+font-size:8px;
+font-weight:800;
+letter-spacing:5px;
+color:#777;
 }
 
 .hero h1{
-    font-size:clamp(100px,20vw,260px);
+font-size:clamp(110px,21vw,280px);
+line-height:.72;
 
-    line-height:.7;
+font-weight:900;
+letter-spacing:-16px;
 
-    font-weight:900;
-
-    letter-spacing:-15px;
+margin:35px 0;
 }
 
-.tagline{
-    margin-top:55px;
-
-    font-size:10px;
-    font-weight:700;
-
-    letter-spacing:7px;
+.hero h1 span{
+color:var(--lime);
 }
 
-.hero p{
-    max-width:430px;
-
-    margin:25px auto 35px;
-
-    color:#777;
-
-    font-size:13px;
-    line-height:1.8;
+.slogan{
+font-size:10px;
+font-weight:800;
+letter-spacing:7px;
 }
 
-/* =========================
-BUTTON
-========================= */
+.hero-description{
+max-width:480px;
 
-.btn{
-    min-height:52px;
+margin:30px auto;
 
-    padding:0 30px;
+color:#777;
 
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-
-    border:0;
-
-    background:white;
-    color:#050505;
-
-    font-size:9px;
-    font-weight:900;
-    letter-spacing:2px;
-
-    transition:.3s;
+font-size:12px;
+line-height:1.8;
 }
 
-.btn:hover{
-    transform:translateY(-4px);
+.primary{
+display:inline-flex;
+
+padding:18px 30px;
+
+background:var(--lime);
+color:#050505;
+
+font-size:9px;
+font-weight:900;
+
+letter-spacing:2px;
+
+transition:.3s;
 }
 
-/* =========================
-MARQUEE
-========================= */
+.primary:hover{
+transform:translateY(-4px);
+box-shadow:0 15px 40px rgba(183,255,42,.18);
+}
+
+/* ================= MARQUEE ================= */
 
 .marquee{
-    overflow:hidden;
-    white-space:nowrap;
+border-top:1px solid var(--line);
+border-bottom:1px solid var(--line);
 
-    padding:17px 0;
+padding:18px 0;
 
-    border-top:1px solid var(--line);
-    border-bottom:1px solid var(--line);
+overflow:hidden;
+white-space:nowrap;
 }
 
-.marquee span{
-    display:inline-block;
+.marquee div{
+display:inline-block;
 
-    color:#666;
+font-size:9px;
+font-weight:800;
 
-    font-size:9px;
-    letter-spacing:4px;
+letter-spacing:4px;
 
-    animation:marquee 25s linear infinite;
+color:#666;
+
+animation:move 25s linear infinite;
 }
 
-@keyframes marquee{
-    to{
-        transform:translateX(-50%);
-    }
+@keyframes move{
+to{
+transform:translateX(-50%);
+}
 }
 
-/* =========================
-GENERAL SECTION
-========================= */
+/* ================= SECTION ================= */
 
-.section{
-    padding:130px 6%;
+section{
+position:relative;
 }
 
-.section-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:end;
-
-    margin-bottom:60px;
+.shop{
+padding:140px 6%;
 }
 
-.section-title{
-    font-size:clamp(55px,8vw,100px);
+.section-top{
+display:flex;
+justify-content:space-between;
+align-items:end;
 
-    letter-spacing:-7px;
-    line-height:.8;
+margin-bottom:60px;
 }
 
-.section-description{
-    color:#666;
+.kicker{
+font-size:8px;
+font-weight:800;
 
-    font-size:9px;
-    letter-spacing:2px;
+letter-spacing:4px;
+
+color:var(--lime);
+
+margin-bottom:20px;
 }
 
-/* =========================
-PRODUCTS
-========================= */
+.title{
+font-size:clamp(60px,9vw,120px);
+
+line-height:.78;
+
+letter-spacing:-8px;
+
+font-weight:900;
+}
+
+.counter{
+font-size:9px;
+
+letter-spacing:3px;
+
+color:#555;
+}
+
+/* ================= PRODUCTS ================= */
 
 .products{
-    display:grid;
+display:grid;
 
-    grid-template-columns:
-        repeat(2,1fr);
+grid-template-columns:
+repeat(3,1fr);
 
-    gap:45px 25px;
+gap:18px;
 }
 
 .product{
-    cursor:pointer;
+background:var(--panel);
+
+border:1px solid #202020;
+
+transition:.45s;
+
+cursor:pointer;
+}
+
+.product:hover{
+transform:translateY(-8px);
+
+border-color:#444;
 }
 
 .product-image{
-    position:relative;
+aspect-ratio:4/5;
 
-    aspect-ratio:4/5;
+position:relative;
 
-    overflow:hidden;
+overflow:hidden;
 
-    background:#151515;
+background:#181818;
+}
+
+.product-image:after{
+content:"";
+
+position:absolute;
+inset:0;
+
+background:
+linear-gradient(
+135deg,
+transparent 55%,
+rgba(183,255,42,.08)
+);
 }
 
 .product-image img{
-    width:100%;
-    height:100%;
+width:100%;
+height:100%;
 
-    object-fit:cover;
+object-fit:cover;
 
-    filter:grayscale(100%);
+filter:grayscale(100%);
 
-    transition:
-        transform .7s,
-        filter .5s;
+transition:.7s;
 }
 
 .product:hover img{
-    transform:scale(1.05);
-
-    filter:grayscale(0);
+filter:grayscale(0);
+transform:scale(1.06);
 }
 
-.product-number{
-    position:absolute;
+.tag{
+position:absolute;
 
-    top:15px;
-    left:15px;
+top:14px;
+left:14px;
 
-    z-index:2;
+z-index:3;
 
-    padding:8px 10px;
+padding:9px 11px;
 
-    background:white;
-    color:black;
+background:var(--lime);
+color:#050505;
 
-    font-size:8px;
-    font-weight:900;
-    letter-spacing:2px;
+font-size:7px;
+font-weight:900;
+
+letter-spacing:2px;
 }
 
 .product-info{
-    display:flex;
-    justify-content:space-between;
-
-    padding:18px 2px;
-
-    border-bottom:1px solid var(--line);
+padding:20px;
 }
 
 .product-name{
-    font-size:12px;
-    font-weight:800;
+font-size:12px;
+font-weight:800;
 }
 
-.product-meta{
-    margin-top:7px;
+.product-details{
+margin-top:8px;
 
-    color:#666;
+font-size:8px;
 
-    font-size:8px;
-    letter-spacing:1px;
+letter-spacing:1px;
+
+color:#666;
 }
 
-.price{
-    font-size:12px;
-    font-weight:800;
+.product-bottom{
+margin-top:20px;
+
+display:flex;
+justify-content:space-between;
+
+font-size:10px;
+font-weight:800;
 }
 
-/* =========================
-MANIFESTO
-========================= */
+/* ================= MANIFESTO ================= */
 
 .manifesto{
-    padding:150px 7%;
+padding:170px 7%;
 
-    background:#f4f4ef;
+background:var(--white);
+color:#050505;
+}
 
-    color:#080808;
+.manifesto .kicker{
+color:#555;
 }
 
 .manifesto h2{
-    font-size:clamp(55px,9vw,125px);
+font-size:clamp(60px,10vw,145px);
 
-    line-height:.82;
+line-height:.78;
 
-    letter-spacing:-8px;
+letter-spacing:-10px;
 }
 
 .manifesto p{
-    max-width:550px;
+max-width:600px;
 
-    margin-top:50px;
+margin-top:55px;
 
-    color:#555;
+color:#555;
 
-    font-size:14px;
-    line-height:1.9;
+font-size:14px;
+
+line-height:2;
 }
 
-/* =========================
-CUSTOM
-========================= */
-
-.custom{
-    padding:140px 6%;
-
-    background:#0c0c0c;
-}
-
-.custom-heading{
-    margin-bottom:75px;
-}
-
-.custom-heading h2{
-    font-size:clamp(55px,9vw,120px);
-
-    letter-spacing:-8px;
-
-    line-height:.8;
-}
-
-.custom-heading p{
-    max-width:500px;
-
-    margin-top:30px;
-
-    color:#777;
-
-    font-size:13px;
-
-    line-height:1.8;
-}
-
-.custom-grid{
-    display:grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap:70px;
-}
-
-/* =========================
-SHIRT PREVIEW
-========================= */
-
-.preview{
-    position:sticky;
-    top:100px;
-
-    height:max-content;
-}
-
-.shirt-area{
-    aspect-ratio:4/5;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    background:#171717;
-}
-
-.shirt{
-    position:relative;
-
-    width:65%;
-    height:75%;
-
-    background:#050505;
-
-    clip-path:polygon(
-        25% 0,
-        38% 8%,
-        50% 13%,
-        62% 8%,
-        75% 0,
-        100% 18%,
-        85% 35%,
-        72% 28%,
-        72% 100%,
-        28% 100%,
-        28% 28%,
-        15% 35%,
-        0 18%
-    );
-
-    transition:.3s;
-}
-
-.shirt.white{
-    background:#f0f0ec;
-}
-
-.design-text{
-    position:absolute;
-
-    top:43%;
-    left:50%;
-
-    transform:translate(-50%,-50%);
-
-    width:70%;
-
-    text-align:center;
-
-    color:white;
-
-    font-size:25px;
-    font-weight:900;
-
-    word-break:break-word;
-}
-
-.shirt.white .design-text{
-    color:#080808;
-}
-
-.uploaded-design{
-    position:absolute;
-
-    top:45%;
-    left:50%;
-
-    transform:translate(-50%,-50%);
-
-    max-width:45%;
-    max-height:35%;
-
-    object-fit:contain;
-
-    display:none;
-}
-
-.preview-caption{
-    margin-top:12px;
-
-    color:#555;
-
-    font-size:8px;
-    letter-spacing:2px;
-}
-
-/* =========================
-FORM
-========================= */
-
-.custom-form{
-    display:flex;
-    flex-direction:column;
-
-    gap:28px;
-}
-
-.form-group label.title{
-    display:block;
-
-    margin-bottom:10px;
-
-    color:#777;
-
-    font-size:9px;
-    font-weight:800;
-
-    letter-spacing:2px;
-}
-
-.options{
-    display:flex;
-    flex-wrap:wrap;
-
-    gap:8px;
-}
-
-.option{
-    padding:13px 17px;
-
-    border:1px solid #303030;
-
-    background:#111;
-    color:#999;
-
-    font-size:9px;
-    font-weight:800;
-
-    transition:.25s;
-}
-
-.option:hover{
-    border-color:#777;
-}
-
-.option.active{
-    background:white;
-    color:black;
-
-    border-color:white;
-}
-
-.text-input{
-    width:100%;
-
-    height:52px;
-
-    padding:0 15px;
-
-    outline:none;
-
-    border:1px solid #303030;
-
-    background:#111;
-    color:white;
-
-    font-size:12px;
-}
-
-.text-input:focus{
-    border-color:#aaa;
-}
-
-.upload{
-    display:block;
-
-    padding:22px;
-
-    border:1px dashed #333;
-
-    color:#777;
-
-    text-align:center;
-
-    font-size:9px;
-    letter-spacing:2px;
-
-    cursor:pointer;
-}
-
-.upload input{
-    display:none;
-}
-
-.total{
-    padding-top:25px;
-
-    border-top:1px solid var(--line);
-
-    display:flex;
-
-    justify-content:space-between;
-    align-items:center;
-}
-
-.total-label{
-    color:#777;
-
-    font-size:9px;
-    letter-spacing:2px;
-}
-
-.total-price{
-    font-size:25px;
-    font-weight:900;
-}
-
-/* =========================
-DROP
-========================= */
+/* ================= DROP ================= */
 
 .drop{
-    min-height:650px;
+padding:130px 6%;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+background:
+radial-gradient(
+circle at 70% 30%,
+#263415,
+#0a0a0a 40%,
+#050505
+);
+}
 
-    text-align:center;
+.drop-card{
+min-height:550px;
 
-    background:
-    linear-gradient(
-        rgba(0,0,0,.65),
-        rgba(0,0,0,.85)
-    ),
-    url("https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=2000&q=90");
+border:1px solid #2b2b2b;
 
-    background-size:cover;
-    background-position:center;
+display:flex;
+align-items:center;
+
+padding:7%;
+
+position:relative;
+overflow:hidden;
+}
+
+.drop-card:before{
+content:"4:20";
+
+position:absolute;
+
+right:-30px;
+bottom:-120px;
+
+font-size:280px;
+
+font-weight:900;
+
+color:rgba(183,255,42,.035);
+
+letter-spacing:-25px;
+}
+
+.drop-content{
+position:relative;
+z-index:2;
+}
+
+.drop-number{
+font-size:9px;
+letter-spacing:4px;
+
+color:var(--lime);
 }
 
 .drop h2{
-    font-size:clamp(65px,11vw,150px);
+font-size:clamp(70px,10vw,140px);
 
-    letter-spacing:-9px;
+letter-spacing:-9px;
 
-    line-height:.8;
+line-height:.75;
+
+margin:35px 0;
 }
 
 .drop p{
-    margin:30px 0;
+color:#777;
 
-    color:#aaa;
+font-size:11px;
 
-    font-size:9px;
+line-height:1.8;
 
-    letter-spacing:4px;
+max-width:400px;
+
+margin-bottom:30px;
 }
 
-/* =========================
-VALUES
-========================= */
+/* ================= CUSTOM ================= */
+
+.custom{
+padding:140px 6%;
+
+background:#090909;
+}
+
+.custom-header{
+margin-bottom:70px;
+}
+
+.custom-grid{
+display:grid;
+
+grid-template-columns:
+1fr 1fr;
+
+gap:70px;
+}
+
+/* shirt */
+
+.preview{
+position:sticky;
+top:100px;
+}
+
+.shirt-box{
+aspect-ratio:4/5;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+background:
+radial-gradient(
+circle,
+#202020,
+#0c0c0c
+);
+
+border:1px solid #222;
+}
+
+.shirt{
+width:62%;
+height:72%;
+
+background:#050505;
+
+clip-path:polygon(
+25% 0,
+39% 8%,
+50% 12%,
+61% 8%,
+75% 0,
+100% 17%,
+84% 36%,
+72% 28%,
+72% 100%,
+28% 100%,
+28% 28%,
+16% 36%,
+0 17%
+);
+
+position:relative;
+
+transition:.4s;
+}
+
+.shirt.white{
+background:#f1f1ec;
+}
+
+.shirt-text{
+position:absolute;
+
+top:44%;
+left:50%;
+
+transform:translate(-50%,-50%);
+
+font-size:24px;
+font-weight:900;
+
+color:white;
+
+white-space:nowrap;
+}
+
+.shirt.white .shirt-text{
+color:#050505;
+}
+
+/* form */
+
+.form{
+display:flex;
+flex-direction:column;
+
+gap:28px;
+}
+
+.label{
+font-size:8px;
+font-weight:800;
+
+letter-spacing:3px;
+
+color:#777;
+
+margin-bottom:10px;
+}
+
+.options{
+display:flex;
+flex-wrap:wrap;
+gap:7px;
+}
+
+.option{
+padding:14px 18px;
+
+background:#111;
+
+border:1px solid #292929;
+
+color:#777;
+
+font-size:8px;
+font-weight:800;
+
+letter-spacing:1px;
+}
+
+.option.active{
+background:var(--lime);
+border-color:var(--lime);
+
+color:#050505;
+}
+
+input{
+width:100%;
+height:52px;
+
+background:#111;
+
+border:1px solid #292929;
+
+color:white;
+
+padding:0 15px;
+
+outline:none;
+}
+
+input:focus{
+border-color:var(--lime);
+}
+
+.upload{
+padding:25px;
+
+border:1px dashed #333;
+
+text-align:center;
+
+font-size:8px;
+
+letter-spacing:2px;
+
+color:#777;
+
+cursor:pointer;
+}
+
+.upload input{
+display:none;
+}
+
+.total{
+padding-top:25px;
+
+border-top:1px solid #252525;
+
+display:flex;
+
+justify-content:space-between;
+align-items:center;
+}
+
+.total span:first-child{
+font-size:8px;
+
+letter-spacing:3px;
+
+color:#666;
+}
+
+.total strong{
+font-size:25px;
+}
+
+/* ================= VALUES ================= */
 
 .values{
-    display:grid;
+display:grid;
 
-    grid-template-columns:
-        repeat(3,1fr);
+grid-template-columns:
+repeat(3,1fr);
 
-    border-top:1px solid var(--line);
+border-top:1px solid var(--line);
 }
 
 .value{
-    padding:60px 35px;
+padding:65px 35px;
 
-    border-right:1px solid var(--line);
+border-right:1px solid var(--line);
 }
 
 .value:last-child{
-    border-right:0;
+border:0;
 }
 
 .value-number{
-    margin-bottom:35px;
+color:var(--lime);
 
-    color:#555;
+font-size:8px;
+font-weight:800;
 
-    font-size:9px;
+letter-spacing:3px;
 
-    letter-spacing:2px;
+margin-bottom:30px;
 }
 
 .value h3{
-    margin-bottom:15px;
+font-size:18px;
 
-    font-size:17px;
+margin-bottom:15px;
 }
 
 .value p{
-    color:#666;
+color:#666;
 
-    font-size:11px;
+font-size:11px;
 
-    line-height:1.8;
+line-height:1.8;
 }
 
-/* =========================
-FOOTER
-========================= */
+/* ================= FOOTER ================= */
 
 footer{
-    padding:90px 6% 30px;
+padding:100px 6% 30px;
 
-    border-top:1px solid var(--line);
+border-top:1px solid var(--line);
 }
 
-.footer-top{
-    display:flex;
+.footer-main{
+display:flex;
 
-    justify-content:space-between;
+justify-content:space-between;
 
-    margin-bottom:90px;
+margin-bottom:100px;
 }
 
 .footer-logo{
-    font-size:45px;
+font-size:65px;
 
-    font-weight:900;
+font-weight:900;
 
-    letter-spacing:-5px;
+letter-spacing:-6px;
+}
+
+.footer-logo span{
+color:var(--lime);
 }
 
 .footer-slogan{
-    margin-top:10px;
+margin-top:15px;
 
-    color:#666;
+font-size:8px;
 
-    font-size:8px;
+letter-spacing:4px;
 
-    letter-spacing:3px;
+color:#555;
 }
 
-.footer-links{
-    display:flex;
+.social{
+display:flex;
 
-    gap:30px;
+gap:30px;
 }
 
-.footer-links a{
-    color:#777;
+.social a{
+font-size:8px;
 
-    font-size:8px;
+font-weight:800;
 
-    letter-spacing:2px;
+letter-spacing:2px;
+
+color:#666;
+}
+
+.social a:hover{
+color:var(--lime);
 }
 
 .footer-bottom{
-    padding-top:25px;
+padding-top:25px;
 
-    border-top:1px solid var(--line);
+border-top:1px solid #222;
 
-    display:flex;
+display:flex;
+justify-content:space-between;
 
-    justify-content:space-between;
+font-size:8px;
 
-    color:#555;
+color:#444;
 
-    font-size:8px;
-
-    letter-spacing:1px;
+letter-spacing:2px;
 }
 
-/* =========================
-MOBILE
-========================= */
+/* ================= MOBILE ================= */
 
-@media(max-width:750px){
+@media(max-width:800px){
 
-    header{
-        height:64px;
-    }
+header{
+height:65px;
+}
 
-    .nav{
-        display:none;
-    }
+nav{
+display:none;
+}
 
-    .hero h1{
-        font-size:105px;
+.hero h1{
+font-size:105px;
+letter-spacing:-9px;
+}
 
-        letter-spacing:-9px;
-    }
+.hero{
+min-height:90vh;
+}
 
-    .tagline{
-        font-size:8px;
+.shop,
+.custom,
+.drop{
+padding:100px 5%;
+}
 
-        letter-spacing:4px;
-    }
+.section-top{
+display:block;
+}
 
-    .section{
-        padding:100px 5%;
-    }
+.counter{
+margin-top:25px;
+}
 
-    .section-header{
-        display:block;
-    }
+.products{
+grid-template-columns:1fr;
+}
 
-    .section-description{
-        margin-top:20px;
-    }
+.manifesto{
+padding:110px 5%;
+}
 
-    .products{
-        grid-template-columns:1fr;
-    }
+.manifesto h2{
+letter-spacing:-6px;
+}
 
-    .manifesto{
-        padding:110px 5%;
-    }
+.custom-grid{
+grid-template-columns:1fr;
+}
 
-    .manifesto h2{
-        letter-spacing:-5px;
-    }
+.preview{
+position:relative;
+top:0;
 
-    .custom{
-        padding:100px 5%;
-    }
+order:-1;
+}
 
-    .custom-grid{
-        grid-template-columns:1fr;
+.values{
+grid-template-columns:1fr;
+}
 
-        gap:60px;
-    }
+.value{
+border-right:0;
+border-bottom:1px solid var(--line);
+}
 
-    .preview{
-        position:relative;
-        top:0;
+.drop-card{
+min-height:500px;
+}
 
-        order:-1;
-    }
+.drop h2{
+letter-spacing:-6px;
+}
 
-    .values{
-        grid-template-columns:1fr;
-    }
+.footer-main{
+display:block;
+}
 
-    .value{
-        border-right:0;
+.social{
+margin-top:35px;
+flex-wrap:wrap;
+}
 
-        border-bottom:1px solid var(--line);
-    }
+.footer-bottom{
+display:block;
+line-height:2;
+}
 
-    .drop{
-        min-height:550px;
-    }
-
-    .drop h2{
-        letter-spacing:-5px;
-    }
-
-    .footer-top{
-        display:block;
-    }
-
-    .footer-links{
-        margin-top:35px;
-
-        flex-wrap:wrap;
-    }
-
-    .footer-bottom{
-        display:block;
-    }
-
-    .footer-bottom div{
-        margin-bottom:10px;
-    }
 }
 </style>
 </head>
 
-
 <body>
-
-
-<!-- =========================
-HEADER
-========================= -->
 
 <header>
 
-    <a href="#" class="logo">
-        4:20®
-    </a>
+<a href="#" class="logo">
+4:<span>20</span>®
+</a>
 
-    <nav class="nav">
+<nav>
+<a href="#shop">SHOP</a>
+<a href="#drop">DROPS</a>
+<a href="#custom">CUSTOM</a>
+<a href="#about">ABOUT</a>
+</nav>
 
-        <a href="#shop">
-            SHOP
-        </a>
-
-        <a href="#custom">
-            CUSTOM
-        </a>
-
-        <a href="#identity">
-            IDENTIDAD
-        </a>
-
-        <a href="#drops">
-            DROPS
-        </a>
-
-    </nav>
-
-    <button
-    class="cart-btn"
-    onclick="goShop()">
-
-        BAG (<span id="cartCount">0</span>)
-
-    </button>
+<button class="bag">
+BAG (<span id="bagCount">0</span>)
+</button>
 
 </header>
 
 
-<!-- =========================
-HERO
-========================= -->
-
 <section class="hero">
 
-    <div class="hero-content">
+<div class="hero-grid"></div>
 
-        <div class="eyebrow">
-            EST. 2026 · MEXICO
-        </div>
+<div class="hero-content">
 
-        <h1>
-            4:20
-        </h1>
+<div class="small">
+EST. 2026 · MEXICO
+</div>
 
-        <div class="tagline">
-            LA HORA ADECUADA
-        </div>
+<h1>
+4:<span>20</span>
+</h1>
 
-        <p>
-            Streetwear creado alrededor de una hora,
-            una identidad y una forma de vestir.
-        </p>
+<div class="slogan">
+LA HORA ADECUADA.
+</div>
 
-        <a
-        href="#shop"
-        class="btn">
+<p class="hero-description">
+Una marca. Una hora. Una identidad.
+Streetwear creado para quienes saben.
+</p>
 
-            VER DROP 01 →
+<a href="#shop" class="primary">
+EXPLORE DROP 01 →
+</a>
 
-        </a>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- =========================
-MARQUEE
-========================= -->
-
 <div class="marquee">
 
-<span>
-4:20® — LA HORA ADECUADA —
-DROP 01 — MADE TO ORDER —
-4:20® — LA HORA ADECUADA —
-DROP 01 — MADE TO ORDER —
-4:20® — LA HORA ADECUADA —
-DROP 01 — MADE TO ORDER —
-</span>
+<div>
+4:20® · LA HORA ADECUADA · MADE TO ORDER ·
+DROP 01 · 4:20® · LA HORA ADECUADA ·
+MADE TO ORDER · DROP 01 ·
+4:20® · LA HORA ADECUADA ·
+</div>
 
 </div>
 
 
-<!-- =========================
-SHOP
-========================= -->
+<section class="shop" id="shop">
 
-<section
-class="section"
-id="shop">
-
-<div class="section-header">
+<div class="section-top">
 
 <div>
 
-<div class="eyebrow">
-COLLECTION 001
+<div class="kicker">
+COLLECTION / 001
 </div>
 
-<h2 class="section-title">
+<h2 class="title">
 DROP 01
 </h2>
 
 </div>
 
-<div class="section-description">
-03 PIEZAS · MADE TO ORDER
+<div class="counter">
+03 PIEZAS · LIMITED
 </div>
 
 </div>
@@ -1075,19 +1034,15 @@ DROP 01
 <div class="products">
 
 
-<!-- PRODUCTO 001 -->
-
 <article
 class="product"
-onclick="addProduct('4:20 TEE 001',200)">
+onclick="order('4:20 TEE 001',200)">
 
 <div class="product-image">
 
-<div class="product-number">
+<div class="tag">
 001
 </div>
-
-<!-- CAMBIA ESTA IMAGEN POR TU DISEÑO -->
 
 <img
 src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=90"
@@ -1097,20 +1052,24 @@ alt="4:20 Tee 001">
 
 <div class="product-info">
 
-<div>
-
 <div class="product-name">
 4:20 TEE 001
 </div>
 
-<div class="product-meta">
-NEGRO · OVERSIZED · CH / M / G / XL
+<div class="product-details">
+BLACK · OVERSIZED · MADE TO ORDER
 </div>
 
-</div>
+<div class="product-bottom">
 
-<div class="price">
-$200
+<span>
+CH / M / G / XL
+</span>
+
+<span>
+$200 MXN
+</span>
+
 </div>
 
 </div>
@@ -1118,19 +1077,15 @@ $200
 </article>
 
 
-<!-- PRODUCTO 002 -->
-
 <article
 class="product"
-onclick="addProduct('4:20 TEE 002',200)">
+onclick="order('4:20 TEE 002',200)">
 
 <div class="product-image">
 
-<div class="product-number">
+<div class="tag">
 002
 </div>
-
-<!-- CAMBIA ESTA IMAGEN POR TU DISEÑO -->
 
 <img
 src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=1200&q=90"
@@ -1140,20 +1095,24 @@ alt="4:20 Tee 002">
 
 <div class="product-info">
 
-<div>
-
 <div class="product-name">
 4:20 TEE 002
 </div>
 
-<div class="product-meta">
-BLANCO · REGULAR · CH / M / G / XL
+<div class="product-details">
+WHITE · REGULAR · MADE TO ORDER
 </div>
 
-</div>
+<div class="product-bottom">
 
-<div class="price">
-$200
+<span>
+CH / M / G / XL
+</span>
+
+<span>
+$200 MXN
+</span>
+
 </div>
 
 </div>
@@ -1161,19 +1120,15 @@ $200
 </article>
 
 
-<!-- PRODUCTO 003 -->
-
 <article
 class="product"
-onclick="addProduct('4:20 TEE 003',250)">
+onclick="order('4:20 TEE 003',250)">
 
 <div class="product-image">
 
-<div class="product-number">
+<div class="tag">
 003
 </div>
-
-<!-- CAMBIA ESTA IMAGEN POR TU DISEÑO -->
 
 <img
 src="https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=1200&q=90"
@@ -1183,42 +1138,39 @@ alt="4:20 Tee 003">
 
 <div class="product-info">
 
-<div>
-
 <div class="product-name">
 4:20 TEE 003
 </div>
 
-<div class="product-meta">
-NEGRO · LIMITED · CH / M / G / XL
+<div class="product-details">
+BLACK · LIMITED · MADE TO ORDER
 </div>
 
-</div>
+<div class="product-bottom">
 
-<div class="price">
-$250
+<span>
+CH / M / G / XL
+</span>
+
+<span>
+$250 MXN
+</span>
+
 </div>
 
 </div>
 
 </article>
 
-
 </div>
 
 </section>
 
 
-<!-- =========================
-IDENTITY
-========================= -->
+<section class="manifesto" id="about">
 
-<section
-class="manifesto"
-id="identity">
-
-<div class="eyebrow">
-4:20 / IDENTITY
+<div class="kicker">
+THE IDEA
 </div>
 
 <h2>
@@ -1227,44 +1179,58 @@ ADECUADA.
 </h2>
 
 <p>
-
-No necesitamos explicar demasiado.
-
-4:20 es el número.
-La identidad está en quien lo lleva.
-
-Diseños urbanos, drops pequeños
-y piezas hechas bajo pedido.
-
+4:20 no necesita explicación.
+Es un número, una señal y una identidad.
+Cada colección nace como un pequeño drop
+y desaparece para convertirse en archivo.
 </p>
 
 </section>
 
 
-<!-- =========================
-CUSTOM
-========================= -->
+<section class="drop" id="drop">
 
-<section
-class="custom"
-id="custom">
+<div class="drop-card">
 
-<div class="custom-heading">
+<div class="drop-content">
 
-<div class="eyebrow">
-4:20 / CUSTOM
+<div class="drop-number">
+NEXT RELEASE / 002
 </div>
 
 <h2>
-HAZLA<br>
-TUYA.
+COMING<br>
+SOON.
 </h2>
 
 <p>
-Crea una pieza personalizada.
-Elige color, corte, talla, ubicación
-y agrega tu propio diseño.
+El próximo drop está en proceso.
+No mostramos todo antes de tiempo.
 </p>
+
+<a href="#custom" class="primary">
+CREATE YOUR PIECE →
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="custom" id="custom">
+
+<div class="custom-header">
+
+<div class="kicker">
+4:20 / CUSTOM
+</div>
+
+<h2 class="title">
+HAZLA<br>
+TUYA.
+</h2>
 
 </div>
 
@@ -1272,63 +1238,45 @@ y agrega tu propio diseño.
 <div class="custom-grid">
 
 
-<!-- PREVIEW -->
-
 <div class="preview">
 
-<div class="shirt-area">
+<div class="shirt-box">
+
+<div class="shirt" id="shirt">
 
 <div
-class="shirt"
-id="shirt">
-
-<div
-class="design-text"
-id="designText">
-
+class="shirt-text"
+id="shirtText">
 4:20
-
 </div>
 
-<img
-class="uploaded-design"
-id="uploadedDesign">
+</div>
 
 </div>
 
 </div>
 
-<div class="preview-caption">
-VISTA PREVIA · REFERENCIA
-</div>
 
-</div>
+<div class="form">
 
 
-<!-- FORM -->
+<div>
 
-<div class="custom-form">
-
-
-<!-- COLOR -->
-
-<div class="form-group">
-
-<label class="title">
+<div class="label">
 COLOR
-</label>
+</div>
 
 <div class="options">
 
 <button
 class="option active"
-onclick="chooseColor('black',this)">
+onclick="colorShirt('black',this)">
 NEGRO
 </button>
 
 <button
 class="option"
-onclick="chooseColor('white',this)">
+onclick="colorShirt('white',this)">
 BLANCO
 </button>
 
@@ -1337,36 +1285,11 @@ BLANCO
 </div>
 
 
-<!-- CORTE -->
+<div>
 
-<div class="form-group">
-
-<label class="title">
-CORTE
-</label>
-
-<div class="options">
-
-<button class="option active">
-OVERSIZED
-</button>
-
-<button class="option">
-REGULAR
-</button>
-
-</div>
-
-</div>
-
-
-<!-- TALLA -->
-
-<div class="form-group">
-
-<label class="title">
+<div class="label">
 TALLA
-</label>
+</div>
 
 <div class="options">
 
@@ -1391,165 +1314,85 @@ XL
 </div>
 
 
-<!-- TEXTO -->
+<div>
 
-<div class="form-group">
-
-<label class="title">
-TEXTO PERSONALIZADO
-</label>
+<div class="label">
+TU TEXTO
+</div>
 
 <input
-class="text-input"
 id="customText"
-maxlength="25"
-placeholder="Escribe algo..."
-oninput="updateText()">
+maxlength="20"
+placeholder="ESCRIBE TU TEXTO"
+oninput="updateShirt()">
 
 </div>
 
 
-<!-- UBICACION -->
+<div>
 
-<div class="form-group">
-
-<label class="title">
-UBICACIÓN
-</label>
-
-<div class="options">
-
-<button
-class="option active"
-onclick="choosePosition('front',this)">
-PECHO
-</button>
-
-<button
-class="option"
-onclick="choosePosition('back',this)">
-ESPALDA
-</button>
-
-<button
-class="option"
-onclick="choosePosition('sleeve',this)">
-MANGA
-</button>
-
+<div class="label">
+DISEÑO
 </div>
-
-</div>
-
-
-<!-- IMAGEN -->
-
-<div class="form-group">
-
-<label class="title">
-TU DISEÑO
-</label>
 
 <label class="upload">
 
-SUBIR IMAGEN
+SUBIR TU DISEÑO
 
 <input
 type="file"
 accept="image/*"
-onchange="uploadImage(event)">
+onchange="uploadDesign(event)">
 
 </label>
 
 </div>
 
 
-<!-- TOTAL -->
-
 <div class="total">
 
-<div class="total-label">
+<span>
 DESDE
-</div>
+</span>
 
-<div class="total-price">
+<strong>
 $250 MXN
-</div>
+</strong>
 
 </div>
 
 
 <button
-class="btn"
-onclick="orderCustom()">
+class="primary"
+onclick="customOrder()">
 
 PEDIR POR WHATSAPP →
 
 </button>
 
-</div>
 
 </div>
-
-</section>
-
-
-<!-- =========================
-NEXT DROP
-========================= -->
-
-<section
-class="drop"
-id="drops">
-
-<div>
-
-<div class="eyebrow">
-NEXT RELEASE
-</div>
-
-<h2>
-DROP 02
-</h2>
-
-<p>
-COMING SOON · 4:20®
-</p>
-
-<a
-href="#shop"
-class="btn">
-
-VER DROP 01
-
-</a>
 
 </div>
 
 </section>
 
-
-<!-- =========================
-VALUES
-========================= -->
 
 <section class="values">
 
-
 <div class="value">
 
 <div class="value-number">
-01 / DESIGN
+01 / DROPS
 </div>
 
 <h3>
-MENOS. MEJOR.
+PEQUEÑAS COLECCIONES.
 </h3>
 
 <p>
-Diseños limpios,
-identidad fuerte
-y detalles intencionales.
+Cada drop tiene una identidad
+y una cantidad limitada.
 </p>
 
 </div>
@@ -1558,16 +1401,16 @@ y detalles intencionales.
 <div class="value">
 
 <div class="value-number">
-02 / DROPS
+02 / DESIGN
 </div>
 
 <h3>
-NO PARA SIEMPRE.
+MENOS, PERO MEJOR.
 </h3>
 
 <p>
-Cada drop tiene su momento.
-Después pasa al archivo.
+Diseños pensados para permanecer
+más allá de una temporada.
 </p>
 
 </div>
@@ -1580,32 +1423,27 @@ Después pasa al archivo.
 </div>
 
 <h3>
-HECHA PARA TI.
+TU PIEZA.
 </h3>
 
 <p>
-Personaliza tu pieza.
-Nosotros la producimos bajo pedido.
+Personaliza y pide tu propia
+versión de 4:20.
 </p>
 
 </div>
 
-
 </section>
 
 
-<!-- =========================
-FOOTER
-========================= -->
-
 <footer>
 
-<div class="footer-top">
+<div class="footer-main">
 
 <div>
 
 <div class="footer-logo">
-4:20®
+4:<span>20</span>®
 </div>
 
 <div class="footer-slogan">
@@ -1615,7 +1453,7 @@ LA HORA ADECUADA.
 </div>
 
 
-<div class="footer-links">
+<div class="social">
 
 <a href="#">
 INSTAGRAM
@@ -1636,17 +1474,17 @@ WHATSAPP
 
 <div class="footer-bottom">
 
-<div>
+<span>
 © 2026 4:20®
-</div>
+</span>
 
-<div>
+<span>
 MEXICO
-</div>
+</span>
 
-<div>
-LA HORA ADECUADA.
-</div>
+<span>
+MADE TO ORDER
+</span>
 
 </div>
 
@@ -1655,35 +1493,25 @@ LA HORA ADECUADA.
 
 <script>
 
-/* =========================
-CONFIGURACIÓN
-========================= */
+let count=0;
 
-const WHATSAPP =
-"TU_NUMERO_WHATSAPP";
+let selectedColor="NEGRO";
 
 
-let cartCount = 0;
+/* PRODUCTOS */
 
-let color = "Negro";
+function order(name,price){
 
-let position = "Pecho";
+count++;
 
+document.getElementById(
+"bagCount"
+).textContent=count;
 
-/* =========================
-CARRITO
-========================= */
+const phone="TU_NUMERO_WHATSAPP";
 
-function addProduct(name,price){
-
-    cartCount++;
-
-    document.getElementById(
-        "cartCount"
-    ).textContent = cartCount;
-
-    const message =
-`Hola 4:20® 👋
+const message=
+`Hola 4:20®.
 
 Quiero pedir:
 
@@ -1691,236 +1519,153 @@ ${name}
 
 Precio: $${price} MXN
 
-Quiero confirmar disponibilidad y talla.`;
+Quiero confirmar talla y disponibilidad.`;
 
-    if(
-        WHATSAPP !==
-        "TU_NUMERO_WHATSAPP"
-    ){
+if(phone==="TU_NUMERO_WHATSAPP"){
 
-        window.open(
-            "https://wa.me/" +
-            WHATSAPP +
-            "?text=" +
-            encodeURIComponent(message),
-            "_blank"
-        );
+alert(
+"Configura primero tu número de WhatsApp en el código."
+);
 
-    }else{
+return;
 
-        alert(
-            "Primero configura tu número de WhatsApp en el código."
-        );
+}
 
-    }
+window.open(
+"https://wa.me/"+phone+
+"?text="+encodeURIComponent(message),
+"_blank"
+);
 
 }
 
 
-/* =========================
-IR A SHOP
-========================= */
+/* COLOR */
 
-function goShop(){
+function colorShirt(color,button){
 
-    document
-    .getElementById("shop")
-    .scrollIntoView({
-        behavior:"smooth"
-    });
+selectedColor=
+color==="white"
+?"BLANCO"
+:"NEGRO";
+
+document
+.querySelectorAll(
+".custom .option"
+)
+.forEach(
+b=>b.classList.remove("active")
+);
+
+button.classList.add("active");
+
+const shirt=
+document.getElementById("shirt");
+
+if(color==="white"){
+
+shirt.classList.add("white");
+
+}else{
+
+shirt.classList.remove("white");
+
+}
 
 }
 
 
-/* =========================
-COLOR
-========================= */
+/* TEXTO */
 
-function chooseColor(
-    selected,
-    button
-){
+function updateShirt(){
 
-    color =
-    selected === "black"
-    ? "Negro"
-    : "Blanco";
+const text=
+document.getElementById(
+"customText"
+).value;
 
-    document
-    .querySelectorAll(
-        ".custom-form .form-group:first-child .option"
-    )
-    .forEach(
-        b => b.classList.remove("active")
-    );
-
-    button.classList.add("active");
-
-    const shirt =
-    document.getElementById("shirt");
-
-    if(selected === "white"){
-
-        shirt.classList.add("white");
-
-    }else{
-
-        shirt.classList.remove("white");
-
-    }
+document.getElementById(
+"shirtText"
+).textContent=
+text || "4:20";
 
 }
 
 
-/* =========================
-TEXTO
-========================= */
+/* SUBIR DISEÑO */
 
-function updateText(){
+function uploadDesign(event){
 
-    const value =
-    document.getElementById(
-        "customText"
-    ).value;
+const file=
+event.target.files[0];
 
-    document.getElementById(
-        "designText"
-    ).textContent =
-    value || "4:20";
+if(!file)return;
 
-}
+const reader=
+new FileReader();
 
+reader.onload=function(e){
 
-/* =========================
-POSICIÓN
-========================= */
+const shirt=
+document.getElementById("shirt");
 
-function choosePosition(
-    selected,
-    button
-){
+shirt.style.backgroundImage=
+`url(${e.target.result})`;
 
-    position =
-    selected === "front"
-    ? "Pecho"
-    : selected === "back"
-    ? "Espalda"
-    : "Manga";
+shirt.style.backgroundSize=
+"contain";
 
-    document
-    .querySelectorAll(
-        ".custom-form .form-group:nth-child(5) .option"
-    )
-    .forEach(
-        b => b.classList.remove("active")
-    );
+shirt.style.backgroundRepeat=
+"no-repeat";
 
-    button.classList.add("active");
+shirt.style.backgroundPosition=
+"center";
 
-    const design =
-    document.getElementById(
-        "designText"
-    );
+};
 
-    if(selected === "sleeve"){
-
-        design.style.left = "25%";
-        design.style.top = "30%";
-        design.style.fontSize = "12px";
-
-    }else{
-
-        design.style.left = "50%";
-        design.style.top = "43%";
-        design.style.fontSize = "25px";
-
-    }
+reader.readAsDataURL(file);
 
 }
 
 
-/* =========================
-SUBIR IMAGEN
-========================= */
+/* CUSTOM */
 
-function uploadImage(event){
+function customOrder(){
 
-    const file =
-    event.target.files[0];
+const text=
+document.getElementById(
+"customText"
+).value || "4:20";
 
-    if(!file) return;
+const phone=
+"TU_NUMERO_WHATSAPP";
 
-    const reader =
-    new FileReader();
+const message=
+`Hola 4:20®.
 
-    reader.onload =
-    function(e){
+Quiero una pieza CUSTOM.
 
-        const image =
-        document.getElementById(
-            "uploadedDesign"
-        );
-
-        image.src =
-        e.target.result;
-
-        image.style.display =
-        "block";
-
-    };
-
-    reader.readAsDataURL(file);
-
-}
-
-
-/* =========================
-CUSTOM WHATSAPP
-========================= */
-
-function orderCustom(){
-
-    const customText =
-    document.getElementById(
-        "customText"
-    ).value ||
-    "Sin texto";
-
-    const message =
-`Hola 4:20® 👋
-
-Quiero una CUSTOM.
-
-Color: ${color}
-Corte: Oversized
+Color: ${selectedColor}
 Talla: M
-Ubicación: ${position}
-Texto: ${customText}
+Texto: ${text}
 
-Precio desde: $250 MXN
+Precio desde: $250 MXN`;
 
-La hora adecuada.`;
+if(phone==="TU_NUMERO_WHATSAPP"){
 
-    if(
-        WHATSAPP ===
-        "TU_NUMERO_WHATSAPP"
-    ){
+alert(
+"Configura primero tu número de WhatsApp en el código."
+);
 
-        alert(
-            "Primero configura tu número de WhatsApp en el código."
-        );
+return;
 
-        return;
+}
 
-    }
-
-    window.open(
-        "https://wa.me/" +
-        WHATSAPP +
-        "?text=" +
-        encodeURIComponent(message),
-        "_blank"
-    );
+window.open(
+"https://wa.me/"+phone+
+"?text="+encodeURIComponent(message),
+"_blank"
+);
 
 }
 
