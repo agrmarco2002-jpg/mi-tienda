@@ -2,21 +2,29 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>4:20® — LA HORA ADECUADA</title>
-<meta name="description" content="4:20® — La hora adecuada. Streetwear nacido en México.">
+
+<meta name="description"
+content="4:20® — La hora adecuada. Streetwear mexicano.">
 
 <style>
+
+/* =========================
+   BASE
+========================= */
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 :root{
   --black:#050505;
   --dark:#0b0b0b;
+  --card:#101010;
   --white:#f2f2ed;
   --gray:#777;
-  --line:#242424;
-  --acid:#c7ff36;
+  --line:#252525;
+  --acid:#c8ff35;
 }
 
 *{
@@ -45,9 +53,11 @@ a{
   text-decoration:none;
 }
 
-button{
+button,
+input{
   font-family:inherit;
 }
+
 
 /* =========================
    LOADER
@@ -64,7 +74,7 @@ button{
 
   background:#050505;
 
-  transition:opacity .7s,visibility .7s;
+  transition:.7s;
 }
 
 .loader.hide{
@@ -106,31 +116,6 @@ button{
 
 
 /* =========================
-   CURSOR
-========================= */
-
-.cursor{
-  position:fixed;
-  width:14px;
-  height:14px;
-
-  border:1px solid var(--acid);
-  border-radius:50%;
-
-  pointer-events:none;
-  z-index:9998;
-
-  transform:translate(-50%,-50%);
-}
-
-@media(max-width:800px){
-  .cursor{
-    display:none;
-  }
-}
-
-
-/* =========================
    HEADER
 ========================= */
 
@@ -150,7 +135,7 @@ header{
 
   padding:0 5%;
 
-  background:rgba(5,5,5,.7);
+  background:rgba(5,5,5,.72);
   backdrop-filter:blur(20px);
 
   border-bottom:1px solid rgba(255,255,255,.07);
@@ -188,26 +173,27 @@ nav a:hover{
 .header-right{
   display:flex;
   align-items:center;
-  gap:20px;
+  gap:22px;
 }
 
 .header-link{
+  color:white;
+
   font-size:9px;
   font-weight:800;
   letter-spacing:2px;
+}
 
-  border:0;
-  background:none;
-  color:white;
-
-  cursor:pointer;
+.header-link:hover{
+  color:var(--acid);
 }
 
 .menu{
   display:none;
 
-  border:0;
   background:none;
+  border:0;
+
   color:white;
 
   font-size:9px;
@@ -226,13 +212,14 @@ nav a:hover{
 
   z-index:900;
 
-  background:#050505;
-
   display:flex;
   flex-direction:column;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
+
   gap:25px;
+
+  background:#050505;
 
   opacity:0;
   visibility:hidden;
@@ -246,7 +233,7 @@ nav a:hover{
 }
 
 .mobile-menu a{
-  font-size:48px;
+  font-size:45px;
   font-weight:900;
   letter-spacing:-4px;
 }
@@ -262,18 +249,18 @@ nav a:hover{
   position:relative;
 
   display:flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
 
   overflow:hidden;
 
   background:
-  radial-gradient(
-    circle at center,
-    #273316 0%,
-    #10140d 20%,
-    #050505 58%
-  );
+    radial-gradient(
+      circle at center,
+      #273417 0%,
+      #10140d 22%,
+      #050505 60%
+    );
 }
 
 .grid{
@@ -281,16 +268,24 @@ nav a:hover{
   inset:0;
 
   background-image:
-  linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
-  linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+    linear-gradient(
+      rgba(255,255,255,.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.035) 1px,
+      transparent 1px
+    );
 
   background-size:65px 65px;
 
-  mask-image:linear-gradient(
-    to bottom,
-    black,
-    transparent
-  );
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black,
+      transparent
+    );
 }
 
 .circle{
@@ -299,7 +294,7 @@ nav a:hover{
   width:650px;
   height:650px;
 
-  border:1px solid rgba(199,255,54,.12);
+  border:1px solid rgba(200,255,53,.12);
 
   border-radius:50%;
 
@@ -312,7 +307,7 @@ nav a:hover{
   position:absolute;
   inset:70px;
 
-  border:1px dashed rgba(199,255,54,.08);
+  border:1px dashed rgba(200,255,53,.08);
 
   border-radius:50%;
 }
@@ -335,6 +330,7 @@ nav a:hover{
 
   font-size:8px;
   font-weight:800;
+
   letter-spacing:5px;
 }
 
@@ -357,11 +353,12 @@ nav a:hover{
 .slogan{
   font-size:10px;
   font-weight:900;
+
   letter-spacing:7px;
 }
 
 .hero-description{
-  max-width:420px;
+  max-width:430px;
 
   margin:25px auto 35px;
 
@@ -372,22 +369,29 @@ nav a:hover{
   line-height:1.9;
 }
 
+
+/* =========================
+   BUTTON
+========================= */
+
 .button{
   display:inline-flex;
+
   align-items:center;
   justify-content:center;
 
   min-height:52px;
 
-  padding:0 27px;
+  padding:0 28px;
+
+  border:0;
 
   background:var(--acid);
   color:#050505;
 
-  border:0;
-
   font-size:9px;
   font-weight:900;
+
   letter-spacing:2px;
 
   cursor:pointer;
@@ -399,7 +403,7 @@ nav a:hover{
   transform:translateY(-5px);
 
   box-shadow:
-  0 20px 50px rgba(199,255,54,.16);
+    0 20px 50px rgba(200,255,53,.16);
 }
 
 
@@ -418,6 +422,7 @@ nav a:hover{
 
   font-size:8px;
   font-weight:800;
+
   letter-spacing:4px;
 }
 
@@ -427,6 +432,7 @@ nav a:hover{
   font-size:clamp(80px,16vw,190px);
 
   font-weight:900;
+
   line-height:.8;
 
   letter-spacing:-12px;
@@ -442,7 +448,10 @@ nav a:hover{
   color:#555;
 
   font-size:9px;
+
   letter-spacing:3px;
+
+  transition:.3s;
 }
 
 .clock-message.active{
@@ -457,10 +466,10 @@ nav a:hover{
 .marquee{
   overflow:hidden;
 
+  padding:18px 0;
+
   border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
-
-  padding:18px 0;
 
   white-space:nowrap;
 }
@@ -472,6 +481,7 @@ nav a:hover{
 
   font-size:9px;
   font-weight:800;
+
   letter-spacing:4px;
 
   animation:marquee 25s linear infinite;
@@ -494,6 +504,7 @@ nav a:hover{
 
 .section-head{
   display:flex;
+
   align-items:end;
   justify-content:space-between;
 
@@ -505,6 +516,7 @@ nav a:hover{
 
   font-size:8px;
   font-weight:800;
+
   letter-spacing:4px;
 
   margin-bottom:20px;
@@ -524,6 +536,7 @@ nav a:hover{
   color:#555;
 
   font-size:9px;
+
   letter-spacing:2px;
 }
 
@@ -568,15 +581,18 @@ nav a:hover{
   background:#111;
 }
 
-.product:nth-child(1) .product-image{
+.product:nth-child(1)
+.product-image{
   border-radius:45px 3px 45px 3px;
 }
 
-.product:nth-child(2) .product-image{
+.product:nth-child(2)
+.product-image{
   border-radius:3px 45px 3px 45px;
 }
 
-.product:nth-child(3) .product-image{
+.product:nth-child(3)
+.product-image{
   border-radius:50% 3px 50% 3px;
 }
 
@@ -614,14 +630,15 @@ nav a:hover{
 
   font-size:7px;
   font-weight:900;
+
   letter-spacing:2px;
 }
 
 .favorite{
   position:absolute;
 
-  right:15px;
   top:15px;
+  right:15px;
 
   z-index:3;
 
@@ -633,6 +650,7 @@ nav a:hover{
   border-radius:50%;
 
   background:rgba(0,0,0,.5);
+
   color:white;
 
   cursor:pointer;
@@ -640,6 +658,7 @@ nav a:hover{
 
 .favorite.active{
   background:var(--acid);
+
   color:#050505;
 }
 
@@ -654,6 +673,7 @@ nav a:hover{
 
 .product-meta{
   display:flex;
+
   justify-content:space-between;
 
   margin-top:8px;
@@ -661,6 +681,7 @@ nav a:hover{
   color:#666;
 
   font-size:8px;
+
   letter-spacing:1px;
 }
 
@@ -670,7 +691,7 @@ nav a:hover{
 ========================= */
 
 .manifesto{
-  margin:30px 0;
+  margin:30px 6%;
 
   padding:140px 7%;
 
@@ -688,6 +709,7 @@ nav a:hover{
   color:#555;
 
   font-size:13px;
+
   line-height:2;
 }
 
@@ -715,11 +737,11 @@ nav a:hover{
   border-radius:110px 0 110px 0;
 
   background:
-  radial-gradient(
-    circle at 70% 50%,
-    #283716,
-    #090909 50%
-  );
+    radial-gradient(
+      circle at 70% 50%,
+      #283716,
+      #090909 50%
+    );
 
   border:1px solid #242424;
 }
@@ -732,7 +754,7 @@ nav a:hover{
   right:-30px;
   bottom:-100px;
 
-  color:rgba(199,255,54,.035);
+  color:rgba(200,255,53,.035);
 
   font-size:310px;
   font-weight:900;
@@ -750,6 +772,7 @@ nav a:hover{
 
   font-size:8px;
   font-weight:800;
+
   letter-spacing:4px;
 }
 
@@ -768,17 +791,18 @@ nav a:hover{
 .drop p{
   max-width:430px;
 
+  margin-bottom:30px;
+
   color:#777;
 
   font-size:11px;
-  line-height:1.9;
 
-  margin-bottom:30px;
+  line-height:1.9;
 }
 
 
 /* =========================
-   CUSTOM
+   CUSTOMIZER
 ========================= */
 
 .custom{
@@ -799,22 +823,24 @@ nav a:hover{
 
 .preview{
   position:sticky;
+
   top:110px;
 }
 
 .shirt-stage{
   min-height:650px;
 
+  position:relative;
+
   display:flex;
+
   align-items:center;
   justify-content:center;
-
-  position:relative;
 
   overflow:hidden;
 
   background:
-  radial-gradient(circle,#272727,#0a0a0a);
+    radial-gradient(circle,#272727,#0a0a0a);
 
   border-radius:50%;
 }
@@ -873,7 +899,9 @@ nav a:hover{
 
 .custom-form{
   display:flex;
+
   flex-direction:column;
+
   gap:30px;
 }
 
@@ -882,6 +910,7 @@ nav a:hover{
 
   font-size:8px;
   font-weight:800;
+
   letter-spacing:3px;
 
   margin-bottom:10px;
@@ -889,7 +918,9 @@ nav a:hover{
 
 .options{
   display:flex;
+
   flex-wrap:wrap;
+
   gap:7px;
 }
 
@@ -906,6 +937,12 @@ nav a:hover{
   font-weight:800;
 
   cursor:pointer;
+
+  transition:.25s;
+}
+
+.option:hover{
+  border-color:var(--acid);
 }
 
 .option.active{
@@ -923,6 +960,7 @@ nav a:hover{
   padding:0 16px;
 
   background:#111;
+
   color:white;
 
   border:1px solid #292929;
@@ -947,9 +985,18 @@ nav a:hover{
 
   font-size:8px;
   font-weight:800;
+
   letter-spacing:2px;
 
   cursor:pointer;
+
+  transition:.3s;
+}
+
+.upload:hover{
+  border-color:var(--acid);
+
+  color:var(--acid);
 }
 
 .upload input{
@@ -959,8 +1006,8 @@ nav a:hover{
 .custom-price{
   display:flex;
 
-  justify-content:space-between;
   align-items:center;
+  justify-content:space-between;
 
   padding-top:25px;
 
@@ -971,6 +1018,7 @@ nav a:hover{
   color:#666;
 
   font-size:8px;
+
   letter-spacing:3px;
 }
 
@@ -1011,15 +1059,16 @@ nav a:hover{
 
   font-size:8px;
   font-weight:800;
+
   letter-spacing:3px;
 
   margin-bottom:30px;
 }
 
 .value h3{
-  font-size:18px;
-
   margin-bottom:15px;
+
+  font-size:18px;
 }
 
 .value p{
@@ -1032,7 +1081,7 @@ nav a:hover{
 
 
 /* =========================
-   INSTAGRAM
+   SOCIAL
 ========================= */
 
 .instagram{
@@ -1042,13 +1091,13 @@ nav a:hover{
 }
 
 .instagram-title{
-  font-size:clamp(60px,10vw,140px);
+  font-size:clamp(65px,11vw,150px);
 
   line-height:.75;
 
-  letter-spacing:-9px;
-
   font-weight:900;
+
+  letter-spacing:-10px;
 }
 
 .instagram-title span{
@@ -1065,40 +1114,123 @@ nav a:hover{
   letter-spacing:4px;
 }
 
-.instagram-grid{
-  margin-top:70px;
+.social-big{
+  max-width:900px;
+
+  margin:70px auto 0;
 
   display:grid;
 
-  grid-template-columns:repeat(4,1fr);
+  grid-template-columns:1fr 1fr;
 
-  gap:10px;
+  gap:15px;
 }
 
-.insta-box{
-  aspect-ratio:1;
+.social-card{
+  min-height:150px;
+
+  position:relative;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:22px;
+
+  padding:30px;
 
   overflow:hidden;
 
+  background:#0d0d0d;
+
+  border:1px solid #242424;
+
+  border-radius:28px;
+
+  text-align:left;
+
+  transition:.4s;
+}
+
+.social-card:before{
+  content:"";
+
+  position:absolute;
+
+  width:150px;
+  height:150px;
+
+  right:-60px;
+  top:-60px;
+
+  border-radius:50%;
+
+  background:rgba(200,255,53,.05);
+
+  transition:.5s;
+}
+
+.social-card:hover{
+  transform:translateY(-8px);
+
+  border-color:var(--acid);
+
   background:#111;
+}
+
+.social-card:hover:before{
+  transform:scale(2);
+}
+
+.social-icon{
+  width:55px;
+  height:55px;
+
+  flex-shrink:0;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  border:1px solid #333;
+
+  border-radius:50%;
+
+  color:var(--acid);
+
+  font-size:11px;
+
+  font-weight:900;
+}
+
+.social-card strong{
+  display:block;
+
+  font-size:11px;
+
+  letter-spacing:2px;
+}
+
+.social-card span{
+  display:block;
+
+  margin-top:7px;
+
+  color:#666;
+
+  font-size:9px;
+}
+
+.arrow{
+  margin-left:auto;
 
   position:relative;
-}
+  z-index:2;
 
-.insta-box img{
-  width:100%;
-  height:100%;
+  color:var(--acid);
 
-  object-fit:cover;
-
-  filter:grayscale(100%);
-
-  transition:.6s;
-}
-
-.insta-box:hover img{
-  filter:grayscale(0);
-  transform:scale(1.08);
+  font-size:20px;
 }
 
 
@@ -1114,6 +1246,8 @@ footer{
 
 .footer-main{
   display:flex;
+
+  align-items:flex-start;
 
   justify-content:space-between;
 
@@ -1146,14 +1280,13 @@ footer{
   display:flex;
 
   gap:25px;
-
-  align-items:start;
 }
 
 .social a{
   color:#666;
 
   font-size:8px;
+
   font-weight:800;
 
   letter-spacing:2px;
@@ -1188,11 +1321,13 @@ footer{
 
 .modal{
   position:fixed;
+
   inset:0;
 
   z-index:3000;
 
   display:flex;
+
   align-items:center;
   justify-content:center;
 
@@ -1252,7 +1387,9 @@ footer{
   padding:45px;
 
   display:flex;
+
   flex-direction:column;
+
   justify-content:center;
 }
 
@@ -1265,12 +1402,13 @@ footer{
 }
 
 .modal-info p{
+  margin-bottom:25px;
+
   color:#666;
 
   font-size:11px;
-  line-height:1.9;
 
-  margin-bottom:25px;
+  line-height:1.9;
 }
 
 .close{
@@ -1287,6 +1425,7 @@ footer{
   border-radius:50%;
 
   background:#111;
+
   color:white;
 
   font-size:20px;
@@ -1305,12 +1444,13 @@ footer{
   transform:translateY(40px);
 
   transition:
-  opacity .8s ease,
-  transform .8s ease;
+    opacity .8s ease,
+    transform .8s ease;
 }
 
 .reveal.visible{
   opacity:1;
+
   transform:translateY(0);
 }
 
@@ -1375,6 +1515,7 @@ footer{
 
   .product:nth-child(2){
     width:85%;
+
     margin-left:auto;
   }
 
@@ -1383,6 +1524,8 @@ footer{
   }
 
   .manifesto{
+    margin:20px 5%;
+
     padding:100px 7%;
 
     border-radius:50px 0 50px 0;
@@ -1420,6 +1563,7 @@ footer{
 
   .preview{
     position:relative;
+
     top:0;
   }
 
@@ -1438,11 +1582,16 @@ footer{
 
   .value{
     border-right:0;
+
     border-bottom:1px solid var(--line);
   }
 
-  .instagram-grid{
-    grid-template-columns:repeat(2,1fr);
+  .social-big{
+    grid-template-columns:1fr;
+  }
+
+  .instagram-title{
+    letter-spacing:-6px;
   }
 
   .footer-main{
@@ -1465,6 +1614,7 @@ footer{
     grid-template-columns:1fr;
 
     max-height:90vh;
+
     overflow:auto;
   }
 
@@ -1479,7 +1629,9 @@ footer{
   .modal-info h2{
     font-size:30px;
   }
+
 }
+
 </style>
 </head>
 
@@ -1487,7 +1639,9 @@ footer{
 <body>
 
 
-<!-- LOADER -->
+<!-- =========================
+     LOADER
+========================= -->
 
 <div class="loader" id="loader">
 
@@ -1500,833 +1654,999 @@ footer{
 </div>
 
 
-<!-- CURSOR -->
-
-<div class="cursor" id="cursor"></div>
-
-
-<!-- HEADER -->
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
-<a href="#" class="logo">
-4:<span>20</span>®
-</a>
+  <a href="#" class="logo">
+    4:<span>20</span>®
+  </a>
 
-<nav>
-<a href="#shop">SHOP</a>
-<a href="#drops">DROPS</a>
-<a href="#custom">CUSTOM</a>
-<a href="#about">ABOUT</a>
-</nav>
+  <nav>
 
-<div class="header-right">
+    <a href="#shop">SHOP</a>
 
-<a
-class="header-link"
-href="https://www.instagram.com/4_20.street/"
-target="_blank">
-IG
-</a>
+    <a href="#drops">DROPS</a>
 
-<button
-class="menu"
-onclick="toggleMenu()">
-MENU
-</button>
+    <a href="#custom">CUSTOM</a>
 
-</div>
+    <a href="#about">ABOUT</a>
+
+  </nav>
+
+  <div class="header-right">
+
+    <a
+      class="header-link"
+      href="https://www.instagram.com/4_20.street/"
+      target="_blank"
+      rel="noopener noreferrer">
+
+      IG ↗
+
+    </a>
+
+    <button
+      class="menu"
+      onclick="toggleMenu()">
+
+      MENU
+
+    </button>
+
+  </div>
 
 </header>
 
 
-<!-- MOBILE MENU -->
+<!-- =========================
+     MOBILE MENU
+========================= -->
 
-<div class="mobile-menu" id="mobileMenu">
+<div
+  class="mobile-menu"
+  id="mobileMenu">
 
-<a href="#shop" onclick="toggleMenu()">SHOP</a>
+  <a href="#shop" onclick="toggleMenu()">
+    SHOP
+  </a>
 
-<a href="#drops" onclick="toggleMenu()">DROPS</a>
+  <a href="#drops" onclick="toggleMenu()">
+    DROPS
+  </a>
 
-<a href="#custom" onclick="toggleMenu()">CUSTOM</a>
+  <a href="#custom" onclick="toggleMenu()">
+    CUSTOM
+  </a>
 
-<a href="#about" onclick="toggleMenu()">ABOUT</a>
+  <a href="#about" onclick="toggleMenu()">
+    ABOUT
+  </a>
 
-<a
-href="https://www.instagram.com/4_20.street/"
-target="_blank">
-INSTAGRAM
-</a>
+  <a
+    href="https://www.instagram.com/4_20.street/"
+    target="_blank"
+    rel="noopener noreferrer">
+
+    INSTAGRAM ↗
+
+  </a>
+
+  <a
+    href="https://www.facebook.com/share/1Ephp8bfdR/"
+    target="_blank"
+    rel="noopener noreferrer">
+
+    FACEBOOK ↗
+
+  </a>
 
 </div>
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero">
 
-<div class="grid"></div>
+  <div class="grid"></div>
 
-<div class="circle"></div>
+  <div class="circle"></div>
 
-<div class="hero-content">
+  <div class="hero-content">
 
-<div class="small">
-MEXICO · EST. 2026
-</div>
+    <div class="small">
+      MEXICO · EST. 2026
+    </div>
 
-<h1>
-4:<span>20</span>
-</h1>
+    <h1>
+      4:<span>20</span>
+    </h1>
 
-<div class="slogan">
-LA HORA ADECUADA.
-</div>
+    <div class="slogan">
+      LA HORA ADECUADA.
+    </div>
 
-<p class="hero-description">
-Una hora. Una identidad.
-Una forma diferente de vestirla.
-</p>
+    <p class="hero-description">
+      Una hora. Una identidad.
+      Una forma diferente de vestirla.
+    </p>
 
-<a
-href="#shop"
-class="button">
-VER COLLECTION →
-</a>
+    <a
+      href="#shop"
+      class="button">
 
-</div>
+      VER COLLECTION →
+
+    </a>
+
+  </div>
 
 </section>
 
 
-<!-- CLOCK -->
+<!-- =========================
+     CLOCK
+========================= -->
 
 <section class="clock-section reveal">
 
-<div class="label">
-LIVE TIME / 4:20 SYSTEM
-</div>
+  <div class="label">
+    LIVE TIME / 4:20 SYSTEM
+  </div>
 
-<div class="clock" id="clock">
-00:<span>00</span>
-</div>
+  <div
+    class="clock"
+    id="clock">
 
-<div
-class="clock-message"
-id="clockMessage">
-ESPERANDO LA HORA ADECUADA.
-</div>
+    00:<span>00</span>
+
+  </div>
+
+  <div
+    class="clock-message"
+    id="clockMessage">
+
+    ESPERANDO LA HORA ADECUADA.
+
+  </div>
 
 </section>
 
 
-<!-- MARQUEE -->
+<!-- =========================
+     MARQUEE
+========================= -->
 
 <div class="marquee">
 
-<div class="marquee-track">
+  <div class="marquee-track">
 
-4:20® · LA HORA ADECUADA ·
-STREETWEAR · MEXICO ·
-MADE TO ORDER ·
-4:20® · LA HORA ADECUADA ·
-STREETWEAR · MEXICO ·
-MADE TO ORDER ·
+    4:20® · LA HORA ADECUADA ·
+    STREETWEAR · MEXICO ·
+    MADE TO ORDER ·
+    4:20® · LA HORA ADECUADA ·
+    STREETWEAR · MEXICO ·
+    MADE TO ORDER ·
+
+  </div>
 
 </div>
 
-</div>
 
-
-<!-- SHOP -->
+<!-- =========================
+     SHOP
+========================= -->
 
 <section
-class="section"
-id="shop">
+  class="section"
+  id="shop">
 
-<div class="section-head reveal">
+  <div class="section-head reveal">
 
-<div>
+    <div>
 
-<div class="green-label">
-COLLECTION / 001
-</div>
+      <div class="green-label">
+        COLLECTION / 001
+      </div>
 
-<h2 class="big-title">
-DROP 01
-</h2>
+      <h2 class="big-title">
+        DROP 01
+      </h2>
 
-</div>
+    </div>
 
-<div class="gray">
-03 PIEZAS · LIMITED
-</div>
+    <div class="gray">
+      03 PIEZAS · LIMITED
+    </div>
 
-</div>
-
-
-<div class="products">
+  </div>
 
 
-<!-- PRODUCT 1 -->
-
-<article
-class="product reveal"
-onclick="openProduct(
-'4:20 TEE 001',
-'BLACK · OVERSIZED',
-'$200 MXN',
-'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=90'
-)">
-
-<div class="product-image">
-
-<div class="number">
-001
-</div>
-
-<button
-class="favorite"
-onclick="event.stopPropagation();favorite(this)">
-♡
-</button>
-
-<img
-src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=90"
-alt="4:20 Tee 001">
-
-</div>
-
-<div class="product-info">
-
-<div class="product-name">
-4:20 TEE 001
-</div>
-
-<div class="product-meta">
-
-<span>
-BLACK · OVERSIZED
-</span>
-
-<span>
-$200
-</span>
-
-</div>
-
-</div>
-
-</article>
+  <div class="products">
 
 
-<!-- PRODUCT 2 -->
+    <!-- PRODUCTO 001 -->
 
-<article
-class="product reveal"
-onclick="openProduct(
-'4:20 TEE 002',
-'WHITE · REGULAR',
-'$200 MXN',
-'https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=1200&q=90'
-)">
+    <article
+      class="product reveal"
+      onclick="openProduct(
+        '4:20 TEE 001',
+        'BLACK · OVERSIZED',
+        '$200 MXN',
+        'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=90'
+      )">
 
-<div class="product-image">
+      <div class="product-image">
 
-<div class="number">
-002
-</div>
+        <div class="number">
+          001
+        </div>
 
-<button
-class="favorite"
-onclick="event.stopPropagation();favorite(this)">
-♡
-</button>
+        <button
+          class="favorite"
+          onclick="event.stopPropagation();favorite(this)">
 
-<img
-src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=1200&q=90"
-alt="4:20 Tee 002">
+          ♡
 
-</div>
+        </button>
 
-<div class="product-info">
+        <img
+          src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=90"
+          alt="4:20 Tee 001">
 
-<div class="product-name">
-4:20 TEE 002
-</div>
+      </div>
 
-<div class="product-meta">
+      <div class="product-info">
 
-<span>
-WHITE · REGULAR
-</span>
+        <div class="product-name">
+          4:20 TEE 001
+        </div>
 
-<span>
-$200
-</span>
+        <div class="product-meta">
 
-</div>
+          <span>
+            BLACK · OVERSIZED
+          </span>
 
-</div>
+          <span>
+            $200
+          </span>
 
-</article>
+        </div>
+
+      </div>
+
+    </article>
 
 
-<!-- PRODUCT 3 -->
+    <!-- PRODUCTO 002 -->
 
-<article
-class="product reveal"
-onclick="openProduct(
-'4:20 TEE 003',
-'BLACK · LIMITED',
-'$250 MXN',
-'https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=1200&q=90'
-)">
+    <article
+      class="product reveal"
+      onclick="openProduct(
+        '4:20 TEE 002',
+        'WHITE · REGULAR',
+        '$200 MXN',
+        'https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=1200&q=90'
+      )">
 
-<div class="product-image">
+      <div class="product-image">
 
-<div class="number">
-003
-</div>
+        <div class="number">
+          002
+        </div>
 
-<button
-class="favorite"
-onclick="event.stopPropagation();favorite(this)">
-♡
-</button>
+        <button
+          class="favorite"
+          onclick="event.stopPropagation();favorite(this)">
 
-<img
-src="https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=1200&q=90"
-alt="4:20 Tee 003">
+          ♡
 
-</div>
+        </button>
 
-<div class="product-info">
+        <img
+          src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=1200&q=90"
+          alt="4:20 Tee 002">
 
-<div class="product-name">
-4:20 TEE 003
-</div>
+      </div>
 
-<div class="product-meta">
+      <div class="product-info">
 
-<span>
-BLACK · LIMITED
-</span>
+        <div class="product-name">
+          4:20 TEE 002
+        </div>
 
-<span>
-$250
-</span>
+        <div class="product-meta">
 
-</div>
+          <span>
+            WHITE · REGULAR
+          </span>
 
-</div>
+          <span>
+            $200
+          </span>
 
-</article>
+        </div>
 
-</div>
+      </div>
+
+    </article>
+
+
+    <!-- PRODUCTO 003 -->
+
+    <article
+      class="product reveal"
+      onclick="openProduct(
+        '4:20 TEE 003',
+        'BLACK · LIMITED',
+        '$250 MXN',
+        'https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=1200&q=90'
+      )">
+
+      <div class="product-image">
+
+        <div class="number">
+          003
+        </div>
+
+        <button
+          class="favorite"
+          onclick="event.stopPropagation();favorite(this)">
+
+          ♡
+
+        </button>
+
+        <img
+          src="https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=1200&q=90"
+          alt="4:20 Tee 003">
+
+      </div>
+
+      <div class="product-info">
+
+        <div class="product-name">
+          4:20 TEE 003
+        </div>
+
+        <div class="product-meta">
+
+          <span>
+            BLACK · LIMITED
+          </span>
+
+          <span>
+            $250
+          </span>
+
+        </div>
+
+      </div>
+
+    </article>
+
+  </div>
 
 </section>
 
 
-<!-- ABOUT -->
+<!-- =========================
+     ABOUT
+========================= -->
 
 <section
-class="manifesto reveal"
-id="about">
+  class="manifesto reveal"
+  id="about">
 
-<div>
+  <div>
 
-<div class="green-label">
-THE IDEA
-</div>
+    <div class="green-label">
+      THE IDEA
+    </div>
 
-<h2 class="big-title">
-LA HORA<br>
-ADECUADA.
-</h2>
+    <h2 class="big-title">
 
-<p>
-4:20 es el identificador.
-Una marca de streetwear que no necesita
-gritar para ser reconocida.
-Diseños limpios, drops y piezas que
-hablan por sí mismas.
-</p>
+      LA HORA<br>
+      ADECUADA.
 
-</div>
+    </h2>
+
+    <p>
+
+      4:20 es el identificador.
+      Una marca de streetwear que no necesita
+      gritar para ser reconocida.
+
+      Diseños limpios, drops y piezas que
+      hablan por sí mismas.
+
+    </p>
+
+  </div>
 
 </section>
 
 
-<!-- DROP -->
+<!-- =========================
+     DROP
+========================= -->
 
 <section
-class="drop"
-id="drops">
+  class="drop"
+  id="drops">
 
-<div class="drop-box reveal">
+  <div class="drop-box reveal">
 
-<div class="drop-content">
+    <div class="drop-content">
 
-<div class="drop-number">
-NEXT RELEASE / 002
-</div>
+      <div class="drop-number">
+        NEXT RELEASE / 002
+      </div>
 
-<h2>
-COMING<br>
-SOON.
-</h2>
+      <h2>
 
-<p>
-Los siguientes diseños llegan cuando
-sea la hora. Síguenos en Instagram para
-enterarte primero del próximo drop.
-</p>
+        COMING<br>
+        SOON.
 
-<a
-href="https://www.instagram.com/4_20.street/"
-target="_blank"
-class="button">
-SEGUIR @4_20.STREET →
-</a>
+      </h2>
 
-</div>
+      <p>
 
-</div>
+        Los siguientes diseños llegan cuando
+        sea la hora.
+
+        Síguenos en Instagram o Facebook
+        para enterarte primero del próximo drop.
+
+      </p>
+
+      <a
+        href="https://www.instagram.com/4_20.street/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="button">
+
+        SEGUIR @4_20.STREET →
+
+      </a>
+
+    </div>
+
+  </div>
 
 </section>
 
 
-<!-- CUSTOM -->
+<!-- =========================
+     CUSTOMIZER
+========================= -->
 
 <section
-class="custom"
-id="custom">
+  class="custom"
+  id="custom">
 
-<div class="section-head reveal">
+  <div class="section-head reveal">
 
-<div>
+    <div>
 
-<div class="green-label">
-4:20 / CUSTOM
-</div>
+      <div class="green-label">
+        4:20 / CUSTOM
+      </div>
 
-<h2 class="big-title">
-HAZLA<br>
-TUYA.
-</h2>
+      <h2 class="big-title">
 
-</div>
+        HAZLA<br>
+        TUYA.
 
-</div>
+      </h2>
 
+    </div>
 
-<div class="custom-grid">
-
-
-<div class="preview reveal">
-
-<div class="shirt-stage">
-
-<div
-class="shirt"
-id="shirt">
-
-<div
-class="shirt-text"
-id="shirtText">
-4:20
-</div>
-
-</div>
-
-</div>
-
-</div>
+  </div>
 
 
-<div class="custom-form reveal">
+  <div class="custom-grid">
 
 
-<div>
+    <div class="preview reveal">
 
-<div class="form-label">
-COLOR
-</div>
+      <div class="shirt-stage">
 
-<div class="options">
+        <div
+          class="shirt"
+          id="shirt">
 
-<button
-class="option active"
-onclick="shirtColor('black',this)">
-NEGRO
-</button>
+          <div
+            class="shirt-text"
+            id="shirtText">
 
-<button
-class="option"
-onclick="shirtColor('white',this)">
-BLANCO
-</button>
+            4:20
 
-</div>
+          </div>
 
-</div>
+        </div>
+
+      </div>
+
+    </div>
 
 
-<div>
-
-<div class="form-label">
-TALLA
-</div>
-
-<div class="options">
-
-<button class="option">
-CH
-</button>
-
-<button class="option active">
-M
-</button>
-
-<button class="option">
-G
-</button>
-
-<button class="option">
-XL
-</button>
-
-</div>
-
-</div>
+    <div class="custom-form reveal">
 
 
-<div>
+      <!-- COLOR -->
 
-<div class="form-label">
-TEXTO
-</div>
+      <div>
 
-<input
-class="custom-input"
-id="customText"
-maxlength="20"
-placeholder="ESCRIBE TU TEXTO"
-oninput="updateText()">
+        <div class="form-label">
+          COLOR
+        </div>
 
-</div>
+        <div class="options">
 
+          <button
+            class="option active"
+            onclick="shirtColor('black',this)">
 
-<div>
+            NEGRO
 
-<div class="form-label">
-TU DISEÑO
-</div>
+          </button>
 
-<label class="upload">
+          <button
+            class="option"
+            onclick="shirtColor('white',this)">
 
-SUBIR IMAGEN
+            BLANCO
 
-<input
-type="file"
-accept="image/*"
-onchange="uploadDesign(event)">
+          </button>
 
-</label>
+        </div>
 
-</div>
+      </div>
 
 
-<div class="custom-price">
+      <!-- TALLA -->
 
-<span>
-DESDE
-</span>
+      <div>
 
-<strong>
-$250 MXN
-</strong>
+        <div class="form-label">
+          TALLA
+        </div>
 
-</div>
+        <div class="options">
+
+          <button
+            class="option"
+            onclick="selectSize(this)">
+
+            CH
+
+          </button>
+
+          <button
+            class="option active"
+            onclick="selectSize(this)">
+
+            M
+
+          </button>
+
+          <button
+            class="option"
+            onclick="selectSize(this)">
+
+            G
+
+          </button>
+
+          <button
+            class="option"
+            onclick="selectSize(this)">
+
+            XL
+
+          </button>
+
+        </div>
+
+      </div>
 
 
-<button
-class="button"
-onclick="sendCustom()">
-PEDIR POR WHATSAPP →
-</button>
+      <!-- TEXTO -->
 
-</div>
+      <div>
 
-</div>
+        <div class="form-label">
+          TEXTO
+        </div>
+
+        <input
+          class="custom-input"
+          id="customText"
+          maxlength="20"
+          placeholder="ESCRIBE TU TEXTO"
+          oninput="updateText()">
+
+      </div>
+
+
+      <!-- IMAGEN -->
+
+      <div>
+
+        <div class="form-label">
+          TU DISEÑO
+        </div>
+
+        <label class="upload">
+
+          SUBIR IMAGEN
+
+          <input
+            type="file"
+            accept="image/*"
+            onchange="uploadDesign(event)">
+
+        </label>
+
+      </div>
+
+
+      <div class="custom-price">
+
+        <span>
+          DESDE
+        </span>
+
+        <strong>
+          $250 MXN
+        </strong>
+
+      </div>
+
+
+      <button
+        class="button"
+        onclick="sendCustom()">
+
+        PEDIR POR WHATSAPP →
+
+      </button>
+
+    </div>
+
+  </div>
 
 </section>
 
 
-<!-- VALUES -->
+<!-- =========================
+     VALUES
+========================= -->
 
 <section class="values">
 
-<div class="value reveal">
+  <div class="value reveal">
 
-<div class="value-number">
-01 / DROPS
-</div>
+    <div class="value-number">
+      01 / DROPS
+    </div>
 
-<h3>
-PEQUEÑAS COLECCIONES.
-</h3>
+    <h3>
+      PEQUEÑAS COLECCIONES.
+    </h3>
 
-<p>
-Diseños lanzados por temporadas
-y producidos bajo pedido.
-</p>
+    <p>
+      Diseños lanzados por temporadas
+      y producidos bajo pedido.
+    </p>
 
-</div>
-
-
-<div class="value reveal">
-
-<div class="value-number">
-02 / IDENTITY
-</div>
-
-<h3>
-UN NÚMERO.
-</h3>
-
-<p>
-4:20 es todo lo que necesitas
-para reconocer la marca.
-</p>
-
-</div>
+  </div>
 
 
-<div class="value reveal">
+  <div class="value reveal">
 
-<div class="value-number">
-03 / CUSTOM
-</div>
+    <div class="value-number">
+      02 / IDENTITY
+    </div>
 
-<h3>
-TU PROPIA PIEZA.
-</h3>
+    <h3>
+      UN NÚMERO.
+    </h3>
 
-<p>
-Personaliza una playera y convierte
-una idea en una pieza única.
-</p>
+    <p>
+      4:20 es todo lo que necesitas
+      para reconocer la marca.
+    </p>
 
-</div>
+  </div>
+
+
+  <div class="value reveal">
+
+    <div class="value-number">
+      03 / CUSTOM
+    </div>
+
+    <h3>
+      TU PROPIA PIEZA.
+    </h3>
+
+    <p>
+      Personaliza una playera y convierte
+      una idea en una pieza única.
+    </p>
+
+  </div>
 
 </section>
 
 
-<!-- INSTAGRAM -->
+<!-- =========================
+     SOCIAL
+========================= -->
 
 <section class="instagram">
 
-<div class="green-label">
-FOLLOW THE HOUR
-</div>
+  <div class="green-label">
+    FOLLOW THE HOUR
+  </div>
 
-<h2 class="instagram-title">
-@4_20.<span>STREET</span>
-</h2>
+  <h2 class="instagram-title">
 
-<div class="instagram-handle">
-INSTAGRAM · MEXICO
-</div>
+    4:20<span>®</span>
 
-<a
-href="https://www.instagram.com/4_20.street/"
-target="_blank"
-class="button">
-ABRIR INSTAGRAM →
-</a>
+  </h2>
+
+  <div class="instagram-handle">
+
+    @4_20.STREET · INSTAGRAM · FACEBOOK
+
+  </div>
 
 
-<div class="instagram-grid">
+  <div class="social-big">
 
-<a
-href="https://www.instagram.com/4_20.street/"
-target="_blank"
-class="insta-box">
 
-<img
-src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=800&q=90"
-alt="4:20 streetwear">
+    <!-- INSTAGRAM -->
 
-</a>
+    <a
+      href="https://www.instagram.com/4_20.street/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="social-card">
 
-<a
-href="https://www.instagram.com/4_20.street/"
-target="_blank"
-class="insta-box">
+      <div class="social-icon">
+        IG
+      </div>
 
-<img
-src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=800&q=90"
-alt="4:20 streetwear">
+      <div>
 
-</a>
+        <strong>
+          INSTAGRAM
+        </strong>
 
-<a
-href="https://www.instagram.com/4_20.street/"
-target="_blank"
-class="insta-box">
+        <span>
+          @4_20.street
+        </span>
 
-<img
-src="https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?auto=format&fit=crop&w=800&q=90"
-alt="4:20 streetwear">
+      </div>
 
-</a>
+      <div class="arrow">
+        ↗
+      </div>
 
-<a
-href="https://www.instagram.com/4_20.street/"
-target="_blank"
-class="insta-box">
+    </a>
 
-<img
-src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=800&q=90"
-alt="4:20 streetwear">
 
-</a>
+    <!-- FACEBOOK -->
 
-</div>
+    <a
+      href="https://www.facebook.com/share/1Ephp8bfdR/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="social-card">
+
+      <div class="social-icon">
+        FB
+      </div>
+
+      <div>
+
+        <strong>
+          FACEBOOK
+        </strong>
+
+        <span>
+          4:20 STREET
+        </span>
+
+      </div>
+
+      <div class="arrow">
+        ↗
+      </div>
+
+    </a>
+
+  </div>
 
 </section>
 
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
-<div class="footer-main">
+  <div class="footer-main">
 
-<div>
+    <div>
 
-<div class="footer-logo">
-4:<span>20</span>®
-</div>
+      <div class="footer-logo">
 
-<div class="footer-slogan">
-LA HORA ADECUADA.
-</div>
+        4:<span>20</span>®
 
-</div>
+      </div>
 
+      <div class="footer-slogan">
 
-<div class="social">
+        LA HORA ADECUADA.
 
-<a
-href="https://www.instagram.com/4_20.street/"
-target="_blank">
-INSTAGRAM
-</a>
+      </div>
 
-<a
-href="https://www.tiktok.com/"
-target="_blank">
-TIKTOK
-</a>
-
-<a
-href="#custom">
-CUSTOM
-</a>
-
-</div>
-
-</div>
+    </div>
 
 
-<div class="footer-bottom">
+    <div class="social">
 
-<span>
-© 2026 4:20®
-</span>
+      <a
+        href="https://www.instagram.com/4_20.street/"
+        target="_blank"
+        rel="noopener noreferrer">
 
-<span>
-MEXICO
-</span>
+        INSTAGRAM ↗
 
-<span>
-MADE TO ORDER
-</span>
+      </a>
 
-</div>
+      <a
+        href="https://www.facebook.com/share/1Ephp8bfdR/"
+        target="_blank"
+        rel="noopener noreferrer">
+
+        FACEBOOK ↗
+
+      </a>
+
+      <a href="#custom">
+
+        CUSTOM ↗
+
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <div class="footer-bottom">
+
+    <span>
+      © 2026 4:20®
+    </span>
+
+    <span>
+      MEXICO
+    </span>
+
+    <span>
+      MADE TO ORDER
+    </span>
+
+  </div>
 
 </footer>
 
 
-<!-- PRODUCT MODAL -->
+<!-- =========================
+     PRODUCT MODAL
+========================= -->
 
 <div
-class="modal"
-id="modal"
-onclick="closeOutside(event)">
+  class="modal"
+  id="modal"
+  onclick="closeOutside(event)">
 
-<button
-class="close"
-onclick="closeProduct()">
-×
-</button>
+  <button
+    class="close"
+    onclick="closeProduct()">
 
-<div class="modal-box">
+    ×
 
-<div class="modal-image">
+  </button>
 
-<img
-id="modalImage"
-src=""
-alt="Producto 4:20">
 
-</div>
+  <div class="modal-box">
 
-<div class="modal-info">
 
-<div class="green-label">
-4:20® / DROP
-</div>
+    <div class="modal-image">
 
-<h2 id="modalName">
-PRODUCT
-</h2>
+      <img
+        id="modalImage"
+        src=""
+        alt="Producto 4:20">
 
-<p id="modalDescription">
-DESCRIPTION
-</p>
+    </div>
 
-<div class="custom-price">
 
-<span>
-PRICE
-</span>
+    <div class="modal-info">
 
-<strong id="modalPrice">
-$200
-</strong>
+      <div class="green-label">
+        4:20® / DROP
+      </div>
 
-</div>
+      <h2 id="modalName">
+        PRODUCT
+      </h2>
 
-<br>
+      <p id="modalDescription">
+        DESCRIPTION
+      </p>
 
-<button
-class="button"
-onclick="buyProduct()">
-QUIERO ESTA →
-</button>
 
-</div>
+      <div class="custom-price">
 
-</div>
+        <span>
+          PRICE
+        </span>
+
+        <strong id="modalPrice">
+          $200
+        </strong>
+
+      </div>
+
+      <br>
+
+      <button
+        class="button"
+        onclick="buyProduct()">
+
+        QUIERO ESTA →
+
+      </button>
+
+    </div>
+
+  </div>
 
 </div>
 
 
 <script>
+
+
+/* =========================
+   CONFIGURACIÓN
+========================= */
+
+/*
+   IMPORTANTE:
+
+   Cambia solamente esto por tu número.
+
+   Ejemplo:
+   const WHATSAPP = "5212221234567";
+*/
+
+const WHATSAPP = "TU_NUMERO_WHATSAPP";
+
 
 /* =========================
    LOADER
@@ -2334,28 +2654,14 @@ QUIERO ESTA →
 
 window.addEventListener("load",()=>{
 
-setTimeout(()=>{
+  setTimeout(()=>{
 
-document
-.getElementById("loader")
-.classList.add("hide");
+    document
+      .getElementById("loader")
+      .classList
+      .add("hide");
 
-},1200);
-
-});
-
-
-/* =========================
-   CURSOR
-========================= */
-
-const cursor=
-document.getElementById("cursor");
-
-document.addEventListener("mousemove",(e)=>{
-
-cursor.style.left=e.clientX+"px";
-cursor.style.top=e.clientY+"px";
+  },1200);
 
 });
 
@@ -2366,13 +2672,15 @@ cursor.style.top=e.clientY+"px";
 
 function toggleMenu(){
 
-document
-.getElementById("mobileMenu")
-.classList.toggle("open");
+  document
+    .getElementById("mobileMenu")
+    .classList
+    .toggle("open");
 
-document
-.body
-.classList.toggle("no-scroll");
+  document
+    .body
+    .classList
+    .toggle("no-scroll");
 
 }
 
@@ -2383,12 +2691,12 @@ document
 
 function favorite(button){
 
-button.classList.toggle("active");
+  button.classList.toggle("active");
 
-button.textContent=
-button.classList.contains("active")
-?"♥"
-:"♡";
+  button.textContent =
+    button.classList.contains("active")
+    ? "♥"
+    : "♡";
 
 }
 
@@ -2397,88 +2705,100 @@ button.classList.contains("active")
    PRODUCT MODAL
 ========================= */
 
-let selectedProduct="";
-let selectedPrice="";
+let selectedProduct = "";
+let selectedPrice = "";
 
 function openProduct(
-name,
-description,
-price,
-image
+  name,
+  description,
+  price,
+  image
 ){
 
-selectedProduct=name;
-selectedPrice=price;
+  selectedProduct = name;
 
-document
-.getElementById("modalName")
-.textContent=name;
+  selectedPrice = price;
 
-document
-.getElementById("modalDescription")
-.textContent=description;
 
-document
-.getElementById("modalPrice")
-.textContent=price;
+  document
+    .getElementById("modalName")
+    .textContent = name;
 
-document
-.getElementById("modalImage")
-.src=image;
 
-document
-.getElementById("modal")
-.classList.add("open");
+  document
+    .getElementById("modalDescription")
+    .textContent = description;
 
-document
-.body
-.classList.add("no-scroll");
+
+  document
+    .getElementById("modalPrice")
+    .textContent = price;
+
+
+  document
+    .getElementById("modalImage")
+    .src = image;
+
+
+  document
+    .getElementById("modal")
+    .classList
+    .add("open");
+
+
+  document
+    .body
+    .classList
+    .add("no-scroll");
 
 }
 
 
 function closeProduct(){
 
-document
-.getElementById("modal")
-.classList.remove("open");
+  document
+    .getElementById("modal")
+    .classList
+    .remove("open");
 
-document
-.body
-.classList.remove("no-scroll");
+  document
+    .body
+    .classList
+    .remove("no-scroll");
 
 }
 
 
 function closeOutside(event){
 
-if(event.target.id==="modal"){
-closeProduct();
-}
+  if(event.target.id === "modal"){
+
+    closeProduct();
+
+  }
 
 }
 
 
 /* =========================
-   WHATSAPP PRODUCT
+   PRODUCT → WHATSAPP
 ========================= */
 
 function buyProduct(){
 
-const phone="TU_NUMERO_WHATSAPP";
+  if(WHATSAPP === "TU_NUMERO_WHATSAPP"){
 
-if(phone==="TU_NUMERO_WHATSAPP"){
+    alert(
+      "Primero coloca tu número de WhatsApp en el código."
+    );
 
-alert(
-"Pon primero tu número de WhatsApp en el código."
-);
+    return;
 
-return;
+  }
 
-}
 
-const message=
-`Hola 4:20®.
+  const message =
+`Hola 4:20® 👋
 
 Quiero pedir:
 
@@ -2488,47 +2808,83 @@ Precio: ${selectedPrice}
 
 Quiero confirmar talla y disponibilidad.`;
 
-window.open(
-"https://wa.me/"+phone+
-"?text="+encodeURIComponent(message),
-"_blank"
-);
+
+  window.open(
+    "https://wa.me/" +
+    WHATSAPP +
+    "?text=" +
+    encodeURIComponent(message),
+
+    "_blank"
+  );
 
 }
 
 
 /* =========================
-   SHIRT COLOR
+   CUSTOM COLOR
 ========================= */
 
-let shirtColorName="NEGRO";
+let shirtColorName = "NEGRO";
 
-function shirtColor(color,button){
+function shirtColor(
+  color,
+  button
+){
 
-document
-.querySelectorAll(".custom .option")
-.forEach(item=>{
-item.classList.remove("active");
-});
+  const customSection =
+    document.querySelector(".custom");
 
-button.classList.add("active");
+  customSection
+    .querySelectorAll(".option")
+    .forEach(item=>{
+      item.classList.remove("active");
+    });
 
-const shirt=
-document.getElementById("shirt");
+  button.classList.add("active");
 
-if(color==="white"){
 
-shirt.classList.add("white");
+  const shirt =
+    document.getElementById("shirt");
 
-shirtColorName="BLANCO";
 
-}else{
+  if(color === "white"){
 
-shirt.classList.remove("white");
+    shirt.classList.add("white");
 
-shirtColorName="NEGRO";
+    shirtColorName = "BLANCO";
+
+  }else{
+
+    shirt.classList.remove("white");
+
+    shirtColorName = "NEGRO";
+
+  }
 
 }
+
+
+/* =========================
+   TALLA
+========================= */
+
+let selectedSize = "M";
+
+function selectSize(button){
+
+  const buttons =
+    button.parentElement
+      .querySelectorAll(".option");
+
+  buttons.forEach(item=>{
+    item.classList.remove("active");
+  });
+
+  button.classList.add("active");
+
+  selectedSize =
+    button.textContent.trim();
 
 }
 
@@ -2539,13 +2895,15 @@ shirtColorName="NEGRO";
 
 function updateText(){
 
-const value=
-document.getElementById("customText").value;
+  const value =
+    document
+      .getElementById("customText")
+      .value;
 
-document
-.getElementById("shirtText")
-.textContent=
-value || "4:20";
+  document
+    .getElementById("shirtText")
+    .textContent =
+      value || "4:20";
 
 }
 
@@ -2556,78 +2914,92 @@ value || "4:20";
 
 function uploadDesign(event){
 
-const file=
-event.target.files[0];
+  const file =
+    event.target.files[0];
 
-if(!file)return;
+  if(!file)return;
 
-const reader=
-new FileReader();
 
-reader.onload=function(e){
+  const reader =
+    new FileReader();
 
-const shirt=
-document.getElementById("shirt");
 
-shirt.style.backgroundImage=
-`url(${e.target.result})`;
+  reader.onload =
+    function(e){
 
-shirt.style.backgroundSize="contain";
+      const shirt =
+        document.getElementById("shirt");
 
-shirt.style.backgroundPosition="center";
 
-shirt.style.backgroundRepeat="no-repeat";
+      shirt.style.backgroundImage =
+        `url(${e.target.result})`;
 
-document
-.getElementById("shirtText")
-.style.display="none";
+      shirt.style.backgroundSize =
+        "contain";
 
-};
+      shirt.style.backgroundPosition =
+        "center";
 
-reader.readAsDataURL(file);
+      shirt.style.backgroundRepeat =
+        "no-repeat";
+
+
+      document
+        .getElementById("shirtText")
+        .style.display =
+        "none";
+
+    };
+
+
+  reader.readAsDataURL(file);
 
 }
 
 
 /* =========================
-   CUSTOM WHATSAPP
+   CUSTOM → WHATSAPP
 ========================= */
 
 function sendCustom(){
 
-const phone="TU_NUMERO_WHATSAPP";
+  if(WHATSAPP === "TU_NUMERO_WHATSAPP"){
 
-if(phone==="TU_NUMERO_WHATSAPP"){
+    alert(
+      "Primero coloca tu número de WhatsApp en el código."
+    );
 
-alert(
-"Pon primero tu número de WhatsApp en el código."
-);
+    return;
 
-return;
+  }
 
-}
 
-const text=
-document
-.getElementById("customText")
-.value || "4:20";
+  const text =
+    document
+      .getElementById("customText")
+      .value || "4:20";
 
-const message=
-`Hola 4:20®.
+
+  const message =
+`Hola 4:20® 👋
 
 Quiero cotizar una playera CUSTOM.
 
 Color: ${shirtColorName}
-Talla: M
+Talla: ${selectedSize}
 Texto: ${text}
 
 Precio desde: $250 MXN`;
 
-window.open(
-"https://wa.me/"+phone+
-"?text="+encodeURIComponent(message),
-"_blank"
-);
+
+  window.open(
+    "https://wa.me/" +
+    WHATSAPP +
+    "?text=" +
+    encodeURIComponent(message),
+
+    "_blank"
+  );
 
 }
 
@@ -2638,78 +3010,97 @@ window.open(
 
 function updateClock(){
 
-const now=new Date();
+  const now =
+    new Date();
 
-const h=
-String(now.getHours())
-.padStart(2,"0");
 
-const m=
-String(now.getMinutes())
-.padStart(2,"0");
+  const h =
+    String(now.getHours())
+      .padStart(2,"0");
 
-document
-.getElementById("clock")
-.innerHTML=
-`${h}:<span>${m}</span>`;
 
-const message=
-document.getElementById("clockMessage");
+  const m =
+    String(now.getMinutes())
+      .padStart(2,"0");
 
-if(h==="04" && m==="20"){
 
-message.textContent=
-"THE HOUR IS NOW.";
+  document
+    .getElementById("clock")
+    .innerHTML =
+      `${h}:<span>${m}</span>`;
 
-message.classList.add("active");
 
-}else{
+  const message =
+    document
+      .getElementById("clockMessage");
 
-message.textContent=
-"ESPERANDO LA HORA ADECUADA.";
 
-message.classList.remove("active");
+  if(h === "04" && m === "20"){
+
+    message.textContent =
+      "THE HOUR IS NOW.";
+
+    message.classList
+      .add("active");
+
+  }else{
+
+    message.textContent =
+      "ESPERANDO LA HORA ADECUADA.";
+
+    message.classList
+      .remove("active");
+
+  }
 
 }
 
-}
 
 updateClock();
 
-setInterval(updateClock,1000);
+setInterval(
+  updateClock,
+  1000
+);
 
 
 /* =========================
    SCROLL REVEAL
 ========================= */
 
-const observer=
-new IntersectionObserver(
-(entries)=>{
+const observer =
+  new IntersectionObserver(
 
-entries.forEach(entry=>{
+    (entries)=>{
 
-if(entry.isIntersecting){
+      entries.forEach(entry=>{
 
-entry.target
-.classList
-.add("visible");
+        if(entry.isIntersecting){
 
-}
+          entry.target
+            .classList
+            .add("visible");
 
-});
+        }
 
-},
-{
-threshold:.12
-}
-);
+      });
+
+    },
+
+    {
+      threshold:.12
+    }
+
+  );
+
 
 document
-.querySelectorAll(".reveal")
-.forEach(element=>{
-observer.observe(element);
-});
+  .querySelectorAll(".reveal")
+  .forEach(element=>{
+
+    observer.observe(element);
+
+  });
 
 
 /* =========================
@@ -2717,16 +3108,17 @@ observer.observe(element);
 ========================= */
 
 document.addEventListener(
-"keydown",
-(event)=>{
+  "keydown",
+  (event)=>{
 
-if(event.key==="Escape"){
+    if(event.key === "Escape"){
 
-closeProduct();
+      closeProduct();
 
-}
+    }
 
-});
+  }
+);
 
 </script>
 
