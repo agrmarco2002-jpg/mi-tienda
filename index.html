@@ -10,939 +10,1248 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 :root{
---black:#050505;
---dark:#0b0b0b;
---panel:#111;
---panel2:#171717;
---white:#f4f4f0;
---muted:#777;
---line:#242424;
---lime:#b7ff2a;
+  --bg:#050505;
+  --white:#f4f4ef;
+  --gray:#777;
+  --line:#292929;
+  --lime:#baff32;
 }
 
 *{
-box-sizing:border-box;
-margin:0;
-padding:0;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
 html{
-scroll-behavior:smooth;
+  scroll-behavior:smooth;
 }
 
 body{
-background:var(--black);
-color:var(--white);
-font-family:Inter,Arial,sans-serif;
-overflow-x:hidden;
+  background:var(--bg);
+  color:var(--white);
+  font-family:Inter,Arial,sans-serif;
+  overflow-x:hidden;
+}
+
+body.lock{
+  overflow:hidden;
 }
 
 a{
-color:inherit;
-text-decoration:none;
+  color:inherit;
+  text-decoration:none;
 }
 
 button{
-font-family:inherit;
-cursor:pointer;
+  font-family:inherit;
+  cursor:pointer;
+}
+
+/* ================= CURSOR ================= */
+
+.cursor{
+  position:fixed;
+  width:12px;
+  height:12px;
+  border:1px solid var(--lime);
+  border-radius:50%;
+  pointer-events:none;
+  z-index:9999;
+  transform:translate(-50%,-50%);
+  transition:.08s;
+  mix-blend-mode:difference;
+}
+
+@media(max-width:800px){
+  .cursor{display:none}
 }
 
 /* ================= HEADER ================= */
 
 header{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:76px;
+  position:fixed;
+  z-index:100;
+  top:0;
+  left:0;
+  width:100%;
+  height:75px;
 
-display:flex;
-align-items:center;
-justify-content:space-between;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 
-padding:0 5%;
+  padding:0 5%;
 
-z-index:100;
+  background:rgba(5,5,5,.65);
+  backdrop-filter:blur(18px);
 
-background:rgba(5,5,5,.72);
-backdrop-filter:blur(20px);
-
-border-bottom:1px solid rgba(255,255,255,.08);
+  border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 .logo{
-font-size:24px;
-font-weight:900;
-letter-spacing:-2px;
+  font-size:25px;
+  font-weight:900;
+  letter-spacing:-2px;
 }
 
 .logo span{
-color:var(--lime);
+  color:var(--lime);
 }
 
 nav{
-display:flex;
-gap:35px;
+  display:flex;
+  gap:32px;
 }
 
 nav a{
-font-size:9px;
-font-weight:700;
-letter-spacing:2px;
-color:#888;
-transition:.3s;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:2px;
+  color:#888;
+  transition:.3s;
 }
 
 nav a:hover{
-color:var(--lime);
+  color:var(--lime);
 }
 
-.bag{
-border:0;
-background:none;
-color:white;
+.header-actions{
+  display:flex;
+  gap:20px;
+  align-items:center;
+}
 
-font-size:9px;
-font-weight:800;
-letter-spacing:2px;
+.bag,
+.menu-btn{
+  border:0;
+  background:none;
+  color:white;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:2px;
+}
+
+.menu-btn{
+  display:none;
+}
+
+/* ================= MOBILE MENU ================= */
+
+.mobile-menu{
+  position:fixed;
+  inset:0;
+  background:#050505;
+  z-index:90;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:25px;
+
+  opacity:0;
+  visibility:hidden;
+  transition:.4s;
+}
+
+.mobile-menu.open{
+  opacity:1;
+  visibility:visible;
+}
+
+.mobile-menu a{
+  font-size:42px;
+  font-weight:900;
+  letter-spacing:-3px;
 }
 
 /* ================= HERO ================= */
 
 .hero{
-min-height:100vh;
+  min-height:100vh;
+  position:relative;
 
-display:flex;
-align-items:center;
-justify-content:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
-position:relative;
-overflow:hidden;
+  overflow:hidden;
 
-background:
-radial-gradient(
-circle at 50% 45%,
-#202a13 0%,
-#0b0b0b 25%,
-#050505 60%
-);
+  background:
+    radial-gradient(circle at 50% 45%,
+    #273512 0,
+    #0c0d0b 25%,
+    #050505 60%);
 }
 
 .hero-grid{
-position:absolute;
-inset:0;
+  position:absolute;
+  inset:0;
 
-background-image:
-linear-gradient(
-rgba(255,255,255,.035) 1px,
-transparent 1px
-),
-linear-gradient(
-90deg,
-rgba(255,255,255,.035) 1px,
-transparent 1px
-);
+  background-image:
+    linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
 
-background-size:80px 80px;
+  background-size:70px 70px;
 
-mask-image:linear-gradient(
-to bottom,
-black,
-transparent
-);
+  mask-image:linear-gradient(to bottom,black,transparent);
+}
+
+.hero-circle{
+  position:absolute;
+
+  width:600px;
+  height:600px;
+
+  border:1px solid rgba(186,255,50,.12);
+
+  border-radius:50%;
+
+  animation:spin 35s linear infinite;
+}
+
+.hero-circle:before{
+  content:"";
+  position:absolute;
+
+  inset:60px;
+
+  border:1px dashed rgba(186,255,50,.08);
+
+  border-radius:50%;
+}
+
+@keyframes spin{
+  to{transform:rotate(360deg)}
 }
 
 .hero-content{
-position:relative;
-z-index:2;
+  position:relative;
+  z-index:2;
 
-text-align:center;
-padding:30px;
+  text-align:center;
 }
 
-.small{
-font-size:8px;
-font-weight:800;
-letter-spacing:5px;
-color:#777;
+.eyebrow{
+  font-size:8px;
+  font-weight:800;
+  letter-spacing:5px;
+  color:#777;
 }
 
 .hero h1{
-font-size:clamp(110px,21vw,280px);
-line-height:.72;
+  font-size:clamp(110px,22vw,290px);
+  line-height:.7;
 
-font-weight:900;
-letter-spacing:-16px;
+  font-weight:900;
+  letter-spacing:-17px;
 
-margin:35px 0;
+  margin:45px 0;
 }
 
 .hero h1 span{
-color:var(--lime);
+  color:var(--lime);
 }
 
 .slogan{
-font-size:10px;
-font-weight:800;
-letter-spacing:7px;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:7px;
 }
 
-.hero-description{
-max-width:480px;
+.hero-copy{
+  max-width:430px;
+  margin:28px auto;
 
-margin:30px auto;
-
-color:#777;
-
-font-size:12px;
-line-height:1.8;
+  color:#777;
+  font-size:11px;
+  line-height:1.9;
 }
 
 .primary{
-display:inline-flex;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
 
-padding:18px 30px;
+  padding:17px 28px;
 
-background:var(--lime);
-color:#050505;
+  background:var(--lime);
+  color:#050505;
 
-font-size:9px;
-font-weight:900;
+  border:0;
 
-letter-spacing:2px;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:2px;
 
-transition:.3s;
+  transition:.35s;
 }
 
 .primary:hover{
-transform:translateY(-4px);
-box-shadow:0 15px 40px rgba(183,255,42,.18);
+  transform:translateY(-5px);
+  box-shadow:0 20px 50px rgba(186,255,50,.15);
+}
+
+/* ================= LIVE CLOCK ================= */
+
+.clock-section{
+  padding:120px 6%;
+  text-align:center;
+}
+
+.clock-label{
+  color:#666;
+  font-size:8px;
+  letter-spacing:4px;
+  font-weight:800;
+}
+
+.clock{
+  margin-top:25px;
+
+  font-size:clamp(80px,15vw,190px);
+
+  line-height:.8;
+
+  font-weight:900;
+  letter-spacing:-12px;
+}
+
+.clock span{
+  color:var(--lime);
+}
+
+.clock-status{
+  margin-top:25px;
+
+  color:#666;
+
+  font-size:9px;
+  letter-spacing:3px;
+}
+
+.now{
+  color:var(--lime);
 }
 
 /* ================= MARQUEE ================= */
 
 .marquee{
-border-top:1px solid var(--line);
-border-bottom:1px solid var(--line);
+  overflow:hidden;
 
-padding:18px 0;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
 
-overflow:hidden;
-white-space:nowrap;
+  padding:18px 0;
+
+  white-space:nowrap;
 }
 
-.marquee div{
-display:inline-block;
+.marquee-track{
+  width:max-content;
 
-font-size:9px;
-font-weight:800;
+  animation:marquee 25s linear infinite;
 
-letter-spacing:4px;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:4px;
 
-color:#666;
-
-animation:move 25s linear infinite;
+  color:#555;
 }
 
-@keyframes move{
-to{
-transform:translateX(-50%);
-}
-}
-
-/* ================= SECTION ================= */
-
-section{
-position:relative;
+@keyframes marquee{
+  to{
+    transform:translateX(-50%);
+  }
 }
 
-.shop{
-padding:140px 6%;
+/* ================= GENERAL ================= */
+
+.section{
+  padding:130px 6%;
 }
 
-.section-top{
-display:flex;
-justify-content:space-between;
-align-items:end;
+.section-heading{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
 
-margin-bottom:60px;
+  margin-bottom:70px;
 }
 
 .kicker{
-font-size:8px;
-font-weight:800;
+  font-size:8px;
+  font-weight:800;
+  letter-spacing:4px;
 
-letter-spacing:4px;
+  color:var(--lime);
 
-color:var(--lime);
-
-margin-bottom:20px;
+  margin-bottom:20px;
 }
 
 .title{
-font-size:clamp(60px,9vw,120px);
+  font-size:clamp(65px,10vw,140px);
 
-line-height:.78;
+  font-weight:900;
+  line-height:.75;
 
-letter-spacing:-8px;
-
-font-weight:900;
+  letter-spacing:-9px;
 }
 
-.counter{
-font-size:9px;
-
-letter-spacing:3px;
-
-color:#555;
+.muted{
+  color:#555;
+  font-size:9px;
+  letter-spacing:2px;
 }
 
 /* ================= PRODUCTS ================= */
 
-.products{
-display:grid;
+.product-grid{
+  display:grid;
 
-grid-template-columns:
-repeat(3,1fr);
+  grid-template-columns:
+  1.1fr .8fr 1fr;
 
-gap:18px;
+  gap:35px;
+
+  align-items:start;
 }
 
 .product{
-background:var(--panel);
+  position:relative;
 
-border:1px solid #202020;
+  cursor:pointer;
 
-transition:.45s;
+  transition:.5s;
+}
 
-cursor:pointer;
+.product:nth-child(2){
+  margin-top:100px;
+}
+
+.product:nth-child(3){
+  margin-top:35px;
 }
 
 .product:hover{
-transform:translateY(-8px);
-
-border-color:#444;
+  transform:translateY(-12px);
 }
 
 .product-image{
-aspect-ratio:4/5;
+  position:relative;
 
-position:relative;
+  overflow:hidden;
 
-overflow:hidden;
+  background:#141414;
 
-background:#181818;
+  border-radius:3px;
 }
 
-.product-image:after{
-content:"";
+.product:nth-child(1) .product-image{
+  border-radius:35px 3px 35px 3px;
+}
 
-position:absolute;
-inset:0;
+.product:nth-child(2) .product-image{
+  border-radius:3px 40px 3px 40px;
+}
 
-background:
-linear-gradient(
-135deg,
-transparent 55%,
-rgba(183,255,42,.08)
-);
+.product:nth-child(3) .product-image{
+  border-radius:50% 3px 50% 3px;
 }
 
 .product-image img{
-width:100%;
-height:100%;
+  width:100%;
+  aspect-ratio:4/5;
 
-object-fit:cover;
+  display:block;
 
-filter:grayscale(100%);
+  object-fit:cover;
 
-transition:.7s;
+  filter:grayscale(100%);
+
+  transition:.8s;
 }
 
 .product:hover img{
-filter:grayscale(0);
-transform:scale(1.06);
+  filter:grayscale(0);
+  transform:scale(1.07);
 }
 
-.tag{
-position:absolute;
+.product-tag{
+  position:absolute;
+  top:15px;
+  left:15px;
+  z-index:2;
 
-top:14px;
-left:14px;
+  padding:8px 10px;
 
-z-index:3;
+  background:var(--lime);
+  color:#050505;
 
-padding:9px 11px;
+  font-size:7px;
+  font-weight:900;
+  letter-spacing:2px;
+}
 
-background:var(--lime);
-color:#050505;
+.heart{
+  position:absolute;
+  top:15px;
+  right:15px;
+  z-index:3;
 
-font-size:7px;
-font-weight:900;
+  width:35px;
+  height:35px;
 
-letter-spacing:2px;
+  border:1px solid rgba(255,255,255,.2);
+
+  background:rgba(0,0,0,.45);
+  color:white;
+
+  border-radius:50%;
+}
+
+.heart.active{
+  background:var(--lime);
+  color:#050505;
 }
 
 .product-info{
-padding:20px;
+  padding:18px 3px;
 }
 
 .product-name{
-font-size:12px;
-font-weight:800;
+  font-size:12px;
+  font-weight:800;
 }
 
-.product-details{
-margin-top:8px;
+.product-meta{
+  display:flex;
+  justify-content:space-between;
 
-font-size:8px;
+  margin-top:8px;
 
-letter-spacing:1px;
+  color:#666;
 
-color:#666;
-}
-
-.product-bottom{
-margin-top:20px;
-
-display:flex;
-justify-content:space-between;
-
-font-size:10px;
-font-weight:800;
+  font-size:8px;
+  letter-spacing:1px;
 }
 
 /* ================= MANIFESTO ================= */
 
 .manifesto{
-padding:170px 7%;
+  min-height:80vh;
 
-background:var(--white);
-color:#050505;
+  display:flex;
+  align-items:center;
+
+  padding:130px 7%;
+
+  background:var(--white);
+  color:#050505;
+
+  border-radius:80px 0 80px 0;
+}
+
+.manifesto-inner{
+  max-width:1100px;
 }
 
 .manifesto .kicker{
-color:#555;
+  color:#555;
 }
 
 .manifesto h2{
-font-size:clamp(60px,10vw,145px);
+  font-size:clamp(65px,10vw,145px);
 
-line-height:.78;
+  line-height:.76;
 
-letter-spacing:-10px;
+  letter-spacing:-10px;
+
+  font-weight:900;
 }
 
 .manifesto p{
-max-width:600px;
+  max-width:580px;
 
-margin-top:55px;
+  margin-top:55px;
 
-color:#555;
+  color:#555;
 
-font-size:14px;
-
-line-height:2;
+  font-size:13px;
+  line-height:2;
 }
 
 /* ================= DROP ================= */
 
 .drop{
-padding:130px 6%;
-
-background:
-radial-gradient(
-circle at 70% 30%,
-#263415,
-#0a0a0a 40%,
-#050505
-);
+  padding:150px 6%;
 }
 
-.drop-card{
-min-height:550px;
+.drop-box{
+  min-height:600px;
 
-border:1px solid #2b2b2b;
+  position:relative;
 
-display:flex;
-align-items:center;
+  display:flex;
+  align-items:center;
 
-padding:7%;
+  padding:8%;
 
-position:relative;
-overflow:hidden;
+  overflow:hidden;
+
+  border-radius:100px 0 100px 0;
+
+  background:
+    radial-gradient(circle at 70% 50%,
+    #283616,
+    #0b0b0b 45%);
+
+  border:1px solid #222;
 }
 
-.drop-card:before{
-content:"4:20";
+.drop-box:after{
+  content:"4:20";
 
-position:absolute;
+  position:absolute;
 
-right:-30px;
-bottom:-120px;
+  right:-30px;
+  bottom:-100px;
 
-font-size:280px;
+  font-size:300px;
 
-font-weight:900;
+  font-weight:900;
 
-color:rgba(183,255,42,.035);
+  letter-spacing:-25px;
 
-letter-spacing:-25px;
+  color:rgba(186,255,50,.035);
 }
 
 .drop-content{
-position:relative;
-z-index:2;
+  position:relative;
+  z-index:2;
 }
 
 .drop-number{
-font-size:9px;
-letter-spacing:4px;
-
-color:var(--lime);
+  font-size:8px;
+  letter-spacing:4px;
+  color:var(--lime);
 }
 
 .drop h2{
-font-size:clamp(70px,10vw,140px);
+  margin:35px 0;
 
-letter-spacing:-9px;
+  font-size:clamp(70px,10vw,145px);
 
-line-height:.75;
+  line-height:.72;
 
-margin:35px 0;
+  letter-spacing:-10px;
 }
 
 .drop p{
-color:#777;
+  max-width:400px;
 
-font-size:11px;
+  color:#777;
 
-line-height:1.8;
+  font-size:11px;
+  line-height:1.9;
 
-max-width:400px;
-
-margin-bottom:30px;
+  margin-bottom:30px;
 }
 
 /* ================= CUSTOM ================= */
 
 .custom{
-padding:140px 6%;
+  padding:140px 6%;
 
-background:#090909;
+  background:#080808;
+
+  border-radius:100px 100px 0 0;
 }
 
-.custom-header{
-margin-bottom:70px;
+.custom-layout{
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:80px;
 }
-
-.custom-grid{
-display:grid;
-
-grid-template-columns:
-1fr 1fr;
-
-gap:70px;
-}
-
-/* shirt */
 
 .preview{
-position:sticky;
-top:100px;
+  position:sticky;
+  top:100px;
 }
 
-.shirt-box{
-aspect-ratio:4/5;
+.shirt-stage{
+  min-height:620px;
 
-display:flex;
-align-items:center;
-justify-content:center;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 
-background:
-radial-gradient(
-circle,
-#202020,
-#0c0c0c
-);
+  position:relative;
+  overflow:hidden;
 
-border:1px solid #222;
+  background:
+    radial-gradient(circle,#252525,#0b0b0b);
+
+  border-radius:50%;
+}
+
+.shirt-stage:before{
+  content:"CUSTOM";
+
+  position:absolute;
+
+  font-size:130px;
+  font-weight:900;
+
+  color:rgba(255,255,255,.025);
+
+  transform:rotate(-15deg);
 }
 
 .shirt{
-width:62%;
-height:72%;
+  width:48%;
+  height:70%;
 
-background:#050505;
+  background:#050505;
 
-clip-path:polygon(
-25% 0,
-39% 8%,
-50% 12%,
-61% 8%,
-75% 0,
-100% 17%,
-84% 36%,
-72% 28%,
-72% 100%,
-28% 100%,
-28% 28%,
-16% 36%,
-0 17%
-);
+  clip-path:polygon(
+    25% 0,
+    39% 8%,
+    50% 12%,
+    61% 8%,
+    75% 0,
+    100% 17%,
+    84% 36%,
+    72% 28%,
+    72% 100%,
+    28% 100%,
+    28% 28%,
+    16% 36%,
+    0 17%
+  );
 
-position:relative;
+  position:relative;
 
-transition:.4s;
+  transition:.4s;
+
+  z-index:2;
 }
 
 .shirt.white{
-background:#f1f1ec;
+  background:#eee;
 }
 
 .shirt-text{
-position:absolute;
+  position:absolute;
 
-top:44%;
-left:50%;
+  top:43%;
+  left:50%;
 
-transform:translate(-50%,-50%);
+  transform:translate(-50%,-50%);
 
-font-size:24px;
-font-weight:900;
+  white-space:nowrap;
 
-color:white;
+  font-size:25px;
+  font-weight:900;
 
-white-space:nowrap;
+  color:white;
 }
 
 .shirt.white .shirt-text{
-color:#050505;
+  color:#050505;
 }
 
-/* form */
-
 .form{
-display:flex;
-flex-direction:column;
-
-gap:28px;
+  display:flex;
+  flex-direction:column;
+  gap:28px;
 }
 
 .label{
-font-size:8px;
-font-weight:800;
+  font-size:8px;
+  font-weight:800;
+  letter-spacing:3px;
+  color:#777;
 
-letter-spacing:3px;
-
-color:#777;
-
-margin-bottom:10px;
+  margin-bottom:10px;
 }
 
 .options{
-display:flex;
-flex-wrap:wrap;
-gap:7px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
 }
 
 .option{
-padding:14px 18px;
+  padding:13px 18px;
 
-background:#111;
+  border:1px solid #292929;
 
-border:1px solid #292929;
+  background:#111;
+  color:#777;
 
-color:#777;
-
-font-size:8px;
-font-weight:800;
-
-letter-spacing:1px;
+  font-size:8px;
+  font-weight:800;
 }
 
 .option.active{
-background:var(--lime);
-border-color:var(--lime);
+  background:var(--lime);
+  border-color:var(--lime);
 
-color:#050505;
+  color:#050505;
 }
 
-input{
-width:100%;
-height:52px;
+input[type="text"]{
+  width:100%;
+  height:54px;
 
-background:#111;
+  padding:0 16px;
 
-border:1px solid #292929;
+  border:1px solid #292929;
 
-color:white;
+  outline:0;
 
-padding:0 15px;
-
-outline:none;
+  background:#111;
+  color:white;
 }
 
-input:focus{
-border-color:var(--lime);
+input[type="text"]:focus{
+  border-color:var(--lime);
 }
 
 .upload{
-padding:25px;
+  display:block;
 
-border:1px dashed #333;
+  padding:25px;
 
-text-align:center;
+  text-align:center;
 
-font-size:8px;
+  border:1px dashed #333;
 
-letter-spacing:2px;
+  color:#666;
 
-color:#777;
+  font-size:8px;
+  letter-spacing:2px;
 
-cursor:pointer;
+  cursor:pointer;
 }
 
 .upload input{
-display:none;
+  display:none;
 }
 
-.total{
-padding-top:25px;
+.price{
+  padding-top:25px;
 
-border-top:1px solid #252525;
+  border-top:1px solid #252525;
 
-display:flex;
-
-justify-content:space-between;
-align-items:center;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
-.total span:first-child{
-font-size:8px;
+.price span{
+  color:#666;
 
-letter-spacing:3px;
-
-color:#666;
+  font-size:8px;
+  letter-spacing:3px;
 }
 
-.total strong{
-font-size:25px;
+.price strong{
+  font-size:24px;
 }
 
 /* ================= VALUES ================= */
 
 .values{
-display:grid;
-
-grid-template-columns:
-repeat(3,1fr);
-
-border-top:1px solid var(--line);
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
 }
 
 .value{
-padding:65px 35px;
+  padding:70px 40px;
 
-border-right:1px solid var(--line);
+  border-top:1px solid var(--line);
+  border-right:1px solid var(--line);
+
+  transition:.4s;
+}
+
+.value:hover{
+  background:#101010;
 }
 
 .value:last-child{
-border:0;
+  border-right:0;
 }
 
-.value-number{
-color:var(--lime);
+.value-num{
+  color:var(--lime);
 
-font-size:8px;
-font-weight:800;
+  font-size:8px;
+  font-weight:800;
+  letter-spacing:3px;
 
-letter-spacing:3px;
-
-margin-bottom:30px;
+  margin-bottom:30px;
 }
 
 .value h3{
-font-size:18px;
+  font-size:18px;
 
-margin-bottom:15px;
+  margin-bottom:15px;
 }
 
 .value p{
-color:#666;
+  color:#666;
 
-font-size:11px;
+  font-size:10px;
 
-line-height:1.8;
+  line-height:1.9;
 }
 
 /* ================= FOOTER ================= */
 
 footer{
-padding:100px 6% 30px;
+  padding:120px 6% 30px;
 
-border-top:1px solid var(--line);
+  border-top:1px solid var(--line);
 }
 
 .footer-main{
-display:flex;
+  display:flex;
 
-justify-content:space-between;
+  justify-content:space-between;
 
-margin-bottom:100px;
+  margin-bottom:100px;
 }
 
 .footer-logo{
-font-size:65px;
+  font-size:70px;
 
-font-weight:900;
+  font-weight:900;
 
-letter-spacing:-6px;
+  letter-spacing:-7px;
 }
 
 .footer-logo span{
-color:var(--lime);
+  color:var(--lime);
 }
 
 .footer-slogan{
-margin-top:15px;
+  margin-top:12px;
 
-font-size:8px;
+  color:#555;
 
-letter-spacing:4px;
+  font-size:8px;
 
-color:#555;
+  letter-spacing:4px;
 }
 
 .social{
-display:flex;
-
-gap:30px;
+  display:flex;
+  gap:25px;
 }
 
 .social a{
-font-size:8px;
+  color:#666;
 
-font-weight:800;
+  font-size:8px;
+  font-weight:800;
 
-letter-spacing:2px;
-
-color:#666;
-}
-
-.social a:hover{
-color:var(--lime);
+  letter-spacing:2px;
 }
 
 .footer-bottom{
-padding-top:25px;
+  padding-top:25px;
 
-border-top:1px solid #222;
+  border-top:1px solid #222;
 
-display:flex;
-justify-content:space-between;
+  display:flex;
+  justify-content:space-between;
 
-font-size:8px;
+  color:#444;
 
-color:#444;
+  font-size:8px;
+  letter-spacing:2px;
+}
 
-letter-spacing:2px;
+/* ================= MODAL ================= */
+
+.modal{
+  position:fixed;
+  inset:0;
+
+  z-index:500;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:25px;
+
+  background:rgba(0,0,0,.8);
+
+  backdrop-filter:blur(15px);
+
+  opacity:0;
+  visibility:hidden;
+
+  transition:.3s;
+}
+
+.modal.open{
+  opacity:1;
+  visibility:visible;
+}
+
+.modal-box{
+  width:min(850px,100%);
+
+  background:#101010;
+
+  border:1px solid #292929;
+
+  border-radius:40px;
+
+  overflow:hidden;
+
+  display:grid;
+  grid-template-columns:1fr 1fr;
+
+  transform:translateY(30px);
+
+  transition:.4s;
+}
+
+.modal.open .modal-box{
+  transform:translateY(0);
+}
+
+.modal-image img{
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+}
+
+.modal-info{
+  padding:45px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.close{
+  position:absolute;
+
+  top:25px;
+  right:25px;
+
+  width:40px;
+  height:40px;
+
+  border:1px solid #333;
+
+  border-radius:50%;
+
+  background:#111;
+  color:white;
+}
+
+.modal-info h2{
+  font-size:40px;
+
+  letter-spacing:-3px;
+
+  margin-bottom:15px;
+}
+
+.modal-info p{
+  color:#666;
+
+  font-size:11px;
+
+  line-height:1.8;
+
+  margin-bottom:30px;
+}
+
+/* ================= REVEAL ================= */
+
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+
+  transition:opacity .8s ease,transform .8s ease;
+}
+
+.reveal.visible{
+  opacity:1;
+  transform:translateY(0);
 }
 
 /* ================= MOBILE ================= */
 
 @media(max-width:800px){
 
-header{
-height:65px;
-}
+  nav{
+    display:none;
+  }
 
-nav{
-display:none;
-}
+  .menu-btn{
+    display:block;
+  }
 
-.hero h1{
-font-size:105px;
-letter-spacing:-9px;
-}
+  header{
+    height:65px;
+  }
 
-.hero{
-min-height:90vh;
-}
+  .hero h1{
+    font-size:105px;
+    letter-spacing:-10px;
+  }
 
-.shop,
-.custom,
-.drop{
-padding:100px 5%;
-}
+  .hero-circle{
+    width:350px;
+    height:350px;
+  }
 
-.section-top{
-display:block;
-}
+  .clock{
+    letter-spacing:-7px;
+  }
 
-.counter{
-margin-top:25px;
-}
+  .section{
+    padding:100px 5%;
+  }
 
-.products{
-grid-template-columns:1fr;
-}
+  .section-heading{
+    display:block;
+  }
 
-.manifesto{
-padding:110px 5%;
-}
+  .section-heading .muted{
+    margin-top:25px;
+  }
 
-.manifesto h2{
-letter-spacing:-6px;
-}
+  .product-grid{
+    grid-template-columns:1fr;
+    gap:50px;
+  }
 
-.custom-grid{
-grid-template-columns:1fr;
-}
+  .product:nth-child(2),
+  .product:nth-child(3){
+    margin-top:0;
+  }
 
-.preview{
-position:relative;
-top:0;
+  .product:nth-child(2){
+    width:85%;
+    margin-left:auto;
+  }
 
-order:-1;
-}
+  .product:nth-child(3){
+    width:90%;
+  }
 
-.values{
-grid-template-columns:1fr;
-}
+  .manifesto{
+    padding:100px 6%;
 
-.value{
-border-right:0;
-border-bottom:1px solid var(--line);
-}
+    border-radius:50px 0 50px 0;
+  }
 
-.drop-card{
-min-height:500px;
-}
+  .manifesto h2{
+    letter-spacing:-6px;
+  }
 
-.drop h2{
-letter-spacing:-6px;
-}
+  .drop{
+    padding:100px 5%;
+  }
 
-.footer-main{
-display:block;
-}
+  .drop-box{
+    min-height:500px;
 
-.social{
-margin-top:35px;
-flex-wrap:wrap;
-}
+    border-radius:55px 0 55px 0;
+  }
 
-.footer-bottom{
-display:block;
-line-height:2;
-}
+  .drop h2{
+    letter-spacing:-6px;
+  }
 
+  .custom{
+    padding:100px 5%;
+
+    border-radius:60px 60px 0 0;
+  }
+
+  .custom-layout{
+    grid-template-columns:1fr;
+  }
+
+  .preview{
+    position:relative;
+    top:0;
+  }
+
+  .shirt-stage{
+    min-height:480px;
+  }
+
+  .shirt{
+    width:52%;
+    height:65%;
+  }
+
+  .values{
+    grid-template-columns:1fr;
+  }
+
+  .value{
+    border-right:0;
+    border-bottom:1px solid var(--line);
+  }
+
+  .footer-main{
+    display:block;
+  }
+
+  .social{
+    margin-top:35px;
+    flex-wrap:wrap;
+  }
+
+  .footer-bottom{
+    display:block;
+    line-height:2.5;
+  }
+
+  .modal-box{
+    grid-template-columns:1fr;
+  }
+
+  .modal-image{
+    max-height:300px;
+  }
+
+  .modal-info{
+    padding:30px;
+  }
+
+  .modal-info h2{
+    font-size:30px;
+  }
 }
 </style>
 </head>
 
+
 <body>
+
+<div class="cursor" id="cursor"></div>
+
+
+<!-- HEADER -->
 
 <header>
 
@@ -957,20 +1266,44 @@ line-height:2;
 <a href="#about">ABOUT</a>
 </nav>
 
-<button class="bag">
+<div class="header-actions">
+
+<button class="bag" onclick="scrollToCustom()">
 BAG (<span id="bagCount">0</span>)
 </button>
 
+<button class="menu-btn" onclick="toggleMenu()">
+MENU
+</button>
+
+</div>
+
 </header>
 
+
+<!-- MOBILE MENU -->
+
+<div class="mobile-menu" id="mobileMenu">
+
+<a href="#shop" onclick="toggleMenu()">SHOP</a>
+<a href="#drop" onclick="toggleMenu()">DROPS</a>
+<a href="#custom" onclick="toggleMenu()">CUSTOM</a>
+<a href="#about" onclick="toggleMenu()">ABOUT</a>
+
+</div>
+
+
+<!-- HERO -->
 
 <section class="hero">
 
 <div class="hero-grid"></div>
 
+<div class="hero-circle"></div>
+
 <div class="hero-content">
 
-<div class="small">
+<div class="eyebrow">
 EST. 2026 · MEXICO
 </div>
 
@@ -982,13 +1315,13 @@ EST. 2026 · MEXICO
 LA HORA ADECUADA.
 </div>
 
-<p class="hero-description">
-Una marca. Una hora. Una identidad.
-Streetwear creado para quienes saben.
+<p class="hero-copy">
+No es una hora cualquiera.
+Es una identidad.
 </p>
 
 <a href="#shop" class="primary">
-EXPLORE DROP 01 →
+ENTRAR AL DROP →
 </a>
 
 </div>
@@ -996,21 +1329,46 @@ EXPLORE DROP 01 →
 </section>
 
 
+<!-- CLOCK -->
+
+<section class="clock-section reveal">
+
+<div class="clock-label">
+LOCAL TIME / 4:20 SYSTEM
+</div>
+
+<div class="clock" id="clock">
+00:<span>00</span>
+</div>
+
+<div class="clock-status" id="clockStatus">
+ESPERANDO LA HORA ADECUADA.
+</div>
+
+</section>
+
+
+<!-- MARQUEE -->
+
 <div class="marquee">
 
-<div>
-4:20® · LA HORA ADECUADA · MADE TO ORDER ·
-DROP 01 · 4:20® · LA HORA ADECUADA ·
-MADE TO ORDER · DROP 01 ·
-4:20® · LA HORA ADECUADA ·
-</div>
+<div class="marquee-track">
+
+4:20® · LA HORA ADECUADA · DROP CULTURE ·
+MADE TO ORDER · MEXICO · 4:20® ·
+LA HORA ADECUADA · DROP CULTURE ·
+MADE TO ORDER · MEXICO ·
 
 </div>
 
+</div>
 
-<section class="shop" id="shop">
 
-<div class="section-top">
+<!-- SHOP -->
+
+<section class="section" id="shop">
+
+<div class="section-heading reveal">
 
 <div>
 
@@ -1024,25 +1382,38 @@ DROP 01
 
 </div>
 
-<div class="counter">
-03 PIEZAS · LIMITED
+<div class="muted">
+03 PIEZAS / LIMITED
 </div>
 
 </div>
 
 
-<div class="products">
+<div class="product-grid">
 
+
+<!-- PRODUCT 1 -->
 
 <article
-class="product"
-onclick="order('4:20 TEE 001',200)">
+class="product reveal"
+onclick="openProduct(
+'4:20 TEE 001',
+'BLACK / OVERSIZED',
+'200',
+'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=90'
+)">
 
 <div class="product-image">
 
-<div class="tag">
+<span class="product-tag">
 001
-</div>
+</span>
+
+<button
+class="heart"
+onclick="event.stopPropagation();favorite(this)">
+♡
+</button>
 
 <img
 src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=90"
@@ -1056,20 +1427,9 @@ alt="4:20 Tee 001">
 4:20 TEE 001
 </div>
 
-<div class="product-details">
-BLACK · OVERSIZED · MADE TO ORDER
-</div>
-
-<div class="product-bottom">
-
-<span>
-CH / M / G / XL
-</span>
-
-<span>
-$200 MXN
-</span>
-
+<div class="product-meta">
+<span>BLACK · OVERSIZED</span>
+<span>$200</span>
 </div>
 
 </div>
@@ -1077,15 +1437,28 @@ $200 MXN
 </article>
 
 
+<!-- PRODUCT 2 -->
+
 <article
-class="product"
-onclick="order('4:20 TEE 002',200)">
+class="product reveal"
+onclick="openProduct(
+'4:20 TEE 002',
+'WHITE / REGULAR',
+'200',
+'https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=1200&q=90'
+)">
 
 <div class="product-image">
 
-<div class="tag">
+<span class="product-tag">
 002
-</div>
+</span>
+
+<button
+class="heart"
+onclick="event.stopPropagation();favorite(this)">
+♡
+</button>
 
 <img
 src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=1200&q=90"
@@ -1099,20 +1472,9 @@ alt="4:20 Tee 002">
 4:20 TEE 002
 </div>
 
-<div class="product-details">
-WHITE · REGULAR · MADE TO ORDER
-</div>
-
-<div class="product-bottom">
-
-<span>
-CH / M / G / XL
-</span>
-
-<span>
-$200 MXN
-</span>
-
+<div class="product-meta">
+<span>WHITE · REGULAR</span>
+<span>$200</span>
 </div>
 
 </div>
@@ -1120,15 +1482,28 @@ $200 MXN
 </article>
 
 
+<!-- PRODUCT 3 -->
+
 <article
-class="product"
-onclick="order('4:20 TEE 003',250)">
+class="product reveal"
+onclick="openProduct(
+'4:20 TEE 003',
+'BLACK / LIMITED',
+'250',
+'https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=1200&q=90'
+)">
 
 <div class="product-image">
 
-<div class="tag">
+<span class="product-tag">
 003
-</div>
+</span>
+
+<button
+class="heart"
+onclick="event.stopPropagation();favorite(this)">
+♡
+</button>
 
 <img
 src="https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=1200&q=90"
@@ -1142,20 +1517,9 @@ alt="4:20 Tee 003">
 4:20 TEE 003
 </div>
 
-<div class="product-details">
-BLACK · LIMITED · MADE TO ORDER
-</div>
-
-<div class="product-bottom">
-
-<span>
-CH / M / G / XL
-</span>
-
-<span>
-$250 MXN
-</span>
-
+<div class="product-meta">
+<span>BLACK · LIMITED</span>
+<span>$250</span>
 </div>
 
 </div>
@@ -1167,7 +1531,11 @@ $250 MXN
 </section>
 
 
-<section class="manifesto" id="about">
+<!-- MANIFESTO -->
+
+<section class="manifesto reveal" id="about">
+
+<div class="manifesto-inner">
 
 <div class="kicker">
 THE IDEA
@@ -1179,18 +1547,22 @@ ADECUADA.
 </h2>
 
 <p>
-4:20 no necesita explicación.
-Es un número, una señal y una identidad.
-Cada colección nace como un pequeño drop
-y desaparece para convertirse en archivo.
+4:20 es el identificador.
+No buscamos llenar la ropa de elementos.
+Buscamos crear piezas que puedas reconocer
+sin necesidad de explicar quién las hizo.
 </p>
+
+</div>
 
 </section>
 
 
+<!-- DROP -->
+
 <section class="drop" id="drop">
 
-<div class="drop-card">
+<div class="drop-box reveal">
 
 <div class="drop-content">
 
@@ -1204,12 +1576,13 @@ SOON.
 </h2>
 
 <p>
-El próximo drop está en proceso.
-No mostramos todo antes de tiempo.
+Los siguientes diseños aparecen cuando
+es el momento. Síguenos para conocer
+el próximo lanzamiento.
 </p>
 
 <a href="#custom" class="primary">
-CREATE YOUR PIECE →
+CREAR MI PIEZA →
 </a>
 
 </div>
@@ -1219,9 +1592,13 @@ CREATE YOUR PIECE →
 </section>
 
 
+<!-- CUSTOM -->
+
 <section class="custom" id="custom">
 
-<div class="custom-header">
+<div class="section-heading reveal">
+
+<div>
 
 <div class="kicker">
 4:20 / CUSTOM
@@ -1234,13 +1611,15 @@ TUYA.
 
 </div>
 
+</div>
 
-<div class="custom-grid">
+
+<div class="custom-layout">
 
 
-<div class="preview">
+<div class="preview reveal">
 
-<div class="shirt-box">
+<div class="shirt-stage">
 
 <div class="shirt" id="shirt">
 
@@ -1257,7 +1636,7 @@ id="shirtText">
 </div>
 
 
-<div class="form">
+<div class="form reveal">
 
 
 <div>
@@ -1270,13 +1649,13 @@ COLOR
 
 <button
 class="option active"
-onclick="colorShirt('black',this)">
+onclick="shirtColor('black',this)">
 NEGRO
 </button>
 
 <button
 class="option"
-onclick="colorShirt('white',this)">
+onclick="shirtColor('white',this)">
 BLANCO
 </button>
 
@@ -1317,14 +1696,15 @@ XL
 <div>
 
 <div class="label">
-TU TEXTO
+TEXTO
 </div>
 
 <input
+type="text"
 id="customText"
 maxlength="20"
 placeholder="ESCRIBE TU TEXTO"
-oninput="updateShirt()">
+oninput="updateText()">
 
 </div>
 
@@ -1332,24 +1712,24 @@ oninput="updateShirt()">
 <div>
 
 <div class="label">
-DISEÑO
+TU DISEÑO
 </div>
 
 <label class="upload">
 
-SUBIR TU DISEÑO
+SUBIR IMAGEN
 
 <input
 type="file"
 accept="image/*"
-onchange="uploadDesign(event)">
+onchange="uploadImage(event)">
 
 </label>
 
 </div>
 
 
-<div class="total">
+<div class="price">
 
 <span>
 DESDE
@@ -1364,7 +1744,7 @@ $250 MXN
 
 <button
 class="primary"
-onclick="customOrder()">
+onclick="customWhatsApp()">
 
 PEDIR POR WHATSAPP →
 
@@ -1378,11 +1758,13 @@ PEDIR POR WHATSAPP →
 </section>
 
 
+<!-- VALUES -->
+
 <section class="values">
 
-<div class="value">
+<div class="value reveal">
 
-<div class="value-number">
+<div class="value-num">
 01 / DROPS
 </div>
 
@@ -1391,34 +1773,34 @@ PEQUEÑAS COLECCIONES.
 </h3>
 
 <p>
-Cada drop tiene una identidad
-y una cantidad limitada.
+Diseños lanzados por temporadas
+y cantidades limitadas.
 </p>
 
 </div>
 
 
-<div class="value">
+<div class="value reveal">
 
-<div class="value-number">
+<div class="value-num">
 02 / DESIGN
 </div>
 
 <h3>
-MENOS, PERO MEJOR.
+UNA IDENTIDAD.
 </h3>
 
 <p>
-Diseños pensados para permanecer
-más allá de una temporada.
+El número es simple.
+La forma de llevarlo no.
 </p>
 
 </div>
 
 
-<div class="value">
+<div class="value reveal">
 
-<div class="value-number">
+<div class="value-num">
 03 / CUSTOM
 </div>
 
@@ -1427,14 +1809,16 @@ TU PIEZA.
 </h3>
 
 <p>
-Personaliza y pide tu propia
-versión de 4:20.
+Personaliza una playera y crea
+una versión hecha para ti.
 </p>
 
 </div>
 
 </section>
 
+
+<!-- FOOTER -->
 
 <footer>
 
@@ -1491,22 +1875,179 @@ MADE TO ORDER
 </footer>
 
 
+<!-- PRODUCT MODAL -->
+
+<div
+class="modal"
+id="productModal"
+onclick="closeModal(event)">
+
+<button
+class="close"
+onclick="closeProduct()">
+×
+</button>
+
+<div class="modal-box">
+
+<div class="modal-image">
+
+<img id="modalImage" src="">
+
+</div>
+
+<div class="modal-info">
+
+<div class="kicker">
+4:20® / DROP
+</div>
+
+<h2 id="modalName">
+PRODUCT
+</h2>
+
+<p id="modalDescription">
+PRODUCT DESCRIPTION
+</p>
+
+<div class="price">
+
+<span>
+PRICE
+</span>
+
+<strong id="modalPrice">
+$200
+</strong>
+
+</div>
+
+<br>
+
+<button
+class="primary"
+onclick="buyCurrent()">
+
+QUIERO ESTA →
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
 <script>
 
-let count=0;
+/* ================= VARIABLES ================= */
 
-let selectedColor="NEGRO";
+let bagCount=0;
+
+let currentProduct="";
+
+let currentPrice="";
+
+let currentColor="NEGRO";
 
 
-/* PRODUCTOS */
+/* ================= CURSOR ================= */
 
-function order(name,price){
+const cursor=document.getElementById("cursor");
 
-count++;
+document.addEventListener("mousemove",e=>{
 
-document.getElementById(
-"bagCount"
-).textContent=count;
+cursor.style.left=e.clientX+"px";
+cursor.style.top=e.clientY+"px";
+
+});
+
+
+/* ================= MENU ================= */
+
+function toggleMenu(){
+
+document
+.getElementById("mobileMenu")
+.classList.toggle("open");
+
+document
+.body
+.classList.toggle("lock");
+
+}
+
+
+/* ================= FAVORITES ================= */
+
+function favorite(button){
+
+button.classList.toggle("active");
+
+button.textContent=
+button.classList.contains("active")
+?"♥"
+:"♡";
+
+}
+
+
+/* ================= MODAL ================= */
+
+function openProduct(name,description,price,image){
+
+currentProduct=name;
+currentPrice=price;
+
+document.getElementById("modalName")
+.textContent=name;
+
+document.getElementById("modalDescription")
+.textContent=description;
+
+document.getElementById("modalPrice")
+.textContent="$"+price+" MXN";
+
+document.getElementById("modalImage")
+.src=image;
+
+document
+.getElementById("productModal")
+.classList.add("open");
+
+document.body.classList.add("lock");
+
+}
+
+
+function closeProduct(){
+
+document
+.getElementById("productModal")
+.classList.remove("open");
+
+document.body.classList.remove("lock");
+
+}
+
+
+function closeModal(event){
+
+if(event.target.id==="productModal"){
+closeProduct();
+}
+
+}
+
+
+/* ================= BUY ================= */
+
+function buyCurrent(){
+
+bagCount++;
+
+document.getElementById("bagCount")
+.textContent=bagCount;
 
 const phone="TU_NUMERO_WHATSAPP";
 
@@ -1515,16 +2056,16 @@ const message=
 
 Quiero pedir:
 
-${name}
+${currentProduct}
 
-Precio: $${price} MXN
+Precio: $${currentPrice} MXN
 
 Quiero confirmar talla y disponibilidad.`;
 
 if(phone==="TU_NUMERO_WHATSAPP"){
 
 alert(
-"Configura primero tu número de WhatsApp en el código."
+"Antes de usar WhatsApp, cambia TU_NUMERO_WHATSAPP por tu número."
 );
 
 return;
@@ -1540,27 +2081,24 @@ window.open(
 }
 
 
-/* COLOR */
+/* ================= CUSTOM COLOR ================= */
 
-function colorShirt(color,button){
+function shirtColor(color,button){
 
-selectedColor=
+currentColor=
 color==="white"
 ?"BLANCO"
 :"NEGRO";
 
 document
-.querySelectorAll(
-".custom .option"
-)
-.forEach(
-b=>b.classList.remove("active")
-);
+.querySelectorAll(".custom .option")
+.forEach(b=>{
+b.classList.remove("active");
+});
 
 button.classList.add("active");
 
-const shirt=
-document.getElementById("shirt");
+const shirt=document.getElementById("shirt");
 
 if(color==="white"){
 
@@ -1575,51 +2113,44 @@ shirt.classList.remove("white");
 }
 
 
-/* TEXTO */
+/* ================= TEXT ================= */
 
-function updateShirt(){
+function updateText(){
 
 const text=
-document.getElementById(
-"customText"
-).value;
+document.getElementById("customText").value;
 
-document.getElementById(
-"shirtText"
-).textContent=
-text || "4:20";
+document.getElementById("shirtText")
+.textContent=text || "4:20";
 
 }
 
 
-/* SUBIR DISEÑO */
+/* ================= IMAGE ================= */
 
-function uploadDesign(event){
+function uploadImage(event){
 
-const file=
-event.target.files[0];
+const file=event.target.files[0];
 
 if(!file)return;
 
-const reader=
-new FileReader();
+const reader=new FileReader();
 
 reader.onload=function(e){
 
-const shirt=
-document.getElementById("shirt");
+const shirt=document.getElementById("shirt");
 
 shirt.style.backgroundImage=
 `url(${e.target.result})`;
 
-shirt.style.backgroundSize=
-"contain";
+shirt.style.backgroundSize="contain";
 
-shirt.style.backgroundRepeat=
-"no-repeat";
+shirt.style.backgroundPosition="center";
 
-shirt.style.backgroundPosition=
-"center";
+shirt.style.backgroundRepeat="no-repeat";
+
+document.getElementById("shirtText")
+.style.display="none";
 
 };
 
@@ -1628,24 +2159,22 @@ reader.readAsDataURL(file);
 }
 
 
-/* CUSTOM */
+/* ================= CUSTOM WHATSAPP ================= */
 
-function customOrder(){
+function customWhatsApp(){
+
+const phone="TU_NUMERO_WHATSAPP";
 
 const text=
-document.getElementById(
-"customText"
-).value || "4:20";
-
-const phone=
-"TU_NUMERO_WHATSAPP";
+document.getElementById("customText").value
+||"4:20";
 
 const message=
 `Hola 4:20®.
 
-Quiero una pieza CUSTOM.
+Quiero una playera CUSTOM.
 
-Color: ${selectedColor}
+Color: ${currentColor}
 Talla: M
 Texto: ${text}
 
@@ -1654,7 +2183,7 @@ Precio desde: $250 MXN`;
 if(phone==="TU_NUMERO_WHATSAPP"){
 
 alert(
-"Configura primero tu número de WhatsApp en el código."
+"Antes de usar WhatsApp, cambia TU_NUMERO_WHATSAPP por tu número."
 );
 
 return;
@@ -1668,6 +2197,86 @@ window.open(
 );
 
 }
+
+
+/* ================= SCROLL TO CUSTOM ================= */
+
+function scrollToCustom(){
+
+document
+.getElementById("custom")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+
+/* ================= LIVE CLOCK ================= */
+
+function updateClock(){
+
+const now=new Date();
+
+let h=now.getHours();
+let m=now.getMinutes();
+
+const hh=String(h).padStart(2,"0");
+const mm=String(m).padStart(2,"0");
+
+document.getElementById("clock").innerHTML=
+`${hh}:<span>${mm}</span>`;
+
+const status=
+document.getElementById("clockStatus");
+
+if(h===4 && m===20){
+
+status.textContent=
+"THE HOUR IS NOW.";
+
+status.classList.add("now");
+
+}else{
+
+status.textContent=
+"ESPERANDO LA HORA ADECUADA.";
+
+status.classList.remove("now");
+
+}
+
+}
+
+setInterval(updateClock,1000);
+
+updateClock();
+
+
+/* ================= SCROLL REVEAL ================= */
+
+const observer=
+new IntersectionObserver(
+(entries)=>{
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("visible");
+
+}
+
+});
+},
+{
+threshold:.12
+}
+);
+
+document
+.querySelectorAll(".reveal")
+.forEach(el=>observer.observe(el));
+
 
 </script>
 
