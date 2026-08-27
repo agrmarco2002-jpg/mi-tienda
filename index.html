@@ -2,24 +2,34 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 <title>4:20 — La hora adecuada</title>
 
-<meta name="description" content="4:20 — La hora adecuada. Streetwear, piezas urbanas y línea 4:20 Work / Agriculture.">
+<meta name="description"
+content="4:20 — La hora adecuada. Streetwear, piezas urbanas y diseños personalizados.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+rel="stylesheet">
 
 <style>
+
+/* =========================================================
+   4:20 — LA HORA ADECUADA
+   VERSION PREMIUM
+========================================================= */
+
 :root{
---black:#080808;
---black2:#0e0e0e;
---black3:#151515;
---white:#f5f5f2;
---gray:#888;
---line:#292929;
+--black:#070707;
+--black2:#0c0c0c;
+--black3:#121212;
+--white:#f3f3ef;
+--gray:#777;
+--line:#252525;
+--soft:#e9e9e4;
 }
 
 *{
@@ -43,8 +53,13 @@ body.lock{
 overflow:hidden;
 }
 
-button,input{
+button,
+input{
 font-family:inherit;
+}
+
+button{
+-webkit-tap-highlight-color:transparent;
 }
 
 a{
@@ -52,16 +67,19 @@ color:inherit;
 text-decoration:none;
 }
 
-/* ================= LOADER ================= */
+
+/* =========================================================
+   LOADER
+========================================================= */
 
 .loader{
 position:fixed;
 inset:0;
 z-index:9999;
+background:#070707;
 display:flex;
 align-items:center;
 justify-content:center;
-background:#080808;
 transition:.7s;
 }
 
@@ -85,14 +103,19 @@ height:2px;
 background:#eee;
 transform:scaleX(0);
 transform-origin:left;
-animation:loading 1.5s ease forwards;
+animation:loading 1.4s forwards;
 }
 
 @keyframes loading{
-to{transform:scaleX(1)}
+to{
+transform:scaleX(1);
+}
 }
 
-/* ================= HEADER ================= */
+
+/* =========================================================
+   HEADER
+========================================================= */
 
 header{
 position:fixed;
@@ -105,7 +128,7 @@ display:flex;
 align-items:center;
 justify-content:space-between;
 padding:0 5%;
-background:rgba(8,8,8,.82);
+background:rgba(7,7,7,.78);
 backdrop-filter:blur(20px);
 border-bottom:1px solid rgba(255,255,255,.07);
 }
@@ -136,24 +159,30 @@ transition:.3s;
 
 nav a:hover,
 .header-social a:hover{
-color:#fff;
+color:white;
 }
 
 .header-social{
 display:flex;
-gap:20px;
 align-items:center;
+gap:20px;
 }
 
 .menu{
 display:none;
-border:0;
 background:none;
-color:#fff;
+border:0;
+color:white;
 font-size:9px;
 font-weight:800;
 letter-spacing:2px;
+cursor:pointer;
 }
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
 
 .mobile-menu{
 position:fixed;
@@ -163,8 +192,8 @@ display:flex;
 flex-direction:column;
 align-items:center;
 justify-content:center;
-gap:25px;
-background:#080808;
+gap:26px;
+background:#070707;
 opacity:0;
 visibility:hidden;
 transition:.4s;
@@ -181,7 +210,10 @@ font-weight:900;
 letter-spacing:-2px;
 }
 
-/* ================= HERO ================= */
+
+/* =========================================================
+   HERO
+========================================================= */
 
 .hero{
 min-height:100vh;
@@ -191,7 +223,7 @@ align-items:center;
 justify-content:center;
 overflow:hidden;
 background:
-radial-gradient(circle at center,#242424 0%,#101010 30%,#080808 70%);
+radial-gradient(circle at center,#242424 0%,#101010 30%,#070707 70%);
 }
 
 .hero-grid{
@@ -222,7 +254,9 @@ border-radius:50%;
 }
 
 @keyframes spin{
-to{transform:rotate(360deg)}
+to{
+transform:rotate(360deg);
+}
 }
 
 .hero-content{
@@ -282,11 +316,14 @@ transition:.35s;
 
 .button:hover{
 transform:translateY(-4px);
-background:#fff;
+background:white;
 box-shadow:0 20px 50px rgba(255,255,255,.08);
 }
 
-/* ================= MARQUEE ================= */
+
+/* =========================================================
+   MARQUEE
+========================================================= */
 
 .marquee{
 overflow:hidden;
@@ -306,10 +343,15 @@ animation:marquee 28s linear infinite;
 }
 
 @keyframes marquee{
-to{transform:translateX(-50%)}
+to{
+transform:translateX(-50%);
+}
 }
 
-/* ================= SECTIONS ================= */
+
+/* =========================================================
+   GENERAL SECTIONS
+========================================================= */
 
 .section{
 padding:140px 6%;
@@ -343,7 +385,10 @@ font-size:8px;
 letter-spacing:2px;
 }
 
-/* ================= PRODUCTS ================= */
+
+/* =========================================================
+   PRODUCTS
+========================================================= */
 
 .products{
 display:grid;
@@ -362,13 +407,16 @@ transition:.5s;
 margin-top:70px;
 }
 
-.product:nth-child(3),
-.product:nth-child(6){
+.product:nth-child(3){
 margin-top:25px;
 }
 
 .product:nth-child(4){
 margin-top:45px;
+}
+
+.product:nth-child(6){
+margin-top:25px;
 }
 
 .product:hover{
@@ -388,6 +436,7 @@ width:100%;
 height:100%;
 display:block;
 object-fit:cover;
+object-position:center;
 transition:.8s;
 }
 
@@ -424,7 +473,7 @@ cursor:pointer;
 
 .favorite.active{
 background:#080808;
-color:#fff;
+color:white;
 }
 
 .product-info{
@@ -445,7 +494,10 @@ font-size:8px;
 letter-spacing:1px;
 }
 
-/* ================= ABOUT ================= */
+
+/* =========================================================
+   ABOUT
+========================================================= */
 
 .brand-section{
 margin:30px 6%;
@@ -463,7 +515,10 @@ font-size:13px;
 line-height:2;
 }
 
-/* ================= DROP ================= */
+
+/* =========================================================
+   DROP
+========================================================= */
 
 .drop{
 padding:150px 6%;
@@ -477,7 +532,8 @@ align-items:center;
 padding:9%;
 overflow:hidden;
 border-radius:110px 0 110px 0;
-background:radial-gradient(circle at 70% 50%,#282828,#090909 55%);
+background:
+radial-gradient(circle at 70% 50%,#282828,#090909 55%);
 border:1px solid #252525;
 }
 
@@ -520,9 +576,10 @@ font-size:11px;
 line-height:1.9;
 }
 
-/* =====================================================
-   CUSTOM DESIGNER
-===================================================== */
+
+/* =========================================================
+   CUSTOM
+========================================================= */
 
 .custom{
 padding:150px 6%;
@@ -532,186 +589,465 @@ border-radius:100px 100px 0 0;
 
 .custom-grid{
 display:grid;
-grid-template-columns:1.1fr .9fr;
-gap:80px;
+grid-template-columns:minmax(0,1.15fr) minmax(350px,.85fr);
+gap:75px;
+align-items:start;
 }
 
-/* ================= PRODUCT VIEWER ================= */
+
+/* =========================================================
+   PREMIUM GARMENT PREVIEW
+========================================================= */
 
 .preview{
 position:sticky;
-top:100px;
+top:105px;
 }
 
-.viewer{
+.garment-wrapper{
 position:relative;
-min-height:680px;
+min-height:720px;
 display:flex;
 align-items:center;
 justify-content:center;
 overflow:hidden;
 background:
-radial-gradient(circle at 50% 45%,#2a2a2a 0%,#171717 35%,#090909 75%);
-border:1px solid #252525;
-border-radius:45px;
+radial-gradient(
+circle at 50% 45%,
+#303030 0%,
+#181818 42%,
+#090909 78%
+);
+border:1px solid #222;
+border-radius:50px;
 }
 
-.viewer:before{
+.garment-wrapper:before{
 content:"";
 position:absolute;
-width:520px;
-height:520px;
-border:1px solid rgba(255,255,255,.035);
+width:75%;
+height:75%;
 border-radius:50%;
+background:rgba(255,255,255,.025);
+filter:blur(40px);
 }
 
-.viewer-info{
+.preview-top{
 position:absolute;
 top:25px;
-left:25px;
+left:30px;
+right:30px;
 z-index:20;
-color:#666;
-font-size:7px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.preview-tag{
+color:#777;
+font-size:8px;
 font-weight:800;
 letter-spacing:3px;
 }
 
-.viewer-side{
-position:absolute;
-right:25px;
-top:25px;
-z-index:20;
-color:#666;
-font-size:7px;
-font-weight:800;
-letter-spacing:2px;
-}
-
-/* ================= REALISTIC SHIRT SVG ================= */
-
-.garment{
-position:relative;
-z-index:5;
-width:min(520px,76%);
-height:580px;
-filter:
-drop-shadow(0 30px 35px rgba(0,0,0,.55))
-drop-shadow(0 5px 8px rgba(0,0,0,.35));
-transition:.55s ease;
-}
-
-/* subtle movement */
-.garment.wind{
-animation:fabricWind 5s ease-in-out infinite;
-}
-
-@keyframes fabricWind{
-0%,100%{transform:rotate(0deg) translateX(0)}
-50%{transform:rotate(-1deg) translateX(5px)}
-}
-
-.garment svg{
-width:100%;
-height:100%;
-overflow:visible;
-}
-
-.garment-body{
-transition:.45s;
-}
-
-.fabric-highlight{
-opacity:.16;
-mix-blend-mode:screen;
-}
-
-.fabric-shadow{
-opacity:.25;
-mix-blend-mode:multiply;
-}
-
-/* ================= PRINT ================= */
-
-.print-layer{
-position:absolute;
-z-index:10;
-left:50%;
-top:46%;
-width:230px;
-min-height:70px;
-transform:translate(-50%,-50%);
+.view-switch{
 display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-pointer-events:none;
-transition:.35s;
+gap:5px;
+padding:4px;
+background:#111;
+border:1px solid #2b2b2b;
+border-radius:30px;
 }
 
-.print-content{
-max-width:100%;
-font-size:30px;
-font-weight:900;
-line-height:.95;
-letter-spacing:-1.5px;
-word-break:break-word;
-transition:.3s;
-}
-
-.print-content img{
-display:block;
-max-width:190px;
-max-height:140px;
-object-fit:contain;
-margin:auto;
-filter:drop-shadow(0 3px 3px rgba(0,0,0,.2));
-}
-
-.shirt-black .print-content{
-color:#fff;
-}
-
-.shirt-white .print-content,
-.shirt-beige .print-content{
-color:#080808;
-}
-
-/* ================= VIEWER CONTROLS ================= */
-
-.viewer-controls{
-position:absolute;
-bottom:22px;
-left:50%;
-transform:translateX(-50%);
-z-index:30;
-display:flex;
-gap:6px;
-padding:6px;
-background:rgba(0,0,0,.55);
-border:1px solid #333;
-border-radius:100px;
-backdrop-filter:blur(15px);
-}
-
-.view-button{
-height:38px;
-padding:0 17px;
+.view-switch button{
 border:0;
-border-radius:100px;
 background:transparent;
 color:#777;
+padding:8px 13px;
+border-radius:20px;
 font-size:7px;
 font-weight:900;
-letter-spacing:2px;
+letter-spacing:1px;
 cursor:pointer;
 }
 
-.view-button.active{
+.view-switch button.active{
 background:#eee;
 color:#080808;
 }
 
-/* ================= DESIGNER FORM ================= */
+
+/* =========================================================
+   GARMENT
+========================================================= */
+
+.garment{
+position:relative;
+width:min(440px,70%);
+aspect-ratio:.78;
+z-index:5;
+filter:drop-shadow(0 35px 30px rgba(0,0,0,.55));
+transform:perspective(900px) rotateY(-2deg);
+transition:.45s;
+}
+
+.garment-back{
+transform:perspective(900px) rotateY(2deg);
+}
+
+
+/* torso */
+
+.garment-body{
+position:absolute;
+left:17%;
+right:17%;
+top:10%;
+bottom:2%;
+background:var(--garment-color,#101010);
+border-radius:
+9% 9% 7% 7%
+/
+5% 5% 4% 4%;
+box-shadow:
+inset 10px 0 18px rgba(255,255,255,.025),
+inset -16px 0 22px rgba(0,0,0,.32),
+inset 0 -20px 35px rgba(0,0,0,.20);
+overflow:hidden;
+}
+
+
+/* realistic fabric */
+
+.garment-body:before{
+content:"";
+position:absolute;
+inset:0;
+opacity:.27;
+background:
+repeating-linear-gradient(
+90deg,
+rgba(255,255,255,.025) 0px,
+rgba(255,255,255,.025) 1px,
+transparent 1px,
+transparent 5px
+),
+repeating-linear-gradient(
+0deg,
+rgba(255,255,255,.018) 0px,
+rgba(255,255,255,.018) 1px,
+transparent 1px,
+transparent 4px
+);
+mix-blend-mode:soft-light;
+}
+
+.garment-body:after{
+content:"";
+position:absolute;
+left:7%;
+right:7%;
+bottom:5%;
+height:35%;
+background:
+radial-gradient(
+ellipse at center,
+rgba(255,255,255,.08),
+transparent 65%
+);
+filter:blur(12px);
+opacity:.6;
+}
+
+
+/* shoulders */
+
+.garment-sleeve{
+position:absolute;
+top:12%;
+width:31%;
+height:34%;
+background:var(--garment-color,#101010);
+z-index:1;
+box-shadow:
+inset 0 -10px 18px rgba(0,0,0,.25),
+inset 0 10px 14px rgba(255,255,255,.025);
+}
+
+.garment-sleeve.left{
+left:0;
+clip-path:polygon(
+100% 0,
+70% 7%,
+20% 20%,
+0 54%,
+25% 80%,
+100% 65%
+);
+border-radius:25% 0 30% 35%;
+transform:rotate(3deg);
+}
+
+.garment-sleeve.right{
+right:0;
+clip-path:polygon(
+0 0,
+30% 7%,
+80% 20%,
+100% 54%,
+75% 80%,
+0 65%
+);
+border-radius:0 25% 35% 30%;
+transform:rotate(-3deg);
+}
+
+
+/* sleeve shadows */
+
+.garment-sleeve:after{
+content:"";
+position:absolute;
+inset:0;
+background:
+linear-gradient(
+135deg,
+rgba(255,255,255,.06),
+transparent 40%,
+rgba(0,0,0,.2)
+);
+}
+
+
+/* collar */
+
+.collar{
+position:absolute;
+z-index:10;
+top:3%;
+left:37%;
+width:26%;
+height:14%;
+border-radius:50%;
+background:#080808;
+box-shadow:
+0 2px 4px rgba(0,0,0,.7);
+}
+
+.collar-inner{
+position:absolute;
+inset:20%;
+border-radius:50%;
+background:#151515;
+}
+
+.garment.white .collar-inner{
+background:#d8d8d2;
+}
+
+.garment.white .collar{
+background:#c9c9c3;
+}
+
+
+/* polo collar */
+
+.polo-collar{
+display:none;
+position:absolute;
+z-index:12;
+top:4%;
+left:31%;
+width:38%;
+height:18%;
+}
+
+.polo-collar:before,
+.polo-collar:after{
+content:"";
+position:absolute;
+top:0;
+width:50%;
+height:100%;
+background:var(--garment-color,#101010);
+box-shadow:
+inset 0 -4px 5px rgba(0,0,0,.18);
+}
+
+.polo-collar:before{
+left:0;
+clip-path:polygon(
+100% 0,
+75% 100%,
+0 45%,
+20% 0
+);
+}
+
+.polo-collar:after{
+right:0;
+clip-path:polygon(
+0 0,
+80% 0,
+100% 45%,
+25% 100%
+);
+}
+
+.polo-neck{
+display:none;
+position:absolute;
+z-index:13;
+top:7%;
+left:42%;
+width:16%;
+height:10%;
+background:#070707;
+border-radius:0 0 50% 50%;
+}
+
+
+/* polo mode */
+
+.garment.polo .collar{
+display:none;
+}
+
+.garment.polo .polo-collar,
+.garment.polo .polo-neck{
+display:block;
+}
+
+
+/* oversized */
+
+.garment.oversized{
+width:min(475px,75%);
+}
+
+.garment.oversized .garment-body{
+left:12%;
+right:12%;
+top:9%;
+}
+
+.garment.oversized .garment-sleeve{
+width:35%;
+height:38%;
+}
+
+
+/* =========================================================
+   GARMENT DESIGN AREA
+========================================================= */
+
+.print-area{
+position:absolute;
+z-index:20;
+left:25%;
+width:50%;
+top:31%;
+height:42%;
+display:flex;
+align-items:center;
+justify-content:center;
+pointer-events:none;
+}
+
+.print-layer{
+position:absolute;
+max-width:85%;
+max-height:75%;
+object-fit:contain;
+filter:
+drop-shadow(0 3px 3px rgba(0,0,0,.25));
+mix-blend-mode:multiply;
+transition:.25s;
+}
+
+.garment.dark-print .print-layer{
+mix-blend-mode:screen;
+}
+
+.custom-print-text{
+position:absolute;
+max-width:95%;
+text-align:center;
+font-size:clamp(13px,2vw,23px);
+font-weight:900;
+letter-spacing:-.7px;
+line-height:1;
+color:white;
+text-shadow:0 2px 4px rgba(0,0,0,.2);
+white-space:pre-wrap;
+word-break:break-word;
+}
+
+.garment.white .custom-print-text{
+color:#111;
+text-shadow:none;
+}
+
+
+/* wind folds */
+
+.fold{
+position:absolute;
+z-index:15;
+pointer-events:none;
+border-radius:50%;
+opacity:.18;
+}
+
+.fold.one{
+left:18%;
+top:28%;
+width:65%;
+height:9%;
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.28),
+transparent
+);
+transform:rotate(-3deg);
+filter:blur(5px);
+}
+
+.fold.two{
+left:20%;
+top:60%;
+width:60%;
+height:7%;
+background:linear-gradient(
+90deg,
+transparent,
+rgba(0,0,0,.45),
+transparent
+);
+transform:rotate(2deg);
+filter:blur(6px);
+}
+
+.fold.three{
+left:29%;
+top:82%;
+width:45%;
+height:5%;
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.18),
+transparent
+);
+transform:rotate(-2deg);
+filter:blur(5px);
+}
+
+
+/* =========================================================
+   CUSTOM FORM
+========================================================= */
 
 .custom-form{
 display:flex;
@@ -719,10 +1055,10 @@ flex-direction:column;
 gap:28px;
 }
 
-.form-group{
+.form-block{
 display:flex;
 flex-direction:column;
-gap:10px;
+gap:11px;
 }
 
 .form-label{
@@ -751,7 +1087,7 @@ transition:.25s;
 
 .option:hover{
 border-color:#aaa;
-color:#fff;
+color:white;
 }
 
 .option.active{
@@ -760,14 +1096,12 @@ color:#080808;
 border-color:#eee;
 }
 
-/* ================= TEXT ================= */
-
 .custom-input{
 width:100%;
 height:55px;
 padding:0 16px;
 background:#111;
-color:#fff;
+color:white;
 border:1px solid #292929;
 outline:none;
 }
@@ -776,42 +1110,29 @@ outline:none;
 border-color:#aaa;
 }
 
-/* ================= DESIGN PICKER ================= */
-
-.design-grid{
+.range-row{
 display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:7px;
+grid-template-columns:1fr auto;
+gap:15px;
+align-items:center;
 }
 
-.design-option{
-min-height:58px;
-padding:8px;
-background:#111;
-border:1px solid #292929;
-color:#777;
-font-size:7px;
-font-weight:800;
+input[type="range"]{
+width:100%;
+accent-color:#eee;
 cursor:pointer;
-transition:.25s;
 }
 
-.design-option:hover{
-border-color:#aaa;
-color:#fff;
+.range-value{
+min-width:45px;
+color:#aaa;
+font-size:8px;
+text-align:right;
 }
-
-.design-option.active{
-background:#eee;
-color:#080808;
-border-color:#eee;
-}
-
-/* ================= UPLOAD ================= */
 
 .upload{
 display:block;
-padding:24px;
+padding:25px;
 border:1px dashed #333;
 text-align:center;
 color:#666;
@@ -823,7 +1144,7 @@ transition:.25s;
 }
 
 .upload:hover{
-color:#fff;
+color:white;
 border-color:#aaa;
 }
 
@@ -831,28 +1152,12 @@ border-color:#aaa;
 display:none;
 }
 
-/* ================= SIZE / POSITION ================= */
-
-.slider-row{
-display:grid;
-grid-template-columns:1fr auto;
-align-items:center;
-gap:15px;
-}
-
-.slider-value{
-color:#aaa;
+.selected-design{
 font-size:8px;
-font-weight:800;
+color:#666;
+letter-spacing:1px;
+margin-top:4px;
 }
-
-input[type="range"]{
-width:100%;
-accent-color:#eee;
-cursor:pointer;
-}
-
-/* ================= PRICE ================= */
 
 .custom-price{
 display:flex;
@@ -869,30 +1174,93 @@ letter-spacing:3px;
 }
 
 .custom-price strong{
-font-size:25px;
+font-size:22px;
 }
 
-/* ================= SNAPSHOT ================= */
+.custom-actions{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+}
 
-.capture-box{
+.secondary-button{
+min-height:52px;
+border:1px solid #333;
+background:#111;
+color:white;
+font-size:8px;
+font-weight:900;
+letter-spacing:2px;
+cursor:pointer;
+transition:.3s;
+}
+
+.secondary-button:hover{
+border-color:#aaa;
+}
+
+
+/* =========================================================
+   DISCOUNT
+========================================================= */
+
+.discount-box{
+margin-top:8px;
 padding:22px;
-background:#101010;
+background:
+linear-gradient(
+135deg,
+#151515,
+#0d0d0d
+);
 border:1px solid #292929;
 }
 
-.capture-title{
-font-size:10px;
+.discount-title{
+font-size:11px;
 font-weight:900;
-margin-bottom:8px;
+letter-spacing:1px;
 }
 
-.capture-text{
+.discount-text{
+margin-top:8px;
 color:#666;
 font-size:9px;
-line-height:1.8;
+line-height:1.7;
 }
 
-/* ================= VALUES ================= */
+.discount-button{
+margin-top:16px;
+width:100%;
+height:46px;
+background:#eee;
+border:0;
+color:#080808;
+font-size:8px;
+font-weight:900;
+letter-spacing:2px;
+cursor:pointer;
+}
+
+.discount-status{
+display:none;
+margin-top:14px;
+padding:12px;
+background:#191919;
+border:1px solid #303030;
+color:#aaa;
+font-size:8px;
+line-height:1.6;
+}
+
+.discount-status.show{
+display:block;
+}
+
+
+/* =========================================================
+   VALUES
+========================================================= */
 
 .values{
 display:grid;
@@ -933,7 +1301,10 @@ font-size:10px;
 line-height:1.9;
 }
 
-/* ================= SOCIAL ================= */
+
+/* =========================================================
+   SOCIAL
+========================================================= */
 
 .social-section{
 padding:150px 6%;
@@ -1027,7 +1398,10 @@ font-weight:800;
 letter-spacing:2px;
 }
 
-/* ================= FOOTER ================= */
+
+/* =========================================================
+   FOOTER
+========================================================= */
 
 footer{
 padding:130px 6% 30px;
@@ -1069,7 +1443,7 @@ transition:.3s;
 }
 
 .footer-links a:hover{
-color:#fff;
+color:white;
 }
 
 .footer-bottom{
@@ -1082,7 +1456,10 @@ font-size:8px;
 letter-spacing:2px;
 }
 
-/* ================= MODAL ================= */
+
+/* =========================================================
+   MODAL
+========================================================= */
 
 .modal{
 position:fixed;
@@ -1159,12 +1536,15 @@ height:42px;
 border:1px solid #333;
 border-radius:50%;
 background:#111;
-color:#fff;
+color:white;
 font-size:20px;
 cursor:pointer;
 }
 
-/* ================= REVEAL ================= */
+
+/* =========================================================
+   REVEAL
+========================================================= */
 
 .reveal{
 opacity:0;
@@ -1177,11 +1557,40 @@ opacity:1;
 transform:translateY(0);
 }
 
-/* =====================================================
-   MOBILE
-===================================================== */
 
-@media(max-width:800px){
+/* =========================================================
+   TOAST
+========================================================= */
+
+.toast{
+position:fixed;
+left:50%;
+bottom:30px;
+z-index:5000;
+transform:translate(-50%,20px);
+padding:14px 20px;
+background:#eee;
+color:#080808;
+font-size:8px;
+font-weight:900;
+letter-spacing:1px;
+opacity:0;
+visibility:hidden;
+transition:.35s;
+}
+
+.toast.show{
+opacity:1;
+visibility:visible;
+transform:translate(-50%,0);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:900px){
 
 header{
 height:65px;
@@ -1198,6 +1607,50 @@ display:none;
 .menu{
 display:block;
 }
+
+.custom-grid{
+grid-template-columns:1fr;
+gap:45px;
+}
+
+.preview{
+position:relative;
+top:0;
+}
+
+.garment-wrapper{
+min-height:620px;
+}
+
+.values{
+grid-template-columns:1fr;
+}
+
+.value{
+border-right:0;
+border-bottom:1px solid var(--line);
+}
+
+.social-grid{
+grid-template-columns:1fr;
+}
+
+.products{
+grid-template-columns:repeat(2,1fr);
+}
+
+.product:nth-child(2),
+.product:nth-child(3),
+.product:nth-child(4),
+.product:nth-child(5),
+.product:nth-child(6){
+margin-top:0;
+}
+
+}
+
+
+@media(max-width:600px){
 
 .hero h1{
 font-size:105px;
@@ -1225,14 +1678,6 @@ margin-top:25px;
 .products{
 grid-template-columns:1fr;
 gap:55px;
-}
-
-.product:nth-child(2),
-.product:nth-child(3),
-.product:nth-child(4),
-.product:nth-child(5),
-.product:nth-child(6){
-margin-top:0;
 }
 
 .product:nth-child(2){
@@ -1273,48 +1718,26 @@ padding:100px 5%;
 border-radius:60px 60px 0 0;
 }
 
-.custom-grid{
-grid-template-columns:1fr;
-gap:45px;
-}
-
-.preview{
-position:relative;
-top:0;
-}
-
-.viewer{
-min-height:560px;
-border-radius:30px;
+.garment-wrapper{
+min-height:570px;
+border-radius:35px;
 }
 
 .garment{
-width:90%;
-height:500px;
+width:76%;
 }
 
-.print-layer{
-width:190px;
+.preview-top{
+left:18px;
+right:18px;
+top:18px;
 }
 
-.print-content{
-font-size:23px;
+.view-switch button{
+padding:7px 9px;
 }
 
-.design-grid{
-grid-template-columns:repeat(2,1fr);
-}
-
-.values{
-grid-template-columns:1fr;
-}
-
-.value{
-border-right:0;
-border-bottom:1px solid var(--line);
-}
-
-.social-grid{
+.custom-actions{
 grid-template-columns:1fr;
 }
 
@@ -1354,42 +1777,64 @@ font-size:30px;
 }
 
 }
+
 </style>
 </head>
 
+
 <body>
 
-<!-- ================= LOADER ================= -->
+
+<!-- ======================================================
+     LOADER
+====================================================== -->
 
 <div class="loader" id="loader">
-<div class="loader-logo">4:20</div>
-<div class="loader-line"></div>
+
+<div class="loader-logo">
+4:20
 </div>
 
-<!-- ================= HEADER ================= -->
+<div class="loader-line"></div>
+
+</div>
+
+
+<!-- ======================================================
+     HEADER
+====================================================== -->
 
 <header>
 
-<a href="#" class="logo">4:<span>20</span></a>
+<a href="#" class="logo">
+4:<span>20</span>
+</a>
 
 <nav>
+
 <a href="#shop">SHOP</a>
 <a href="#drops">DROPS</a>
 <a href="#custom">CUSTOM</a>
 <a href="#about">ABOUT</a>
+
 </nav>
 
 <div class="header-social">
 
-<a href="https://www.instagram.com/4_20.street/" target="_blank" rel="noopener noreferrer">
+<a href="https://www.instagram.com/4_20.street/"
+target="_blank"
+rel="noopener noreferrer">
 IG ↗
 </a>
 
-<a href="https://www.tiktok.com/@horaadecuada420" target="_blank" rel="noopener noreferrer">
+<a href="https://www.tiktok.com/@horaadecuada420"
+target="_blank"
+rel="noopener noreferrer">
 TK ↗
 </a>
 
-<button class="menu" onclick="toggleMenu()">
+<button class="menu"
+onclick="toggleMenu()">
 MENU
 </button>
 
@@ -1397,34 +1842,55 @@ MENU
 
 </header>
 
-<!-- ================= MOBILE MENU ================= -->
+
+<!-- ======================================================
+     MOBILE MENU
+====================================================== -->
 
 <div class="mobile-menu" id="mobileMenu">
 
-<a href="#shop" onclick="toggleMenu()">SHOP</a>
-<a href="#drops" onclick="toggleMenu()">DROPS</a>
-<a href="#custom" onclick="toggleMenu()">CUSTOM</a>
-<a href="#about" onclick="toggleMenu()">ABOUT</a>
+<a href="#shop" onclick="toggleMenu()">
+SHOP
+</a>
 
-<a href="https://www.instagram.com/4_20.street/" target="_blank">
+<a href="#drops" onclick="toggleMenu()">
+DROPS
+</a>
+
+<a href="#custom" onclick="toggleMenu()">
+CUSTOM
+</a>
+
+<a href="#about" onclick="toggleMenu()">
+ABOUT
+</a>
+
+<a href="https://www.instagram.com/4_20.street/"
+target="_blank">
 INSTAGRAM ↗
 </a>
 
-<a href="https://www.tiktok.com/@horaadecuada420" target="_blank">
+<a href="https://www.tiktok.com/@horaadecuada420"
+target="_blank">
 TIKTOK ↗
 </a>
 
-<a href="https://www.facebook.com/share/1Ephp8bfdR/" target="_blank">
+<a href="https://www.facebook.com/share/1Ephp8bfdR/"
+target="_blank">
 FACEBOOK ↗
 </a>
 
 </div>
 
-<!-- ================= HERO ================= -->
+
+<!-- ======================================================
+     HERO
+====================================================== -->
 
 <section class="hero">
 
 <div class="hero-grid"></div>
+
 <div class="hero-ring"></div>
 
 <div class="hero-content">
@@ -1445,7 +1911,8 @@ LA HORA ADECUADA
 Diseño contemporáneo, piezas urbanas y colecciones creadas para vestir todos los días.
 </p>
 
-<a href="#shop" class="button">
+<a href="#shop"
+class="button">
 VER COLECCIÓN →
 </a>
 
@@ -1453,7 +1920,10 @@ VER COLECCIÓN →
 
 </section>
 
-<!-- ================= MARQUEE ================= -->
+
+<!-- ======================================================
+     MARQUEE
+====================================================== -->
 
 <div class="marquee">
 
@@ -1467,9 +1937,10 @@ VER COLECCIÓN →
 
 </div>
 
-<!-- =====================================================
-SHOP
-===================================================== -->
+
+<!-- ======================================================
+     SHOP
+====================================================== -->
 
 <section class="section" id="shop">
 
@@ -1493,7 +1964,9 @@ DROP 01
 
 </div>
 
+
 <div class="products">
+
 
 <!-- 001 -->
 
@@ -1539,6 +2012,7 @@ TEE 4:20 / DESIGN 01
 
 </article>
 
+
 <!-- 002 -->
 
 <article class="product reveal"
@@ -1582,6 +2056,7 @@ TEE 4:20 / DESIGN 02
 </div>
 
 </article>
+
 
 <!-- 003 -->
 
@@ -1627,6 +2102,7 @@ TEE 4:20 / DESIGN 03
 
 </article>
 
+
 <!-- 004 -->
 
 <article class="product reveal"
@@ -1670,6 +2146,7 @@ TEE 4:20 / DESIGN 04
 </div>
 
 </article>
+
 
 <!-- 005 -->
 
@@ -1715,7 +2192,8 @@ TEE 4:20 / DESIGN 05
 
 </article>
 
-<!-- 006 POLO -->
+
+<!-- 006 -->
 
 <article class="product reveal"
 onclick="openProduct(
@@ -1763,7 +2241,10 @@ POLO 4:20 / FIELD
 
 </section>
 
-<!-- ================= ABOUT ================= -->
+
+<!-- ======================================================
+     ABOUT
+====================================================== -->
 
 <section class="brand-section reveal" id="about">
 
@@ -1776,19 +2257,20 @@ LA HORA<br>ADECUADA.
 </h2>
 
 <p>
-4:20 nace como una marca de ropa enfocada en diseño, identidad,
-comodidad y piezas fáciles de llevar. La estética es limpia,
-reconocible y contemporánea. Cada colección puede cambiar;
-la identidad permanece.
-
+4:20 nace como una marca de ropa enfocada en diseño,
+identidad, comodidad y piezas fáciles de llevar.
+La estética es limpia, reconocible y contemporánea.
+Cada colección puede cambiar; la identidad permanece.
 <br><br>
-
 VESTIR BIEN · COMODIDAD · CONFIANZA · GUSTO.
 </p>
 
 </section>
 
-<!-- ================= DROP ================= -->
+
+<!-- ======================================================
+     DROP
+====================================================== -->
 
 <section class="drop" id="drops">
 
@@ -1812,8 +2294,11 @@ Los próximos lanzamientos estarán disponibles en nuestras redes.
 <a
 href="https://www.instagram.com/4_20.street/"
 target="_blank"
+rel="noopener noreferrer"
 class="button">
+
 VER INSTAGRAM →
+
 </a>
 
 </div>
@@ -1822,9 +2307,10 @@ VER INSTAGRAM →
 
 </section>
 
-<!-- =====================================================
-CREA TU PIEZA
-===================================================== -->
+
+<!-- ======================================================
+     CREA TU PIEZA
+====================================================== -->
 
 <section class="custom" id="custom">
 
@@ -1848,323 +2334,38 @@ DISEÑA · VISUALIZA · COTIZA
 
 </div>
 
+
 <div class="custom-grid">
 
+
 <!-- =====================================================
-PREVIEW
+     PREVIEW
 ===================================================== -->
 
 <div class="preview reveal">
 
-<div class="viewer" id="designerViewer">
+<div class="garment-wrapper"
+id="captureArea">
 
-<div class="viewer-info">
-4:20 CUSTOM STUDIO
+
+<div class="preview-top">
+
+<div class="preview-tag">
+4:20 / CUSTOM STUDIO
 </div>
 
-<div class="viewer-side" id="viewerSide">
-FRONT
-</div>
-
-<!-- PRENDA -->
-
-<div
-class="garment wind shirt-black"
-id="garment">
-
-<svg
-viewBox="0 0 520 580"
-xmlns="http://www.w3.org/2000/svg">
-
-<defs>
-
-<linearGradient
-id="blackFabric"
-x1="0"
-y1="0"
-x2="1"
-y2="1">
-
-<stop offset="0" stop-color="#171717"/>
-<stop offset=".45" stop-color="#050505"/>
-<stop offset=".72" stop-color="#1b1b1b"/>
-<stop offset="1" stop-color="#050505"/>
-
-</linearGradient>
-
-<linearGradient
-id="whiteFabric"
-x1="0"
-y1="0"
-x2="1"
-y2="1">
-
-<stop offset="0" stop-color="#ffffff"/>
-<stop offset=".45" stop-color="#dcdcd8"/>
-<stop offset=".7" stop-color="#f3f3ef"/>
-<stop offset="1" stop-color="#cfcfca"/>
-
-</linearGradient>
-
-<linearGradient
-id="beigeFabric"
-x1="0"
-y1="0"
-x2="1"
-y2="1">
-
-<stop offset="0" stop-color="#e7dfcf"/>
-<stop offset=".5" stop-color="#cfc3ae"/>
-<stop offset=".8" stop-color="#e3d9c9"/>
-<stop offset="1" stop-color="#bdb09c"/>
-
-</linearGradient>
-
-<filter id="softShadow">
-<feGaussianBlur stdDeviation="4"/>
-</filter>
-
-</defs>
-
-<!-- SHADOW UNDER GARMENT -->
-
-<ellipse
-cx="260"
-cy="555"
-rx="150"
-ry="18"
-fill="#000"
-opacity=".35"
-filter="url(#softShadow)"
-/>
-
-<!-- ================= OVERSIZED ================= -->
-
-<g id="oversizedShape" class="garment-body">
-
-<path
-id="garmentMain"
-d="
-M145 80
-L205 48
-Q260 78 315 48
-L375 80
-L475 150
-Q490 160 482 178
-L430 285
-L390 263
-L388 505
-Q388 530 365 535
-L155 535
-Q132 530 132 505
-L130 263
-L90 285
-L38 178
-Q30 160 45 150
-Z"
-fill="url(#blackFabric)"
-stroke="#2d2d2d"
-stroke-width="2"
-/>
-
-<!-- left fold -->
-
-<path
-d="M90 285 Q125 260 130 235 L132 495 Q132 525 155 535"
-fill="none"
-stroke="#fff"
-stroke-opacity=".08"
-stroke-width="10"
-/>
-
-<!-- right fold -->
-
-<path
-d="M430 285 Q395 260 388 235 L388 495 Q388 525 365 535"
-fill="none"
-stroke="#fff"
-stroke-opacity=".07"
-stroke-width="10"
-/>
-
-<!-- fabric waves -->
-
-<path
-d="M150 365 Q180 350 210 365 T270 365 T330 365 T385 350"
-fill="none"
-stroke="#fff"
-stroke-opacity=".06"
-stroke-width="7"
-/>
-
-<path
-d="M150 420 Q185 405 215 420 T280 420 T340 420 T385 405"
-fill="none"
-stroke="#000"
-stroke-opacity=".25"
-stroke-width="9"
-/>
-
-<!-- neck -->
-
-<path
-d="M205 49 Q260 105 315 49 Q307 118 260 120 Q213 118 205 49Z"
-fill="#090909"
-stroke="#333"
-stroke-width="2"
-/>
-
-</g>
-
-<!-- ================= POLO ================= -->
-
-<g id="poloShape" class="garment-body" style="display:none">
-
-<path
-id="poloMain"
-d="
-M160 83
-L205 48
-Q260 72 315 48
-L360 83
-L460 145
-Q475 154 467 173
-L425 260
-L388 242
-L385 505
-Q385 530 360 535
-L160 535
-Q135 530 135 505
-L132 242
-L95 260
-L53 173
-Q45 154 60 145
-Z"
-fill="url(#blackFabric)"
-stroke="#2d2d2d"
-stroke-width="2"
-/>
-
-<!-- polo collar -->
-
-<path
-d="M205 48
-L225 72
-L260 95
-L295 72
-L315 48
-L300 130
-L260 112
-L220 130Z"
-fill="#111"
-stroke="#3b3b3b"
-stroke-width="2"
-/>
-
-<!-- button line -->
-
-<line
-x1="260"
-y1="95"
-x2="260"
-y2="170"
-stroke="#aaa"
-stroke-opacity=".35"
-stroke-width="2"
-/>
-
-<circle cx="260" cy="113" r="3" fill="#aaa"/>
-<circle cx="260" cy="133" r="3" fill="#aaa"/>
-
-<path
-d="M145 370 Q190 350 230 370 T310 370 T385 350"
-fill="none"
-stroke="#fff"
-stroke-opacity=".06"
-stroke-width="7"
-/>
-
-</g>
-
-<!-- ================= CREW ================= -->
-
-<g id="crewShape" class="garment-body" style="display:none">
-
-<path
-d="
-M145 80
-L205 48
-Q260 78 315 48
-L375 80
-L475 150
-Q490 160 482 178
-L430 285
-L390 263
-L388 505
-Q388 530 365 535
-L155 535
-Q132 530 132 505
-L130 263
-L90 285
-L38 178
-Q30 160 45 150
-Z"
-fill="url(#blackFabric)"
-stroke="#2d2d2d"
-stroke-width="2"
-/>
-
-<!-- crew neck -->
-
-<ellipse
-cx="260"
-cy="78"
-rx="48"
-ry="33"
-fill="#090909"
-stroke="#333"
-stroke-width="7"
-/>
-
-<path
-d="M150 365 Q190 345 225 365 T300 365 T385 345"
-fill="none"
-stroke="#fff"
-stroke-opacity=".06"
-stroke-width="7"
-/>
-
-</g>
-
-<!-- ================= PRINT ================= -->
-
-<div class="print-layer" id="printLayer">
-
-<div
-class="print-content"
-id="shirtText">
-4/20
-</div>
-
-</div>
-
-</div>
-
-<!-- VIEW CONTROLS -->
-
-<div class="viewer-controls">
+<div class="view-switch">
 
 <button
-class="view-button active"
 id="frontButton"
-onclick="setView('front')">
+class="active"
+onclick="changeView('front')">
 FRENTE
 </button>
 
 <button
-class="view-button"
 id="backButton"
-onclick="setView('back')">
+onclick="changeView('back')">
 ESPALDA
 </button>
 
@@ -2172,17 +2373,76 @@ ESPALDA
 
 </div>
 
+
+<!-- GARMENT -->
+
+<div
+class="garment"
+id="garment">
+
+
+<div class="garment-sleeve left"></div>
+
+<div class="garment-sleeve right"></div>
+
+
+<div class="garment-body">
+
+
+<div class="fold one"></div>
+<div class="fold two"></div>
+<div class="fold three"></div>
+
+
+<div class="print-area">
+
+<img
+id="uploadedDesign"
+class="print-layer"
+style="display:none"
+alt="Diseño personalizado"
+>
+
+<div
+id="customPrintText"
+class="custom-print-text">
+4/20
 </div>
 
+</div>
+
+</div>
+
+
+<div class="collar">
+
+<div class="collar-inner"></div>
+
+</div>
+
+
+<div class="polo-collar"></div>
+
+<div class="polo-neck"></div>
+
+
+</div>
+
+</div>
+
+</div>
+
+
 <!-- =====================================================
-FORM
+     FORM
 ===================================================== -->
 
 <div class="custom-form reveal">
 
+
 <!-- TIPO -->
 
-<div class="form-group">
+<div class="form-block">
 
 <div class="form-label">
 TIPO DE PRENDA
@@ -2192,19 +2452,19 @@ TIPO DE PRENDA
 
 <button
 class="option active"
-onclick="setGarment('oversized',this)">
+onclick="setGarmentType('oversized',this)">
 OVERSIZED
 </button>
 
 <button
 class="option"
-onclick="setGarment('crew',this)">
+onclick="setGarmentType('tee',this)">
 CUELLO REDONDO
 </button>
 
 <button
 class="option"
-onclick="setGarment('polo',this)">
+onclick="setGarmentType('polo',this)">
 POLO
 </button>
 
@@ -2212,9 +2472,10 @@ POLO
 
 </div>
 
+
 <!-- COLOR -->
 
-<div class="form-group">
+<div class="form-block">
 
 <div class="form-label">
 COLOR
@@ -2224,79 +2485,133 @@ COLOR
 
 <button
 class="option active"
-onclick="setColor('black',this)">
+onclick="setGarmentColor('black',this)">
 NEGRO
 </button>
 
 <button
 class="option"
-onclick="setColor('white',this)">
+onclick="setGarmentColor('white',this)">
 BLANCO
 </button>
 
 <button
 class="option"
-onclick="setColor('beige',this)">
+onclick="setGarmentColor('beige',this)">
 BEIGE
+</button>
+
+<button
+class="option"
+onclick="setGarmentColor('gray',this)">
+GRIS
+</button>
+
+<button
+class="option"
+onclick="setGarmentColor('green',this)">
+VERDE OSCURO
 </button>
 
 </div>
 
 </div>
 
-<!-- DISEÑOS -->
 
-<div class="form-group">
+<!-- DISEÑO -->
+
+<div class="form-block">
 
 <div class="form-label">
 DISEÑO
 </div>
 
-<div class="design-grid">
+<div class="options">
 
 <button
-class="design-option active"
-onclick="setDesign('4/20',this)">
+class="option active"
+onclick="selectDesign(
+'4/20',
+'none',
+this
+)">
 4/20
 </button>
 
 <button
-class="design-option"
-onclick="setDesign('LA HORA ADECUADA',this)">
-LA HORA ADECUADA
+class="option"
+onclick="selectDesign(
+'DESIGN 01',
+'IMG-20260827-WA1289.jpg',
+this
+)">
+DISEÑO 01
 </button>
 
 <button
-class="design-option"
-onclick="setDesign('FRACCIÓN',this)">
-FRACCIÓN
+class="option"
+onclick="selectDesign(
+'DESIGN 02',
+'IMG-20260827-WA2971.jpg',
+this
+)">
+DISEÑO 02
 </button>
 
 <button
-class="design-option"
-onclick="setDesign('4:20',this)">
-4:20
+class="option"
+onclick="selectDesign(
+'DESIGN 03',
+'IMG-20260827-WA3824.jpg',
+this
+)">
+DISEÑO 03
 </button>
 
 <button
-class="design-option"
-onclick="setDesign('CUSTOM',this)">
-CUSTOM
+class="option"
+onclick="selectDesign(
+'DESIGN 04',
+'IMG-20260827-WA6261.jpg',
+this
+)">
+DISEÑO 04
 </button>
 
 <button
-class="design-option"
-onclick="clearDesign(this)">
-SIN DISEÑO
+class="option"
+onclick="selectDesign(
+'DESIGN 05',
+'IMG-20260827-WA8548.jpg',
+this
+)">
+DISEÑO 05
+</button>
+
+<button
+class="option"
+onclick="selectDesign(
+'FIELD',
+'IMG-20260827-WA8893.jpg',
+this
+)">
+FIELD
 </button>
 
 </div>
 
+<div
+class="selected-design"
+id="selectedDesign">
+DISEÑO ACTUAL: 4/20
 </div>
+
+</div>
+
 
 <!-- TEXTO -->
 
-<div class="form-group">
+<div class="form-block">
 
 <div class="form-label">
 TU TEXTO
@@ -2306,98 +2621,118 @@ TU TEXTO
 class="custom-input"
 id="customText"
 placeholder="Escribe tu texto"
-maxlength="24"
+maxlength="25"
 oninput="updateCustomText(this.value)"
 >
 
 </div>
 
-<!-- LOGO -->
-
-<label class="upload">
-
-<input
-type="file"
-id="logoUpload"
-accept="image/*"
-onchange="handleUpload(this)"
->
-
-SUBIR LOGO / IMAGEN
-
-</label>
 
 <!-- TAMAÑO -->
 
-<div class="form-group">
+<div class="form-block">
 
 <div class="form-label">
 TAMAÑO DEL DISEÑO
 </div>
 
-<div class="slider-row">
+<div class="range-row">
 
 <input
 type="range"
-id="sizeSlider"
-min="60"
-max="180"
-value="100"
-oninput="changePrintSize(this.value)"
+id="sizeRange"
+min="50"
+max="140"
+value="85"
+oninput="updateDesignSize(this.value)"
 >
 
-<span
-class="slider-value"
+<div
+class="range-value"
 id="sizeValue">
-100%
-</span>
-
+85%
 </div>
 
 </div>
 
-<!-- POSICIÓN VERTICAL -->
+</div>
 
-<div class="form-group">
+
+<!-- POSICIÓN -->
+
+<div class="form-block">
 
 <div class="form-label">
-POSICIÓN
+ALTURA
 </div>
 
-<div class="slider-row">
+<div class="range-row">
 
 <input
 type="range"
-id="positionSlider"
-min="28"
-max="65"
-value="46"
-oninput="changePrintPosition(this.value)"
+id="positionRange"
+min="20"
+max="80"
+value="50"
+oninput="updateDesignPosition(this.value)"
 >
 
-<span
-class="slider-value"
+<div
+class="range-value"
 id="positionValue">
-CENTRO
-</span>
-
+50%
 </div>
 
 </div>
 
-<!-- CAPTURA -->
-
-<div class="capture-box">
-
-<div class="capture-title">
-¿TE GUSTA TU PIEZA?
 </div>
 
-<div class="capture-text">
-Toma una captura de tu diseño terminado y envíala por Instagram para recibir tu cotización.
+
+<!-- ROTACIÓN -->
+
+<div class="form-block">
+
+<div class="form-label">
+ROTACIÓN
+</div>
+
+<div class="range-row">
+
+<input
+type="range"
+id="rotateRange"
+min="-15"
+max="15"
+value="0"
+oninput="updateDesignRotation(this.value)"
+>
+
+<div
+class="range-value"
+id="rotateValue">
+0°
 </div>
 
 </div>
+
+</div>
+
+
+<!-- SUBIR -->
+
+<label class="upload">
+
+<input
+type="file"
+id="uploadInput"
+accept="image/*"
+onchange="handleUpload(this)"
+>
+
+SUBIR TU PROPIO LOGO / IMAGEN
+
+</label>
+
 
 <!-- PRECIO -->
 
@@ -2413,27 +2748,63 @@ POR DEFINIR
 
 </div>
 
-<!-- CAPTURA -->
+
+<!-- ACCIONES -->
+
+<div class="custom-actions">
+
+<button
+class="secondary-button"
+onclick="captureDesign()">
+📸 CAPTURAR DISEÑO
+</button>
 
 <button
 class="button"
-onclick="captureDesign()">
+onclick="quoteDesign()">
+COTIZAR EN IG →
+</button>
 
-TOMAR CAPTURA →
+</div>
+
+
+<!-- DESCUENTO -->
+
+<div class="discount-box">
+
+<div class="discount-title">
+SIGUE NUESTRAS CUENTAS Y OBTÉN DESCUENTO
+</div>
+
+<div class="discount-text">
+
+Sigue nuestras redes oficiales y muéstranos que ya las sigues.
+Tu descuento se confirma al momento de cotizar.
+
+</div>
+
+<button
+class="discount-button"
+onclick="openDiscount()">
+
+VER DINÁMICA →
 
 </button>
 
-<!-- INSTAGRAM -->
+<div
+class="discount-status"
+id="discountStatus">
 
-<a
-href="https://www.instagram.com/4_20.street/"
-target="_blank"
-rel="noopener noreferrer"
-class="button">
+1. Sigue Instagram<br>
+2. Sigue TikTok<br>
+3. Sigue Facebook<br>
+4. Toma captura de tus perfiles<br>
+5. Envía tu diseño + capturas al cotizar
 
-COTIZAR POR INSTAGRAM →
+</div>
 
-</a>
+</div>
+
 
 </div>
 
@@ -2441,7 +2812,10 @@ COTIZAR POR INSTAGRAM →
 
 </section>
 
-<!-- ================= VALUES ================= -->
+
+<!-- ======================================================
+     VALUES
+====================================================== -->
 
 <section class="values reveal">
 
@@ -2462,6 +2836,7 @@ Sin excesos.
 
 </div>
 
+
 <div class="value">
 
 <div class="value-number">
@@ -2473,11 +2848,12 @@ COMODIDAD
 </h3>
 
 <p>
-Algodón pesado, oversized y regular.
-Prendas para uso diario real.
+Oversized, cuello redondo y polo.
+Prendas pensadas para uso diario real.
 </p>
 
 </div>
+
 
 <div class="value">
 
@@ -2498,7 +2874,10 @@ Reconocible sin gritar.
 
 </section>
 
-<!-- ================= SOCIAL ================= -->
+
+<!-- ======================================================
+     SOCIAL
+====================================================== -->
 
 <section class="social-section reveal">
 
@@ -2514,7 +2893,9 @@ SÍGUENOS.
 DROP 001 · LA HORA ADECUADA · DISPONIBLE
 </div>
 
+
 <div class="social-grid">
+
 
 <a
 href="https://www.instagram.com/4_20.street/"
@@ -2551,6 +2932,7 @@ ENTRAR →
 
 </a>
 
+
 <a
 href="https://www.tiktok.com/@horaadecuada420"
 target="_blank"
@@ -2585,6 +2967,7 @@ ENTRAR →
 </div>
 
 </a>
+
 
 <a
 href="https://www.facebook.com/share/1Ephp8bfdR/"
@@ -2621,11 +3004,15 @@ ENTRAR →
 
 </a>
 
+
 </div>
 
 </section>
 
-<!-- ================= FOOTER ================= -->
+
+<!-- ======================================================
+     FOOTER
+====================================================== -->
 
 <footer>
 
@@ -2643,21 +3030,31 @@ LA HORA ADECUADA · EST. MMXX · MEXICO
 
 </div>
 
+
 <div class="footer-links">
 
-<a href="#shop">SHOP</a>
-<a href="#drops">DROPS</a>
-<a href="#custom">CUSTOM</a>
-<a href="#about">ABOUT</a>
+<a href="#shop">
+SHOP
+</a>
 
-<a
-href="https://www.instagram.com/4_20.street/"
+<a href="#drops">
+DROPS
+</a>
+
+<a href="#custom">
+CUSTOM
+</a>
+
+<a href="#about">
+ABOUT
+</a>
+
+<a href="https://www.instagram.com/4_20.street/"
 target="_blank">
 INSTAGRAM
 </a>
 
-<a
-href="https://www.tiktok.com/@horaadecuada420"
+<a href="https://www.tiktok.com/@horaadecuada420"
 target="_blank">
 TIKTOK
 </a>
@@ -2665,6 +3062,7 @@ TIKTOK
 </div>
 
 </div>
+
 
 <div class="footer-bottom">
 
@@ -2681,11 +3079,16 @@ HECHO EN MEXICO · DISEÑO LOCAL
 
 </footer>
 
-<!-- ================= PRODUCT MODAL ================= -->
+
+<!-- ======================================================
+     PRODUCT MODAL
+====================================================== -->
 
 <div class="modal" id="productModal">
 
-<button class="close" onclick="closeProduct()">
+<button
+class="close"
+onclick="closeProduct()">
 ×
 </button>
 
@@ -2703,7 +3106,9 @@ alt=""
 
 <div class="modal-info">
 
-<div class="label">
+<div
+class="label"
+id="modalLabel">
 4:20 / DROP 001
 </div>
 
@@ -2737,80 +3142,112 @@ PEDIR POR IG →
 
 </div>
 
-<!-- =====================================================
-JAVASCRIPT
-===================================================== -->
+
+<!-- ======================================================
+     TOAST
+====================================================== -->
+
+<div
+class="toast"
+id="toast">
+DISEÑO CAPTURADO
+</div>
+
+
+<!-- ======================================================
+     JAVASCRIPT
+====================================================== -->
 
 <script>
 
-/* ================= LOADER ================= */
 
-const loader=document.getElementById('loader');
+/* ========================================================
+   LOADER
+======================================================== */
 
-window.addEventListener('load',()=>{
+const loader=document.getElementById("loader");
+
+window.addEventListener("load",()=>{
 
 setTimeout(()=>{
 
-loader.classList.add('hide');
+loader.classList.add("hide");
 
-},1200);
+},1000);
 
 });
 
-/* ================= MENU ================= */
+
+/* ========================================================
+   MOBILE MENU
+======================================================== */
 
 function toggleMenu(){
 
-const menu=document.getElementById('mobileMenu');
+const menu=document.getElementById("mobileMenu");
 
-menu.classList.toggle('open');
+menu.classList.toggle("open");
 
-document.body.classList.toggle('lock');
-
-}
-
-/* ================= FAVORITES ================= */
-
-function toggleFavorite(btn){
-
-btn.classList.toggle('active');
-
-btn.textContent=
-btn.classList.contains('active')
-?'♥'
-:'♡';
+document.body.classList.toggle("lock");
 
 }
 
-/* ================= PRODUCT MODAL ================= */
+
+/* ========================================================
+   FAVORITOS
+======================================================== */
+
+function toggleFavorite(button){
+
+button.classList.toggle("active");
+
+button.textContent=
+button.classList.contains("active")
+?"♥"
+:"♡";
+
+}
+
+
+/* ========================================================
+   PRODUCT MODAL
+======================================================== */
 
 function openProduct(title,desc,price,img){
 
-document.getElementById('modalTitle').textContent=title;
+document.getElementById("modalTitle").textContent=title;
 
-document.getElementById('modalDesc').textContent=desc;
+document.getElementById("modalDesc").textContent=desc;
 
-document.getElementById('modalPrice').textContent=price;
+document.getElementById("modalPrice").textContent=price;
 
-document.getElementById('modalImg').src=img;
+document.getElementById("modalImg").src=img;
 
-document.getElementById('productModal').classList.add('open');
+document
+.getElementById("productModal")
+.classList.add("open");
 
-document.body.classList.add('lock');
+document.body.classList.add("lock");
 
 }
+
 
 function closeProduct(){
 
-document.getElementById('productModal').classList.remove('open');
+document
+.getElementById("productModal")
+.classList.remove("open");
 
-document.body.classList.remove('lock');
+document.body.classList.remove("lock");
 
 }
 
-document.getElementById('productModal').addEventListener('click',e=>{
 
-if(e.target.id==='productModal'){
+document
+.getElementById("productModal")
+.addEventListener("click",e=>{
+
+if(e.target.id==="productModal"){
 
 closeProduct();
 
@@ -2818,17 +3255,22 @@ closeProduct();
 
 });
 
-/* ================= REVEALS ================= */
 
-const reveals=document.querySelectorAll('.reveal');
+/* ========================================================
+   REVEAL
+======================================================== */
 
-const observer=new IntersectionObserver(entries=>{
+const reveals=
+document.querySelectorAll(".reveal");
+
+const observer=
+new IntersectionObserver(entries=>{
 
 entries.forEach(entry=>{
 
 if(entry.isIntersecting){
 
-entry.target.classList.add('visible');
+entry.target.classList.add("visible");
 
 observer.unobserve(entry.target);
 
@@ -2836,308 +3278,623 @@ observer.unobserve(entry.target);
 
 });
 
-},{threshold:.15});
+},{
+threshold:.12
+});
 
-reveals.forEach(el=>observer.observe(el));
+reveals.forEach(element=>{
 
-/* =====================================================
-CUSTOM DESIGNER
-===================================================== */
-
-const garment=document.getElementById('garment');
-const garmentMain=document.getElementById('garmentMain');
-
-const oversizedShape=document.getElementById('oversizedShape');
-const poloShape=document.getElementById('poloShape');
-const crewShape=document.getElementById('crewShape');
-
-const shirtText=document.getElementById('shirtText');
-const printLayer=document.getElementById('printLayer');
-
-let currentColor='black';
-let currentView='front';
-let uploadedImage=null;
-let currentText='4/20';
-
-/* ================= TYPE ================= */
-
-function setGarment(type,btn){
-
-document
-.querySelectorAll('.custom-form .form-group:nth-child(1) .option')
-.forEach(o=>o.classList.remove('active'));
-
-btn.classList.add('active');
-
-oversizedShape.style.display='none';
-poloShape.style.display='none';
-crewShape.style.display='none';
-
-if(type==='oversized'){
-
-oversizedShape.style.display='block';
-
-}
-
-if(type==='polo'){
-
-poloShape.style.display='block';
-
-}
-
-if(type==='crew'){
-
-crewShape.style.display='block';
-
-}
-
-}
-
-/* ================= COLOR ================= */
-
-function setColor(color,btn){
-
-document
-.querySelectorAll('.custom-form .form-group:nth-child(2) .option')
-.forEach(o=>o.classList.remove('active'));
-
-btn.classList.add('active');
-
-currentColor=color;
-
-garment.classList.remove(
-'shirt-black',
-'shirt-white',
-'shirt-beige'
-);
-
-garment.classList.add('shirt-'+color);
-
-/* Change fabric gradients */
-
-const black=document.getElementById('blackFabric');
-const white=document.getElementById('whiteFabric');
-const beige=document.getElementById('beigeFabric');
-
-let target;
-
-if(color==='black') target='url(#blackFabric)';
-if(color==='white') target='url(#whiteFabric)';
-if(color==='beige') target='url(#beigeFabric)';
-
-document.querySelectorAll(
-'#garment svg .garment-body path'
-).forEach(path=>{
-
-if(path.getAttribute('fill')!=='none'){
-
-path.setAttribute('fill',target);
-
-}
+observer.observe(element);
 
 });
 
-}
 
-/* ================= DESIGN ================= */
+/* ========================================================
+   CUSTOMIZER VARIABLES
+======================================================== */
 
-function setDesign(text,btn){
+const garment=
+document.getElementById("garment");
+
+const customPrintText=
+document.getElementById("customPrintText");
+
+const uploadedDesign=
+document.getElementById("uploadedDesign");
+
+const selectedDesign=
+document.getElementById("selectedDesign");
+
+let currentDesign="4/20";
+
+let currentImage=null;
+
+let currentView="front";
+
+
+/* ========================================================
+   GARMENT TYPE
+======================================================== */
+
+function setGarmentType(type,button){
 
 document
-.querySelectorAll('.design-option')
-.forEach(o=>o.classList.remove('active'));
+.querySelectorAll(
+'.custom-form .form-block:nth-child(1) .option'
+)
+.forEach(option=>{
 
-btn.classList.add('active');
+option.classList.remove("active");
 
-uploadedImage=null;
+});
 
-shirtText.innerHTML=text;
+button.classList.add("active");
 
-currentText=text;
+garment.classList.remove(
+"oversized",
+"polo",
+"tee"
+);
+
+if(type==="oversized"){
+
+garment.classList.add("oversized");
 
 }
 
-function clearDesign(btn){
+if(type==="polo"){
+
+garment.classList.add("polo");
+
+}
+
+if(type==="tee"){
+
+garment.classList.add("tee");
+
+}
+
+}
+
+
+/* ========================================================
+   GARMENT COLOR
+======================================================== */
+
+function setGarmentColor(color,button){
 
 document
-.querySelectorAll('.design-option')
-.forEach(o=>o.classList.remove('active'));
+.querySelectorAll(
+'.custom-form .form-block:nth-child(2) .option'
+)
+.forEach(option=>{
 
-btn.classList.add('active');
+option.classList.remove("active");
 
-uploadedImage=null;
+});
 
-shirtText.textContent='';
+button.classList.add("active");
 
-currentText='';
+garment.classList.remove("white");
 
-}
+garment.style.setProperty(
+"--garment-color",
+getGarmentColor(color)
+);
 
-/* ================= CUSTOM TEXT ================= */
+if(color==="white"){
 
-function updateCustomText(value){
-
-if(value.trim()!==''){
-
-shirtText.textContent=value.toUpperCase();
-
-currentText=value.toUpperCase();
-
-}
+garment.classList.add("white");
 
 }
 
-/* ================= UPLOAD ================= */
+if(
+color==="black" ||
+color==="gray" ||
+color==="green"
+){
 
-function handleUpload(input){
+garment.classList.add("dark-print");
 
-if(!input.files || !input.files[0]) return;
+}else{
 
-const file=input.files[0];
+garment.classList.remove("dark-print");
 
-const reader=new FileReader();
+}
 
-reader.onload=function(e){
+}
 
-uploadedImage=e.target.result;
 
-shirtText.innerHTML=
-'<img src="'+e.target.result+'" alt="Logo personalizado">';
+function getGarmentColor(color){
+
+const colors={
+
+black:"#111111",
+
+white:"#eeeeea",
+
+beige:"#d8d0c1",
+
+gray:"#666666",
+
+green:"#17251f"
 
 };
 
-reader.readAsDataURL(file);
+return colors[color] || "#111111";
 
 }
 
-/* ================= SIZE ================= */
 
-function changePrintSize(value){
+/* ========================================================
+   DESIGN SELECTION
+======================================================== */
 
-printLayer.style.width=(230*(value/100))+'px';
+function selectDesign(name,image,button){
 
-document.getElementById('sizeValue').textContent=value+'%';
+document
+.querySelectorAll(
+'.custom-form .form-block:nth-child(3) .option'
+)
+.forEach(option=>{
+
+option.classList.remove("active");
+
+});
+
+button.classList.add("active");
+
+currentDesign=name;
+
+currentImage=image;
+
+selectedDesign.textContent=
+"DISEÑO ACTUAL: "+name;
+
+
+if(image==="none"){
+
+uploadedDesign.style.display="none";
+
+customPrintText.style.display="block";
+
+customPrintText.textContent="4/20";
+
+return;
 
 }
 
-/* ================= POSITION ================= */
 
-function changePrintPosition(value){
+uploadedDesign.src=image;
 
-printLayer.style.top=value+'%';
+uploadedDesign.style.display="block";
 
-let label='CENTRO';
-
-if(value<40) label='ARRIBA';
-
-if(value>53) label='ABAJO';
-
-document.getElementById('positionValue').textContent=label;
+customPrintText.style.display="none";
 
 }
 
-/* ================= FRONT / BACK ================= */
 
-function setView(view){
+/* ========================================================
+   CUSTOM TEXT
+======================================================== */
+
+function updateCustomText(value){
+
+if(value.trim()===""){
+
+if(!currentImage){
+
+customPrintText.textContent="4/20";
+
+}
+
+return;
+
+}
+
+uploadedDesign.style.display="none";
+
+customPrintText.style.display="block";
+
+customPrintText.textContent=
+value.toUpperCase();
+
+}
+
+
+/* ========================================================
+   UPLOAD
+======================================================== */
+
+function handleUpload(input){
+
+if(!input.files || !input.files[0]){
+
+return;
+
+}
+
+const reader=new FileReader();
+
+reader.onload=function(event){
+
+uploadedDesign.src=event.target.result;
+
+uploadedDesign.style.display="block";
+
+customPrintText.style.display="none";
+
+currentImage=event.target.result;
+
+currentDesign="TU DISEÑO";
+
+selectedDesign.textContent=
+"DISEÑO ACTUAL: TU DISEÑO";
+
+};
+
+reader.readAsDataURL(input.files[0]);
+
+}
+
+
+/* ========================================================
+   DESIGN SIZE
+======================================================== */
+
+function updateDesignSize(value){
+
+uploadedDesign.style.width=value+"%";
+
+customPrintText.style.fontSize=
+(value/100*23)+"px";
+
+document.getElementById("sizeValue")
+.textContent=value+"%";
+
+}
+
+
+/* ========================================================
+   DESIGN POSITION
+======================================================== */
+
+function updateDesignPosition(value){
+
+document.querySelector(".print-area")
+.style.top=value+"%";
+
+document.getElementById("positionValue")
+.textContent=value+"%";
+
+}
+
+
+/* ========================================================
+   DESIGN ROTATION
+======================================================== */
+
+function updateDesignRotation(value){
+
+uploadedDesign.style.transform=
+"rotate("+value+"deg)";
+
+customPrintText.style.transform=
+"rotate("+value+"deg)";
+
+document.getElementById("rotateValue")
+.textContent=value+"°";
+
+}
+
+
+/* ========================================================
+   FRONT / BACK
+======================================================== */
+
+function changeView(view){
 
 currentView=view;
 
-const front=document.getElementById('frontButton');
-const back=document.getElementById('backButton');
-const side=document.getElementById('viewerSide');
+const frontButton=
+document.getElementById("frontButton");
 
-front.classList.remove('active');
-back.classList.remove('active');
+const backButton=
+document.getElementById("backButton");
 
-if(view==='front'){
+frontButton.classList.remove("active");
 
-front.classList.add('active');
+backButton.classList.remove("active");
 
-side.textContent='FRONT';
+if(view==="front"){
 
-printLayer.style.display='flex';
+frontButton.classList.add("active");
 
-garment.style.transform='rotateY(0deg)';
+garment.classList.remove("garment-back");
 
-}
+}else{
 
-if(view==='back'){
+backButton.classList.add("active");
 
-back.classList.add('active');
-
-side.textContent='BACK';
-
-printLayer.style.display='flex';
-
-garment.style.transform='rotateY(180deg)';
+garment.classList.add("garment-back");
 
 }
 
 }
 
-/* =====================================================
-CAPTURE
-===================================================== */
+
+/* ========================================================
+   DISCOUNT
+======================================================== */
+
+function openDiscount(){
+
+const box=
+document.getElementById("discountStatus");
+
+box.classList.toggle("show");
+
+}
+
+
+/* ========================================================
+   TOAST
+======================================================== */
+
+function showToast(message){
+
+const toast=
+document.getElementById("toast");
+
+toast.textContent=message;
+
+toast.classList.add("show");
+
+setTimeout(()=>{
+
+toast.classList.remove("show");
+
+},2500);
+
+}
+
+
+/* ========================================================
+   CAPTURE
+======================================================== */
 
 async function captureDesign(){
 
-const viewer=document.getElementById('designerViewer');
+/*
+   Usamos SVG + foreignObject para crear
+   una captura visual del configurador.
+*/
+
+const garmentElement=
+document.getElementById("garment");
+
+const rect=
+garmentElement.getBoundingClientRect();
+
+const width=900;
+
+const height=1100;
+
+const serializer=
+new XMLSerializer();
+
+const garmentClone=
+garmentElement.cloneNode(true);
+
+
+/* quitar transformaciones de interfaz */
+
+garmentClone.style.transform="none";
+
+garmentClone.style.margin="0";
+
+
+const wrapper=
+document.createElement("div");
+
+wrapper.style.position="fixed";
+
+wrapper.style.left="-99999px";
+
+wrapper.style.top="0";
+
+wrapper.style.width="440px";
+
+wrapper.style.height="565px";
+
+wrapper.style.background="#1b1b1b";
+
+wrapper.style.display="flex";
+
+wrapper.style.alignItems="center";
+
+wrapper.style.justifyContent="center";
+
+wrapper.appendChild(garmentClone);
+
+document.body.appendChild(wrapper);
+
 
 try{
 
-/*
-html2canvas no viene incluido de fábrica.
-Lo cargamos solamente cuando se solicita la captura.
-*/
+const svg=`
 
-if(typeof html2canvas==='undefined'){
+<svg xmlns="http://www.w3.org/2000/svg"
+width="${width}"
+height="${height}">
 
-const script=document.createElement('script');
+<rect
+width="100%"
+height="100%"
+fill="#0b0b0b"/>
 
-script.src=
-'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+<text
+x="60"
+y="85"
+fill="#777"
+font-family="Arial"
+font-size="18"
+font-weight="700"
+letter-spacing="4">
 
-document.head.appendChild(script);
+4:20 / CUSTOM STUDIO
 
-await new Promise(resolve=>{
+</text>
 
-script.onload=resolve;
+<text
+x="60"
+y="135"
+fill="#f1f1ed"
+font-family="Arial"
+font-size="38"
+font-weight="900">
 
+${currentDesign}
+
+</text>
+
+<foreignObject
+x="100"
+y="180"
+width="700"
+height="760">
+
+<div
+xmlns="http://www.w3.org/1999/xhtml"
+style="
+width:100%;
+height:100%;
+display:flex;
+align-items:center;
+justify-content:center;
+">
+
+${serializer.serializeToString(garmentClone)}
+
+</div>
+
+</foreignObject>
+
+<text
+x="60"
+y="1035"
+fill="#555"
+font-family="Arial"
+font-size="15"
+font-weight="700"
+letter-spacing="3">
+
+LA HORA ADECUADA · 4:20
+
+</text>
+
+</svg>
+`;
+
+
+const blob=
+new Blob([svg],{
+type:"image/svg+xml;charset=utf-8"
 });
 
-}
+const url=
+URL.createObjectURL(blob);
 
-const canvas=await html2canvas(viewer,{
-backgroundColor:'#101010',
-scale:2,
-useCORS:true
-});
+const image=
+new Image();
 
-const image=canvas.toDataURL('image/png');
+image.onload=function(){
 
-const link=document.createElement('a');
+const canvas=
+document.createElement("canvas");
 
-link.download='4-20-mi-pieza.png';
+canvas.width=width;
 
-link.href=image;
+canvas.height=height;
+
+const ctx=
+canvas.getContext("2d");
+
+ctx.drawImage(
+image,
+0,
+0,
+width,
+height
+);
+
+URL.revokeObjectURL(url);
+
+canvas.toBlob(blob=>{
+
+const downloadUrl=
+URL.createObjectURL(blob);
+
+const link=
+document.createElement("a");
+
+link.href=downloadUrl;
+
+link.download=
+"4-20-mi-diseno.png";
 
 link.click();
 
-alert(
-'Tu diseño fue guardado. Ahora envía esta captura por Instagram para cotizar tu pieza.'
+URL.revokeObjectURL(downloadUrl);
+
+showToast(
+"CAPTURA LISTA · ENVÍALA AL COTIZAR"
 );
+
+});
+
+};
+
+image.src=url;
 
 }catch(error){
 
 console.error(error);
 
-alert(
-'No se pudo generar la captura. Haz una captura de pantalla normal de tu diseño y envíala por Instagram.'
+showToast(
+"USA LA CAPTURA DE PANTALLA DE TU TELÉFONO"
 );
 
 }
 
+setTimeout(()=>{
+
+wrapper.remove();
+
+},1000);
+
 }
+
+
+/* ========================================================
+   QUOTE
+======================================================== */
+
+function quoteDesign(){
+
+captureDesign();
+
+setTimeout(()=>{
+
+window.open(
+"https://www.instagram.com/4_20.street/",
+"_blank"
+);
+
+},800);
+
+}
+
 
 </script>
 
