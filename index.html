@@ -4,14 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Playeras originales. Diseño, identidad y estilo.">
-<meta name="theme-color" content="#0a0a0a">
+<title>4:20 — Official Store</title>
 
-<title>MI MARCA — Playeras</title>
+<meta name="description" content="4:20 — Streetwear. Drops limitados.">
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
-
 *{
     margin:0;
     padding:0;
@@ -23,10 +20,9 @@ html{
 }
 
 body{
-    font-family:Inter,Arial,sans-serif;
-    background:#f5f5f3;
-    color:#0a0a0a;
-    line-height:1.5;
+    background:#050505;
+    color:#fff;
+    font-family:Arial,Helvetica,sans-serif;
 }
 
 a{
@@ -34,271 +30,312 @@ a{
     text-decoration:none;
 }
 
-button{
-    font:inherit;
-}
-
-/* NAVBAR */
+/* =========================
+   NAVBAR
+========================= */
 
 header{
     position:fixed;
     top:0;
     left:0;
     width:100%;
-    z-index:1000;
-    padding:18px 5%;
+    z-index:100;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    background:rgba(245,245,243,.9);
+    padding:22px 5%;
+    background:rgba(5,5,5,.75);
     backdrop-filter:blur(15px);
-    border-bottom:1px solid rgba(0,0,0,.08);
+    border-bottom:1px solid #222;
 }
 
 .logo{
-    font-size:20px;
+    font-size:22px;
     font-weight:900;
     letter-spacing:-1px;
 }
 
 nav{
     display:flex;
-    gap:28px;
-    font-size:13px;
-    font-weight:600;
+    gap:30px;
+    font-size:11px;
+    font-weight:bold;
+    letter-spacing:2px;
 }
 
 nav a{
-    transition:.25s;
+    transition:.3s;
 }
 
 nav a:hover{
-    opacity:.5;
+    opacity:.45;
 }
 
-.menu{
-    display:none;
-    font-size:25px;
-    cursor:pointer;
-}
-
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero{
     min-height:100vh;
-    padding:150px 6% 70px;
-    display:grid;
-    grid-template-columns:1fr 1fr;
+    position:relative;
+    display:flex;
     align-items:center;
-    gap:50px;
+    justify-content:center;
+    text-align:center;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at center,#222 0%,#090909 38%,#050505 75%);
 }
 
-.hero-text{
-    max-width:650px;
+.hero-content{
+    position:relative;
+    z-index:2;
+    padding:30px;
 }
 
-.eyebrow{
-    font-size:12px;
-    font-weight:700;
-    letter-spacing:3px;
-    text-transform:uppercase;
-    margin-bottom:20px;
-    opacity:.55;
+.small{
+    font-size:11px;
+    letter-spacing:5px;
+    color:#888;
+    margin-bottom:25px;
 }
 
 .hero h1{
-    font-size:clamp(55px,8vw,110px);
-    line-height:.88;
-    letter-spacing:-7px;
+    font-size:clamp(90px,18vw,230px);
+    line-height:.75;
+    letter-spacing:-14px;
     font-weight:900;
-    margin-bottom:30px;
+}
+
+.hero h2{
+    margin-top:35px;
+    font-size:13px;
+    letter-spacing:7px;
+    font-weight:500;
 }
 
 .hero p{
-    max-width:450px;
-    font-size:17px;
-    color:#555;
-    margin-bottom:35px;
+    margin:20px auto 35px;
+    max-width:400px;
+    color:#888;
+    font-size:14px;
 }
 
 .btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    padding:16px 25px;
-    background:#0a0a0a;
-    color:white;
-    font-size:13px;
-    font-weight:700;
-    border:none;
-    cursor:pointer;
+    display:inline-block;
+    background:#fff;
+    color:#000;
+    padding:16px 30px;
+    font-size:11px;
+    font-weight:bold;
+    letter-spacing:2px;
     transition:.3s;
 }
 
 .btn:hover{
+    background:#ccc;
     transform:translateY(-3px);
 }
 
-.hero-image{
-    height:650px;
-    background:
-    linear-gradient(135deg,#ddd,#999);
-    display:flex;
-    align-items:flex-end;
-    justify-content:flex-start;
+/* =========================
+   MARQUEE
+========================= */
+
+.marquee{
     overflow:hidden;
+    white-space:nowrap;
+    border-top:1px solid #222;
+    border-bottom:1px solid #222;
+    padding:18px 0;
+    font-size:11px;
+    letter-spacing:4px;
+    color:#777;
 }
 
-.hero-image span{
-    padding:25px;
-    color:white;
-    font-size:12px;
-    letter-spacing:2px;
-    font-weight:700;
+.marquee span{
+    display:inline-block;
+    animation:mover 18s linear infinite;
 }
 
-/* PRODUCTOS */
+@keyframes mover{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-50%);
+    }
+}
+
+/* =========================
+   SECCIONES
+========================= */
 
 .section{
-    padding:110px 6%;
+    padding:120px 6%;
 }
 
-.section-head{
+.section-title{
     display:flex;
     justify-content:space-between;
     align-items:end;
-    margin-bottom:45px;
+    margin-bottom:50px;
+}
+
+.label{
+    color:#777;
+    font-size:10px;
+    letter-spacing:4px;
+    margin-bottom:12px;
 }
 
 .section h2{
-    font-size:clamp(35px,5vw,65px);
-    letter-spacing:-3px;
-    line-height:1;
+    font-size:clamp(40px,7vw,85px);
+    letter-spacing:-5px;
+    line-height:.9;
 }
 
-.section-head p{
-    color:#666;
-    font-size:14px;
-}
+/* =========================
+   PRODUCTOS
+========================= */
 
 .products{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:22px;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
 }
 
 .product{
-    position:relative;
     cursor:pointer;
 }
 
-.product-image{
-    aspect-ratio:4/5;
-    background:#ddd;
-    overflow:hidden;
+.product-photo{
     position:relative;
+    aspect-ratio:4/5;
+    overflow:hidden;
+    background:#111;
 }
 
-.product-image img{
+.product-photo img{
     width:100%;
     height:100%;
     object-fit:cover;
-    transition:.6s;
+    filter:grayscale(100%);
+    transition:.7s;
 }
 
 .product:hover img{
-    transform:scale(1.04);
+    transform:scale(1.05);
+    filter:grayscale(0%);
 }
 
-.tag{
+.badge{
     position:absolute;
     top:15px;
     left:15px;
+    z-index:2;
     background:#fff;
-    padding:7px 10px;
-    font-size:10px;
-    font-weight:800;
-    letter-spacing:1px;
+    color:#000;
+    padding:8px 12px;
+    font-size:9px;
+    font-weight:bold;
+    letter-spacing:2px;
 }
 
 .product-info{
     display:flex;
     justify-content:space-between;
-    padding:17px 2px;
+    padding:18px 2px;
+    border-bottom:1px solid #222;
 }
 
 .product-name{
-    font-weight:700;
-    font-size:14px;
+    font-size:13px;
+    font-weight:bold;
+    letter-spacing:1px;
 }
 
-.product-type{
-    color:#777;
-    font-size:12px;
-    margin-top:4px;
+.product-description{
+    margin-top:5px;
+    color:#666;
+    font-size:10px;
+    letter-spacing:1px;
 }
 
 .price{
-    font-weight:800;
-    font-size:14px;
+    font-size:13px;
+    font-weight:bold;
 }
 
-/* MARCA */
+/* =========================
+   MANIFIESTO
+========================= */
 
-.about{
-    background:#0a0a0a;
-    color:white;
-    padding:130px 6%;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:80px;
-}
-
-.about h2{
-    font-size:clamp(45px,6vw,80px);
-    line-height:.95;
-    letter-spacing:-4px;
-}
-
-.about p{
-    color:#aaa;
-    max-width:500px;
-    font-size:16px;
-    line-height:1.8;
-}
-
-/* BANNER */
-
-.banner{
-    margin:0 6%;
-    min-height:430px;
+.manifesto{
+    min-height:80vh;
+    background:#fff;
+    color:#050505;
     display:flex;
-    flex-direction:column;
     align-items:center;
-    justify-content:center;
-    text-align:center;
-    background:#ddd;
-    padding:50px;
+    padding:100px 8%;
 }
 
-.banner h2{
-    font-size:clamp(40px,6vw,75px);
-    letter-spacing:-4px;
-    line-height:.95;
+.manifesto-inner{
+    max-width:1000px;
 }
 
-.banner p{
-    margin:20px 0 30px;
+.manifesto .label{
+    color:#777;
+}
+
+.manifesto h2{
+    font-size:clamp(45px,8vw,105px);
+    line-height:.9;
+    letter-spacing:-6px;
+}
+
+.manifesto p{
+    margin-top:40px;
+    max-width:550px;
     color:#555;
+    line-height:1.8;
+    font-size:15px;
 }
 
-/* FOOTER */
+/* =========================
+   DROP
+========================= */
+
+.drop{
+    text-align:center;
+    padding:140px 20px;
+    background:
+        linear-gradient(#050505cc,#050505cc),
+        url("https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=1800&q=85");
+    background-size:cover;
+    background-position:center;
+}
+
+.drop .label{
+    color:#aaa;
+}
+
+.drop h2{
+    font-size:clamp(50px,9vw,120px);
+    letter-spacing:-6px;
+}
+
+.drop p{
+    color:#aaa;
+    margin:20px 0 35px;
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
-    margin-top:100px;
-    background:#0a0a0a;
-    color:white;
-    padding:70px 6% 30px;
+    padding:80px 6% 30px;
+    border-top:1px solid #222;
 }
 
 .footer-top{
@@ -309,65 +346,54 @@ footer{
 }
 
 .footer-logo{
-    font-size:30px;
+    font-size:35px;
     font-weight:900;
 }
 
 .footer-links{
     display:flex;
-    gap:30px;
-    font-size:13px;
+    gap:25px;
+    font-size:10px;
+    letter-spacing:2px;
 }
 
-.copyright{
+.copy{
     padding-top:25px;
-    border-top:1px solid #333;
-    color:#777;
-    font-size:11px;
+    border-top:1px solid #222;
+    color:#555;
+    font-size:9px;
+    letter-spacing:1px;
 }
 
-/* ANIMACION */
+/* =========================
+   MOVIL
+========================= */
 
-.fade{
-    opacity:0;
-    transform:translateY(20px);
-    animation:appear .8s forwards;
-}
-
-@keyframes appear{
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-/* MOVIL */
-
-@media(max-width:800px){
+@media(max-width:700px){
 
     header{
-        padding:16px 5%;
+        padding:18px 5%;
     }
 
     nav{
-        display:none;
-    }
-
-    .menu{
-        display:block;
-    }
-
-    .hero{
-        grid-template-columns:1fr;
-        padding-top:130px;
+        gap:12px;
+        font-size:8px;
     }
 
     .hero h1{
-        letter-spacing:-4px;
+        letter-spacing:-8px;
     }
 
-    .hero-image{
-        height:500px;
+    .hero h2{
+        letter-spacing:4px;
+    }
+
+    .section{
+        padding:90px 5%;
+    }
+
+    .section-title{
+        display:block;
     }
 
     .products{
@@ -380,12 +406,15 @@ footer{
     }
 
     .price{
-        margin-top:7px;
+        margin-top:8px;
     }
 
-    .about{
-        grid-template-columns:1fr;
-        gap:40px;
+    .manifesto{
+        padding:90px 5%;
+    }
+
+    .manifesto h2{
+        letter-spacing:-3px;
     }
 
     .footer-top{
@@ -398,104 +427,117 @@ footer{
     }
 }
 
-@media(max-width:500px){
+@media(max-width:450px){
 
-    .hero{
-        padding-left:5%;
-        padding-right:5%;
-    }
-
-    .section{
-        padding:80px 5%;
+    nav{
+        display:none;
     }
 
     .products{
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:1fr;
     }
 
-    .banner{
-        margin:0 5%;
-        min-height:350px;
+    .hero h1{
+        font-size:100px;
     }
 }
 </style>
 </head>
 
+
 <body>
+
+<!-- =========================
+     NAV
+========================= -->
 
 <header>
 
-    <a href="#" class="logo">MI MARCA®</a>
+    <a href="#" class="logo">
+        4:20®
+    </a>
 
     <nav>
-        <a href="#coleccion">COLECCIÓN</a>
-        <a href="#historia">NOSOTROS</a>
+        <a href="#shop">SHOP</a>
+        <a href="#manifesto">MANIFIESTO</a>
+        <a href="#drop">DROP</a>
         <a href="#contacto">CONTACTO</a>
     </nav>
-
-    <div class="menu">☰</div>
 
 </header>
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero">
 
-    <div class="hero-text fade">
+    <div class="hero-content">
 
-        <div class="eyebrow">
-            NUEVA COLECCIÓN · 2026
+        <div class="small">
+            EST. 2026
         </div>
 
         <h1>
-            VISTE<br>
-            TU<br>
-            IDENTIDAD.
+            4:20
         </h1>
 
+        <h2>
+            STREETWEAR / CULTURE / IDENTITY
+        </h2>
+
         <p>
-            Playeras creadas para quienes no necesitan
-            seguir las reglas para tener estilo.
+            No seguimos tendencias.
+            Creamos las nuestras.
         </p>
 
-        <a href="#coleccion" class="btn">
-            VER COLECCIÓN →
+        <a href="#shop" class="btn">
+            VER DROP 01
         </a>
-
-    </div>
-
-
-    <div class="hero-image">
-
-        <span>
-            MI MARCA · DROP 01
-        </span>
 
     </div>
 
 </section>
 
 
-<!-- COLECCIÓN -->
+<!-- =========================
+     MARQUEE
+========================= -->
 
-<section class="section" id="coleccion">
+<div class="marquee">
 
-    <div class="section-head">
+    <span>
+        4:20® — DROP 01 — LIMITED — 4:20® — DROP 01 — LIMITED —
+        4:20® — DROP 01 — LIMITED — 4:20® — DROP 01 — LIMITED —
+    </span>
+
+</div>
+
+
+<!-- =========================
+     SHOP
+========================= -->
+
+<section class="section" id="shop">
+
+    <div class="section-title">
 
         <div>
-            <div class="eyebrow">
-                SHOP
+
+            <div class="label">
+                COLLECTION 001
             </div>
 
             <h2>
                 DROP 01
             </h2>
+
         </div>
 
-        <p>
-            EDICIÓN LIMITADA
-        </p>
+        <div class="label">
+            LIMITED RELEASE
+        </div>
 
     </div>
 
@@ -507,32 +549,34 @@ footer{
 
         <article class="product">
 
-            <div class="product-image">
+            <div class="product-photo">
 
-                <div class="tag">
-                    NUEVO
+                <div class="badge">
+                    NEW
                 </div>
 
                 <img
-                src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=85"
-                alt="Playera negra">
+                src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1000&q=90"
+                alt="4:20 Tee Black">
 
             </div>
 
             <div class="product-info">
 
                 <div>
+
                     <div class="product-name">
-                        TEE 001
+                        4:20 TEE 001
                     </div>
 
-                    <div class="product-type">
-                        Algodón premium
+                    <div class="product-description">
+                        BLACK / OVERSIZED
                     </div>
+
                 </div>
 
                 <div class="price">
-                    $399 MXN
+                    $200 MXN
                 </div>
 
             </div>
@@ -544,28 +588,34 @@ footer{
 
         <article class="product">
 
-            <div class="product-image">
+            <div class="product-photo">
+
+                <div class="badge">
+                    LIMITED
+                </div>
 
                 <img
-                src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=900&q=85"
-                alt="Playera urbana">
+                src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=1000&q=90"
+                alt="4:20 Tee White">
 
             </div>
 
             <div class="product-info">
 
                 <div>
+
                     <div class="product-name">
-                        TEE 002
+                        4:20 TEE 002
                     </div>
 
-                    <div class="product-type">
-                        Oversized
+                    <div class="product-description">
+                        WHITE / REGULAR
                     </div>
+
                 </div>
 
                 <div class="price">
-                    $399 MXN
+                    $150 MXN
                 </div>
 
             </div>
@@ -577,32 +627,30 @@ footer{
 
         <article class="product">
 
-            <div class="product-image">
-
-                <div class="tag">
-                    BEST SELLER
-                </div>
+            <div class="product-photo">
 
                 <img
-                src="https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=900&q=85"
-                alt="Playera blanca">
+                src="https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=1000&q=90"
+                alt="4:20 Essential">
 
             </div>
 
             <div class="product-info">
 
                 <div>
+
                     <div class="product-name">
-                        TEE 003
+                        4:20 ESSENTIAL
                     </div>
 
-                    <div class="product-type">
-                        Essential
+                    <div class="product-description">
+                        BLACK / REGULAR
                     </div>
+
                 </div>
 
                 <div class="price">
-                    $399 MXN
+                    $100 MXN
                 </div>
 
             </div>
@@ -610,43 +658,66 @@ footer{
         </article>
 
 
+        <!-- PRODUCTO 4 -->
+
+        <article class="product">
+
+            <div class="product-photo">
+
+                <img
+                src="https://images.unsplash.com/photo-1583743814966-8936f37f2096?auto=format&fit=crop&w=1000&q=90"
+                alt="4:20 Oversized">
+
+            </div>
+
+            <div class="product-info">
+
+                <div>
+
+                    <div class="product-name">
+                        4:20 OVERSIZED 004
+                    </div>
+
+                    <div class="product-description">
+                        WHITE / OVERSIZED
+                    </div>
+
+                </div>
+
+                <div class="price">
+                    $200 MXN
+                </div>
+
+            </div>
+
+        </article>
+
     </div>
 
 </section>
 
 
-<!-- HISTORIA -->
+<!-- =========================
+     MANIFIESTO
+========================= -->
 
-<section class="about" id="historia">
+<section class="manifesto" id="manifesto">
 
-    <div>
+    <div class="manifesto-inner">
 
-        <div class="eyebrow">
-            NUESTRA IDEA
+        <div class="label">
+            THE 4:20 MANIFESTO
         </div>
 
         <h2>
-            NO ES<br>
-            SOLO UNA<br>
-            PLAYERA.
+            MÁS QUE<br>
+            UN NÚMERO.
         </h2>
 
-    </div>
-
-    <div>
-
         <p>
-            Creamos prendas para personas que quieren
-            expresar quiénes son sin tener que explicarlo.
-            Diseño, actitud y personalidad en una sola pieza.
-        </p>
-
-        <br>
-
-        <p>
-            Cada colección nace con una idea:
-            hacer ropa que puedas reconocer incluso
-            antes de ver el nombre de la marca.
+            4:20 representa una forma de ver las cosas.
+            Una identidad. Una comunidad. Una manera
+            diferente de vestir y expresarse.
         </p>
 
     </div>
@@ -654,42 +725,41 @@ footer{
 </section>
 
 
-<!-- BANNER -->
+<!-- =========================
+     DROP
+========================= -->
 
-<section class="section">
+<section class="drop" id="drop">
 
-    <div class="banner">
-
-        <div class="eyebrow">
-            DROP 01
-        </div>
-
-        <h2>
-            ENCUENTRA<br>
-            TU PLAYERA.
-        </h2>
-
-        <p>
-            Disponible ahora.
-        </p>
-
-        <a href="#coleccion" class="btn">
-            COMPRAR →
-        </a>
-
+    <div class="label">
+        NEXT RELEASE
     </div>
+
+    <h2>
+        DROP 02
+    </h2>
+
+    <p>
+        PRÓXIMAMENTE
+    </p>
+
+    <a href="#contacto" class="btn">
+        MANTENTE AL TANTO →
+    </a>
 
 </section>
 
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer id="contacto">
 
     <div class="footer-top">
 
         <div class="footer-logo">
-            MI MARCA®
+            4:20®
         </div>
 
         <div class="footer-links">
@@ -702,7 +772,7 @@ footer{
                 TIKTOK
             </a>
 
-            <a href="https://wa.me/5210000000000">
+            <a href="#">
                 WHATSAPP
             </a>
 
@@ -710,8 +780,8 @@ footer{
 
     </div>
 
-    <div class="copyright">
-        © 2026 MI MARCA. TODOS LOS DERECHOS RESERVADOS.
+    <div class="copy">
+        © 2026 4:20®. ALL RIGHTS RESERVED.
     </div>
 
 </footer>
